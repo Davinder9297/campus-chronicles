@@ -69,10 +69,10 @@ a {
 .ptufont{
   color: #66FCF1;
 }
-@keyframes move {
+@keyframes move { 
   0% {
     /* margin-left: 0px; */
-    transform: translateX(100%);
+    transform: translateX(0%);
 
   }
   100% {
@@ -81,5 +81,9 @@ a {
   }
 }
 .animate-move {
-  animation: move 15s linear infinite;
+  animation: move 5s linear infinite;
+  overflow: auto;
 }
+/* .whologin{
+  background-image: url('');
+} */

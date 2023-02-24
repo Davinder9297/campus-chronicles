@@ -1,6 +1,6 @@
 export default function Header(){
     return(<>
-    <div className="flex  justify-around pt-2 h-11 font-serif text-md font-semibold bg-purple-300">
+    <div className="flex  justify-around pt-2 h-11 font-serif text-md font-semibold bg-purple-300 ">
 <div >Home</div>
 <div>About us</div>
 
