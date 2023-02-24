@@ -23,10 +23,7 @@ a {
   html {
     color-scheme: dark;
   }
-  body {
-    color: white;
-    background: black;
-  }
+
 }
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
@@ -63,12 +60,7 @@ a {
   90% {margin-top: 0;}
   100% {margin-top: 0;}
 }
-.ptubg{
-  background-color:#0B0C10;
-}
-.ptufont{
-  color: #66FCF1;
-}
+
 @keyframes move { 
   0% {
     /* margin-left: 0px; */
@@ -84,6 +76,8 @@ a {
   animation: move 5s linear infinite;
   overflow: auto;
 }
-/* .whologin{
-  background-image: url('');
-} */
+.whologin{
+  background-image: url('../public/bg-gif.gif');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
