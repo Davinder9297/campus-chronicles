@@ -5,7 +5,8 @@ let name = month[d.getMonth()];
 let s=d.getDate()+" "+name+" "+d.getFullYear();
     return (<>
     <div className="flex-col mt-8 mb-5">
-<div className="text-center text-3xl font-semibold font-serif animate-pulse">Events At Campus</div>
+<div className="text-center text-3xl font-semibold font-serif text-gray-600">Events At Campus</div>
+<div className="flex justify-center"><img src="hr.png" alt="" /></div>
 <div className="flex flex-wrap w-full h-auto justify-evenly mt-4 ">
 <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5  hover:scale-90 transition duration-300 ease-in">
     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>

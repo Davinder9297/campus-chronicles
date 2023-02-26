@@ -10,8 +10,6 @@ module.exports = {
       'display': ['Oswald'],
       'body': ['"Open Sans"'],
       'o':[ 'Oswald', 'sans-serif'],
-      'a':['Alumni Sans Inline One','DynaPuff'],
-      'jass':['Alumni Sans Inline One','DynaPuff','Roboto Slab']
     },
     extend: {
       
@@ -25,5 +23,7 @@ module.exports = {
       '2xl': {'min': '1536px'},
     },
   },
-  plugins: [],
+  plugins: [
+    // require('flowbite/plugin'),
+  ],
 }

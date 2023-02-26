@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
+overflow-x: hidden;
 }
 
 a {
@@ -34,7 +34,7 @@ a {
 }
 
 .animation > div > div {
-  padding: 0.25rem 0.75rem;
+  /* padding: 0.25rem 0.75rem; */
   height:3rem;
   margin-bottom: 2.81rem;
   display:inline-block;
@@ -63,18 +63,40 @@ a {
 
 @keyframes move { 
   0% {
-    /* margin-left: 0px; */
+        transform: translateX(100%);
+
+  }
+
+  50% {
     transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+
+
+  }
+}
+@keyframes move2 { 
+  0% {
+        transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100%);
 
   }
   100% {
-    transform: translateX(-100%);
-    /* margin-left: 800px; */
+    transform: translateX(0%);
+
   }
 }
 .animate-move {
-  animation: move 5s linear infinite;
-  overflow: auto;
+
+  animation: move  15s linear  infinite;
+  overflow-x: hidden;
+}
+.animate-move2 {
+  animation: move2 15s linear infinite;
+  overflow-x: hidden;
 }
 .whologin{
   background-image: url('../public/bg-gif.gif');
