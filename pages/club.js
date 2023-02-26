@@ -6,45 +6,59 @@ export default function Club() {
 
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 hover-">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
                     <img className="rounded-xl h-full w-full" src="cultural_logo.png" />
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 hover-">
-                    <img className="rounded-xl h-full w-full" src="cultural_logo.png" />
+                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
+                    <img className="rounded-xl h-full w-full" src="personality.png"/>
                 </div>
-                <div className="border-solid border-4 m-3 border-pink-600 h-[173px] p-2 text-center rounded-xl shadow-2xl shadow-slate-900">
-                    <img className="rounded-xl h-full w-full" src="cultural_logo.png" />
+                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
+                    <img className="rounded-xl h-full w-full" src="editorial.jpg" />
                 </div>
             </div>
 
 
             <div className="flex-col justify-between w-[44%] ">
-                <div className=" p-3 font-jass text-2xl text-center font-bold">
+                <div className=" p-3 font-jass text-2xl text-center font-bold ">
                     Current Notifications...
-                    <div className="border-solid border-4 border-yellow-300 bg-stone-400 h-[325px] ">
-                        data
+                    <div className="border-solid border-2 h-[300px] overflow-y-auto mt-2">
+                        <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between">
+                            <div className="w-[10%] ">S.no.</div>
+                            <div className="w-[70%] ">Subject</div>
+                            <div className="w-[15%] ">Date</div>
+                        </div>
+                        <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
+                            <div className="w-[10%] ">1.</div>
+                            <div className="w-[70%] text-left">This is my first notification</div>
+                            <div className="w-[17%] ">27.02.2023</div>
+                        </div>  
+                        <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
+                            <div className="w-[10%] ">2.</div>
+                            <div className="w-[70%] text-left">This is my Second notification</div>
+                            <div className="w-[17%] ">28.02.2023</div>
+                        </div>    
                     </div>
                 </div>
-                <div className="flex flex-row flex-wrap justify-evenly">
-                    <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-2xl shadow-slate-900">
+                <div className="flex flex-row flex-wrap justify-evenly mt-2">
+                    <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
                         <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
                     </div>
-                    <div className="border-solid border-4 m-2 border-pink-600 h-[173px] p-2 text-center rounded-xl w-[45%] shadow-2xl shadow-slate-900">
-                    <img className="rounded-xl h-full w-full" src="cultural_logo.png"/>
+                    <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
+                    <img className="rounded-xl h-full w-full" src="core-committee.png"/>
                     </div>
                 </div>
             </div>
 
 
             <div className="flex-col flex-wrap w-[24%]">
-                <div className="border-solid border-4 m-3 border-pink-600 h-[173px] p-2 text-center rounded-xl shadow-2xl shadow-slate-900">
-                <img className="rounded-xl h-full w-full" src="cultural_logo.png"/>
+                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
+                <img className="rounded-xl h-full w-full" src="placement.jpg"/>
                 </div>
-                <div className="border-solid border-4 m-3 border-pink-600 h-[173px] p-2 text-center rounded-xl shadow-2xl shadow-slate-900">
-                <img className="rounded-xl h-full w-full" src="cultural_logo.png"/>
+                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
+                <img className="rounded-xl h-full w-full" src="e-cell.png" />
                 </div>
-                <div className="border-solid border-4 m-3 border-pink-600 h-[173px] p-2 text-center rounded-xl shadow-2xl shadow-slate-900">
-                <img className="rounded-xl h-full w-full" src="cultural_logo.png"/>
+                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-2xl shadow-slate-900 cursor-pointer hover:scale-105 transition duration-150">
+                <img className="rounded-xl h-full w-full" src="coding.png"/>
                 </div>
             </div>
         </div>
