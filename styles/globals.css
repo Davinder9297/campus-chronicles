@@ -90,13 +90,9 @@ a {
   }
 }
 .animate-move {
-
-  animation: move  15s linear  infinite;
-  overflow-x: hidden;
+transform: ;
 }
 .animate-move2 {
-  animation: move2 15s linear infinite;
-  overflow-x: hidden;
 }
 .whologin{
   background-image: url('../public/bg-gif.gif');
