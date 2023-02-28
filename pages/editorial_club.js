@@ -2,8 +2,8 @@ export default function Culturalclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" w-full h-44 overflow-hidden shadow-xl shadow-red-200 ">
-                <img className="h-full" src="cultural_tile.png" />
+            <div className=" w-full h-44 flex justify-center shadow-xl bg-black shadow-red-200 ">
+                <img className="bg-red-400 w-full" src="editorial_tile.png" />
             </div>
             <div className="flex flex-row " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
