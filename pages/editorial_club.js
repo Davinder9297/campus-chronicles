@@ -2,8 +2,11 @@ export default function Culturalclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" w-full h-44 flex justify-center shadow-xl bg-black shadow-red-200 ">
-                <img className="bg-red-400 w-full" src="editorial_tile.png" />
+            <div className=" h-44 flex justify-center space-x-5 shadow-xl  
+            
+            shadow-red-200 items-center">
+                <img className=" h-44" src="editorial_tile2.png" />
+                <img className=" w-[600px] h-20 " src="editorial_tile1.png" />
             </div>
             <div className="flex flex-row " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
@@ -138,7 +141,7 @@ export default function Culturalclub() {
                         </div>
                     </div>
                 </div>
-                <div className="flex-col m-3 w-[68%]">
+                <div className="flex-col='true' m-3 w-[68%]">
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
                         <div className="m-3 font-normal text-xl border-solid border-2 border-red-600 rounded-xl p-2 text-justify">
@@ -148,11 +151,11 @@ export default function Culturalclub() {
                     </div>
                     <div className="text-center font-bold text-3xl font-sans m-3 p-2 border-2 border-solid border-red-600 rounded-xl">
                         Our Events....
-                        <div className="flex-col">
+                        <div className="flex-col='true'">
                             <div className="flex flex-wrap justify-center m-3 ">
 
                                 <div className="border-solid border-2 m-3 border-red-600 h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
-                                    <div flex-col>
+                                    <div flex-col='true'>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className="text-red-600 border-2 border-solid border-black-200 h-auto text-xl overflow-hidden mt-2">
                                             Event name
@@ -165,7 +168,7 @@ export default function Culturalclub() {
                                 </div>
 
                                 <div className="border-solid border-2 m-3 border-red-600 h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
-                                    <div flex-col>
+                                    <div flex-col='true'>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className="border-2 border-solid border-black-200 h-auto text-xl overflow-hidden mt-2 text-red-600">
                                             Event name
