@@ -29,14 +29,8 @@ export default function Club() {
                 </div>
             </div>
 
-
-<<<<<<< HEAD
-            <div className="flex-col justify-between w-[44%] ">
-                <div className=" p-3 font-jass text-shadow-md text-center font-bold ">
-=======
             <div className="flex-col justify-between w-[44%]">
                 <div className=" p-3 font-jass text-2xl text-center font-bold ">
->>>>>>> cebc7d03d21387e5101fe723ed58d3a8be0657d3
                     Current Notifications...
                     <div className="border-solid border-2 h-[300px] overflow-y-auto mt-2">
                         <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between">
