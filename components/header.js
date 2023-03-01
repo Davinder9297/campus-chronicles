@@ -4,26 +4,27 @@ export default function Header(){
 <div >Home</div>
 <div>About us</div>
 
-<div className="dropdown show">
-  <a className=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div className="dropdown font-serif ">
+  <div className=" font-semibold dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Admission
-  </a>
-
-  <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a className="dropdown-item" href="#">Programs offered</a>
+  </div>
+  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  <a className="dropdown-item" href="#">Programs offered</a>
     <a className="dropdown-item" href="#">Admission 2023</a>
     <a className="dropdown-item" href="#">Fee Structure</a>
     <a className="dropdown-item" href="#">Scholarships</a>
   </div>
 </div>
 
+
 <div>Faculty & Other Staff</div>
 
-<div className="dropdown show">
-  <a className=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Student Facilities   
-  </a>
+<div className="dropdown">
+<div className=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Student Facilities
+  </div>
 
-  <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <a className="dropdown-item" href="#">Events And Activites</a>
     <a className="dropdown-item" href="#">SC-ST Grievance</a>
     <a className="dropdown-item" href="#">Campus Library</a>
