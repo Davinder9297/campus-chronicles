@@ -11,7 +11,7 @@ export default function Index() {
 <div className="h-[350px] mt-[2px] "><Carousal/></div>
 <Director2/>
 <Events/>
-<div className="flex justify-around ">
+<div className="flex justify-around  h-auto">
   <Faq/>
 <Upcomingevents/>
 </div>

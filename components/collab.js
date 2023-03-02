@@ -1,6 +1,6 @@
  export default function Collab(){
     return(<>
-    <div className="h-auto w-full flex-col  mb-5  ">
+    <div className="h-auto w-full flex-col  mb-5 mt-5 ">
 <div className="text-center text-3xl font-semibold text-gray-600 font-serif">Our Recruiters</div>
 <div className="flex justify-center"><img src="hr.png" alt="" /></div>
 <div className="flex-col  h-auto mt-5 w-full ">

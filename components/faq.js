@@ -1,7 +1,7 @@
 import {FaQuestionCircle} from 'react-icons/fa'
 export default function Faq(){
     return(<>
-    <div className="flex-col w-[470px] min-h-[260px] h-auto">
+    <div className="flex-col w-[470px] min-h-[260px] h-auto p-3">
         <div className="flex "><div className='text-xl'>FAQs </div><FaQuestionCircle className='ml-1 mt-1 text-xl'/></div>
         <div className='text-sm mt-1'>FREQUENTLY ASKED QUESTIONS</div>
         <div className=''><img className='w-40 ml-3' src="hr.png" alt="" /></div>

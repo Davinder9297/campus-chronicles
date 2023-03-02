@@ -2,8 +2,11 @@ export default function Editorialclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" w-full h-36 flex justify-center shadow-md bg-black shadow-cyan-200 ">
-                <img className="bg-cyan-400 w-full" src="editorial_tile.png" />
+            <div className=" h-36 flex justify-around  shadow-xl  
+           
+            shadow-red-200 items-center">
+                <img className=" h-36" src="editorial_tile2.png" />
+                <img className=" w-[600px] h-20 bg-black mr-60" src="editorial_tile1.png" />
             </div>
             <div className="flex flex-row " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
@@ -138,7 +141,7 @@ export default function Editorialclub() {
                         </div>
                     </div>
                 </div>
-                <div className="flex-col m-3 w-[68%]">
+                <div className="flex-col='true' m-3 w-[68%]">
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
                         <div className="m-3 font-normal text-xl shadow-md shadow-cyan-300 rounded-xl p-2 text-justify">
@@ -148,7 +151,7 @@ export default function Editorialclub() {
                     </div>
                     <div className="text-center font-bold text-3xl font-sans m-3 p-2 shadow-md shadow-cyan-200 rounded-xl">
                         Our Events....
-                        <div className="flex-col">
+                        <div className="flex-col='true'">
                             <div className="flex flex-wrap justify-center m-3 ">
 
                                 <div className="m-3 shadow-cyan-300 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
