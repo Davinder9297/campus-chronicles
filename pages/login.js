@@ -2,8 +2,8 @@ import {BiLogIn} from 'react-icons/bi'
 
 export default function Login(){
     return(<>
-    <div className='whologin pb-6 w-full pt-12'>
-    <div className=" flex-col h-96 w-80 mx-auto pt-1 bg-white rounded-lg">
+    <div className='whologin pb-6 w-full pt-12 '>
+    <div className=" flex-col h-96 w-80 mx-auto pt-1 bg-white rounded-lg shadow-xl shadow-blue-300">
 <div className="font-s text-gray-600 font-semibold text-xl text-center">Login</div>
 <div className="font-s text-gray-600 mt-2 font-semibold text-xs text-center">Welcome to campus chronicles</div>
 <div className="flex-col px-3 mt-4 text-xs space-y-1">
