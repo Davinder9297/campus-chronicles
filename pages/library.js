@@ -8,7 +8,7 @@ export default function Library(){
     <div className="flex-col ">
         <div className='text-center text-4xl'>Library</div>
         <div className="flex justify-between mt-3">
-            <div className="leftcorner flex-col  space-y-6 ml-2  w-48">
+            <div className="leftcorner flex-col  space-y-6 ml-2  w-1/5">
             <div className='flex  space-x-2 '>
                     <div><img src="faculty.svg" alt="" /></div>
                     <div className='flex-col'>Neha
@@ -24,12 +24,10 @@ export default function Library(){
                 <div className='flex '><MdAccountCircle className='text-lg mt-1 mr-1'/>Account</div>
             
             </div>
-            <div className="flex-col bg-slate-800 w-[750px] h-[350px]">
-                <div className=' '>
+            <div className="flex-col w-3/5 h-[350px]">
                    <LibraryCarousal/>
-                </div>
             </div>
-            <div className="flex-col w-64 pr-4">
+            <div className="flex-col w-1/5 pr-4">
                 <div className='text-xl font-serif text-center bg-purple-300 rounded-sm'>Announcement</div>
                <marquee  width="100%" direction="up" height="90%" behaviour="scroll" scrollamount="4" className="space-y-5">
              <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>

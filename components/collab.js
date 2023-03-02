@@ -4,7 +4,7 @@
 <div className="text-center text-3xl font-semibold text-gray-600 font-serif">Our Recruiters</div>
 <div className="flex justify-center"><img src="hr.png" alt="" /></div>
 <div className="flex-col  h-auto  w-full ">
-<marquee  width="100%" direction="left" height="100%" behaviour="scroll" scrollamount="18" className="blink w-full">
+<marquee   direction="left"  behaviour="scroll" scrollamount="20" className="blink w-full">
   <div className="flex ">
   <img className="h-28   " src="a.png" alt="" />
     <img className="h-28  " src="b.png" alt="" />
