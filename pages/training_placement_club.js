@@ -38,10 +38,10 @@ export default function Trainingclub() {
                     <div className="shadow-md shadow-gray-600 text-2xl m-2 p-3 rounded-xl">
                         <div className="bg-gray-300 rounded-xl">Leading Roles</div>
                         
-                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around   bg-gray-200 rounded-xl">
+                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around bg-gray-200 rounded-xl">
                             Database Management Team
                         </div>
-                        <div className="flex flex-row justify-around mt-1 ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100 mt-1 ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 1.
                             </div>
@@ -52,7 +52,7 @@ export default function Trainingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100  ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 2.
                             </div>
@@ -63,7 +63,7 @@ export default function Trainingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100  ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 3.
                             </div>
@@ -75,11 +75,11 @@ export default function Trainingclub() {
                             </div>
                         </div>
 
-                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around   bg-gray-200 rounded-xl">
+                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around bg-gray-200 rounded-xl">
                             Content Management Team
                         </div>
                         
-                        <div className="flex flex-row justify-around mt-1 ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100 mt-1 ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 4.
                             </div>
@@ -90,7 +90,7 @@ export default function Trainingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around mt-1 ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100 mt-1 ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 5.
                             </div>
@@ -102,11 +102,11 @@ export default function Trainingclub() {
                             </div>
                         </div>
                         
-                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around   bg-gray-200 rounded-xl">
+                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around bg-gray-200 rounded-xl">
                             Designing Management Team
                         </div>
                         
-                        <div className="flex flex-row justify-around mt-1 ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100 mt-1 ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 6.
                             </div>
@@ -117,7 +117,7 @@ export default function Trainingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100  ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 7.
                             </div>
@@ -129,11 +129,11 @@ export default function Trainingclub() {
                             </div>
                         </div>
 
-                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around   bg-gray-200 rounded-xl">
+                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around bg-gray-200 rounded-xl">
                             LinkedIn Management Team
                         </div>
                         
-                        <div className="flex flex-row justify-around mt-1 ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100 mt-1 ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 8.
                             </div>
@@ -144,7 +144,7 @@ export default function Trainingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100  ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 9.
                             </div>
@@ -155,7 +155,7 @@ export default function Trainingclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100  ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 10.
                             </div>
@@ -166,11 +166,11 @@ export default function Trainingclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around   bg-gray-200 rounded-xl">
+                        <div className="font-bold mt-2 text-xl p-1 flex flex-row justify-around bg-gray-200 rounded-xl">
                             Internship Management Team
                         </div>
                         
-                        <div className="flex flex-row justify-around mt-1 ">
+                        <div className="flex flex-row justify-around hover:bg-gray-100 mt-1 ">
                             <div className="w-[20%] text-lg h-[58] p-1">
                                 11.
                             </div>

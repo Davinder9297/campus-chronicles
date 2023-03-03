@@ -54,7 +54,9 @@ export default function Club() {
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">
                     <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                        <Link href={'/sports'}>
                         <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
+                    </Link>
                     </div>
                     <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                         <img className="rounded-xl h-full w-full" src="core-committee.png" />
