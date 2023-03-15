@@ -2,14 +2,14 @@ export default function Culturalclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" w-full h-36 overflow-hidden shadow-md shadow-red-300 ">
+            <div className=" w-full h-36 overflow-hidden shadow-md shadow-red-600 ">
                 <img className="h-full" src="cultural_tile.png" />
             </div>
             <div className="flex flex-row " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
                     Our Handlers
-                    <div className=" shadow-red-400 shadow-md text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-red-200 rounded-xl">Incharge</div>
+                    <div className=" shadow-red-600 shadow-md text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-red-400 rounded-xl">Incharge</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -21,8 +21,8 @@ export default function Culturalclub() {
                         </div>
                     </div>
 
-                    <div className=" shadow-red-400 shadow-md text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-red-200 rounded-xl">President</div>
+                    <div className=" shadow-red-600 shadow-md text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-red-400 rounded-xl">President</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -35,9 +35,9 @@ export default function Culturalclub() {
                         </div>
                     </div>
 
-                    <div className=" shadow-red-400 shadow-md text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-red-200 rounded-xl">Leading Roles</div>
-                        <div className="flex flex-row justify-around  mt-3 bg-red-400 rounded-xl">
+                    <div className=" shadow-red-600 shadow-md text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-red-400 rounded-xl">Leading Roles</div>
+                        <div className="flex flex-row justify-around  mt-3 bg-red-300 rounded-xl">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 Sno.
                             </div>
@@ -48,7 +48,7 @@ export default function Culturalclub() {
                                 Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around mt-2 ">
+                        <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 1.
                             </div>
@@ -59,7 +59,7 @@ export default function Culturalclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 2.
                             </div>
@@ -70,7 +70,7 @@ export default function Culturalclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 3.
                             </div>
@@ -81,7 +81,7 @@ export default function Culturalclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 4.
                             </div>
@@ -92,7 +92,7 @@ export default function Culturalclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 5.
                             </div>
@@ -103,7 +103,7 @@ export default function Culturalclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 6.
                             </div>
@@ -114,7 +114,7 @@ export default function Culturalclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 7.
                             </div>
@@ -125,7 +125,7 @@ export default function Culturalclub() {
                                 1<sup>st</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-red-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 8.
                             </div>
@@ -141,17 +141,17 @@ export default function Culturalclub() {
                 <div className="flex-col m-3 w-[68%]">
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
-                        <div className="m-3 font-normal text-xl shadow-red-400 shadow-md rounded-xl p-2 text-justify">
+                        <div className="m-3 font-normal text-xl shadow-red-600 shadow-md rounded-xl p-2 text-justify">
                         Culture club helps in encouraging talent of the students. Club activities help students to develop a sense of unity and teamwork, learning how to work with others in reaching the same goals. This club help learners develop social skills and give students an open floor to build confidence and work on their performance anxiety.Because of the comfortable environment, conversations flow easily and everyone is open to new ideas.
                         Events include competitions such as instrumental,singing dance and many more. Cultural club also celebrates all the festivals creating a vibrant atmosphere all around.
                         </div>
                     </div>
-                    <div className="text-center font-bold text-3xl font-sans m-3 p-2  shadow-red-400 shadow-md rounded-xl">
+                    <div className="text-center font-bold text-3xl font-sans m-3 p-2  shadow-red-600 shadow-md rounded-xl">
                         Our Events....
                         <div className="flex-col">
                             <div className="flex flex-wrap justify-center m-3 ">
 
-                                <div className="m-3 shadow-red-400 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                <div className="m-3 shadow-red-600 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div flex-col>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className="text-red-600 h-auto text-xl overflow-hidden mt-2">
@@ -164,7 +164,7 @@ export default function Culturalclub() {
                                     </div>
                                 </div>
 
-                                <div className="m-3 shadow-red-400 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                <div className="m-3 shadow-red-600 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div flex-col>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className=" border-black-200 h-auto text-xl overflow-hidden mt-2 text-red-600">

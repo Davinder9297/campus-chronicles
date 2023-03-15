@@ -2,14 +2,14 @@ export default function Eclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" w-full h-36 flex justify-center shadow-md bg-white shadow-yellow-200 ">
+            <div className=" w-full h-36 flex justify-center shadow-md bg-white shadow-yellow-400 ">
                 <img className="bg-yellow-400 w-full" src="e-cell_tile.png" />
             </div>
             <div className="flex flex-row " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
                     Our Handlers
-                    <div className="shadow-md shadow-yellow-200 text-2xl m-3 p-3 rounded-xl">
-                        <div className="bg-yellow-200 rounded-xl">Incharge</div>
+                    <div className="shadow-md shadow-yellow-400 text-2xl m-3 p-3 rounded-xl">
+                        <div className="bg-yellow-300 rounded-xl">Incharge</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -21,8 +21,8 @@ export default function Eclub() {
                         </div>
                     </div>
 
-                    <div className="shadow-md shadow-yellow-200 text-2xl m-3 p-3 rounded-xl">
-                        <div className="bg-yellow-200 rounded-xl">President</div>
+                    <div className="shadow-md shadow-yellow-400 text-2xl m-3 p-3 rounded-xl">
+                        <div className="bg-yellow-300 rounded-xl">President</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -35,9 +35,9 @@ export default function Eclub() {
                         </div>
                     </div>
 
-                    <div className="shadow-md shadow-yellow-200 text-2xl m-3 p-3 rounded-xl">
-                        <div className="bg-yellow-200 rounded-xl">Leading Roles</div>
-                        <div className="flex flex-row justify-around  mt-3 bg-yellow-400 rounded-xl">
+                    <div className="shadow-md shadow-yellow-400 text-2xl m-3 p-3 rounded-xl">
+                        <div className="bg-yellow-300 rounded-xl">Leading Roles</div>
+                        <div className="flex flex-row justify-around  mt-3 bg-yellow-200 rounded-xl">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 Sno.
                             </div>
@@ -48,7 +48,7 @@ export default function Eclub() {
                                 Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around mt-2 ">
+                        <div className="flex justify-around  hover:bg-yellow-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 1.
                             </div>
@@ -59,7 +59,7 @@ export default function Eclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-yellow-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 2.
                             </div>
@@ -70,7 +70,7 @@ export default function Eclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-yellow-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 3.
                             </div>
@@ -81,7 +81,7 @@ export default function Eclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-yellow-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 4.
                             </div>
@@ -92,7 +92,7 @@ export default function Eclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-yellow-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 5.
                             </div>
@@ -103,7 +103,7 @@ export default function Eclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-yellow-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 6.
                             </div>
@@ -132,7 +132,7 @@ export default function Eclub() {
                             </div>
                         </div>
                     </div>
-                    <div className="text-center font-bold text-3xl font-sans m-1 p-2 shadow-md shadow-yellow-200 rounded-xl">
+                    <div className="text-center font-bold text-3xl font-sans m-1 p-2 shadow-md shadow-yellow-400 rounded-xl">
                         Our Events....
                         <div className="flex-col">
                             <div className="flex flex-wrap justify-center m-3 ">

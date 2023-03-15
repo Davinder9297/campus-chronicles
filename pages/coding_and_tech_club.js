@@ -37,7 +37,7 @@ export default function Codingclub() {
 
                     <div className="shadow-md shadow-purple-600 text-2xl m-3 p-3 rounded-xl">
                     <div className="bg-purple-400 rounded-xl">Leading Roles</div>
-                        <div className="flex flex-row justify-around  mt-3 bg-purple-600 rounded-xl">
+                        <div className="flex flex-row justify-around mt-3 bg-purple-300 rounded-xl">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 Sno.
                             </div>
@@ -48,7 +48,7 @@ export default function Codingclub() {
                                 Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around mt-2 ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 1.
                             </div>
@@ -59,7 +59,7 @@ export default function Codingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 2.
                             </div>
@@ -70,7 +70,7 @@ export default function Codingclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 3.
                             </div>
@@ -81,7 +81,7 @@ export default function Codingclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 4.
                             </div>
@@ -92,7 +92,7 @@ export default function Codingclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 5.
                             </div>
@@ -103,7 +103,7 @@ export default function Codingclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 6.
                             </div>
@@ -114,7 +114,7 @@ export default function Codingclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-purple-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 7.
                             </div>
@@ -167,7 +167,7 @@ export default function Codingclub() {
                                 </div>
 
                             </div>
-                            <div className="font-semibold text-center text-2xl border-2-solid bg-purple-400 p-1 ml-8 mr-8 rounded-xl">
+                            <div className="font-semibold text-center text-2xl border-2-solid bg-purple-500 p-1 ml-8 mr-8 rounded-xl">
                                 <button>
                                     Load more Events
                                 </button>
