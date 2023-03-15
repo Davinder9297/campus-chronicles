@@ -2,34 +2,30 @@ import {ImBooks,ImNewspaper} from 'react-icons/im'
 import {FaHome,FaBookMedical} from 'react-icons/fa'
 import {AiFillFilePdf} from 'react-icons/ai'
 import {MdAccountCircle} from 'react-icons/md'
+import {MdMessage} from 'react-icons/md'
 import LibraryCarousal from '../components/Library_carousel'
 export default function Library(){
     return(<>
     <div className="flex-col ">
-        <div className='text-center text-4xl'>Library</div>
-        <div className="flex justify-between mt-3">
-            <div className="leftcorner flex-col  space-y-6 ml-2  w-1/5">
-            <div className='flex  space-x-2 '>
-                    <div><img src="faculty.svg" alt="" /></div>
-                    <div className='flex-col'>Neha
-                    <div className='ml-2'>(Librarian)</div>
-                    </div>
-                   
-                </div>
-                <div className='flex '><FaHome className='text-lg mt-1 mr-1'/> Home</div>
-                <div className='flex '><ImBooks className='text-lg mt-1 mr-1'/> Available Books</div>
-                <div className='flex '><ImNewspaper className='text-lg mt-1 mr-1'/>Available Magazines</div>
-                <div className='flex '><FaBookMedical className='text-lg mt-1 mr-1'/>Request Book</div>
+        <div className='text-center text-4xl h-24 bg-slate-400'>Library</div>
+        <div className="libnavbar flex justify-around w-full bg-purple-300 py-2 font-semibold font-serif ">
+                <div className='flex '><FaHome className='text-lg mt-[2px] mr-1'/> Home</div>
+                <div className='flex  '><MdMessage className='text-lg mt-1 mr-1'/>About Library</div>
+                <div className='flex '><ImBooks className='text-xl mt-[2px] mr-1'/> Available Books</div>
+                <div className='flex '><ImNewspaper className='text-lg mt-[3px] mr-1'/>Available Magazines</div>
+                <div className='flex '><FaBookMedical className=' mt-1 mr-1'/>Request Book</div>
                 <div className='flex '><AiFillFilePdf className='text-lg mt-1 mr-1'/>eBooks</div>
-                <div className='flex '><MdAccountCircle className='text-lg mt-1 mr-1'/>Account</div>
+                <div className='flex '><MdAccountCircle className='text-xl mt-[2px] mr-1 '/>Profile</div>
             
             </div>
-            <div className="flex-col w-3/5 h-[350px]">
+        <div className="flex justify-between mt-[2px]">
+      
+            <div className="flex-col w-[73%] h-2/3 bg-black">
                    <LibraryCarousal/>
             </div>
-            <div className="flex-col w-1/5 pr-4">
+            <div className="flex-col w-1/4 mr-1 shadow-xl shadow-purple-300 ">
                 <div className='text-xl font-serif text-center bg-purple-300 rounded-sm'>Announcement</div>
-               <marquee  width="100%" direction="up" height="90%" behaviour="scroll" scrollamount="4" className="space-y-5">
+               <marquee  width="100%" direction="up" height="90%" behaviour="scroll" scrollamount="4" className="space-y-5 px-3">
              <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
              <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
              <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>

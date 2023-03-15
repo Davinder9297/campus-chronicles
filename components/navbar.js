@@ -12,7 +12,7 @@ export default function Navbar(){
 <div className="flex-col ">
 <div className="animation ml-28 ">
      <div className="text-2xl pt-3  text-red-600 font-bold "><div className="first ">CAMPUS CHRONICLES</div></div>
-     <div className="text-2xl font-bold   text-red-600 "><div className="second"></div>CAMPUS CHRONICLES</div>
+     <div className="text-2xl font-bold   text-yellow-300 "><div className="second"></div>CAMPUS CHRONICLES</div>
      <div className="text-2xl mt-5 pt-2  text-blue-600 font-bold "><div className="first">CAMPUS CHRONICLES</div>
 </div>
 </div>
