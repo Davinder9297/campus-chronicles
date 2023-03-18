@@ -7,7 +7,7 @@ import Upcomingevents from "../components/upcoming"
 import Header from "../components/header"
 export default function Index() {
     return(<>
-      <div className="flex-col">
+      <div className="flex-col ">
 <Header/>
 <div className="h-[350px] mt-[2px] "><Carousal/></div>
 <Director2/>

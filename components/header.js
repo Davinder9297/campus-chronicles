@@ -1,7 +1,8 @@
+import Link from "next/link"
 export default function Header(){
     return(<>
     <div className="flex  justify-around pt-2 h-11 font-serif text-md font-semibold bg-purple-300 ">
-<div >Home</div>
+<div >Home</div> 
 <div>About us</div>
 <div className="dropdown font-serif ">
   <div className=" font-semibold dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,10 +24,10 @@ export default function Header(){
     Student Facilities
   </div>
 
-  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  <div className="dropdown-menu flex-col " aria-labelledby="dropdownMenuButton1">
     <a className="dropdown-item" href="#">Events And Activites</a>
     <a className="dropdown-item" href="#">SC-ST Grievance</a>
-    <a className="dropdown-item" href="#">Campus Library</a>
+    <Link className="dropdown-item" href="/library">Campus Library</Link>
     <a className="dropdown-item" href="#">Two Computer Labs</a>
     <a className="dropdown-item" href="#">Digital Electronics Lab</a>
     <a className="dropdown-item" href="#">Seminar Hall</a>

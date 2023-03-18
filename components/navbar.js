@@ -6,7 +6,7 @@ export default function Navbar(){
     <div className="h-24 w-full justify-between flex shadow-xl bg-blue-900">
 <div className='flex '>
 <div className="h-[100px] w-24 ml-20">
-    <div className="pt-3 w-[85px]"><img className="h-[70px] w-[80px]" src="ptu-logo-transparent.png" alt="" />
+    <div className="pt-3 w-[85px]"><img className="h-[70px] w-[80px]" src="/ptu-logo-transparent.png" alt="" />
     </div>
 </div>
 <div className="flex-col ">

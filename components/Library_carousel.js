@@ -17,7 +17,7 @@ const LibraryCarousal = () => {
         <img src="2.jpg" className="block w-full h-[370px] xsm:h-40" alt="..."/>
       </div>
       <div className="carousel-item relative float-left w-full" data-bs-interval="1500">
-        <img src="3.jpg" className="block w-full h-[370px] xsm:h-40" alt="..."/>
+        <img src="2.jpg" className="block w-full h-[370px] xsm:h-40" alt="..."/>
       </div>
     </div>
     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
