@@ -4,6 +4,7 @@ import Events from "../components/events"
 import Collab from "../components/collab"
 import Faq from "../components/faq"
 import Upcomingevents from "../components/upcoming"
+import Header from "../components/header"
 export default function Index() {
     return(<>
       <div className="flex-col">
