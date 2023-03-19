@@ -6,7 +6,7 @@ export default function Footer(){
     return(<>
     <div className=" flex justify-around mt-2 relative bg-purple-200 py-3 bottom-0">
         <div className="flex-col ">
-            <div className='flex justify-center'><img className='h-24' src="ptu-logo-transparent.png" alt="" /></div>
+            <div className='flex justify-center'><img className='h-24' src="/ptu-logo-transparent.png" alt="" /></div>
         <div className='text-center font-semibold'> CAMPUS CHRONICLES</div>
         <div className="flex justify-around text-2xl mt-3">
             <button className='text-xl'><BsFacebook/></button>

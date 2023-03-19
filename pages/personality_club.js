@@ -2,14 +2,14 @@ export default function Personalityclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" w-full h-36 overflow-hidden shadow-md shadow-orange-300 ">
+            <div className=" w-full h-36 overflow-hidden shadow-md shadow-orange-400 ">
                 <img className="h-full w-full" src="personality_tile.png" />
             </div>
             <div className="flex flex-row m-3 mt-4 " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
                     Our Handlers
-                    <div className="shadow-md shadow-orange-200 text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-orange-200 rounded-xl">Incharge</div>
+                    <div className="shadow-md shadow-orange-400 text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-orange-300 rounded-xl">Incharge</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -21,8 +21,8 @@ export default function Personalityclub() {
                         </div>
                     </div>
 
-                    <div className="shadow-md shadow-orange-200 text-2xl m-3 p-3 rounded-xl ">
-                        <div className="bg-orange-200 rounded-xl">President</div>
+                    <div className="shadow-md shadow-orange-400 text-2xl m-3 p-3 rounded-xl ">
+                        <div className="bg-orange-300 rounded-xl">President</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -35,9 +35,9 @@ export default function Personalityclub() {
                         </div>
                     </div>
 
-                    <div className="shadow-md shadow-orange-200 text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-orange-200 rounded-xl">Leading Roles</div>
-                        <div className="flex flex-row justify-around  mt-3 rounded-2xl bg-orange-400">
+                    <div className="shadow-md shadow-orange-400 text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-orange-300 rounded-xl">Leading Roles</div>
+                        <div className="flex flex-row justify-around mt-3 rounded-2xl bg-orange-200">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 Sno.
                             </div>
@@ -48,7 +48,7 @@ export default function Personalityclub() {
                                 Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around mt-2 ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 1.
                             </div>
@@ -59,7 +59,7 @@ export default function Personalityclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 2.
                             </div>
@@ -70,7 +70,7 @@ export default function Personalityclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 3.
                             </div>
@@ -81,7 +81,7 @@ export default function Personalityclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 4.
                             </div>
@@ -92,7 +92,7 @@ export default function Personalityclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 5.
                             </div>
@@ -103,7 +103,7 @@ export default function Personalityclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 6.
                             </div>
@@ -114,7 +114,7 @@ export default function Personalityclub() {
                                 1<sup>st</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-orange-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 7.
                             </div>
@@ -132,16 +132,16 @@ export default function Personalityclub() {
                 <div className="flex-col m-3 w-[68%]">
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
-                        <div className="m-3 font-normal text-xl shadow-md shadow-orange-200 rounded-xl p-2 text-justify">
+                        <div className="m-3 font-normal text-xl shadow-md shadow-orange-400 rounded-xl p-2 text-justify">
                             Darpan comes you with the opportunity of developing personality in ways through which learn not only to benefit others but ourselves as well. With the aim of developing one's personality we have reached methods like demo interview sessions and group discussions for your placements along with other activities and charities that are to be held.
                         </div>
                     </div>
-                    <div className="text-center font-bold text-3xl font-sans m-3 p-2 shadow-md shadow-orange-200 rounded-xl">
+                    <div className="text-center font-bold text-3xl font-sans m-3 p-2 shadow-md shadow-orange-400 rounded-xl">
                         Our Events....
                         <div className="flex-col">
                             <div className="flex flex-wrap justify-center m-3 ">
 
-                                <div className="shadow-md shadow-orange-200 m-3  h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                <div className="shadow-md shadow-orange-400 m-3  h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div flex-col>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className="text-orange-600 h-auto text-xl overflow-hidden mt-2">
@@ -154,7 +154,7 @@ export default function Personalityclub() {
                                     </div>
                                 </div>
 
-                                <div className="shadow-md shadow-orange-200 m-3 h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                <div className="shadow-md shadow-orange-400 m-3 h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div flex-col>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className=" h-auto text-xl overflow-hidden mt-2 text-orange-600">

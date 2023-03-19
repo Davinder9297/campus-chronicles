@@ -2,17 +2,15 @@ export default function Editorialclub() {
     return (<>
 
         <div className=" w-full mt-1">
-            <div className=" h-36 flex justify-around  shadow-xl  
-           
-            shadow-red-200 items-center">
+            <div className=" h-36 flex justify-around  shadow-md shadow-cyan-500 items-center">
                 <img className=" h-36" src="editorial_tile2.png" />
                 <img className=" w-[600px] h-20 bg-black mr-60" src="editorial_tile1.png" />
             </div>
             <div className="flex flex-row " >
                 <div className="w-[40%] text-center font-bold text-3xl font-sans m-3 p-2">
                     Our Handlers
-                    <div className="shadow-md shadow-cyan-200 text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-cyan-200 rounded-xl">Incharge</div>
+                    <div className="shadow-md shadow-cyan-500 text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-cyan-300 rounded-xl">Incharge</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -24,8 +22,8 @@ export default function Editorialclub() {
                         </div>
                     </div>
 
-                    <div className="shadow-md shadow-cyan-200 text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-cyan-200 rounded-xl">President</div>
+                    <div className="shadow-md shadow-cyan-500 text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-cyan-300 rounded-xl">President</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
                                 <img className="h-full w-full" src="teacher.jpg" />
@@ -38,9 +36,9 @@ export default function Editorialclub() {
                         </div>
                     </div>
 
-                    <div className="shadow-md shadow-cyan-200 text-2xl m-3 p-3 rounded-xl">
-                    <div className="bg-cyan-200 rounded-xl">Leading Roles</div>
-                        <div className="flex flex-row justify-around  mt-3 bg-cyan-400 rounded-xl">
+                    <div className="shadow-md shadow-cyan-500 text-2xl m-3 p-3 rounded-xl">
+                    <div className="bg-cyan-300 rounded-xl">Leading Roles</div>
+                        <div className="flex flex-row justify-around  mt-3 bg-cyan-200 rounded-xl">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 Sno.
                             </div>
@@ -51,7 +49,7 @@ export default function Editorialclub() {
                                 Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around mt-2 ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 1.
                             </div>
@@ -62,7 +60,7 @@ export default function Editorialclub() {
                                 3<sup>rd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 2.
                             </div>
@@ -73,7 +71,7 @@ export default function Editorialclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 3.
                             </div>
@@ -84,7 +82,7 @@ export default function Editorialclub() {
                                 2<sup>nd</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 4.
                             </div>
@@ -95,7 +93,7 @@ export default function Editorialclub() {
                                 1<sup>st</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 5.
                             </div>
@@ -106,7 +104,7 @@ export default function Editorialclub() {
                                 1<sup>st</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 6.
                             </div>
@@ -117,7 +115,7 @@ export default function Editorialclub() {
                                 1<sup>st</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 7.
                             </div>
@@ -128,7 +126,7 @@ export default function Editorialclub() {
                                 1<sup>st</sup> Year
                             </div>
                         </div>
-                        <div className="flex flex-row justify-around  ">
+                        <div className="flex flex-row justify-around hover:bg-cyan-100  ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 8.
                             </div>
@@ -144,17 +142,17 @@ export default function Editorialclub() {
                 <div className="flex-col='true' m-3 w-[68%]">
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
-                        <div className="m-3 font-normal text-xl shadow-md shadow-cyan-300 rounded-xl p-2 text-justify">
+                        <div className="m-3 font-normal text-xl shadow-md shadow-cyan-500 rounded-xl p-2 text-justify">
                         Editorial Club is dedicated to keeping the campus community informed and engaged through regular uodates of the notice board. In addition to providing a platform for students to showcase their creativity and artistic talents, the club also helps students develop important skills such as journalistic writing, effective communication, and content creation.
                         <br/>By providing opportunities for students to express themselvesand share their ideas with others. The editorial club plays a key role in fostering a culture of creativity and collaboration in campus.As a part of its efforts the club is currently working on producing the next edition of the campus magazine which will showcase the best of student work from across the campus.
                         </div>
                     </div>
-                    <div className="text-center font-bold text-3xl font-sans m-3 p-2 shadow-md shadow-cyan-200 rounded-xl">
+                    <div className="text-center font-bold text-3xl font-sans m-3 p-2 shadow-md shadow-cyan-500 rounded-xl">
                         Our Events....
                         <div className="flex-col='true'">
                             <div className="flex flex-wrap justify-center m-3 ">
 
-                                <div className="m-3 shadow-cyan-300 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                <div className="m-3 shadow-cyan-500 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div flex-col>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className="text-cyan-600 h-auto text-xl overflow-hidden mt-2">
@@ -167,7 +165,7 @@ export default function Editorialclub() {
                                     </div>
                                 </div>
 
-                                <div className="m-3 shadow-cyan-300 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                <div className="m-3 shadow-cyan-500 shadow-md h-auto rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div flex-col>
                                         <img className="rounded-xl h-56 w-full" src="cultural_logo.png" />
                                         <div className="h-auto text-xl overflow-hidden mt-2 text-cyan-600">
