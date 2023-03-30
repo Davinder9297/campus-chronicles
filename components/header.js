@@ -29,7 +29,7 @@ export default function Header(){
     <a className="dropdown-item" href="#">Events And Activites</a>
     <a className="dropdown-item" href="#">SC-ST Grievance</a>
     <Link className="dropdown-item" href="/library">Campus Library</Link>
-    <a className="dropdown-item" href="#">Two Computer Labs</a>
+    <a className="dropdown-item" href="#">Clubs Management</a>
     <a className="dropdown-item" href="#">Digital Electronics Lab</a>
     <a className="dropdown-item" href="#">Seminar Hall</a>
     <a className="dropdown-item" href="#">Sports Activities</a>
