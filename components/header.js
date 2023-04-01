@@ -7,7 +7,7 @@ export default function Header() {
       <div>About us</div>
       <div><Link href='/'>Faculty</Link></div>
       <div>Events & Activities</div>
-      <div>Clubs</div>
+      <div><Link href='/club'>Clubs</Link></div>
       <div>Library</div>
       <div><Link href="fd">Placements</Link></div>
 
