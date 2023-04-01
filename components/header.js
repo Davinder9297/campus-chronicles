@@ -26,7 +26,6 @@ export default function Header(){
   </div>
 
   <div className="dropdown-menu flex-col " aria-labelledby="dropdownMenuButton1">
-<<<<<<< HEAD
    <div className="dropdown-item"> <Link  href="/">Events And Activites</Link></div>
     <div className="dropdown-item"><Link className="dropdown-item" href="/">SC-ST Grievance</Link></div>
     <div className="dropdown-item"><Link className="dropdown-item" href="/library">Campus Library</Link></div>
@@ -37,18 +36,6 @@ export default function Header(){
     <div className="dropdown-item"><Link className="dropdown-item" href="/">Hostel</Link></div>
     <div className="dropdown-item"><Link className="dropdown-item" href="/">ICT Enabled Classes</Link></div>
     <div className="dropdown-item"><Link className="dropdown-item" href="/">Cafetria</Link></div>
-=======
-    <a className="dropdown-item" href="#">Events And Activites</a>
-    <a className="dropdown-item" href="#">SC-ST Grievance</a>
-    <Link className="dropdown-item" href="/library">Campus Library</Link>
-    <a className="dropdown-item" href="#">Clubs Management</a>
-    <a className="dropdown-item" href="#">Digital Electronics Lab</a>
-    <a className="dropdown-item" href="#">Seminar Hall</a>
-    <a className="dropdown-item" href="#">Sports Activities</a>
-    <a className="dropdown-item" href="#">Hostel</a>
-    <a className="dropdown-item" href="#">ICT Enabled Classes</a>
-    <a className="dropdown-item" href="#">Cafetria</a>
->>>>>>> 58ea031bea82dcdcd9a6134e33f8b4df3c612694
   </div>
 </div>
 
