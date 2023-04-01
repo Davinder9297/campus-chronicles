@@ -12,10 +12,10 @@ export default function Library(){
         <div className="libnavbar flex justify-around w-full bg-purple-300 py-2 font-semibold font-serif ">
                 <div className='flex '><FaHome className='text-lg mt-[2px] mr-1'/> Home</div>
                 <div className='flex  '><MdMessage className='text-lg mt-1 mr-1'/>About Library</div>
-                <div className='flex '><ImBooks className='text-xl mt-[2px] mr-1'/> <Link href='/library/available'>Available Books</Link></div>
-                <div className='flex '><ImNewspaper className='text-lg mt-[3px] mr-1'/>Available Magazines</div>
-                <div className='flex '><FaBookMedical className=' mt-1 mr-1'/>Request Book</div>
-                <div className='flex '><AiFillFilePdf className='text-lg mt-1 mr-1'/>eBooks</div>
+                <div className='flex '><ImBooks className='text-xl mt-[2px] mr-1'/> <Link href='/library/availablebooks'>Available Books</Link></div>
+                <div className='flex '><ImNewspaper className='text-lg mt-[3px] mr-1'/><Link href='/library/availablemagazines'>Available Magazines</Link></div>
+                <div className='flex '><FaBookMedical className=' mt-1 mr-1'/><Link href='/library/requestbook'>Request Book</Link></div>
+                <div className='flex '><AiFillFilePdf className='text-lg mt-1 mr-1'/><Link href='/library/ebooks'>eBooks</Link></div>
                 <div className='flex '><MdAccountCircle className='text-xl mt-[2px] mr-1 '/>Profile</div>
             
             </div>
