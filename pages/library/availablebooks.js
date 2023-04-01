@@ -68,9 +68,9 @@ export default function Available(){
         </div>
 
 
-        <div className='right-side flex-col w-[79%] py-2'>
+        <div className='right-side flex-col w-[79%]'>
         <div className="flex justify-center ">
-  <div className="">
+  <div className="pt-3">
     <div className=" flex w-full flex-wrap items-stretch">
       <input
         type="search"
@@ -100,10 +100,10 @@ export default function Available(){
 </div>
 
 
-<div className='flex-col mt-4 mx-2  h-full'>
+<div className='flex-col mx-2 py-12 h-full'>
         <div className='text-center text-2xl text-white font-serif'> All Books</div> 
         <div className='flex justify-center'><img className='w-32 ' src="/hr.png" alt="" /></div>
-        <div className=' w-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-transparent h-full  flex flex-wrap  justify-center '>
+        <div className=' w-full overflow-y-auto scrollbar-thin pb-12 scrollbar-track-transparent scrollbar-thumb-transparent h-full  flex flex-wrap  justify-center '>
             <div className='flex-col mx-3 my-4'>
             <img className='h-52' src="/book.jpg" alt="" />
             <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
@@ -160,7 +160,7 @@ export default function Available(){
             <img className='h-52' src="/book.jpg" alt="" />
             <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
             </div>
-            <div className='flex-col mx-3 my-4'>
+            <div className='flex-col mx-3 my-4  '>
             <img className='h-52' src="/book.jpg" alt="" />
             <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
             </div>

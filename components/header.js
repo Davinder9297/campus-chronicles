@@ -9,15 +9,15 @@ export default function Header(){
     Admission
   </div>
   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-  <a className="dropdown-item" href="#">Programs offered</a>
-    <a className="dropdown-item" href="#">Admission 2023</a>
-    <a className="dropdown-item" href="#">Fee Structure</a>
-    <a className="dropdown-item" href="#">Scholarships</a>
+  <div className="dropdown-item"><Link className="dropdown-item" href="/">Programs offered</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Admission 2023</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Fee Structure</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Scholarships</Link></div>
   </div>
 </div>
 
 
-<div>Faculty & Other Staff</div>
+<div><Link href='/'>Faculty & Other Staff</Link></div>
 
 <div className="dropdown">
 <div className=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,20 +25,20 @@ export default function Header(){
   </div>
 
   <div className="dropdown-menu flex-col " aria-labelledby="dropdownMenuButton1">
-    <a className="dropdown-item" href="#">Events And Activites</a>
-    <a className="dropdown-item" href="#">SC-ST Grievance</a>
-    <Link className="dropdown-item" href="/library">Campus Library</Link>
-    <a className="dropdown-item" href="#">Two Computer Labs</a>
-    <a className="dropdown-item" href="#">Digital Electronics Lab</a>
-    <a className="dropdown-item" href="#">Seminar Hall</a>
-    <a className="dropdown-item" href="#">Sports Activities</a>
-    <a className="dropdown-item" href="#">Hostel</a>
-    <a className="dropdown-item" href="#">ICT Enabled Classes</a>
-    <a className="dropdown-item" href="#">Cafetria</a>
+   <div className="dropdown-item"> <Link  href="/">Events And Activites</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">SC-ST Grievance</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/library">Campus Library</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Two Computer Labs</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Digital Electronics Lab</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Seminar Hall</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Sports Activities</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Hostel</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">ICT Enabled Classes</Link></div>
+    <div className="dropdown-item"><Link className="dropdown-item" href="/">Cafetria</Link></div>
   </div>
 </div>
 
-<div><a href="">Placements</a></div>
+<div><Link href="fd">Placements</Link></div>
 
 <div><button>Login</button></div>
 </div>

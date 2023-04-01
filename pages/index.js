@@ -5,10 +5,11 @@ import Collab from "../components/collab"
 import Faq from "../components/faq"
 import Upcomingevents from "../components/upcoming"
 import Header from "../components/header"
+import Footer from "../components/footer"
 export default function Index() {
     return(<>
       <div className="flex-col ">
-<Header/>
+      <Header/>
 <div className="h-[350px] mt-[2px] "><Carousal/></div>
 <Director2/>
 <Events/>
@@ -18,6 +19,7 @@ export default function Index() {
 </div>
 
 <Collab/>
+<Footer/>
       </div>
     </>)
 }

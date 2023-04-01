@@ -63,29 +63,13 @@ a {
 
 @keyframes move { 
   0% {
-        transform: translateX(100%);
+        transform: translateX(-200%);
 
   }
 
-  50% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-
-
-  }
-}
-@keyframes move2 { 
-  0% {
-        transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100%);
-
-  }
   100% {
     transform: translateX(0%);
+    
 
   }
 }
@@ -101,4 +85,13 @@ a {
   50% {
      opacity: 0.7;
   }
+}
+.request{
+  background-image: url('../public/bookbg.webp');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  
+}
+.request_book_animation{
+  animation: move 1s linear 1;
 }
