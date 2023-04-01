@@ -95,3 +95,6 @@ a {
 .request_book_animation{
   animation: move 1s linear 1;
 }
+.teacherbg{
+  background-image: url('../public/teacherbg.gif');
+}
