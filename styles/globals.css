@@ -97,4 +97,46 @@ a {
 }
 .teacherbg{
   background-image: url('../public/teacherbg.gif');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.profile{
+  background-image: url('../public/teacherprofile.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.assignment{
+  background-image: url('../public/assignment.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.record{
+  background-image: url('../public/studentrecord.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.attendance{
+  background-image: url('../public/attendance.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.research{
+  background-image: url('../public/research.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.announcement{
+  background-image: url('../public/announcement.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.syllabus{
+  background-image: url('../public/syllabbus.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.timetable{
+  background-image: url('../public/timetable4.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
 }
