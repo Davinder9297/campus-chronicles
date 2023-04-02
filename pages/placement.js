@@ -5,6 +5,7 @@ import {MdEditNotifications} from 'react-icons/md'
 import {FaThList} from 'react-icons/fa'
 import {RiCheckboxMultipleFill}from 'react-icons/ri'
 // import {TiThSmall} from 'react-icons/ti'
+import Collab from "../components/collab"
 import LibraryCarousal from '../components/Library_carousel'
 
 
@@ -14,9 +15,9 @@ export default function Placement() {
 
 <div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold'>
   <div><button> <AiTwotoneHome /></button> Home</div>
-  <div> About </div>
-  <div> Interview Related questions </div>
+  <div> About Placements</div>
   <div> Placement Procedure</div>
+  <div> Interview Related questions </div>
   <div> Take mock test</div>
 
 </div>
@@ -61,30 +62,33 @@ export default function Placement() {
       </div>
     </div>
 
-    <div className=' flex flex-row justify-between w-auto h-3/4 mx-1 my-2 border-2 border-purple-900 '>
-      <div className=' flex-col h-3/4 w-[32%] text-clip overflow-hidden border-r-2'>
-        <div className='pl-5 pt-3 pb-2 mt-8 ml-5 border-black border-3 text-left'>
+    <div className=' flex flex-row justify-between w-auto h-3/4 mx-1 my-2 border-2  '>
+      <div className=' flex-col h-3/4 w-[32%] text-clip overflow-hidden '>
+        <div className='pl-5 pt-3 pb-2 mt-8 ml-5 text-left'>
           <div className=' text-3xl font-serif font-bold text-pink-500'> PLACEMENT
           <div className=' text-3xl font-serif font-bold text-black'>  STATS</div></div>
         </div>
-        <div className=' pl-14 pt-4 pb-2 mt-8 ml-5 border-black border-3 text-left text-xl font-mono'>
+        <div className=' pl-14 pt-4 pb-2 mt-8 ml-5 text-left text-xl font-mono'>
         1260 management case-studies covering domains like Strategy, Marketing, Economics & Finance and others, 
         bought across 68 countries. The placement stats are hjdsvhdhbdhcbdsbc cndbjgcxbjl bla blaa b;aaaa
         </div>
 
       </div>
 
-      <div className='h-auto w-[35%] bg-gray-300 bg-gradient-to-r from-orange-200 via-red-200 to-pink-300'>
-        <div className='flex mt-8 ml-5 mr-3 pl-8 pt-4 h-20 w-auto font-serif font-extrabold text-lg text-center border-2 border-black'> <div className='m-2'><RiCheckboxMultipleFill/></div> dsglergeriojgjerogk0erogiodfj</div>
-        <div className='flex mt-8 ml-5 mr-3 pl-8 pt-3 h-20 w-auto font-serif font-extrabold text-lg text-center border-2 border-black'> <div className='m-2'><RiCheckboxMultipleFill/></div> dsglergeriojgjerogk0erogiodfj</div>
-        <div className='flex mt-8 ml-5 mr-3 pl-8 pt-3 h-20 w-auto font-serif font-extrabold text-lg text-center border-2 border-black'> <div className='m-2'><RiCheckboxMultipleFill/></div> dsglergeriojgjerogk0erogiodfj</div>
-        <div className='flex mt-8 ml-5 mr-3 pl-8 pt-3 h-20 w-auto font-serif font-extrabold text-lg text-center border-2 border-black'> <div className='m-2'><RiCheckboxMultipleFill/></div> dsglergeriojgjerogk0erogiodfj</div>
+      <div className='h-auto w-[40%]  bg-gradient-to-r from-orange-200 via-red-200 to-pink-300 rounded-xl'>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center '> <div className='m-2'><RiCheckboxMultipleFill/></div> 50 Companies</div>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center '> <div className='m-2'><RiCheckboxMultipleFill/></div> 100+ Placement Offers</div>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center '> <div className='m-2'><RiCheckboxMultipleFill/></div> 6.06 lac Average CTC</div>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center '> <div className='m-2'><RiCheckboxMultipleFill/></div> 17 LPA-Highest Package</div>
       </div>
 
-      <div className='h-auto w-[35%] '>
-        <div className=' flex-col  mt-8 '>
-          <div className='  border-2 border-black pb-3 '> <img className='w-64 h-44' src='research.jpg' alt=''></img></div>
-          <div className='  border-2 border-black pb-3 '> <img className='w-64 h-44' src='research2.jpg' alt=''></img> nfjdnvkjdn</div>
+      <div className='h-auto w-[30%] '>
+        <div className=' flex-col m-6 space-y-2'>
+          <div className=' flex-col justify-center space-y-1 pl-3'> <img className='w-72 h-48' src='plac_home.jpeg' alt=''></img>
+          <div className=' text-center font-serif font-bold text-base pl-3'> Qspider's Placement drive</div></div>
+          
+          <div className=' flex-col justify-center space-y-1 pl-3 pr-3 '> <img className='w-72 h-48 ' src='plac_home2.jpeg' alt=''></img>
+          <div className=' text-center font-serif font-bold text-base  pl-3'> Guidance session</div></div>
         </div>
 
       </div>
@@ -93,7 +97,7 @@ export default function Placement() {
     {/* <div className= "border-2 border-slate-500  flex-row justify-end  w-[50%] h-[50%]"></div> */}
     
     </div>
-
+ 
     
     <div className='mt-8 mb-5 w-auto mx-2 my-2 border-2  font-bold text-center text-2xl font-sans p-3  rounded-xl '>
      T&P Events and Placement drives
@@ -177,6 +181,8 @@ NGO's and the private sector. </div>
     </div>     
   </div>
 </div>
+
+<Collab/>
 
      
   </>)

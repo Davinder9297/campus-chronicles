@@ -12,6 +12,11 @@ module.exports = {
       'o':[ 'Oswald', 'sans-serif'],
     },
     extend: {
+      backgroundImage: {
+        'plac_bg': "url('../public/google.png')",
+        'hello': "url('../public/sample_img2.jpg')",
+        
+      },
       
     },
     screens: {
