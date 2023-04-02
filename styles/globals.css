@@ -63,29 +63,13 @@ a {
 
 @keyframes move { 
   0% {
-        transform: translateX(100%);
+        transform: translateX(-200%);
 
   }
 
-  50% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-
-
-  }
-}
-@keyframes move2 { 
-  0% {
-        transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100%);
-
-  }
   100% {
     transform: translateX(0%);
+    
 
   }
 }
@@ -101,4 +85,58 @@ a {
   50% {
      opacity: 0.7;
   }
+}
+.request{
+  background-image: url('../public/bookbg.webp');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  
+}
+.request_book_animation{
+  animation: move 1s linear 1;
+}
+.teacherbg{
+  background-image: url('../public/teacherbg.gif');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.profile{
+  background-image: url('../public/teacherprofile.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.assignment{
+  background-image: url('../public/assignment.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.record{
+  background-image: url('../public/studentrecord.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.attendance{
+  background-image: url('../public/attendance.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.research{
+  background-image: url('../public/research.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.announcement{
+  background-image: url('../public/announcement.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.syllabus{
+  background-image: url('../public/syllabbus.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.timetable{
+  background-image: url('../public/timetable4.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
 }
