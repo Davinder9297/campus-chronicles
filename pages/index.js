@@ -12,6 +12,8 @@ export default function Index() {
       <div className="flex-col ">
         <Navbar/>
       <Header/>
+      <div className="flex-col">
+
 <div className="h-[350px] mt-[2px] "><Carousal/></div>
 <Director2/>
 <Events/>
