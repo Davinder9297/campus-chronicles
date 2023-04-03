@@ -1,9 +1,9 @@
 import { MdEmail } from 'react-icons/md'
 import { IoMdCall } from 'react-icons/io'
 
-export default function Navbar() {
+export default function Navbar(props) {
     return <>
-        <div className="h-24 w-full justify-between flex shadow-xl bg-blue-900">
+        <div className={`h-24 w-full justify-between flex shadow-xl  ${props.class}`}>
             <div className='flex '>
                 <div className="h-[100px] w-24 ml-12 mr-8">
                     <div className="pt-1 w-[105px]"><img className="h-[90px] w-[110px]" src="/logo_gif.gif" alt="" />
