@@ -6,8 +6,12 @@ import Faq from "../components/faq"
 import Upcomingevents from "../components/upcoming"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import Navbar from "../components/navbar"
 export default function Index() {
     return(<>
+      <div className="flex-col ">
+        <Navbar/>
+      <Header/>
       <div className="flex-col">
 
 <div className="h-[350px] mt-[2px] "><Carousal/></div>

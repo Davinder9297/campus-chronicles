@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
 <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=DynaPuff&family=Oswald&display=swap" rel="stylesheet"/>
 </Head>
-  <Navbar/>
+  {/* <Navbar/> */}
   {/* <Header/> */}
   <Component {...pageProps} />
   {/* <Footer/> */}
