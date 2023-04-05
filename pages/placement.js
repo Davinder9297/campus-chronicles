@@ -106,7 +106,7 @@ export default function Placement() {
     <div className="flex flex-wrap justify-center m-2  ">
 
         <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-        <div flex-col>
+        <div className='flex-col'>
              <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
              <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
                  The Podcast
@@ -119,7 +119,7 @@ is to get students placed inreputed multinationals, government organizations, NG
      </div>
 
      <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div flex-col>
+         <div className='flex-col'>
              <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
              <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
                  The Podcast
@@ -134,7 +134,7 @@ NGO's and the private sector. </div>
          </div>
      </div>
      <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div flex-col>
+         <div className='flex-col'>
              <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
              <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
                  The Podcast
@@ -149,7 +149,7 @@ NGO's and the private sector. </div>
          </div>
      </div>
      <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div flex-col>
+         <div className='flex-col'>
              <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
              <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
                  The Podcast
@@ -164,7 +164,7 @@ NGO's and the private sector. </div>
          </div>
      </div>
      <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div flex-col>
+         <div className='flex-col'>
              <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
              <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
                  The Podcast

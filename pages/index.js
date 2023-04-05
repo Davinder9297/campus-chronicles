@@ -24,6 +24,7 @@ export default function Index() {
 
 <Collab/>
 <Footer/>
+</div>
       </div>
     </>)
 }
