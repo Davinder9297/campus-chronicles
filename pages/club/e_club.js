@@ -67,7 +67,7 @@ export default function Eclub() {
                                 Akshay Jangra
                             </div>
                             <div className=" w-[20%] text-xl h-[58] text-left p-1">
-                                3<sup>rd</sup> Yea`r
+                                3<sup>rd</sup> Year
                             </div>
                         </div>
                         <div className="flex flex-row justify-around hover:bg-yellow-100  ">

@@ -1,7 +1,7 @@
 export default function Codingclub() {
     return (<>
 
-        <div className=" w-full mt-1">
+        <div className=" w-full">
             <div className=" w-full h-36 flex justify-center shadow-md shadow-purple-600  ">
                 <img className="w-full" src="/coding_tile.png" />
             </div>

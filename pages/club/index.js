@@ -1,4 +1,4 @@
-// import Header from '../components/header'
+import Navbar from "../../components/navbar"
 // import Navbar from '../components/navbar'
 
 import Link from "next/link";
@@ -7,9 +7,7 @@ import Link from "next/link";
 export default function Club() {
     return (<>
 
-        <div className="">
-
-        </div>
+<Navbar class=""/>
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
