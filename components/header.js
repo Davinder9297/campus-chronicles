@@ -9,7 +9,7 @@ export default function Header() {
       <div>Events & Activities</div>
       <div><Link href='/club'>Clubs</Link></div>
       <div>Library</div>
-      <div><Link href="fd">Placements</Link></div>
+      <div><Link href="/placement">Placements</Link></div>
 
       <div><button type="button" className="bg-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch

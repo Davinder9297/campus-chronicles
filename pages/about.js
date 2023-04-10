@@ -1,8 +1,9 @@
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import {BsFillBookmarkStarFill} from "react-icons/bs"
 export default function About(){
     return(<>
-    <div className=" h-auto ">
+    <div className=" h-auto mb-4">
     <Navbar class="bg-gray-500"/>
     <div className="pt-10 ">
     <div className="flex justify-center space-x-20 items-center  ">     
@@ -23,7 +24,7 @@ export default function About(){
        <div className=" w-[50%] leading-loose">
              <div className="text-center font-serif text-lg font-semibold">Salient Features</div>
              <div className="flex justify-center"><img src="/hr.png" className="w-40" alt="" /></div>
-            <div className="font-serif mt-2">
+            <div className="font-serif mt-2 container">
                 <div className="flex items-center space-x-2"><div><BsFillBookmarkStarFill/></div><div>PhD Faculty</div></div>
                 <div className="flex items-center space-x-2"><div><BsFillBookmarkStarFill/></div><div>Scholarship for Meritorious Students as per University Norms</div></div>
                 <div className="flex items-center space-x-2"><div><BsFillBookmarkStarFill/></div><div>Post-Metric Scholarships for SC/ST Students as per Punjab Govt. Rules
@@ -56,7 +57,6 @@ export default function About(){
                 <div className=" leading-loose ">
                 <div className="flex items-center  space-x-2 "><div><BsFillBookmarkStarFill/></div><div>Bachelor's of Computer Science And Engineering (4 years) </div></div>
                 <div className="flex items-center space-x-2  mt-2"><div><BsFillBookmarkStarFill/></div><div>Bachelor's of Computer Science And Engineering Lateral Entry (3 years) </div></div>
-                <div className="flex items-center space-x-2  mt-2"><div><BsFillBookmarkStarFill/></div><div>Bachelor of Computer Application  (3 years) </div></div>
                 </div>
 
             </div>
@@ -93,11 +93,13 @@ seamless in all facets of life.</div></div>
         </div>
         <div></div>
 
-<div className="mx-auto">
-	<table width="100%">
+<div className="mt-5 about container">
+<div className="text-center font-serif font-semibold text-xl">Fee Structure</div>
+<div className=" font-serif text-lg mt-4">B.Tech CSE</div>
+	<table width="100%" className="mt-2">
 		<thead>
 			<tr>
-				<th align="left">
+				<th align="left" >
 					S.No.</th>
 				<th align="left">
 					Content</th>
@@ -112,7 +114,112 @@ seamless in all facets of life.</div></div>
 			</tr>
 		</thead>
 		<tbody>
+			<tr className="">
+				<td>
+					<strong>1.</strong></td>
+				<td>
+					Tuition Fee</td>
+				<td>
+					30,000.00</td>
+				<td>
+					30,000.00</td>
+				<td>
+					30,000.00</td>
+				<td>
+					30,000.00</td>
+			</tr>
 			<tr>
+				<td>
+					<strong>2.</strong></td>
+				<td>
+					Development Fund</td>
+				<td>
+					4,300.00</td>
+				<td>
+					4,300.00</td>
+				<td>
+					4,300.00</td>
+				<td>
+					4,300.00</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>3.</strong></td>
+				<td>
+					Student Related Fund</td>
+				<td>
+					2,700.00</td>
+				<td>
+					2,700.00</td>
+				<td>
+					2,700.00</td>
+				<td>
+					2,700.00</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>4.</strong></td>
+				<td>
+					Securities (Refundable)</td>
+				<td>
+					8,000.00</td>
+				<td>
+					&nbsp;</td>
+				<td>
+					&nbsp;</td>
+				<td>
+					&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>5.</strong></td>
+				<td>
+					Other Fee</td>
+				<td>
+					1,600.00</td>
+				<td>
+					&nbsp;</td>
+				<td>
+					&nbsp;</td>
+				<td>
+					&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<strong>Total Fee</strong></td>
+				<td>
+					46,600.00</td>
+				<td>
+					37,000.00</td>
+				<td>
+					37,000.00</td>
+				<td>
+					37,000.00</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div className="about mt-4"> 
+	<div className=" font-serif text-lg mt-3">B.Tech CSE LEET</div>
+	<table width="100%" className="table1 mt-2">
+		<thead className="bg-green-600 ">
+			<tr className="">
+				<th align="left" className="pl-2">
+					S.No.</th>
+				<th align="left">
+					Content</th>
+				<th align="left">
+					3rd Semester</th>
+				<th align="left">
+					4th Semester</th>
+				<th align="left">
+					V/VII</th>
+				<th align="left">
+					<strong>VI/VIII</strong></th>
+			</tr>
+		</thead>
+		<tbody className="py-10">
+			<tr className="pt-5">
 				<td>
 					<strong>1.</strong></td>
 				<td>
@@ -197,9 +304,41 @@ seamless in all facets of life.</div></div>
 		</tbody>
 	</table>
 </div>
+</div>
 
+<div className="container about mt-4">
+<div className="text-center font-serif font-semibold text-xl">Scholarship Schemes</div>
+<table width="100%" className="mt-4">
+		<thead>
+			<tr>
+				<th align="left" width="40%">
+					Scholarship</th>
+				<th align="left" width="30%">
+					Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					Prime Minister's Scholarship Scheme (PMSS) for SC/ST &amp; OBC Students</td>
+				<td>
+					<a href="http://www.scholarships.punjab.gov.in/">Click Here</a></td>
+			</tr>
+			<tr>
+				<td>
+					National Scholarship Portal&nbsp; (NSP) for any state Students</td>
+				<td>
+					<a href="https://scholarships.gov.in/">Click Here </a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+    </div>  
     </div>
-    
-    </div>
+	<Footer/>
     </>)
 }
+

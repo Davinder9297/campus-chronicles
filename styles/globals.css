@@ -140,3 +140,33 @@ a {
   background-repeat: no-repeat;
   background-size:100% 100%;
 }
+ .about>table>thead>tr>th {
+  padding: 8px;
+  text-align: left;
+  background-color: #065012 !important;
+  color: #ffffff !important;
+}
+
+.about>table>tbody>tr:nth-child(even) {
+  background-color: #92c471;
+}
+.about>table>tbody>tr>td {
+  border: 1px;
+  padding: 8px; 
+  /* background-color: red; */
+}  
+.qualification>table>tbody>tr>td {
+  padding: 6px 5px; 
+  text-align: center;
+  /* background-color: red; */
+}  
+.research_pub>table>tbody>tr>td {
+  padding: 6px 5px; 
+  text-align: center;
+  /* background-color: red; */
+}  
+.ann_bg{
+  background-image: url('../public/ann_bg.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
