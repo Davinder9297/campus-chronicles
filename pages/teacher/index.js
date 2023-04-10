@@ -1,5 +1,5 @@
 import Navbar from "../../components/navbar";
-
+import Link from "next/link";
 export default function Teacher(){
     return(<>
     <div className="teacherbg h-screen text-white">
@@ -13,7 +13,7 @@ export default function Teacher(){
         <div className="h-32 w-44 bg-slate-400 m-4">Student Records</div>
         <div className="h-32 w-44 bg-slate-400 m-4">Attendence</div>
         <div className="h-32 w-44 bg-slate-400 m-4">Upload Reasearch Papers</div>
-        <div className="h-32 w-44 bg-slate-400 m-4">Announcement Generation</div>
+        <div className="h-32 w-44 bg-slate-400 m-4"><Link href="/teacher/Generate_announcement">Announcement Generation</Link></div>
         <div className="h-32 w-44 bg-slate-400 m-4">FDFA</div>
         <div className="h-32 w-44 bg-slate-400 m-4">df</div>
     </div>
