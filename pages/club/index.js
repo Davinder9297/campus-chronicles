@@ -38,16 +38,18 @@ export default function Club() {
                             <div className="w-[70%] ">Subject</div>
                             <div className="w-[15%] ">Date</div>
                         </div>
+                        <marquee direction="up" height="80%" behaviour="scroll" scrollamount="4">
                         <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
                             <div className="w-[10%] ">1.</div>
-                            <div className="w-[70%] text-left">This is my first notification</div>
+                            <div className='flex space-x-1  w-[70%]'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
                             <div className="w-[17%] ">27.02.2023</div>
                         </div>
                         <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
                             <div className="w-[10%] ">2.</div>
-                            <div className="w-[70%] text-left">This is my Second notification</div>
+                            <div className='flex space-x-1 w-[70%]'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
                             <div className="w-[17%] ">28.02.2023</div>
                         </div>
+                        </marquee>
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">

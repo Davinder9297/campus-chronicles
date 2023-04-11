@@ -14,7 +14,7 @@ export default function Profile(){
   const [read, setread] = useState(true)
   const [disable, setdisable] = useState(true)
   const [name, setname] = useState('Ms. Jaspreet Kaur')
-  const [role, setrole] = useState('Chapdasi')
+  const [role, setrole] = useState('Student')
   const [dob, setdob] = useState('23-11-2002')
   const [phone, setphone] = useState('7009400665')
   const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
