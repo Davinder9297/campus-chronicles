@@ -44,7 +44,7 @@ export default function My_profile() {
         <div className="h-screen ">
             <div className="h-screen">
                 <Navbar class="shadow-sm" />
-                <div className=" w-[90%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 h-[80%] overflow-hidden ">
+                <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 h-[80%] overflow-hidden ">
                     Update Your Profile ....
 
                     <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] ">
@@ -67,24 +67,24 @@ export default function My_profile() {
                             </div>
 
                             <div className={`m-auto  h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm px-2 ${pinfo}`}>
-                                <table className="border-collapse border border-white w-[95%] mx-auto text-lg">
+                                <table className="border-collapse border border-white w-[100%] mx-auto text-lg">
                                     <tbody>
                                         
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Contact Number</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setphone(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={phone}/></td>
+                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Contact Number</td>
+                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setphone(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={phone}/></td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setemail(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={email}/></td>
+                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
+                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setemail(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={email}/></td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Address</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setaddress(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={address}/></td>
+                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Address</td>
+                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setaddress(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={address}/></td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setlinkedin(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={linkedin}/></td>
+                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
+                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setlinkedin(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={linkedin}/></td>
                                         </tr>
                                         
                                         </tbody>
