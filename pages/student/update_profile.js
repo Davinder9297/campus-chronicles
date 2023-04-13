@@ -6,6 +6,7 @@ import { FiSave } from 'react-icons/fi'
 import { CgShapeRhombus } from 'react-icons/cg'
 import { useEffect } from "react"
 import { Chart } from "chart.js";
+// update password pending
 
 export default function My_profile() {
 
@@ -17,6 +18,7 @@ export default function My_profile() {
     const [phone, setphone] = useState('7009400665')
     const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
     const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
+    const [address, setaddress] = useState('Mohali')
     const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
 
     const edit=()=>{
@@ -70,25 +72,27 @@ export default function My_profile() {
                                         
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Contact Number</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">7009400665</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setphone(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={phone}/></td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">jaspreetkaursaini469.gmail.com</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setemail(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={email}/></td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Address</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">Mohali</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setaddress(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={address}/></td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">https://www.linkedin.com/in/jaspreet-kaur23/</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setlinkedin(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={linkedin}/></td>
                                         </tr>
                                         
                                         </tbody>
                                 </table>
-                                <div className="flex  space-x-5 mt-[5%]m-auto"> 
-                            <button  type="submit" onClick={edit} className="flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 cursor-pointer"><div>Edit</div> <FaEdit  className=""/></button>
+                                <div className="font-sans space-y-5 pt-4  w-[70%] m-auto">
+
+                                <div className="flex  space-x-5 mt-[5%] justify-center"> 
+                            <button  type="submit" onClick={edit} className="flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 mr-5 cursor-pointer"><div>Edit</div> <FaEdit  className=""/></button>
                             <button disabled={disable} onClick={save} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 ${point}`}><div>Save</div> <FiSave className="" /></button>
                         </div>
                             </div>
@@ -98,6 +102,6 @@ export default function My_profile() {
                 </div>
             </div>
         </div>
+        </div>
     </>)
 }
-// export Example;

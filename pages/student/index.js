@@ -82,12 +82,14 @@ console.log('done');
                         </div>
 
                         <div className="flex  mt-4 justify-between">
+                        <Link href={"/student/time_table"}>
                             <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-green-600">
                                 <img src="/timetable3.png" className="h-24  align-middle m-auto p-2" />
                                 <div className=" m-auto pr-3 ">
                                     View Time Table
                                 </div>
                             </div>
+                            </Link>
                             <div className="h-28 w-[30%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-purple-600">
                                 <img src="attendance.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">

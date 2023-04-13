@@ -6,7 +6,7 @@ import { FiSave } from 'react-icons/fi'
 import { CgShapeRhombus } from 'react-icons/cg'
 import { useEffect } from "react"
 import { Chart } from "chart.js";
-
+// password pending
 export default function My_profile() {
 
     const [pinfo, setpinfo] = useState('')
