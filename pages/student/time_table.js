@@ -1,17 +1,23 @@
 import Link from "next/link"
 import Navbar from "../../components/navbar"
+import { FaPowerOff } from 'react-icons/fa'
+
 
 export default function Time_table() {
 
     return (<>
         <div className="h-screen">
             <Navbar class="shadow-md" />
-            <div className="h-[80%] w-[90%] m-auto mt-4">
+            <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4">
+            <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer">
+                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
+                        <div className="logout_stu text-base">Logout</div>
+                </div>
                 <div className="font-semibold text-4xl text-center p-2">
                     Time Table ....
                 </div>
 
-                <div className=" h-[80%] mt-4">
+                <div className=" h-[90%] mt-6 mb-5">
                     <table className="border-collapse border border-white w-[95%] m-auto text-lg text-center">
                         <thead className="">
                             <tr className=" ">

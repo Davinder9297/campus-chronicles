@@ -1,8 +1,7 @@
 import Link from "next/link"
 import Navbar from "../../components/navbar"
 import { useState } from "react"
-import { FaEdit } from 'react-icons/fa'
-import { FiSave } from 'react-icons/fi'
+import {FaPowerOff} from "react-icons/fa"
 import { CgShapeRhombus } from 'react-icons/cg'
 import { useEffect } from "react"
 import { Chart } from "chart.js";
@@ -60,7 +59,11 @@ export default function My_profile() {
         <div className="h-screen ">
             <div className="h-screen">
                 <Navbar class="shadow-sm" />
-                <div className=" w-[90%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 h-[80%] overflow-hidden ">
+                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
+                        <div className="logout_stu text-base">Logout</div>
+                </div>
+                <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 h-[80%] overflow-hidden ">
                     Your Profile ....
 
                     <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] ">
@@ -75,7 +78,7 @@ export default function My_profile() {
                             </div>
                         </div>
                         <div className=" w-[65%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto">
-                            <div className="h-[]5%] w-[100%] flex ">
+                            <div className=" w-[100%] flex ">
                                 <div onClick={pi} className={` w-[50%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
                                     Personal Information
                                 </div>
@@ -89,43 +92,47 @@ export default function My_profile() {
                                     <tbody>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Name </td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">Jaspreet Kaur</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Jaspreet Kaur</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Roll Number</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">2025677</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">2025677</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Current Semester</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">6<sup>th</sup></td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">6<sup>th</sup></td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Date of Birth</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">23.11.2002</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">23.11.2002</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Father's Name</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">Jagjit Singh</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Jagjit Singh</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Mother's Name</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">Amrit Kaur</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Amrit Kaur</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Contact Number</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">7009400665</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">7009400665</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">jaspreetkaursaini469.gmail.com</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">jaspreetkaursaini469.gmail.com</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Address</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">Mohali</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Mohali</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto border-slate-300 ">https://www.linkedin.com/in/jaspreet-kaur23/</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">https://www.linkedin.com/in/jaspreet-kaur23/</td>
+                                        </tr>
+                                        <tr>
+                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Current Password</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">123456</td>
                                         </tr>
                                         
                                         </tbody>
