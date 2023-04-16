@@ -161,7 +161,7 @@ a {
   padding: 8px; 
   /* background-color: red; */
 }  
-.qualification>table>tbody>tr>td {
+.qualtable>table>tbody>tr>td {
   padding: 6px 5px; 
   text-align: center;
   /* background-color: red; */
@@ -172,6 +172,18 @@ a {
   /* background-color: red; */
 }  
 .left-side>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.res_table>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.ex>table>tbody>tr>td {
   padding: 2px 4px; 
 
   text-align: center;
