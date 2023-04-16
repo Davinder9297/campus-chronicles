@@ -3,9 +3,7 @@ import Navbar from "../../components/navbar"
 import { useState } from "react"
 import { FaEdit } from 'react-icons/fa'
 import { FiSave } from 'react-icons/fi'
-import { CgShapeRhombus } from 'react-icons/cg'
-import { useEffect } from "react"
-import { Chart } from "chart.js";
+import { FaPowerOff } from 'react-icons/fa'
 // update password pending
 
 export default function My_profile() {
@@ -16,6 +14,7 @@ export default function My_profile() {
     const [read, setread] = useState(true)
     const [disable, setdisable] = useState(true)
     const [phone, setphone] = useState('7009400665')
+    const [currentpassword, setnewpassword] = useState('123456')
     const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
     const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
     const [address, setaddress] = useState('Mohali')
@@ -44,6 +43,10 @@ export default function My_profile() {
         <div className="h-screen ">
             <div className="h-screen">
                 <Navbar class="shadow-sm" />
+                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
+                        <div className="logout_stu text-base">Logout</div>
+                </div>
                 <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 h-[80%] overflow-hidden ">
                     Update Your Profile ....
 
@@ -76,7 +79,7 @@ export default function My_profile() {
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
-                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setemail(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={email}/></td>
+                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="email" onChange={(e)=>{setemail(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={email}/></td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Address</td>
@@ -86,12 +89,16 @@ export default function My_profile() {
                                             <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
                                             <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setlinkedin(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={linkedin}/></td>
                                         </tr>
+                                        <tr>
+                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Current Password</td>
+                                            <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="password" onChange={(e)=>{setnewpassword(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={currentpassword}/></td>
+                                        </tr>
                                         
                                         </tbody>
                                 </table>
-                                <div className="font-sans space-y-5 pt-4  w-[70%] m-auto">
+                                <div className="font-sans space-y-5 pt-3  w-[70%] m-auto">
 
-                                <div className="flex  space-x-5 mt-[5%] justify-center"> 
+                                <div className="flex  space-x-5 justify-center"> 
                             <button  type="submit" onClick={edit} className="flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 mr-5 cursor-pointer"><div>Edit</div> <FaEdit  className=""/></button>
                             <button disabled={disable} onClick={save} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 ${point}`}><div>Save</div> <FiSave className="" /></button>
                         </div>

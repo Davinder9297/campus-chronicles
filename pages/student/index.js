@@ -4,26 +4,17 @@ import {FaPowerOff} from "react-icons/fa"
 
 
 export default function Student() {
-    
-    function display(value)
-    {
-var ele = getElementById(value);
-ele.hidden="false";
-console.log('done');
-    }
     return (<>
         <div className="h-screen overflow-hidden">
             <Navbar class="shadow-sm bg-yellow-2" />
 
-            <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 border-2 border-solid border-black">
-                <div className="h-10 w-14  border-2 border-solid border-green-700 fixed right-7 top-24 cursor-pointer ">
-                <FaPowerOff className="h-full w-full hover:opacity-80 addEventListener('click',display(aa))"  />
-                    {/* <div className="absolute right-0 z-10 mt-1 w-44 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none " aria-hidden="false" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"> */}
-                        <div id="aa" class="py-1" role="none" hidden='true'>
-                            <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" >Logout</a>
-                        </div>
-                    {/* </div> */}
+            <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4">
+                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
+                        <div className="logout_stu text-base">Logout</div>
                 </div>
+
+
                 <div className="p-2">
                     Welcome...  &nbsp;&nbsp; Ms. Jaspreet kaur
                 </div>
@@ -43,12 +34,14 @@ console.log('done');
                                 </div>
                             </Link>
 
+                            <Link href={"/student/study_material"}>
                             <div className="h-28 w-[30%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-emerald-700">
                                 <img src="study_material.png" className="h-32  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     Study Material
                                 </div>
                             </div>
+                            </Link>
                             <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-cyan-500">
                                 <img src="book_issued.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">

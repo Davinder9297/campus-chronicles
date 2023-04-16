@@ -194,3 +194,39 @@ a {
   background-repeat: no-repeat;
   background-size:100% 100%;
 }
+
+/* student -> study material */
+.sm_dropoptions{
+  display: none;
+}
+.sm_drop:hover .sm_dropoptions{
+  display: block;
+}
+/* student -> study material -> notes*/
+.notes_sem_sub{
+  display: none;
+  /* position: absolute; */
+
+}
+.sem1:hover .notes_sem_sub{
+  display: inline-flex;
+  /* position: relative; */
+  width: 90%;
+}
+.notes_sem_sub_1{
+  display: none;
+  /* position: absolute; */
+}
+.notes_sem_sub:hover .notes_sem_sub_1{
+  display: inline-flex;
+  /* position: relative; */
+  width: 90%;
+}
+
+/* student -> logout option */
+.logout_stu{
+  display: none; 
+}
+.logo_logout:hover .logout_stu{
+  display: block;
+}
