@@ -60,12 +60,14 @@ export default function Student() {
                                     </div>
                                 </div>
                             </Link>
+                            <Link href={"/student/view_assignment"}>
                             <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-orange-500">
                                 <img src="assignment.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     View Assignment
                                 </div>
                             </div>
+                            </Link>
                             <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-teal-500">
                                 <img src="fees_records.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
