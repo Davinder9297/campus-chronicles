@@ -167,3 +167,93 @@ a {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+.word {
+  margin: auto;
+  color: white;
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+.about>table>thead>tr>th {
+  padding: 8px;
+  text-align: left;
+  background-color: #065012 !important;
+  color: #ffffff !important;
+}
+
+.about>table>tbody>tr:nth-child(even) {
+  background-color: #92c471;
+}
+.about>table>tbody>tr>td {
+  border: 1px;
+  padding: 8px; 
+  /* background-color: red; */
+}  
+.qualtable>table>tbody>tr>td {
+  padding: 6px 5px; 
+  text-align: center;
+  /* background-color: red; */
+}  
+.research_pub>table>tbody>tr>td {
+  padding: 6px 5px; 
+  text-align: center;
+  /* background-color: red; */
+}  
+.left-side>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.res_table>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.ex>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.ann_bg{
+  background-image: url('../public/ann_bg.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+/* student -> study material */
+.sm_dropoptions{
+  display: none;
+}
+.sm_drop:hover .sm_dropoptions{
+  display: block;
+}
+/* student -> study material -> notes*/
+.notes_sem_sub{
+  display: none;
+  /* position: absolute; */
+
+}
+.sem1:hover .notes_sem_sub{
+  display: inline-flex;
+  /* position: relative; */
+  width: 90%;
+}
+.notes_sem_sub_1{
+  display: none;
+  /* position: absolute; */
+}
+.notes_sem_sub:hover .notes_sem_sub_1{
+  display: inline-flex;
+  /* position: relative; */
+  width: 90%;
+}
+
+/* student -> logout option */
+.logout_stu{
+  display: none; 
+}
+.logo_logout:hover .logout_stu{
+  display: block;
+}

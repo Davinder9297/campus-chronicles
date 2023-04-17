@@ -4,7 +4,7 @@ export default function CoreCommittee() {
         <div className="">
             <div className=" w-full h-32 flex justify-start shadow-md shadow-slate-800">
                 <div className="flex   my-auto ml-10 ">
-                    <img src="/core-committee.png" className="h-24 rounded-2xl shadow-lg shadow-slate-800" />
+                    <img src="/core-committee.png" className="h-24 rounded-2xl " />
                 </div>
                 <div className="mt-4 text-6xl font-serif m-auto">
                     Core Committee
