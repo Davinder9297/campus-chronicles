@@ -149,7 +149,7 @@ export default function Study_material() {
 
                                                             </div>
                                                         </div>
-                                                        <div className="m-auto w-[60%] bg-zinc-200 p-1 text-center rounded-full hover:bg-zinc-300 cursor-pointer mt-4">
+                                                        <div className="m-auto w-[40%] bg-zinc-200 p-1 text-center rounded-full hover:bg-zinc-300 cursor-pointer mt-4">
                                                             <button className="">Submit</button>
                                                         </div>
                                                     </div></div>
