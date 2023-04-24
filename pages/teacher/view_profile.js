@@ -2,6 +2,7 @@ import { useState } from "react"
 import {FaEdit} from 'react-icons/fa'
 import {FiSave} from 'react-icons/fi'
 import {CgShapeRhombus} from 'react-icons/cg'
+import {ImSpinner6} from 'react-icons/im'
 import Navbar from "../../components/navbar"
 import Link from "next/link"
 import TableRows from "./Tablerows"
@@ -184,6 +185,7 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
  return(<>
   <div className="h-screen  overflow-y-hidden">
     <Navbar/>
+
     <div className="text-center font-semibold  text-3xl mt-2 font-serif">Your Profile</div>
     <div className="flex  h-[77.3%] mt-2  bg-black font-serif ">
         <div className="dp bg-gradient-to-b from-[#e18ff1] via-[#cfa5d4] to-[#91a9eb] text-white h-[100%] w-[30%] flex items-center justify-center">
