@@ -27,7 +27,7 @@ export default function Header() {
       <div >Home</div>
       <div><Link href="/about">About Us</Link></div>
       <div><Link href='/'>Faculty</Link></div>
-      <div>Events & Activities</div>
+      <div><Link href="#events">Events & Activities</Link></div>
       <div><Link href='/club'>Clubs</Link></div>
       <div>Library</div>
       <div><Link href="/placement">Placements</Link></div>

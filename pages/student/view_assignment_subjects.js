@@ -55,28 +55,37 @@ export default function Study_material1() {
                         <div className="border-2 border-solid border-emerald-800 text-2xl mt-2 p-1 bg-zinc-300 rounded">
                             Select Subject
                         </div>
-                        <div className="flex justify-between mt-4 border-2 border-solid border-emerald-800 w-[90%] m-auto">
-                            <Link href={"/student/my_profile"}>
-                                <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-red-600">
-                                    <img src="stu.png" className="h-24  align-middle m-auto" />
+                        <div className="flex justify-between
+                         mt-4 border-2 border-solid border-emerald-800 w-[90%] m-auto flex-wrap ">
+                            <Link href={"/student/view_assignment"}>
+                                <div className="h-28 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className=" m-auto pr-3 ">
-                                        View Profile
+                                        Subject 1
                                     </div>
                                 </div>
                             </Link>
 
                             <Link href={"/student/study_material"}>
-                            <div className="h-28 w-[30%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-emerald-700">
-                                <img src="study_material.png" className="h-32  align-middle m-auto" />
+                            <div className="h-28 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                 <div className=" m-auto pr-3 ">
-                                    Study Material
+                                    Subject 2
                                 </div>
                             </div>
                             </Link>
-                            <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-cyan-500">
-                                <img src="book_issued.png" className="h-24  align-middle m-auto" />
+                            <div className="h-28 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                 <div className=" m-auto pr-3 ">
-                                    Books Issued
+                                    Subject 3
+                                </div>
+                            </div>
+
+                            <div className="h-28 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
+                                <div className=" m-auto pr-3 ">
+                                    Subject 4
+                                </div>
+                            </div>
+                            <div className="h-28 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
+                                <div className=" m-auto pr-3 ">
+                                    Subject 5
                                 </div>
                             </div>
 
