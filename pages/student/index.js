@@ -68,12 +68,14 @@ export default function Student() {
                                 </div>
                             </div>
                             </Link>
+                            <Link href={"/student/fees_records"}>
                             <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-teal-500">
                                 <img src="fees_records.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     Fees Records
                                 </div>
                             </div>
+                            </Link>
                         </div>
 
                         <div className="flex  mt-4 justify-between">

@@ -5,6 +5,7 @@ mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test
 // mongoose.connect("mongodb://localhost:27017/main");
 export default async function handler(req, res) {
     // console.log(req.body);
+    console.log(req)
 
     if(req.method==='POST'){
         let ans=await clubcredentials.countDocuments({}).exec();

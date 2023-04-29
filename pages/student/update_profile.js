@@ -6,7 +6,7 @@ import { FiSave } from 'react-icons/fi'
 import { FaPowerOff } from 'react-icons/fa'
 // update password pending
 
-export default function My_profile() {
+export default function Update_profile() {
 
     const [pinfo, setpinfo] = useState('')
     const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
@@ -47,7 +47,7 @@ export default function My_profile() {
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
                         <div className="logout_stu text-base">Logout</div>
                 </div>
-                <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 h-[80%] overflow-hidden ">
+                <div className=" w-[95%] m-auto text-center text-4xl font-semibold  p-4 h-[80%] overflow-hidden ">
                     Update Your Profile ....
 
                     <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] ">

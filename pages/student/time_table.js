@@ -8,7 +8,7 @@ export default function Time_table() {
     return (<>
         <div className="h-screen">
             <Navbar class="shadow-md" />
-            <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4">
+            <div className=" w-[95%] m-auto text-center text-4xl font-semibold p-4">
             <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
                         <div className="logout_stu text-base">Logout</div>

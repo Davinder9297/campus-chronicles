@@ -49,7 +49,7 @@ export default function Study_material1() {
                 <div className="logout_stu text- border-2 border-solid">Logout</div>
             </div>
             <div className=" w-[95%] m-auto h-[80%]">
-                <div className=" m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 overflow-hidden h-[100%] ">
+                <div className=" m-auto text-center text-4xl font-semibold p-4 overflow-hidden h-[100%] ">
                     Assignment Submission ....
                     <div className=" w-[95%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto mt-3 ">
                         <div className="border-2 border-solid border-emerald-800 text-2xl mt-2 p-1 bg-zinc-300 rounded">
