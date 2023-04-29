@@ -78,11 +78,12 @@ export default function Club_management(){
                           </tr>
                           {rowsData.map((data,index)=>{
                             const {image,name,year,club,role}=data;
+                            // console.log(image);
                             return(
 
                               <tr key={index}>
                               <td className="border-2  border-slate-300">
-                                  <img src={`${image}`} alt="" />
+                                  <img src={`/${image.name}`} alt="" />
                               </td>
                               <td className="border-2  border-slate-300">
                                   {name}
@@ -146,7 +147,7 @@ export default function Club_management(){
                       
                       <div className="flex-col">
                         <div className=" text-lg">Image</div>
-                        <div className="max-w-full"><input accept=".jpg,.png" value={image} onChange={(e)=>(setimage(e.target.value))} name="image" className="hover:cursor-pointer" type="file" /></div>
+                        <div className="max-w-full"><input accept=".jpg,.png"  onChange={(e)=>(setimage(e.target.files[0]))} name="image" className="hover:cursor-pointer" type="file" /></div>
                       </div>
                   <button onClick={addTableRows} className="font-serif  outline  outline-1 px-2 rounded-sm py-[6px] w-full bg-pink-400 text-base text-gray-900 outline-gray-300 ">Submit</button>
                     </form>

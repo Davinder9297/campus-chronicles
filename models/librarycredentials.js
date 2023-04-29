@@ -3,13 +3,27 @@ mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test");
 // mongoose.connect("mongodb://localhost:27017/main");
 const ourschema=new mongoose.Schema({
-    data:{
-        type:Array
+    facultyname:{
+        type:String
     },
-    profession:{
-        type:String,
-        default:"Librarian"
-    }
+    image:{
+        type:String
+    },
+    facultyid:{
+        type:String
+    },  
+    department:{
+        type:String
+    },  
+    designation:{
+        type:String
+    },  
+    userid:{
+        type:String
+    },  
+    password:{
+        type:String
+    }, 
 
 });
 mongoose.models={};

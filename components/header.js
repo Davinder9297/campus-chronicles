@@ -4,7 +4,7 @@ import {ImWarning} from 'react-icons/im'
 // import parcookie from 'js-cookie'
 import { parseCookies } from 'nookies'
 import { useEffect, useState } from "react"
-import Cookies from "js-cookie"
+import cookie from "js-cookie"
 export default function Header() {
   const [showlogin, setshowlogin] = useState('')
   const [showlogout, setshowlogout] = useState('hidden')
@@ -22,7 +22,7 @@ useEffect(() => {
 }, [])
 
 const yesbutton=()=>{
-  Cookies.remove('token')
+  cookie.remove('token')
   setshowlogin('')
   setshowlogout('hidden')
 }

@@ -8,25 +8,16 @@ export default async function handler(req, res) {
     console.log(req)
 
     if(req.method==='POST'){
-        let ans=await clubcredentials.countDocuments({}).exec();
-if(ans==0){
-    let p=new clubcredentials({
-        data:req.body,
-       
-});
-await p.save();
-res.status(200).json({success:"success"}) 
-}
-else{
-    await clubcredentials.updateOne({data:req.body})
-    res.status(200).json({success:"success"}) 
-
-}
-
-               
-        }
-    else{
-        let data=await clubcredentials.find({});
-        res.status(200).json(data);
+        let da=req.body;
+        await clubcredentials.remove();
+        da.map(async(dat)=>{
+            let p=new clubcredentials(dat);
+        await p.save();
+        })
+    }
+    
+    else{  
+            let data1=await clubcredentials.find({});
+            res.status(200).json(data1);
     }      
 }
