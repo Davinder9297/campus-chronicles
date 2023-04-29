@@ -5,14 +5,19 @@ import { ToastContainer, toast } from 'react-toastify';
 import cookie from 'js-cookie'
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'js-cookie';
 export default function Login(){
     const [user, setuser] = useState()
     const [password, setpassword] = useState()
     const [profession, setprofession] = useState('')
+    const [spin, setspin] = useState('hidden')
+    const [show, setshow] = useState('')
     const authenticate=async(e)=>{
         e.preventDefault();
 const data={user,password,profession}
-console.log(profession,user,password);
+// console.log(profession,user,password);
+setspin('')
+setshow('opacity-50')
 const res=await fetch('http://localhost:3000/api/login', {
                 method: 'POST',
                 headers: {
@@ -21,10 +26,12 @@ const res=await fetch('http://localhost:3000/api/login', {
                 body:JSON.stringify(data),
               })
               let response=await res.json();
+              setspin('hidden')
+              setshow('')
 if(response.error){
     toast.warning('Invaild email address or password', {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -35,9 +42,10 @@ if(response.error){
     // console.log("error");
 }
 else{
+    Cookies.set('login',user)
     toast.success('Login successfully', {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -57,6 +65,7 @@ else{
     //    setpassword('')
     //    setprofession('')
     }
+    
     return(<>
     <div className='bg-slate-500  w-full h-screen'>
         <Navbar/>
@@ -72,8 +81,13 @@ else{
     pauseOnHover
     />
     <div className="  h-[60%] w-[50%] mx-auto   bg-white rounded-lg shadow-xl shadow-blue-300 my-20">
-        <div className='flex justify-around  h-full'>
-            <div className='w-[50%]  flex justify-center items-center'>
+    <div className={`text-center  justify-center items-center h-full w-full flex absolute top-0 left-0 z-10  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
+        <div className={`justify-around  h-full  flex ${show} `}>
+            <div className='w-[50%]  flex justify-center items-center '>
                 <img src="/login_side.jpg" alt="" />
             </div>
                 <div className="flex-col w-[50%] text-white bg-blue-500 rounded-tr-lg rounded-br-lg h-[100%] py-2 px-3  text-xs space-y-1">

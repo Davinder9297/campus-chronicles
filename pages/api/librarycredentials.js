@@ -7,23 +7,16 @@ export default async function handler(req, res) {
     // console.log(req.body);
 
     if(req.method==='POST'){
-        let ans=await librarycredentials.countDocuments({}).exec();
-if(ans==0){
-    let p=new librarycredentials({
-        data:req.body,
-       
-});
-await p.save();
-res.status(200).json({success:"success"}) 
-}
-else{
-    await librarycredentials.updateOne({data:req.body})
-    res.status(200).json({success:"success"}) 
-
-}      
-        }
-    else{
-        let data=await librarycredentials.find({});
-        res.status(200).json(data);
+        let da=req.body;
+        await librarycredentials.remove();
+        da.map(async(dat)=>{
+            let p=new librarycredentials(dat);
+        await p.save();
+        })
+    }
+    
+    else{  
+            let data1=await librarycredentials.find({});
+            res.status(200).json(data1);
     }      
 }

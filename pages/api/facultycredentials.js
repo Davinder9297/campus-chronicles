@@ -7,25 +7,17 @@ export default async function handler(req, res) {
     // console.log(req.body);
 
     if(req.method==='POST'){
-        let ans=await facultycredentials.countDocuments({}).exec();
-if(ans==0){
-    let p=new facultycredentials({
-        data:req.body,
-       
-});
-await p.save();
+        let da=req.body;
+        await facultycredentials.remove();
+        da.map(async(dat)=>{
+            let p=new facultycredentials(dat);
+        await p.save();
+        })
 res.status(200).json({success:"success"}) 
 }
-else{
-    await facultycredentials.updateOne({data:req.body})
-    res.status(200).json({success:"success"}) 
-
-}
-
-               
-        }
     else{
-        let data=await facultycredentials.find({});
-        res.status(200).json(data);
+        
+            let data1=await facultycredentials.find({});
+            res.status(200).json(data1);
     }      
 }

@@ -1,33 +1,37 @@
 import mongoose from "mongoose";
+import Email from "next-auth/providers/email";
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test");
 // mongoose.connect("mongodb://localhost:27017/main");
 const ourschema=new mongoose.Schema({
-    studentname:{
+    name:{
         type:String
     },
-    rollno:{
-        type:String
-    },  
     image:{
         type:String
     },
-    dob:{
+    department:{
         type:String
-    },  
-    fathername:{
+    },
+    designation:{
         type:String
-    },  
-    mothername:{
+    },
+    facultyid:{
         type:String
-    },  
-    userid:{
+    },
+    phone:{
         type:String
-    },  
-    password:{
+    },
+    email:{
+        type:Email
+    },
+    linkedin:{
         type:String
-    }, 
-    
+    },
+    uniqueid:{
+        type:String,
+    }
+
 });
 mongoose.models={};
-export default mongoose.model("studentcredentials",ourschema);
+export default mongoose.model("facultypersonaldata",ourschema);

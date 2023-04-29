@@ -3,11 +3,15 @@ function TableRows({rowsData, deleteTableRows, handleChange}) {
     return(  
         
         rowsData.map((data, index)=>{
-            const {studentname,rollno,dob,fathername,mothername,userid,password}= data;
+            const {image,studentname,rollno,dob,fathername,mothername,userid,password}= data;
             // const [ind, setind] = useState(0)
             return(<>
                 <tr key={index}>
                     <td>{index+1}</td>
+                <td className="border-2  border-slate-300 h-20 w-28 space-y-2">
+                    <div className="flex justify-center w-full"><img src={`${image}`} className="max-h-16 w-fit" alt="" /></div>
+               <input type="file"   onChange={(evnt)=>(handleChange(index, evnt))} name="image" className="py-0 px-1 form-control"/>
+                </td>
                 <td className="border-2  border-slate-300">
                <input  value={studentname} onChange={(evnt)=>(handleChange(index, evnt))} name="studentname" className=" form-control"/>
                 </td>
