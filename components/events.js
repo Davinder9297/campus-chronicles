@@ -4,10 +4,11 @@ export default function Events() {
     let name = month[d.getMonth()];
     let s = d.getDate() + " " + name + " " + d.getFullYear();
     return (<>
-        <div className="flex-col mt-8 mb-5">
+        <div className="flex-col mt-8 mb-5 " id="events" >
             <div className="text-center text-3xl font-semibold font-serif text-gray-600">Events At Campus</div>
             <div className="flex justify-center"><img src="hr.png" alt="" /></div>
-            <div className="flex flex-wrap w-full h-auto justify-evenly mt-4 ">
+            <div className="flex justify-center w-full">
+            <div className="flex flex-wrap w-full h-auto justify-between mt-4 max-w-[1250px] ">
                 <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5  hover:scale-90 transition duration-300 ease-in">
                     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
                     <div className="flex justify-between">
@@ -68,6 +69,7 @@ export default function Events() {
                     <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                     <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
                 </div>
+            </div>
             </div>
         </div>
     </>)

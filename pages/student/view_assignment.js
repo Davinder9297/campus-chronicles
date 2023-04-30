@@ -48,15 +48,15 @@ export default function Study_material() {
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 " />
                 <div className="logout_stu text- border-2 border-solid">Logout</div>
             </div>
-            <div className=" w-[95%] m-auto h-[80%]">
-                <div className=" m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4 overflow-hidden h-[100%] ">
-                    Assignment Submission ....
+            <div className=" w-[95%] m-auto h-[85%] ">
+                <div className=" m-auto text-center  text-4xl font-semibold shadow-md shadow-slate-600 p-4 overflow-hidden h-[100%] ">
+                    <div className="font-serif">Assignment Submission</div>
                     <div className=" w-[95%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto mt-3 ">
                         <div className=" w-[100%] flex ">
-                            <div onClick={pi} className={` w-[50%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
+                            <div onClick={pi} className={` w-[50%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
                                 Current Assignments
                             </div>
-                            <div onClick={eq} className={`bg-amber-800 w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
+                            <div onClick={eq} className={`bg-amber-800 text-2xl w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
                                 Submitted Assignments
                             </div>
 
@@ -132,8 +132,8 @@ export default function Study_material() {
                                             </h2>
                                             <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                                 <div className="accordion-body">
-                                                    <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base  p-3`}>
-                                                        <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex">
+                                                    <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base  p-3 bg-slate-100`}>
+                                                        <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex ">
                                                         <div className="w-[70%]">
                                                                 View Assignment
                                                                 </div>
@@ -149,9 +149,11 @@ export default function Study_material() {
 
                                                             </div>
                                                         </div>
-                                                        <div className="m-auto w-[60%] bg-zinc-200 p-1 text-center rounded-full hover:bg-zinc-300 cursor-pointer mt-4">
+                                                       <div className="w-[90%] flex justify-end  items-center mt-2">
+                                                       <div className=" bg-amber-800 text-white w-[36%] p-1 text-center rounded hover:bg-amber-700 cursor-pointer ">
                                                             <button className="">Submit</button>
                                                         </div>
+                                                       </div>
                                                     </div></div>
                                             </div>
                                         </div>

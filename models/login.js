@@ -10,6 +10,7 @@ const ourschema=new mongoose.Schema({
     profession:{
         type:String,   
     },
+
 });
 mongoose.models={};
 export default mongoose.model("login",ourschema);

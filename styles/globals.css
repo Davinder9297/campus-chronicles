@@ -257,3 +257,12 @@ a {
 .logo_logout:hover .logout_stu{
   display: block;
 }
+label {
+  cursor: pointer;
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}

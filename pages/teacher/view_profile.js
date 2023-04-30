@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {FaEdit} from 'react-icons/fa'
 import {FiSave} from 'react-icons/fi'
 import {CgShapeRhombus} from 'react-icons/cg'
+import {ImSpinner6} from 'react-icons/im'
 import Navbar from "../../components/navbar"
 import Link from "next/link"
 import TableRows from "./Tablerows"
 import Newrow from "./tablerows1"
 import Experiencerow from "./tablerows2"
-
+import {Cookies} from "js-cookie"
+import { parseCookies, setCookie } from "nookies"
+import { getCookie } from 'cookies-next';
 export default function Profile(){
   const [pinfo, setpinfo] = useState('')
   const [edqu, setedqu] = useState('hidden')
@@ -17,32 +20,57 @@ export default function Profile(){
   const [exreclass, setexreclass] = useState('text-white')
   const [read, setread] = useState(true)
   const [disable, setdisable] = useState(true)
-  const [name, setname] = useState('Ms. Jaspreet Kaur')
-  const [role, setrole] = useState('Student')
-  const [dob, setdob] = useState('23-11-2002')
-  const [phone, setphone] = useState('7009400665')
-  const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
-  const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
-  const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
-
+  const [point, setpoint] = useState('opacity-40 cursor-not-allowed')
+  const [rowsData1, setRowsData1] = useState([]);
+  const [norecord1, setnorecord1] = useState('');
   const [norecord, setnorecord] = useState('')
 const [show1, setshow1] = useState(true)
-const [light1, setlight1] = useState('opacity-50 cursor-not-allowed')
+const [light1, setlight1] = useState('opacity-40 cursor-not-allowed')
 const [show2, setshow2] = useState(true)
-const [light2, setlight2] = useState('opacity-50 cursor-not-allowed')
+const [light2, setlight2] = useState('opacity-40 cursor-not-allowed')
 const [show3, setshow3] = useState(true)
-const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
-  // const [, set] = useState(second)
-  // const [bottomborder, setbottomborder] = useState()
-    const edit=()=>{
+const [light3, setlight3] = useState('opacity-40 cursor-not-allowed')
+const [spin, setspin] = useState('hidden')
+const [opac, setopac] = useState('')
+
+const [personaldata, setpersonaldata] = useState({image:"",facutyname:"",department:"",designation:"",facultyid:"",phone:"",email:"",linkedin:""})
+const personaldatachange=(evnt)=>{
+  setpersonaldata({
+    ...personaldata,
+    [evnt.target.name]: evnt.target.value
+})
+//   setpersonaldata({
+//     ...personaldata,
+//     [evnt.target.name]: evnt.target.value
+// });
+}
+    const edit=(e)=>{
+      e.preventDefault()
       setread(false)
       setdisable(false)
       setpoint('cursor-pointer')
     }
-    const save=()=>{
+    const save=async(e)=>{
+      // console.log(personaldata);
+e.preventDefault()
       setread(true)
       setdisable(true)
-      setpoint('opacity-50 cursor-not-allowed')
+      setpoint('opacity-40 cursor-not-allowed')
+      // let {}
+      let phone=personaldata.phone;
+      let email=personaldata.email;
+      let linkedin=personaldata.linkedin;
+      // {phone,}
+      let data={phone,email,linkedin}
+      const res=await fetch('http://localhost:3000/api/facultypersonaldata', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body:JSON.stringify(data),
+              })
+              let response=await res.json();
+      
     }
     const pi=()=>{
         setedqu('hidden');
@@ -76,10 +104,10 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
       setlight3('')
   // console.log(rowsData.length);
         const rowsInput={
-          qualification:'',
-          institution:'',
-          university:'',  
-          year:''  
+          qualification:"",
+          institution:"",
+          university:"",  
+          year:""  
         } 
         setRowsData([...rowsData, rowsInput])
         console.log(rowsData.length);
@@ -99,7 +127,8 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
    }
  
    const handleChange = (index, evnt)=>{
-    
+    setshow3(false)
+    setlight3('cursor-pointer')  
     const { name, value } = evnt.target;
     const rowsInput = [...rowsData];
     rowsInput[index][name] = value;
@@ -108,20 +137,19 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
  
  
 }
-    const [rowsData1, setRowsData1] = useState([]);
-    const [norecord1, setnorecord1] = useState('');
+   
  
     const addTableRows1 = ()=>{
       setshow2(false)
       setlight2('')
       setnorecord1('hidden')
         const rowsInput={
-          title:'',
-          authorname:'',
-          journal:'',  
-          year:'',  
-          issn:'',  
-          link:''  
+          title:"",
+          authorname:"",
+          journal:"",  
+          year:"",  
+          issn:"",  
+          link:""  
         } 
         setRowsData1([...rowsData1, rowsInput])
          
@@ -139,7 +167,9 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
         }
    }
  
-   const handleChange1 = (index, evnt)=>{    
+   const handleChange1 = (index, evnt)=>{   
+    setshow2(false)
+    setlight2('cursor-pointer')  
     const { name, value } = evnt.target;
     const rowsInput = [...rowsData1];
     rowsInput[index][name] = value;
@@ -150,12 +180,12 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
  
     const addTableRows2 = ()=>{
       setshow1(false)
-      setlight1('')
+      setlight1('cursor-pointer')
       setnorecord2('hidden')
         const rowsInput={
-          role:'',
-          institution:'',
-          duration:''
+          role:"",
+          institution:"",
+          duration:""
            
         } 
         setRowsData2([...rowsData2, rowsInput])
@@ -175,21 +205,113 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
    }
  
    const handleChange2 = (index, evnt)=>{    
+    setshow1(false)
+      setlight1('cursor-pointer')
     const { name, value } = evnt.target;
     const rowsInput = [...rowsData2];
     rowsInput[index][name] = value;
     setRowsData2(rowsInput);
 }
+const educationsave=async()=>{
+  setshow3(true)
+      setlight3('opacity-40 cursor-not-allowed')
+  const res=await fetch('http://localhost:3000/api/education', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body:JSON.stringify(rowsData),
+              })
+              let response=await res.json();
+}
+const experiencesave=async()=>{
+  setshow1(true)
+      setlight1('opacity-40 cursor-not-allowed')
+  const res=await fetch('http://localhost:3000/api/experience', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body:JSON.stringify(rowsData2),
+              })
+              let response=await res.json();
+}
+const researchsave=async()=>{
+  setshow2(true)
+      setlight2('opacity-40 cursor-not-allowed')
+  const res=await fetch('http://localhost:3000/api/research', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body:JSON.stringify(rowsData1),
+              })
+              let response=await res.json();
+}
+
+useEffect(() => {
+  const url = "http://localhost:3000/api/facultypersonaldata";
+  const url1 = "http://localhost:3000/api/education";
+  const url2 = "http://localhost:3000/api/experience";
+  const url3 = "http://localhost:3000/api/research";
+
+    const fetchData = async () => {
+      try {
+        setspin('')
+        setopac('opacity-40')
+        let response = await fetch(url);
+        let json = await response.json();
+        setpersonaldata(json)
+        let response1 = await fetch(url1);
+        let json1 = await response1.json();
+        // console.log(json1);
+        setRowsData(json1)
+          if(json1.length>0){
+            setnorecord('hidden')
+          }
+        let response2 = await fetch(url2);
+        let json2 = await response2.json();
+        // console.log(json1);
+        setRowsData2(json2)
+          if(json2.length>0){
+            setnorecord2('hidden')
+          }
+        let response3 = await fetch(url3);
+        let json3 = await response3.json();
+        // console.log(json1);
+        setRowsData1(json3)
+          if(json3.length>0){
+            setnorecord1('hidden')
+          }
+          setspin('hidden')
+          setopac('')
+       
+      } catch (error) {
+        setopac('opacity-40')
+        setspin('')
+        console.log("error", error);
+      }
+    };
+
+    fetchData();
+
+}, [])
 
  return(<>
-  <div className="h-screen  overflow-y-hidden">
+  <div className="h-screen overflow-y-hidden ">
     <Navbar/>
+
     <div className="text-center font-semibold  text-3xl mt-2 font-serif">Your Profile</div>
-    <div className="flex  h-[77.3%] mt-2  bg-black font-serif ">
-        <div className="dp bg-gradient-to-b from-[#e18ff1] via-[#cfa5d4] to-[#91a9eb] text-white h-[100%] w-[30%] flex items-center justify-center">
+    <div className={`flex  h-[77.3%] mt-2  bg-black font-serif ${opac}`}>
+    <div className={`text-center  justify-center items-center h-full w-full flex absolute top-0 left-0 z-10 order-1  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
+        <div className="dp bg-gradient-to-b from-[#e18ff1]  to-[#91a9eb] text-white h-[100%] w-[30%] flex items-center justify-center">
             <div className="">
                 <div className=" flex justify-center rounded-full">
-                <img className="h-44 shadow-2xl shadow-red-600 w-44 rounded-full" src="/jass.jpeg" alt="" />
+                <img className="h-44 shadow-2xl shadow-red-600 w-44 rounded-full" src={`${personaldata.image}`} alt="" />
                 </div>
                 <div className="text-center text-2xl mt-4 font-bold">
                 Ms.Saini Saab
@@ -210,32 +332,35 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
                     <div className="flex justify-evenly">
                         <div className="flex-col space-y-5 pt-4 ">
                            <div className="p-1">Name</div>
-                           <div className="p-1">Job Role</div>
-                           <div className="p-1">Date of Birth</div>
+                           <div className="p-1">Department</div>
+                           <div className="p-1">Designation</div>
+                           <div className="p-1">Faculty Id</div>
                            <div className="p-1">Phone No.</div>
                            <div className="p-1">Email</div>
                            <div className="p-1">Linkedin</div>
                         </div>
 
                         <div className="font-sans space-y-5 pt-4  w-[50%]">
-                           <div className=" "><input readOnly={read} onChange={(e)=>{setname(e.target.value)}} type="text"  className="p-1 w-full  bg-slate-100 outline-1  outline-gray-300 rounded outline focus:outline-gray-400" value={name}/></div>
-                           <div><input type="text" onChange={(e)=>{setrole(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={role}/></div>
-                           <div><input type="text" onChange={(e)=>{setdob(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={dob}/></div>
-                           <div><input type="text" onChange={(e)=>{setphone(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={phone}/></div>
-                           <div><input type="text" onChange={(e)=>{setemail(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={email}/></div>
-                           <div><input type="text" onChange={(e)=>{setlinkedin(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={linkedin}/></div>
+                           <div className=" "><input readOnly={true} onChange={personaldatachange} type="text"  className="p-1 w-full  bg-slate-100 outline-1  outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.facultyname} name="facultyname"/></div>
+                           <div><input type="text" onChange={personaldatachange} readOnly={true} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.department} name="department"/></div>
+                           <div><input type="text" onChange={personaldatachange} readOnly={true} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.designation} name="designation"/></div>
+                           <div><input type="text" onChange={personaldatachange} readOnly={true} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.facultyid} name="facultyid"/></div>
+                           <div><input type="text" onChange={personaldatachange} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.phone} name="phone"/></div>
+                           <div><input type="email" onChange={personaldatachange} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.email} name="email"/></div>
+                           <div><input type="text" onChange={personaldatachange} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.linkedin} name="linkedin"/></div>
                            <div className="flex  space-x-5"> 
                             <button  type="submit" onClick={edit} className="flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 cursor-pointer"><div>Edit</div> <FaEdit  className=""/></button>
                             <button disabled={disable} onClick={save} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 ${point}`}><div>Save</div> <FiSave className="" /></button>
                         </div>
-                         </div>
+                         
+                           </div>
                     </div>     
                      </div>
 
 
                   <div className={`qualification font-sans w-full  ${edqu} justify-center items-center h-full px-2`}>
                     <div className="h-full space-y-5 overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500   w-full ">
-                      <div className="w-full flex justify-end pt-2 space-x-3"><button disabled={show3} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 ${light3}`}><div>Save</div> <FiSave className="" /></button>
+                      <div className="w-full flex justify-end pt-2 space-x-3"><button disabled={show3} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 ${light3}`} onClick={educationsave}><div>Save</div> <FiSave className="" /></button>
 <button onClick={addTableRows} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button></div>
                     <div className="flex justify-center  qualtable items-center w-full ">
                     <table className="border-collapse border border-slate-400 ">
@@ -264,8 +389,8 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
 
                   <div className={`experience ${exre} pt-2 w-full   h-full overflow-y-auto  scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500`}>
                           <div className="text-center font-semibold text-2xl">Teaching Experience</div>
-                          <div className="w-full px-2 flex justify-end pt-2 mb-2 space-x-3"><button disabled={show1} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light1}`}><div>Save </div><FiSave className="" /></button> <button onClick={addTableRows2} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button></div>
-                          <div className="w-full ex h-auto ">
+                          <div className="w-full px-2 flex justify-end pt-2 mb-2 space-x-3"><button disabled={show1} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light1}`} onClick={experiencesave}><div>Save </div><FiSave className="" /></button> <button onClick={addTableRows2} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button></div>
+                          <div className="w-full ex h-auto px-2">
                           <table className="border-collapse border border-slate-400 w-full h-full">
                       <thead className="">
                         <tr className=" ">
@@ -295,7 +420,7 @@ const [light3, setlight3] = useState('opacity-50 cursor-not-allowed')
                         
                         <div className="  py-2 research_pub px-2 w-full">
                           <div className="text-center font-semibold text-2xl">Research Publications</div>
-                          <div className="w-full flex justify-end pt-2 mb-2 space-x-3"><button disabled={show2} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light2}`}><div>Save </div><FiSave className="" /></button> <button onClick={addTableRows1} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button></div>
+                          <div className="w-full flex justify-end pt-2 mb-2 space-x-3"><button disabled={show2} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light2}`} onClick={researchsave}><div>Save </div><FiSave className="" /></button> <button onClick={addTableRows1} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button></div>
                           <div className="pt-2   res_table  ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
