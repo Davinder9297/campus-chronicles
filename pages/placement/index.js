@@ -20,7 +20,7 @@ export default function Placement() {
   <div> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
   <div> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
   <div> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
-  <div> Take mock test</div>
+  <div> <Link href= {'/placement/coding_ques'}>Coding Practice </Link></div>
 
 </div>
 

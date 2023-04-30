@@ -77,7 +77,7 @@ export default function Study_material() {
                                 <div className="sem1 text-left ml-5 w-[70%]">
                                     Semester 1
                                 </div>
-                                <div className="w-[30%] flex">
+                                <div className="w-[30%] flex ">
                                     <div className="w-[50%] flex justify-end ">
                                         <a href="/syllabus_sem3.pdf" target="_blank"><GrView className=" hover:opacity-80 h-full w-6 cursor-pointer" /></a>
                                     </div>
