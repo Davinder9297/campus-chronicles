@@ -1,10 +1,49 @@
 import Navbar from "../../components/navbar"
 // import Navbar from '../components/navbar'
-
+// import Document from "next/document";
 import Link from "next/link";
-
+import { useEffect, useState } from "react";
+import {IoMdDownload} from "react-icons/io"
 // import Head from 'next/head'
 export default function Club() {
+    const [data, setdata] = useState([])
+    useEffect(() => {
+        const url = "http://localhost:3000/api/clubannouncement";     
+        const fetchData = async () => {
+          try {
+            // setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+      
+            setdata(json)
+            if(json.length!=0){
+              setnorecord('hidden')
+            }
+            
+            // setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
+      const download=(doc,title)=>{
+        fetch(doc).then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = title;
+                alink.click();
+            })
+        })
+      }
     return (<>
 
 <Navbar class=""/>
@@ -33,23 +72,33 @@ export default function Club() {
 
                     Current Notifications...
                     <div className="border-solid border-2 h-[300px] overflow-y-auto mt-2">
-                        <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between">
-                            <div className="w-[10%] ">S.no.</div>
-                            <div className="w-[70%] ">Subject</div>
-                            <div className="w-[15%] ">Date</div>
+                        {data.map((d,index)=>{
+                            const {title,doc,date}=d;
+                            return(<>
+                               <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
+                            <div className=" ">{index+1}</div>
+                            <div className='flex space-x-1  '><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>{title}</div></div>
+                            <div className=" ">{date}</div>
+                            <div className=" text-2xl"><button onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
                         </div>
-                        <marquee direction="up" height="80%" behaviour="scroll" scrollamount="4">
-                        <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
-                            <div className="w-[10%] ">1.</div>
-                            <div className='flex space-x-1  w-[70%]'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                            <div className="w-[17%] ">27.02.2023</div>
-                        </div>
-                        <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
-                            <div className="w-[10%] ">2.</div>
-                            <div className='flex space-x-1 w-[70%]'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                            <div className="w-[17%] ">28.02.2023</div>
-                        </div>
-                        </marquee>
+                            </>)
+                        })}
+                        {/* <div className="border-solid border-1 border-slate-200 h-15 p-1 text-sm flex flex-row justify-between">
+                            <div className=" ">S.no.</div>
+                            <div className=" ">Subject</div>
+                            <div className=" ">Date</div>
+                            <div className=" ">Download</div>
+                        </div> */}
+                        {/* <marquee id="scroll_new" onmouseover="this.stop();"
+            direction="up" height="80%" behaviour="scroll" scrollamount="4"> */}
+                     
+                        {/* <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
+                            <div className="">2.</div>
+                            <div className='flex space-x-1 '><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
+                            <div className=" ">28.02.2023</div>
+                            <div className=" ">28.02.2023</div>
+                        </div> */}
+                        {/* </marquee> */}
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">

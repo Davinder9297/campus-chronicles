@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar'
 import TableRows from './tablerows'
 import Facultyrows from './facultyrows'
 import { ToastContainer, toast } from 'react-toastify'
+import Clubrows from './clubrows'
 export default function Index(){
     const [norecord, setnorecord] = useState('')
         const [rowsData, setrowsData] = useState([]);
@@ -148,9 +149,6 @@ export default function Index(){
         rowsInput[index][name] = value;
       setrowsData(rowsInput);
       }
-    
-   
-   
   }
 
     const addTableRows1 = ()=>{
@@ -268,9 +266,8 @@ const addTableRows2 = ()=>{
         setdisable3(false)
         setsave4('cursor-pointer')
           const rowsInput={
-            facultyname:'',
-            facultyid:'',  
-            department:'',  
+            facultyname:'', 
+            club:'',  
             designation:'',  
             userid:'',  
             password:'',  
@@ -480,8 +477,7 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
                           <th className="border-2  py-2 border-slate-300 text-center px-2">Image</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Name</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Id</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Department</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Club</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Designation</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">User Id</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Password</th>
@@ -494,7 +490,7 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           No records found
                           </td>
                           </tr>
-                        <Facultyrows rowsData={rowsData3} deleteTableRows={deleteTableRows3} handleChange={handleChange3} />
+                        <Clubrows rowsData={rowsData3} deleteTableRows={deleteTableRows3} handleChange={handleChange3} />
                       </tbody>
                     </table>
                           </div>
