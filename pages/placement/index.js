@@ -1,4 +1,4 @@
-// import Navbar from "../components/navbar";
+// import Navbar from "../../components/navbar";
 import { icons } from 'react-icons'
 import { AiTwotoneHome } from 'react-icons/ai'
 import {MdEditNotifications} from 'react-icons/md'
@@ -6,21 +6,21 @@ import {FaThList} from 'react-icons/fa'
 import {RiCheckboxMultipleFill}from 'react-icons/ri'
 // import {TiThSmall} from 'react-icons/ti'
 import Collab from "../../components/collab"
-import PlacementCr from '../../components/Placement_cr'
+import PlacementCr from "../../components/Placement_cr"
 import Link from 'next/link'
-
+import Navbar from '../../components/navbar'
 
 
 export default function Placement() {
   return (<>
 
-
+<Navbar/>
 <div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold'>
   <div> <button> <AiTwotoneHome /></button> Home</div>
   <div> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
   <div> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
   <div> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
-  <div> Take mock test</div>
+  <div> <Link href= {'/placement/coding_ques'}>Coding Practice </Link></div>
 
 </div>
 

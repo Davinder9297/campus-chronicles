@@ -8,17 +8,35 @@ const PlacementCr = () => {
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 3"></button>
+
     </div>
     <div className="carousel-inner  ">
-      <div className="carousel-item active relative float-left w-full " data-bs-interval="1000">
+      <div className="carousel-item active relative float-left w-full " data-bs-interval="900">
         <img src="/Qs2.png" className="block w-full h-[86vh] xsm:h-40" alt="..."/>
       </div>
-      <div className="carousel-item  relative float-left w-full" data-bs-interval="1000">
-        <img src="/Relinnes.png" className="block w-full h-[86vh] xsm:h-40" alt="..."/>
+      <div className="carousel-item  relative float-left w-full" data-bs-interval="900">
+        <img src="/Relinnes.png" className="block w-full h-[80vh] xsm:h-40" alt="..."/>
       </div>
-      {/* <div className="carousel-item relative float-left w-full" data-bs-interval="1500">
-        <img src="2.jpg" className="block w-full h-[350px] xsm:h-40" alt="..."/>
-      </div> */}
+      <div className="carousel-item relative float-left w-full" data-bs-interval="900">
+        <img src="/cognizant.png" className="block w-full h-[80vh] xsm:h-40" alt="..."/>
+      </div>
+      <div className="carousel-item relative float-left w-full" data-bs-interval="900">
+        <img src="/prince_v.png" className="block w-full h-[80vh] xsm:h-40" alt="..."/>
+      </div>
+      <div className="carousel-item relative float-left w-full" data-bs-interval="900">
+        <img src="/gaurav.png" className="block w-full h-[78vh] xsm:h-40" alt="..."/>
+      </div>
+      <div className="carousel-item relative float-left w-full" data-bs-interval="900">
+        <img src="/sinesh_bhai.png" className="block w-full h-[78vh] xsm:h-40" alt="..."/>
+      </div>
+      <div className="carousel-item relative float-left w-full" data-bs-interval="900">
+        <img src="/sid 22.png" className="block w-full h-[78vh] xsm:h-40" alt="..."/>
+      </div>
+      
     </div>
     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span className="carousel-control-prev-icon" aria-hidden="true"></span>

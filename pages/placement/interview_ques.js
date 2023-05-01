@@ -5,7 +5,9 @@ export default function Interview_ques(){
     
     <div className=" h-36 flex flex-row  ">
         <div className="flex justify-start w-[40%] h-36 " ><img className=" w-[65%]" src="/interview.gif" /></div>
-        <div className=" w-[70%] py-14 text-left pl-6 text-cyan-300 font-extrabold font-BlinkMacSystemFont text-4xl"> Interview Related Questions</div>      
+        <div className=" w-[70%] py-14 text-left pl-6 text-cyan-300 font-extrabold font-BlinkMacSystemFont text-4xl"> Interview Related Questions</div>  
+        <button className=' ml-4 mr-1 mt-1 p-2 flex rounded-lg text-center text-white font-semibold h-10 w-22 bg-cyan-600' type="button " > HOME</button>   
+
             </div>
 
 
