@@ -1,37 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/navbar";
 import {RiDeleteBin5Line} from "react-icons/ri"
+import TableRows from "./tablerows";
+import Link from "next/link";
+import Announcementrows from "./annoucement";
+import Eventsrows from "./events";
 export default function Club_management(){
   const [rowsData, setRowsData ]= useState([]);
-  const [image, setimage] = useState('')
-  const [name, setname] = useState('')
-  const [year, setyear] = useState('')
-  const [club, setclub] = useState('')
-  const [role, setrole] = useState('')
+  const [rowsData1, setRowsData1 ]= useState([]);
+  const [rowsData2, setRowsData2 ]= useState([]);
+  const [norecord1, setnorecord1] = useState('')
+  const [norecord2, setnorecord2] = useState('')
   const [norecord, setnorecord] = useState('')
+  const [spin, setspin] = useState('')
+  const [spin1, setspin1] = useState('')
+  const [spin2, setspin2] = useState('hidden')
+  const [spin3, setspin3] = useState('hidden')
+  const [show, setshow] = useState('hidden')
+  const [disable, setdisable] = useState(true)
+  const [disable1, setdisable1] = useState(true)
+  const [disable2, setdisable2] = useState(true)
+  const [save, setsave] = useState('opacity-50 cursor-not-allowed')
+  const [save1, setsave1] = useState('opacity-50 cursor-not-allowed')
+  const [save2, setsave2] = useState('opacity-50 cursor-not-allowed')
   const addTableRows = (e)=>{
     e.preventDefault();
     setnorecord('hidden')
-    console.log(image);
+    setdisable(false)
+    setsave('cursor-pointer')
       const rowsInput={
-       image:image,
-       name:name,
-       year:year,
-       club:club,
-       role:role
+       image:"",
+       name:"",
+       year:"",
+       club:"",
+       role:""
       } 
       setRowsData([...rowsData, rowsInput])
-      setimage('')
-      setname('')
-      setyear('')
-      setclub('')
-      setrole('')
+
       // console.log(rowsData.length);
        
     
   }
  const deleteTableRows = (index)=>{
- 
+  setdisable(false)
+  setsave('cursor-pointer')
       const rows = [...rowsData];
       rows.splice(index, 1);
       setRowsData(rows);
@@ -40,171 +52,354 @@ export default function Club_management(){
         setnorecord('')
       }
  }
-// var ind=0;
-//  const handleChange = (evnt)=>{
-//   const { name, value } = evnt.target;
-//   console.log(name,value);
+ const handleChange = async(index, evnt)=>{
+  setdisable(false)
+  setsave('cursor-pointer')
+  const rowsInput = [...rowsData];
+  const { name, value } = evnt.target;
+  if(name=='image'){
+      const formdata=new FormData()
+      console.log(evnt.target.files);
+      formdata.append("file",evnt.target.files[0]);
+      formdata.append("upload_preset","mystore")
+    const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
+      method:"POST",
+      body:formdata,
+    })
+    const res2=await res.json();
+  rowsInput[index][name] = res2.url;
+  setRowsData(rowsInput)
 
-//   const rowsInput = [...rowsData];
-//   rowsInput[ind][name] = value;
-//   setRowsData(rowsInput);
-//   ind=ind+1;
+  }
+  else{
+    rowsInput[index][name] = value;
+  setRowsData(rowsInput);
+  }
+}
+const savedata=async(e)=>{
+  e.preventDefault();
+setdisable(true)
+setsave('cursor-not-allowed opacity-50')
+const res=await fetch('http://localhost:3000/api/coordinator', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(rowsData)
+              })
+              let response=await res.json();
+}
+  const addTableRows1 = (e)=>{
+    e.preventDefault();
+    setnorecord1('hidden')
+    setdisable1(false)
+    setsave1('cursor-pointer')
+      const rowsInput={
+       doc:"",
+       title:"",
+       date:"",
+      } 
+      setRowsData1([...rowsData1, rowsInput])
+
+      // console.log(rowsData.length);
+       
+    
+  }
+ const deleteTableRows1 = (index)=>{
+  setdisable1(false)
+  setsave1('cursor-pointer')
+      const rows = [...rowsData1];
+      rows.splice(index, 1);
+      setRowsData1(rows);
+      // console.log(rowsData.length);
+      if(rowsData1.length==1){
+        setnorecord1('')
+      }
+ }
+ const handleChange1 = async(index, evnt)=>{
+  setdisable1(false)
+  setsave1('cursor-pointer')
+  const rowsInput = [...rowsData1];
+  const { name, value } = evnt.target;
+
+  if(name=="doc"){
+    setspin2('opacity-50')
+    setsave1('hidden')
+    // setdisable1(true)
+    // setsave1('cursor-not-allowed opacity-50')
+      const formdata=new FormData()
+      formdata.append("file",evnt.target.files[0]);
+      formdata.append("upload_preset","mystore")
+    const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
+      method:"POST",
+      body:formdata,
+
+    })
+    const res2=await res.json();
+    // console.log(res2);
+    // setdisable1(false)
+    setspin2('hidden ')
+    setsave1('cursor-pointer')
+  rowsInput[index][name] = res2.url;
+  console.log(rowsInput);
+  setRowsData1(rowsInput)
+
+  }
+  else{
+    rowsInput[index][name] = value;
+  setRowsData1(rowsInput);
+  }
+
+}
+const saveannouncement=async(e)=>{
+  e.preventDefault();
+setdisable1(true)
+// console.log(rowsData1);
+setsave1('cursor-not-allowed opacity-50')
+const res=await fetch('http://localhost:3000/api/clubannouncement', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(rowsData1)
+              })
+              let response=await res.json();
+}
+  const addTableRows2 = (e)=>{
+    e.preventDefault();
+    setnorecord2('hidden')
+    setdisable2(false)
+    setsave2('cursor-pointer')
+      const rowsInput={
+       image:"",
+       eventname:"",
+       description:"",
+       title:"",
+       club:"",
+       date:"",
+      } 
+      setRowsData2([...rowsData2, rowsInput])
+
+      // console.log(rowsData.length);
+       
+    
+  }
+ const deleteTableRows2 = (index)=>{
+  setdisable2(false)
+  setsave2('cursor-pointer')
+      const rows = [...rowsData2];
+      rows.splice(index, 1);
+      setRowsData2(rows);
+      // console.log(rowsData.length);
+      if(rowsData2.length==1){
+        setnorecord2('')
+      }
+ }
+ const handleChange2 = async(index, evnt)=>{
+  setdisable2(false)
+  setsave2('cursor-pointer')
+  const rowsInput = [...rowsData2];
+  const { name, value } = evnt.target;
+  // if(name=='date'){
+  //   value=value.substring(8,10)+value.substring(4,8)+value.substring(0,4);
+  // }
+  if(name=="image"){
+    setspin3('opacity-50')
+    setsave2('hidden')
+    // setdisable1(true)
+    // setsave1('cursor-not-allowed opacity-50')
+      const formdata=new FormData()
+      formdata.append("file",evnt.target.files[0]);
+      formdata.append("upload_preset","mystore")
+    const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
+      method:"POST",
+      body:formdata,
+
+    })
+    const res2=await res.json();
+    // console.log(res2);
+    // setdisable1(false)
+    setspin3('hidden ')
+    setsave2('cursor-pointer')
+  rowsInput[index][name] = res2.url;
+  // console.log(rowsInput);
+  setRowsData2(rowsInput)
+
+  }
+  else{
+    rowsInput[index][name] = value;
+  setRowsData2(rowsInput);
+  }
+
+}
+const saveevents=async(e)=>{
+  e.preventDefault();
+setdisable2(true)
+// console.log(rowsData1);
+setsave2('cursor-not-allowed opacity-50')
+const res=await fetch('http://localhost:3000/api/events', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(rowsData2)
+              })
+              let response=await res.json();
+}
+useEffect(() => {
+  const url = "http://localhost:3000/api/coordinator";
+  const url1 = "http://localhost:3000/api/clubannouncement";
+  const url2 = "http://localhost:3000/api/events";
 
 
+  const fetchData = async () => {
+    try {
+      setspin('')
+      let response = await fetch(url);
+      let json = await response.json();
 
-// }
+      setRowsData(json)
+      if(json.length!=0){
+        setnorecord('hidden')
+      }
+      let response1 = await fetch(url1);
+      let json1 = await response1.json();
+
+      setRowsData1(json1)
+      if(json1.length!=0){
+        setnorecord1('hidden')
+      }
+      let response2 = await fetch(url2);
+      let json2 = await response2.json();
+
+      setRowsData2(json2)
+      if(json2.length!=0){
+        setnorecord2('hidden')
+      }
+          
+      
+      setspin('hidden')
+      setshow('')
+    } catch (error) {
+      setshow('hidden')
+      setspin('')
+      console.log("error", error);
+    }
+  };
+
+  fetchData();
+}, []);
     return(<>
-   <div className="  ">
-    <Navbar/>
-   <div className="text-center text-2xl font-serif pt-4">Coordinator's details</div>
-    <div className="flex container justify-around h-[450px] py-3" >
-          <div className="left-side w-[60%] bg-pink-200 overflow-y-auto scrollbar-thin scrollbar-track-pink-200 scrollbar-thumb-pink-400">
-            <table  className="border-collapse border w-full border-slate-400 ">
-                      <thead className="bg-pink-400">
+   <div className='h-screen overflow-y-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-400 '>
+        <Navbar/>
+        <div className={`text-center flex w-full justify-center items-center h-[85.3%]  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
+        <div className={`${show} pb-4`}>
+        <div className="text-center text-2xl font-serif mt-5 ">Coordinator's Details Management</div>
+        <div className="flex justify-end space-x-2 text-white pr-2">
+
+          <button disabled={disable} className={`bg-blue-600 p-2 rounded ${save}`} onClick={savedata}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-center w-full ">
+        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+                          <table className="border-collapse border border-slate-400  w-full">
+                      <thead className="">
                         <tr className=" ">
-                          <th className=" border-2  py-2 border-slate-300 text-center px-2">Image</th>
-                          <th className=" border-2  py-2 border-slate-300 text-center px-2">Name</th>
-                          <th className=" border-2 py-2 border-slate-300 px-2 text-center">Current Year</th>
-                          <th className=" border-2 py-2 border-slate-300 px-2 text-center">Club</th>
-                          <th className=" border-2 py-2 border-slate-300 px-2 text-center">Role</th>
-                          <th className=" border-2 py-2 border-slate-300 px-2 text-center">Operation</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Image</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Name</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Current Year</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Club</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Role</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
                         </tr>
                       </thead>
-                      <tbody className="  ">
+                      <tbody className={``}>
+
                       <tr className={`${norecord}`}>
-                          <td colSpan="9"  className="bg-slate-200 text-center  h-[373px]">
-                          No records found
+                          <td colSpan="9"  className="bg-slate-400 text-center  h-28">
+                          <a href="" download="/st.jpg">No records found</a>
                           </td>
                           </tr>
-                          {rowsData.map((data,index)=>{
-                            const {image,name,year,club,role}=data;
-                            // console.log(image);
-                            return(
-
-                              <tr key={index}>
-                              <td className="border-2  border-slate-300">
-                                  <img src={`/${image.name}`} alt="" />
-                              </td>
-                              <td className="border-2  border-slate-300">
-                                  {name}
-                              </td>
-                              <td className="border-2  border-slate-300">
-                                  {year}
-                              </td>
-                              <td className="border-2  border-slate-300">
-                                  {club}
-                              </td>
-                              <td className="border-2  border-slate-300">
-                                  {role}
-                              </td>
-                              <td className="border-2  border-slate-300"><button className="text-black" onClick={()=>(deleteTableRows(index))}><RiDeleteBin5Line className="text-3xl"/></button></td>
-                          </tr>
-                          )
-                          })}
+                        <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
                       </tbody>
                     </table>
-            </div>
+                          </div>
+        </div>
 
-            <div className="right-side bg-pink-200 rounded outline-1 outline outline-gray-300 shadow-xl shadow-black py-2 flex justify-center w-[30%]">
-                    <form action="" method="post" className="flex-col space-y-2 font-serif">
-                      <div className="flex-col">
-                        <div className=" text-lg">Name</div>
-                        <div><input value={name} onChange={(e)=>(setname(e.target.value))} name="name" type="text" className="outline  outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300" /></div>
-                      </div>
-                      <div className="flex-col">
-                        <div className=" text-lg">Current year</div>
-                        <select value={year} onChange={(e)=>(setyear(e.target.value))} name="year"   className=" outline cursor-pointer outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300">
-  <option className="" value="">--Select Current Year--</option >
-  <option className="" value="1st Year">1st Year</option >
-  <option className="" value="2nd Year">2nd Year</option >
-  <option className="" value="3rd Year">3rd Year</option >
-  <option className="" value="4th Year">4th Year</option >
-</select>
-                      </div>
-                      <div className="flex-col">
-                        <div className=" text-lg">Club Name</div>
-                        <select value={club} onChange={(e)=>(setclub(e.target.value))} name="club"  className="outline cursor-pointer outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300">
-   <option className="" value="">--Select Club Name--</option >
-  <option className="" value="Personality Club">Personality Club</option >
-  <option className="" value="Cultural Club">Cultural Club</option >
-  <option className="" value="Coding Club">Coding Club</option >
-  <option className="" value="Editorial Club">Editorial Club</option >
-  <option className="" value="Sports Club">Sports Club</option >
-  <option className="" value="Training & Placement Cell">Training & Placement Cell</option >
-  <option className="" value="Enterpreneurship Cell">Enterpreneurship Cell</option >
-  <option className="" value="Core Committee">Core Committee</option >
-</select>
-                      </div>
-                      <div className="flex-col">
-                        <div className=" text-lg">Role</div>
-                        <select value={role} onChange={(e)=>(setrole(e.target.value))} name="role"  className="outline cursor-pointer outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300">
-   <option className="" value="">--Select Role--</option >
-  <option className="" value="Incharge">Incharge</option >
-  <option className="" value="President">President</option >
-  <option className="" value="Leading Role">Leading Role</option >
-</select>
-                      </div>
-                      
-                      <div className="flex-col">
-                        <div className=" text-lg">Image</div>
-                        <div className="max-w-full"><input accept=".jpg,.png"  onChange={(e)=>(setimage(e.target.files[0]))} name="image" className="hover:cursor-pointer" type="file" /></div>
-                      </div>
-                  <button onClick={addTableRows} className="font-serif  outline  outline-1 px-2 rounded-sm py-[6px] w-full bg-pink-400 text-base text-gray-900 outline-gray-300 ">Submit</button>
-                    </form>
-            </div>
+
+        <div className="text-center text-2xl font-serif mt-5 ">Anouncement Generation</div>
+        <div className="flex justify-end space-x-2 text-white pr-2">
+        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
+        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span classNamea="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Uploading...
+</button>
+          <button disabled={disable1} className={`bg-blue-600 p-2 rounded ${save1}`} onClick={saveannouncement}>Save Changes</button><button onClick={addTableRows1} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-center w-full ">
+        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+                          <table className="border-collapse border border-slate-400  w-full">
+                      <thead className="">
+                        <tr className=" ">
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Document</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Title</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Date</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody className={``}>
+
+                      <tr className={`${norecord1}`}>
+                          <td colSpan="9"  className="bg-slate-400 text-center  h-28">
+                          <a href="" download="/st.jpg">No records found</a>
+                          </td>
+                          </tr>
+                        <Announcementrows rowsData={rowsData1} deleteTableRows={deleteTableRows1} handleChange={handleChange1} />
+                      </tbody>
+                    </table>
+                          </div>
+        </div>
+
+        <div className="text-center text-2xl font-serif mt-5 ">Upload Events</div>
+        <div className="flex justify-end space-x-2 text-white pr-2">
+        <button  className={`bg-blue-600 p-2 rounded space-x-1 ${spin3}`} type="button" disabled>
+        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span classNamea="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Uploading...
+</button>
+          <button disabled={disable2} className={`bg-blue-600 p-2 rounded ${save2}`} onClick={saveevents}>Save Changes</button><button onClick={addTableRows2} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-center w-full ">
+        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+                          <table className="border-collapse border border-slate-400  w-full">
+                      <thead className="">
+                        <tr className=" ">
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Image</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Event Name</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Title</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Description</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Organized by</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Date</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody className={``}>
+
+                      <tr className={`${norecord2}`}>
+                          <td colSpan="9"  className="bg-slate-400 text-center  h-28">
+                          <a href="" download="/st.jpg">No records found</a>
+                          </td>
+                          </tr>
+                        <Eventsrows rowsData={rowsData2} deleteTableRows={deleteTableRows2} handleChange={handleChange2} />
+                      </tbody>
+                    </table>
+                          </div>
+        </div>
+
+
+
+
+        </div>
     </div>
-
-    <div className="flex justify-around w-full container ">
-    <div className="announcement-side space-y-5 w-[40%] py-4">
-    <div className="text-center font-serif text-2xl mt-3">Announcement Generator</div>
-
-    <div className="flex justify-center ">
-                    <form action="" method="post" className="flex-col space-y-2 font-serif  bg-pink-200 rounded outline-1 px-3 outline-gray-300 shadow-xl shadow-black py-2   outline">
-                      <div className="flex-col space-y-1">
-                        <div className=" text-lg">Title</div>
-                        <div><textarea className=" outline-1 outline-gray-300 rounded outline focus:outline-gray-400  resize-none bg-white" name="" id="" cols="40" rows="5" ></textarea></div>
-                      </div>
-                    
-       
-                      <div className="flex-col space-y-1">
-                        <div className=" text-lg">Attach Document</div>
-                        <div className="max-w-full "><input className="hover:cursor-pointer" type="file" /></div>
-                      </div>
-                  <button className="font-serif  outline  outline-1 px-2 rounded-sm py-[6px] w-full bg-pink-400 text-base text-gray-900 outline-gray-300 ">Upload</button>
-                    </form>
-                    </div>
-            </div>
-    <div className="event-side space-y-5  w-[40%] py-4">
-    <div className="text-center font-serif text-2xl mt-3">Upload Events</div>
-
-                    <div className="flex justify-center ">
-                    <form action="" method="post" className="flex-col space-y-2 font-serif  bg-pink-200 rounded outline-1 px-3 outline-gray-300 shadow-xl shadow-black py-2   outline">
-                    <div className="flex-col">
-                        <div className=" text-lg">Event Name</div>
-                        <div><input type="text" className="outline  outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300" /></div>
-                      </div>
-                      <div className="flex-col space-y-1">
-                        <div className=" text-lg">Title</div>
-                        <div><textarea className=" outline-1 outline-gray-300 rounded outline focus:outline-gray-400  resize-none bg-white" name="title" id="" cols="40" rows="5" ></textarea></div>
-                      </div>
-                    
-                      <div className="flex-col space-y-1">
-                        <div className=" text-lg">Description</div>
-                        <div><textarea className=" outline-1 outline-gray-300 rounded outline focus:outline-gray-400  resize-none bg-white" name="" id="" cols="40" rows="5" ></textarea></div>
-                      </div>
-       
-                      <div className="flex-col space-y-1">
-                        <div className=" text-lg">Attach Document</div>
-                        <div className="max-w-full "><input className="hover:cursor-pointer" type="file" /></div>
-                      </div>
-                  <button className="font-serif  outline  outline-1 px-2 rounded-sm py-[6px] w-full bg-pink-400 text-base text-gray-900 outline-gray-300 ">Upload</button>
-                    </form>
-                    </div>
-            </div>
-
-
-</div>
-
-   </div>
     </>)
 }
