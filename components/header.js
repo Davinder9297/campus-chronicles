@@ -49,7 +49,7 @@ const yesbutton=()=>{
     <div className="flex  justify-around items-center h-11 font-serif text-md font-semibold bg-purple-300 ">
       <div >Home</div>
       <div><Link href="/about">About Us</Link></div>
-      <div><Link href='/'>Faculty</Link></div>
+      <div><Link href='/faculty/new'>Faculty</Link></div>
       <div><Link href="#events">Events & Activities</Link></div>
       <div><Link href='/club'>Clubs</Link></div>
       <div>Library</div>

@@ -1,15 +1,20 @@
+import Navbar from "../../components/navbar"
+
+
 export default function viewEvent() {
     return (<>
         <div className="">
-            <div className="text-center text-4xl h-20 p-3 bg-amber-600 font-semibold font-body">
+        <Navbar class="shadow-md" />
+
+            <div className="text-center text-4xl h-16 p-3 bg-amber-600 font-semibold font-body">
                 Event Name
             </div>
 
             <div className="  h-[75 vh] overflow-hidden">
                 <div className="flex mt-4 ml-4 h-[90%] ">
-                    <div className="w-[40%] p-2">
-                        <img src="/1.jpg" className=" w-full mb-3 h-[48%] rounded-xl" />
-                        <img src="/1.jpg" className=" w-full h-[48%] rounded-xl " />
+                    <div className="w-[40%] h-[100%] border-2 border-solid border-emerald-700 p-2 m-auto">
+                        <img src="/1.jpg" className=" w-full mb-3  rounded-xl" />
+                        {/* <img src="/1.jpg" className=" w-full h-[48%] rounded-xl " /> */}
                     </div>
 
                     <div className=" w-[58%] ml-2 text-center text-4xl mx-auto">
