@@ -121,6 +121,7 @@ const res=await fetch('http://localhost:3000/api/coordinator', {
   setsave1('cursor-pointer')
   const rowsInput = [...rowsData1];
   const { name, value } = evnt.target;
+
   if(name=="doc"){
     setspin2('opacity-50')
     setsave1('hidden')
@@ -199,6 +200,9 @@ const res=await fetch('http://localhost:3000/api/clubannouncement', {
   setsave2('cursor-pointer')
   const rowsInput = [...rowsData2];
   const { name, value } = evnt.target;
+  // if(name=='date'){
+  //   value=value.substring(8,10)+value.substring(4,8)+value.substring(0,4);
+  // }
   if(name=="image"){
     setspin3('opacity-50')
     setsave2('hidden')

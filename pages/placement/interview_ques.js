@@ -1,8 +1,36 @@
 import Link from "next/link";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Interview_ques(){
+    const [data, setdata] = useState([])
+    const [spin, setspin] = useState('')
+    useEffect(() => {
+        const url = "http://localhost:3000/api/interviewquestions";
+      
+      
+        const fetchData = async () => {
+          try {
+            setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+            // console.log(json);
+            setdata(json)
+            // if(json.length!=0){
+            //   setnorecord('hidden')
+            // }          
+            setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
     return(<>
-    
     <div className=" h-36 flex flex-row  ">
         <div className="flex justify-start w-[40%] h-36 " ><img className=" w-[65%]" src="/interview.gif" /></div>
         <div className=" w-[70%] py-14 text-left pl-6 text-cyan-300 font-extrabold font-BlinkMacSystemFont text-4xl"> Interview Related Questions</div>  
@@ -18,10 +46,23 @@ export default function Interview_ques(){
                 <div className=" text-2xl text-left font-bold text-black">Computer Science Interview Questions</div>
             </div>
 
-           <div className=' mt-5 '>
+           <div className=' pt-2 '>
              <div className='text-lg flex-col w-full space-y-3 '> 
-                <div className="cursor-pointer hover:bg-sky-200" >1. Explain the computer system?</div>
-                <div className="cursor-pointer hover:bg-sky-200">2. What is a file?</div>
+             <div className={`text-center flex w-full justify-center items-center h-full relative top-36 left-0
+ z-10 ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
+             {data.map((da,index)=>{
+                const {title}=da;
+                return(<>
+                    <Link href={`#${title}`}><div className="cursor-pointer hover:bg-sky-200" >{index+1}. {title}?</div></Link>
+
+                </>)
+             })}
+             
+                {/* <div className="cursor-pointer hover:bg-sky-200">2. What is a file?</div>
                 <div className="cursor-pointer hover:bg-sky-200">3.  What is inheritance?</div>
                 <Link href="#os"><div className="cursor-pointer hover:bg-sky-200"  >4. What is an operating system?</div></Link>
                 <div className="cursor-pointer hover:bg-sky-200">5. How many popular operating systems are in use today?</div>
@@ -37,7 +78,7 @@ export default function Interview_ques(){
                 <div className="cursor-pointer hover:bg-sky-200">15. What is machine learning?</div>
                 <div className="cursor-pointer hover:bg-sky-200">16. Explain the access modifiers?</div>
                 <div className="cursor-pointer hover:bg-sky-200">17. What are the Layers of the OSI Model? </div>
-                <div className="cursor-pointer hover:bg-sky-200">18. What is the thread in programming?</div>
+                <div className="cursor-pointer hover:bg-sky-200">18. What is the thread in programming?</div> */}
 
                 </div>
 
@@ -49,29 +90,31 @@ export default function Interview_ques(){
            <div className=" mx-3 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner shadow-sky-200  scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 overflow-y-scroll "> 
            <div className=" pt-2 text-2xl text-left font-bold text-black underline">Detailed Answers to the Questions</div>
 
-           <div className="  pt-4 flex-col  space-y-2  ">
-            <div className=" text-lg text-left font-bold">
-            1. Explain the computer system? </div>
-            <div className="  text-left text-base font-serif"> The computer system is the collection of hardware and software that makes up a computer. It consists of the processor, memory, storage devices, input/output devices, and other components. 
+           <div className="  flex-col   ">
+           <div className='text-lg flex-col w-full space-y-3 '> 
+             <div className={`text-center flex w-full justify-center items-center h-full absolute top-10 left-36
+ z-10 ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
+            {data.map((da,index)=>{
+                const {title,description}=da;
+                return(<>               
+       <div id={title} className="  pt-4 flex-col  space-y-2  ">
+       <div className=" text-lg text-left font-bold">
+       {index+1}. {title}? </div>
+       <div className=" text-left text-base font-serif">{description}</div>
 
-<li>The processor is the central processing unit (CPU) that processes information and controls the computer’s operations.</li>
-<li>The memory is the computer’s temporary storage area.</li>
-<li>The storage devices are used to store data and programs.</li>
-<li>The input/output devices are used to connect the computer to external devices such as printers, keyboards, and mice.</li>
-<li>The computer system is a complex device that has many functions. It is used to store and process information, communicate with other computers and other devices, and perform calculations</li></div>
+        </div>
+                </>)
+            })}
 
-           </div>
 
          
 
-       <div className="  pt-4 flex-col  space-y-2  ">
-       <div className=" text-lg text-left font-bold">
-       2. What is file? </div>
-       <div className=" text-left text-base font-serif"> A file is a collection of data that is stored on a computer or other device. Files can be text, images, sounds, or any combination of these. They can be stored on a computer, a hard drive, or some other device. When you open a file, you are actually opening a copy of the data inside the file. This copy is called the “file” and it is what you see when you open the file. The file can be opened in many different ways. For example, you can open it by clicking on it or by double-clicking on it. The file can also be opened by dragging and dropping it onto the screen or by using other methods. When you open a file, you are actually opening a copy of the data inside the file.</div>
-
-        </div>
     
-    <div className="  pt-4 flex-col  space-y-2  ">
+    {/* <div className="  pt-4 flex-col  space-y-2  ">
        <div className=" text-lg text-left font-bold " id="inh">
        3.  What is inheritance? </div>
        <div className=" text-left text-base font-serif"> Inheritance is a way of structuring code so that it can be shared between different classes. Inheritance allows code to be shared between different classes and allows the same class to have different implementations in different contexts. Inheritance is a powerful tool that can make your code more maintainable and easier to understand. Inheritance is a fundamental concept in programming. It’s a way of structuring code so that it can be shared between different classes.</div>
@@ -181,8 +224,9 @@ export default function Interview_ques(){
        18. What is the thread in programming? </div>
        <div className=" text-left text-base font-serif"> The thread is a fundamental concept in programming. It is a way of organizing and managing code so that it can run in parallel. The thread is a way of keeping code running in the background while the main program is running. Threads are used to parallelize tasks and to share resources among multiple threads. When the main program runs, it sends instructions to the thread that is running the task. When the task is done, the thread that was running the task sends instructions to the main program that is waiting for instructions. This process continues until all tasks are done or until one of them crashes or gets interrupted. Threads are a fundamental concept in programming because they allow programs to run in parallel and to share resources. They are also useful for managing memory and CPU usage</div>
 
+        </div> */}
         </div>
-    
+    </div>
      </div>
 </div>
 

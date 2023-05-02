@@ -50,17 +50,17 @@ export default function Club() {
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/cultural_club'}>
+                    <Link href={'/club/cultural_club'}>
                         <img className="rounded-xl h-full w-full" src="/cultural_logo.png" />
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/personality_club'}>
+                    <Link href={'/club/personality_club'}>
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/editorial_club'}>
+                    <Link href={'/club/editorial_club'}>
                         <img className="rounded-xl h-full w-full" src="editorial.jpg" />
                     </Link>
                 </div>
@@ -74,11 +74,23 @@ export default function Club() {
                     <div className="border-solid border-2 h-[300px] overflow-y-auto mt-2">
                         {data.map((d,index)=>{
                             const {title,doc,date}=d;
+                            // const [show, setshow] = useState('')
+                            let show='';
+                            let dat=new Date(date);
+                            let newdate=new Date();
+                            let formatted=date.substring(8,10)+date.substring(4,8)+date.substring(0,4);
+                            // console.log();
+                            let diff=(newdate.getTime()-dat.getTime())/(1000 * 60 * 60 * 24);
+                            if(diff>=1){
+                                // setshow('hidden')
+                                show='hidden';
+                            }
+                            // console.log(dat.getTime());
                             return(<>
                                <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
-                            <div className=" ">{index+1}</div>
-                            <div className='flex space-x-1  '><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>{title}</div></div>
-                            <div className=" ">{date}</div>
+                            <div className=" ">{index+1}.</div>
+                            <div className="flex space-x-1 text-left  w-[30%]" ><div className={`mt-2 ${show}`}><img className='' src="new.gif" alt="" /></div> <div>{title}</div></div>
+                            <div className=" ">{formatted}</div>
                             <div className=" text-2xl"><button onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
                         </div>
                             </>)
@@ -103,12 +115,12 @@ export default function Club() {
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">
                     <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                        <Link href={'club/sports'}>
+                        <Link href={'/club/sports'}>
                         <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
                     </Link>
                     </div>
                     <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/core_commitee'}>
+                    <Link href={'/club/core_commitee'}>
                         <img className="rounded-xl h-full w-full" src="core-committee.png" />
                     </Link>
                     </div>
@@ -118,17 +130,17 @@ export default function Club() {
 
             <div className="flex-col flex-wrap w-[24%]">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/training_placement_club'}>
+                    <Link href={'/club/training_placement_club'}>
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/e_club'}>
+                    <Link href={'/club/e_club'}>
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'club/coding_and_tech_club'}>
+                    <Link href={'/club/coding_and_tech_club'}>
                         <img className="rounded-xl h-full w-full" src="coding.png" />
                     </Link>
                 </div>

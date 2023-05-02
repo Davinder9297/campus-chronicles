@@ -3,6 +3,7 @@ function Eventsrows({rowsData, deleteTableRows, handleChange}) {
     return(  
         rowsData.map((data, index)=>{
             const {image,eventname,club,title,description,date}= data;
+            // date=date.format('dd/mm/yyyy')
             return(<>
                 <tr key={index}>
                 <td className="border-2  border-slate-300 h-20 w-28 space-y-2">
@@ -31,7 +32,7 @@ function Eventsrows({rowsData, deleteTableRows, handleChange}) {
   <option className="" value="Core Committee">Core Committee</option >
 </select>                </td>
                 <td className="border-2  border-slate-300">
-                <input type="date" value={date} onChange={(evnt)=>(handleChange(index, evnt))} name="date" className=" form-control"/>
+                <input type="date"   value={date} onChange={(evnt)=>(handleChange(index, evnt))} name="date" className=" form-control"/>
   
                      </td>
                 

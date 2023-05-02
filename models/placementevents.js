@@ -24,4 +24,4 @@ const ourschema=new mongoose.Schema({
     },  
 });
 mongoose.models={};
-export default mongoose.model("events",ourschema);
+export default mongoose.model("placementevents",ourschema);

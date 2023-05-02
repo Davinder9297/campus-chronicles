@@ -1,10 +1,36 @@
+import { useEffect, useState } from 'react';
 import {IoMdArrowDroprightCircle} from 'react-icons/io'
 
 
 export default function Coding_ques(){
-    return(<>
-    
-    
+    const [data, setdata] = useState([])
+    const [spin, setspin] = useState('')
+    useEffect(() => {
+        const url = "http://localhost:3000/api/codingquestions";
+      
+      
+        const fetchData = async () => {
+          try {
+            setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+            // console.log(json);
+            setdata(json)
+            // if(json.length!=0){
+            //   setnorecord('hidden')
+            // }          
+            setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
+    return(<>  
     <div className=" h-36 flex flex-row  ">
         <div className="flex justify-start w-[40%] h-36 " ><img className=" w-[65%]" src="/code_q.gif" /></div>
         <div className=" w-[70%] py-14 text-left pl-20 text-slate-800 font-extrabold font-BlinkMacSystemFont text-4xl"> Coding Practice Questions</div>   
@@ -79,7 +105,14 @@ export default function Coding_ques(){
 
 <div className=" mx-3 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner overflow-auto scrollbar-thin scrollbar-thumb-zinc-300 "> 
 <div className="flex-col w-[100%] p-3 ">
+<div className={`text-center flex w-full justify-center items-center h-full absolute top-10 left-36
+ z-10 ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
 <div className="accordion " id="accordionFlushExample">
+
                     <div className="  accordion-item focus-within:bg-white">
                         <h2 className=" p-2 accordion-header" id="flush-headingOne">
 
@@ -170,7 +203,7 @@ export default function Coding_ques(){
 
 
                     <div className="accordion-item">
-                        <h2 className="p-2 accordion-header" id="flush-headingThree">
+                        <h2 className="p-2 accordion-header" >
                             <button className="h-28 space-y-2 accordion-button collapsed hover:bg-green-50" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                             <div className=' flex-row w-full space-y-1'>
                                 <div className=" pt-7 flex-col text-lg w-full  ">

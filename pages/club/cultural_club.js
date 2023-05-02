@@ -1,3 +1,4 @@
+import { Link } from "@mui/material";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -98,9 +99,75 @@ export default function Culturalclub() {
                         </div>
                             </>)
                         })}
+                                   <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                3.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                              gf
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                fa
+                            </div>
+                        </div>
+                                   <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                3.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                              gf
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                fa
+                            </div>
+                        </div>
+                                   <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                3.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                              gf
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                fa
+                            </div>
+                        </div>
+                                   <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                3.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                              gf
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                fa
+                            </div>
+                        </div>
+                                   <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                3.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                              gf
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                fa
+                            </div>
+                        </div>
+                                   <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                3.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                              gf
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                fa
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="flex-col m-3 w-[68%]">
+                <div className="flex-col  w-[68%]">
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
                         <div className="m-3 font-normal text-xl shadow-red-600 shadow-md rounded-xl p-2 text-justify">
@@ -108,15 +175,15 @@ export default function Culturalclub() {
                         Events include competitions such as instrumental,singing dance and many more. Cultural club also celebrates all the festivals creating a vibrant atmosphere all around.
                         </div>
                     </div>
-                    <div className="text-center font-bold text-3xl font-sans m-3 p-2  shadow-red-600 shadow-md rounded-xl">
+                    <div className="text-center font-bold text-3xl font-sans bg-slate-500   p-2  shadow-red-600 shadow-md rounded-xl ">
                         Our Events....
-                        <div className="flex-col">
-                            <div className="flex flex-wrap justify-center pt-2 space-x-5 ">
+                        <div className="flex-col ">
+                            <div className="flex flex-wrap justify-center pt-2 space-x-5  space-y-5 scrollbar-thin max-h-[585px] overflow-y-auto scrollbar-track-violet-50 scrollbar-thumb-red-600">
 
                                 {events.map((data,index)=>{
                                     const {title,image,description}=data;
                                     return(<>                                   
-                                    <div className=" shadow-red-600 shadow-md h-auto mb-2 rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                    <div className=" shadow-red-600 shadow-md   rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
                                     <div className="flex-col">
                                         <img className="rounded-xl h-56 w-full" src={image} />
                                         <div className="text-red-600 h-auto text-xl overflow-hidden mt-2">
@@ -130,15 +197,26 @@ export default function Culturalclub() {
                                 </div>
                                 </>)
                                 })}
-
+<div className=" shadow-red-600 shadow-md h-auto mb-2 rounded-xl cursor-pointer hover:scale-105 transition duration-150 w-[46%]">
+                                    <div className="flex-col">
+                                        <img className="rounded-xl h-56 w-full" src="/1.jpg" />
+                                        <div className="text-red-600 h-auto text-xl overflow-hidden mt-2">
+                                           df
+                                            <div className="text-black mt-2  text-justify font-normal text-sm p-2 ">description</div>
+                                            <div>
+                                                <button className="text-black bg-red-300 w-full rounded-xl mt-3 p-1 font-semibold">View Event</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 
 
                             </div>
-                            <div className="font-semibold text-center text-2xl bg-red-400 p-1 ml-8 mr-8 rounded-xl">
-                                <button>
+                            {/* <div className="font-semibold text-center text-2xl bg-red-400 p-1 ml-8 mr-8 rounded-xl"> */}
+                                {/* <Link>
                                     Load more Events
-                                </button>
-                            </div>
+                                </Link>  */}
+                            {/* </div> */}
                         </div>
 
                     </div>
