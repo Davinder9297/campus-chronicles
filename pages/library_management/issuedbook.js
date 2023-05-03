@@ -16,12 +16,14 @@ export default function Issued_book(){
       } 
     const [rowsData, setRowsData] = useState([rowsInput1]);
     const [norecord, setnorecord] = useState('');
- const [bookname, setbookname] = useState('')
- const [isbn, setisbn] = useState('')
- const [studentname, setstudentname] = useState('')
- const [studentroll, setstudentroll] = useState('')
- const [issueddate, setissueddate] = useState('')
- const [returndate, setreturndate] = useState('')
+    const [disable, setdisable] = useState(true);
+    const [opac, setopac] = useState('cursor-not-allowed opacity-50');
+//  const [bookname, setbookname] = useState('')
+//  const [isbn, setisbn] = useState('')
+//  const [studentname, setstudentname] = useState('')
+//  const [studentroll, setstudentroll] = useState('')
+//  const [issueddate, setissueddate] = useState('')
+//  const [returndate, setreturndate] = useState('')
 useEffect(() => {
   
     if(rowsData.length>0){
@@ -34,14 +36,15 @@ useEffect(() => {
 //  const [returned, setreturned] = useState()
     const addTableRows = ()=>{
       setnorecord('hidden')
-  
+  setdisable(false)
+  setopac('cursor-pointer')
         const rowsInput={
-          bookname:bookname,
-          isbn:isbn,
-          studentname:studentname,  
-          studentroll:studentroll,  
-          issueddate:issueddate,  
-          returndate:returndate,
+          bookname:'',
+          isbn:'',
+          studentname:'',  
+          studentroll:'',  
+          issueddate:'',  
+          returndate:'',
           fine:'',  
           returned:false 
         } 
@@ -51,7 +54,8 @@ useEffect(() => {
       
     }
    const deleteTableRows = (index)=>{
-   
+    setdisable(false)
+    setopac('cursor-pointer')
         const rows = [...rowsData];
         rows.splice(index, 1);
         setRowsData(rows);
@@ -62,7 +66,8 @@ useEffect(() => {
    }
  
    const handleChange = (index, evnt)=>{
-    
+    setdisable(false)
+    setopac('cursor-pointer')
     const { name, value } = evnt.target;
     if(name=="returned"){
         value=evnt.target.checked;
@@ -70,17 +75,52 @@ useEffect(() => {
     const rowsInput = [...rowsData];
     rowsInput[index][name] = value;
     setRowsData(rowsInput);
-  console.log(value);
- 
- 
+
 }
+const save=async(e)=>{
+  e.preventDefault()
+setdisable(true)
+setopac('cursor-not-allowed opacity-50')
+const res=await fetch('http://localhost:3000/api/issuedbooks', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                    body:JSON.stringify(rowsData)
+                })
+                let response=await res.json();
+}
+useEffect(() => {
+  const url = "http://localhost:3000/api/issuedbooks";
+  const fetchData = async () => {
+    try {
+      // setspin('')
+      let response = await fetch(url);
+      let json = await response.json();
+
+      setRowsData(json)
+      if(json.length!=0){
+        setnorecord('hidden')
+      }
+      
+      // setspin('hidden')
+      // setshow('')
+    } catch (error) {
+      // setshow('hidden')
+      // setspin('')
+      console.log("error", error);
+    }
+  };
+
+  fetchData();
+}, []);
     return(<>
     <div className="h-screen overflow-y-hidden">
         <Navbar/>
         <div className="flex h-[91.5%] ">
             <Sidebar/>
-            <div className="flex-col w-[82%] h-[93.3%]  overflow-y-auto  scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500">
-              <div className="w-full  p-2">
+            <div className="flex justify-center items-center w-[100%] ">
+              {/* <div className="w-full  p-2">
                 <div className="text-center text-xl font-serif">Issue A Book</div>
                 
                 <div className="flex justify-center space-x-2 font-serif">
@@ -105,13 +145,15 @@ useEffect(() => {
                              </div>
                          </div>
                     </div> 
-                  </div>
+                  </div> */}
 
-                <div className="w-full mt-3 p-2">
-                <div className=" flex-col   container outline outline-1 outline-gray-300 px-3 py-2">
+                <div className="w-full mt-3 ">
+                <div className=" flex-col  h-[93.3%]  container outline outline-1 outline-gray-300 px-3 py-2">
                     <div className="flex justify-between  items-center w-full">
                         <div className="text-xl font-semibold">Issued Books Details</div>
-                    <div className=" flex  w-[30%] ">
+                        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-blue-600 p-2 rounded ${opac}`} onClick={save}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+
+                    {/* <div className=" flex  w-[30%] ">
                 <input
                     type="search"
                     className="relative m-0 -mr-px block w-96 min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-blue-100  px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
@@ -135,12 +177,12 @@ useEffect(() => {
                         clipRule="evenodd" />
                     </svg>
                 </button>
-                </div>
+                </div> */}
                     </div>
                     
-                    <div className="pt-2 pb-2 res_table ">
+                    <div className="pt-2 pb-2 res_table  h-96 overflow-y-auto  scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500">
                           <table className="border-collapse border   w-full">
-                      <thead className="">
+                      <thead className="shadow-2xl shadow-gray-200 ">
                         <tr className=" ">
                           <th className="border-2  py-2 border-slate-300 text-center px-2">Student Name </th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Student Roll No.</th>

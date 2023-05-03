@@ -28,7 +28,7 @@ export default function Sidebar(){
 </div>
     
 
-    <div className="flex-col space-y-6 pt-2 text-white w-[18%] bg-slate-700   font-serif  h-full" >
+    <div className="flex-col space-y-6 pt-2 text-white w-[15%] bg-slate-700   font-serif  h-full" >
             <div><img src="/librarymanagement.png" alt="" /></div>
             <div className="flex space-x-1 items-center pl-2 "><AiOutlineDashboard className="text-xl"/><Link className="/library_management" href="">Dashboard</Link></div>
             <div className="flex space-x-1 items-center pl-2"><RiContactsBook2Line className="text-xl"/><Link href="/library_management/issuedbook">Issued Books</Link></div>

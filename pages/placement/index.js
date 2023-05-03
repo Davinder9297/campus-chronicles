@@ -9,9 +9,60 @@ import Collab from "../../components/collab"
 import PlacementCr from "../../components/Placement_cr"
 import Link from 'next/link'
 import Navbar from '../../components/navbar'
+import Marquee from 'react-fast-marquee'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { IoMdDownload } from 'react-icons/io'
 
 
 export default function Placement() {
+  const [data, setdata] = useState([])
+  const [data1, setdata1] = useState([])
+  const [spin, setspin] = useState('')
+  useEffect(() => {
+      const url = "http://localhost:3000/api/placementannouncements";
+      const url1 = "http://localhost:3000/api/placementevents";
+    
+    
+      const fetchData = async () => {
+        try {
+          setspin('')
+          let response = await fetch(url);
+          let json = await response.json();
+          // console.log(json);
+          setdata(json)
+          let response1 = await fetch(url1);
+          let json1 = await response1.json();
+          // console.log(json);
+          setdata1(json1)
+          // if(json.length!=0){
+          //   setnorecord('hidden')
+          // }          
+          setspin('hidden')
+          // setshow('')
+        } catch (error) {
+          // setshow('hidden')
+          // setspin('')
+          console.log("error", error);
+        }
+      };
+    
+      fetchData();
+    }, []);
+
+    const download=(doc,title)=>{
+      fetch(doc).then(response => {
+          response.blob().then(blob => {
+              // Creating new object of PDF file
+              const fileURL = window.URL.createObjectURL(blob);
+              // Setting various property values
+              let alink = document.createElement('a');
+              alink.href = fileURL;
+              alink.download = title;
+              alink.click();
+          })
+      })
+    }
   return (<>
 
 <Navbar/>
@@ -48,18 +99,34 @@ export default function Placement() {
       <div className=" flex justify-center border-solid  w-[35%] shadow-inner shadow-pink-600 rounded-xl " >
         <div className=' border-solid  w-[95%] text-center font-bold text-2xl font-sans m-3 '><button className='m-2'> <MdEditNotifications /> </button>
            NOTIFICATIONS
-          <div className="  text-xl h-[420px] w-[98%] text-center grid grid-cols-1 divide-y   border-y-2 rounded-md  border-orange-900">
-          <marquee  width="100%" direction="up" height="90%" behaviour="scroll" scrollamount="4" className="space-y-5">
+          <div className="  text-xl h-[420px] w-[98%] text-center    border-y-2 rounded-md  border-orange-900">
+          {/* <Marquee autoFill  direction="up" className='bg-slate-500 h-full'> */}
+{data.map((da,index)=>{
+  const {title,doc,date}=da;
+  let show='';
+  let dat=new Date(date);
+  let newdate=new Date();
+  let formatted=date.substring(8,10)+date.substring(4,8)+date.substring(0,4);
+                              // console.log();
+  let diff=(newdate.getTime()-dat.getTime())/(1000 * 60 * 60 * 24);
+  if(diff>=1){
+                                  // setshow('hidden')
+  show='hidden';
+  }
+  return(<>
+          <div className="justify-between flex bg-slate-300 text-gray-800 font-bold  border-black border-b "><div className=''> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
+</div>
 
-        <div className=" flex  text-gray-800 font-bold  border-black border-b "><div className='mt-4 mb-4'> <button> <FaThList/></button>1st notification is announced </div></div>
+  </>)
+})}
         <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
         <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
         <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        </marquee>
+        {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
+        {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
+        {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
+        {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
+        {/* </Marquee> */}
       </div>
       </div>
       </div>
@@ -107,19 +174,21 @@ export default function Placement() {
     <div className="flex justify-center"><img src="hr.png" alt="" /></div>
     <div className="flex-col">
     <div className="flex flex-wrap justify-center m-2  ">
-
-        <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
+{data1.map((da,index)=>{
+  const {eventname,image,title,description,date}=da;
+  return(<>
+  <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
         <div className='flex-col'>
-             <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
+             <img className="rounded-xl h-52 w-full p-2" src={image} />
              <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
-                 The Podcast
-                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">To actively reach out to the corporate world for facilitating 
-the best placements for IKG PTU Mohali Campus I students, University has
-a Corporate Relations & Alumni department. The main endeavor of CR&A Cell, IKG PTU Mohali Campus I 
-is to get students placed inreputed multinationals, government organizations, NGO's and the private sector. </div>
+                 {title}
+                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">{description}</div>
              </div>
          </div>
      </div>
+  </>)
+})}
+        
 
      <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
          <div className='flex-col'>
