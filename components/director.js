@@ -3,7 +3,7 @@ export default function Director(){
     <div className="flex-col justify-center w-full  border border-lime-500 bg-purple-200 mt-2 py-4">
     <div className="text-3xl text-center mb-3 font-serif font-semibold animate-pulse">Message from the Director</div>
 
-<div className="flex justify-center">
+<div className="flex justify-center xsm:flex-col text-xs">
 <div className="flex-col  ">
 <div className="w-full justify-center flex mt-2"><img className="outline-2  outline-gray-500 outline  rounded-lg   shadow-2xl" src="director.jpg" alt="" /></div>
 </div>

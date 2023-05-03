@@ -9,7 +9,7 @@ import Collab from "../../components/collab"
 import PlacementCr from "../../components/Placement_cr"
 import Link from 'next/link'
 import Navbar from '../../components/navbar'
-import Marquee from 'react-fast-marquee'
+// import Marquee from 'react-fast-marquee'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { IoMdDownload } from 'react-icons/io'
@@ -169,90 +169,61 @@ export default function Placement() {
     </div>
  
     
-    <div className='mt-8 mb-5 w-auto mx-2 my-2 border-2  font-bold text-center text-2xl font-sans p-3  rounded-xl '>
-     T&P Events and Placement drives
-    <div className="flex justify-center"><img src="hr.png" alt="" /></div>
-    <div className="flex-col">
-    <div className="flex flex-wrap justify-center m-2  ">
-{data1.map((da,index)=>{
-  const {eventname,image,title,description,date}=da;
-  return(<>
-  <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-        <div className='flex-col'>
-             <img className="rounded-xl h-52 w-full p-2" src={image} />
-             <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
-                 {title}
-                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">{description}</div>
-             </div>
-         </div>
-     </div>
-  </>)
-})}
+   
+
         
 
-     <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div className='flex-col'>
-             <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
-             <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
-                 The Podcast
-                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">To actively reach out to the corporate world for facilitating the best placements 
-for IKG PTU Mohali Campus I students, University has
-a Corporate Relations & 
-Alumni department. The main endeavor of CR&A Cell, IKG PTU Mohali Campus I 
-is to get students placed in
-reputed multinationals, government organizations, 
-NGO's and the private sector. </div>
-             </div>
-         </div>
-     </div>
-     <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div className='flex-col'>
-             <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
-             <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
-                 The Podcast
-                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">To actively reach out to the corporate world for facilitating the best placements 
-for IKG PTU Mohali Campus I students, University has
-a Corporate Relations & 
-Alumni department. The main endeavor of CR&A Cell, IKG PTU Mohali Campus I 
-is to get students placed in
-reputed multinationals, government organizations, 
-NGO's and the private sector. </div>
-             </div>
-         </div>
-     </div>
-     <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div className='flex-col'>
-             <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
-             <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
-                 The Podcast
-                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">To actively reach out to the corporate world for facilitating the best placements 
-for IKG PTU Mohali Campus I students, University has
-a Corporate Relations & 
-Alumni department. The main endeavor of CR&A Cell, IKG PTU Mohali Campus I 
-is to get students placed in
-reputed multinationals, government organizations, 
-NGO's and the private sector. </div>
-             </div>
-         </div>
-     </div>
-     <div className="m-3 shadow-pink-600 shadow-inner h-auto rounded-xl cursor-pointer w-[30%]">
-         <div className='flex-col'>
-             <img className="rounded-xl h-52 w-full p-2" src="jatin.jpg" />
-             <div className="text-pink-600 h-auto text-xl overflow-hidden mt-1">
-                 The Podcast
-                 <div className="text-black mt-2 font-semibold text-justify text-sm p-2 ">To actively reach out to the corporate world for facilitating the best placements 
-for IKG PTU Mohali Campus I students, University has
-a Corporate Relations & 
-Alumni department. The main endeavor of CR&A Cell, IKG PTU Mohali Campus I 
-is to get students placed in
-reputed multinationals, government organizations, 
-NGO's and the private sector. </div>
-             </div>
-         </div>
-     </div>
-    </div>     
-  </div>
-</div>
+        <div className="flex-col mt-8 mb-5 " id="events" >
+            <div className="text-center text-3xl font-semibold font-serif text-gray-600">Events At Campus</div>
+            <div className="flex justify-center"><img src="hr.png" alt="" /></div>
+            <div className="flex justify-center w-full">
+            <div className="flex flex-wrap w-full h-auto justify-center space-x-14  mt-4 max-w-[1250px] ">
+               {data1.map((da,index)=>{
+  const {eventname,image,title,description,date}=da;
+  return(<>
+            <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5  hover:scale-90 transition duration-300 ease-in">
+                    <div className=""><img className="rounded-t w-[350px] h-52" src={image} alt="" /></div>
+                    <div className="px-1 mt-3 font-bold  text-center">{title}</div>
+                    <div className="px-1 h-[118px]">{description.slice(0,270)}...</div>
+                    <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View event</button></div>
+                </div>
+  </>)
+})}
+              
+    
+                {/* <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
+                    <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
+                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
+                    <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
+                </div>
+                <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
+                    <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
+                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
+                    <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
+                </div>
+                <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
+                    <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
+                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
+                    <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
+                </div>
+                <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
+                    <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
+                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
+                    <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
+                </div>
+                <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
+                    <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
+                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
+                    <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
+                </div> */}
+            </div>
+            </div>
+        </div>
 
 <Collab/>
 

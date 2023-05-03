@@ -1,5 +1,5 @@
 import {RiDeleteBin5Line} from "react-icons/ri"
-function Eventsrows({rowsData, deleteTableRows, handleChange}) {
+function Addbookrows({rowsData, deleteTableRows, handleChange}) {
     return(  
         rowsData.map((data, index)=>{
             const {image,eventname,club,title,description,date}= data;
