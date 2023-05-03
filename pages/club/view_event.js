@@ -3,17 +3,17 @@ import Navbar from "../../components/navbar"
 
 export default function viewEvent() {
     return (<>
-        <div className="">
+        <div className=" h-screen ">
         <Navbar class="shadow-md" />
 
             <div className="text-center text-4xl h-16 p-3 bg-amber-600 font-semibold font-body">
                 Event Name
             </div>
 
-            <div className="  h-[75 vh] overflow-hidden">
-                <div className="flex mt-4 ml-4 h-[90%] ">
+            <div className=" overflow-hidden">
+                <div className="flex mt-4 ml-4 border-2 border-solid border-emerald-700 ">
                     <div className="w-[40%] h-[100%] border-2 border-solid border-emerald-700 p-2 m-auto">
-                        <img src="/1.jpg" className=" w-full mb-3  rounded-xl" />
+                        <img src="/1.jpg" className=" w-full rounded-xl border-2 border-solid border-emerald-700 h-full" />
                         {/* <img src="/1.jpg" className=" w-full h-[48%] rounded-xl " /> */}
                     </div>
 
