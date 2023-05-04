@@ -6,6 +6,9 @@ const ourschema=new mongoose.Schema({
     studentname:{
         type:String
     },
+    currentyear:{
+        type:String
+    },
     studentroll:{
         type:String
     },  

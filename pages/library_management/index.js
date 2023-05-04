@@ -3,55 +3,76 @@ import Navbar from "../../components/navbar";
 import { useEffect } from "react"
 import { Chart } from "chart.js";
 import Sidebar from "./sidebar";
+import { useState } from "react";
 export default function Library_management(){
+  const [total, settotal] = useState(0)
+  const [issued, setissued] = useState(0)
+  const [notreturned, setnotreturned] = useState(0)
+  const [spin, setspin] = useState('')
+  const [opac, setopac] = useState('')
   useEffect(() => {
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        datasets: [{
-          data: [0.2, 0.3, 0.1, 0.5, 0.1, 0.3, 0.7],
-          label: "Applied",
-          borderColor:"#e18ff1",
-          backgroundColor: "#7bb6dd",
-          fill: false,
-        },]
-      },
-    });
-  }, [])
+    const url = "http://localhost:3000/api/librarydashboard";
+    const fetchData = async () => {
+      try {
+        setspin('')
+        setopac('opacity-50')
+        let response = await fetch(url);
+        let json = await response.json();
+        console.log(json);
+          settotal(json.totalbooks)
+          setissued(json.issued)
+          setnotreturned(json.notreturned)
+        
+        setspin('hidden')
+        setopac('')
+      } catch (error) {
+        setopac('hidden')
+        setspin('')
+        console.log("error", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
     return(<>
     <div className="h-screen overflow-y-hidden">
         <Navbar/>
         <div className="flex h-full" >
           <Sidebar/>
         
-        <div className="w-[82%]  pt-5 flex-col">
-              <div className=" flex justify-evenly flex-wrap  h-auto">
+        <div className="w-[100%]  flex-col">
+              <div className= {`flex justify-evenly flex-wrap items-center  h-[90%] ${opac}`}>
+              <div className={`text-center flex w-full justify-center items-center h-full absolute top-0 left-0
+ z-10 ${spin} `}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
                         <div className="flex justify-center w-56 h-28 px-2 bg-green-400 rounded">
                           <div className="flex items-center"><img className="w-28 h-24" src="/books.png" alt="" /></div>
                           <div className="flex-col space-y-4 w-24 pt-2">
-                            <div className="text-center text-3xl ">10</div>
+                            <div className="text-center text-3xl ">{total}</div>
                             <div className="text-center ">Total Books</div>
                           </div>
                         </div>
                         <div className="flex justify-center w-56 h-28 px-2 bg-yellow-400 rounded">
                           <div className="flex items-center"><img className="w-28 h-20" src="/issued.png" alt="" /></div>
                           <div className="flex-col space-y-4 w-24 pt-2">
-                            <div className="text-center text-3xl ">10</div>
+                            <div className="text-center text-3xl ">{issued}</div>
                             <div className="text-center ">Issued Books</div>
                           </div>
                         </div>
                         <div className="flex justify-center w-56 h-28 px-2 bg-red-400 rounded">
                           <div className="flex items-center"><img className="w-24 h-24" src="/return.png" alt="" /></div>
                           <div className="flex-col space-y-4 w-24 pt-2">
-                            <div className="text-center text-3xl ">10</div>
+                            <div className="text-center text-3xl ">{notreturned}</div>
                             <div className="text-center ">Not Returned Books</div>
                           </div>
                         </div>
               </div>
-              <div className="text-center font-serif mt-4 text-xl">Books Issued Per week</div>
-              <div className="w-full flex justify-center"><div className="w-[60%]"><canvas className="" id='myChart'></canvas></div></div>
+              {/* <div className="text-center font-serif mt-4 text-xl">Books Issued Per week</div> */}
+              {/* <div className="w-full flex justify-center"><div className="w-[60%]"><canvas className="" id='myChart'></canvas></div></div> */}
             </div> 
 
         </div>

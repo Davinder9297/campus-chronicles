@@ -10,9 +10,9 @@ export default function Requestedbooks(){
         <Navbar/>
         <div className="flex h-[91.5%] ">
             <Sidebar/>
-            <div className="flex-col w-[82%] h-[93.3%]  overflow-y-auto scrollbar-thin  scrollbar-track-slate-100 scrollbar-thumb-slate-500">
+            <div className="flex-col w-[100%] h-[93.3%]  overflow-y-auto scrollbar-thin  scrollbar-track-slate-100 scrollbar-thumb-slate-500">
 
-                <div className=" flex h-[93.5%] justify-center items-center  p-2">
+                <div className=" flex w-[100%]  h-[93.5%] justify-center items-center  p-2">
                     <div className="w-[100%]">
                         <div className="text-center text-2xl font-serif ">Requested Books</div>
                         <div className="pt-2   res_table  ">

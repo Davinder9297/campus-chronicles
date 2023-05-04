@@ -1,5 +1,5 @@
 import {RiDeleteBin5Line} from "react-icons/ri"
-function Eventsrows({rowsData, deleteTableRows, handleChange}) {
+export default function Addbookrows({rowsData, deleteTableRows, handleChange}) {
     return(  
         rowsData.map((data, index)=>{
             const {image,bookname,authorname,isbn}= data;
@@ -29,4 +29,3 @@ function Eventsrows({rowsData, deleteTableRows, handleChange}) {
     
 }
 
-export default Eventsrows;
