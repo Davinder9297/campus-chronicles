@@ -28,13 +28,13 @@ export default function Sidebar(){
 </div>
     
 
-    <div className="flex-col space-y-6 pt-2 text-white w-[15%] bg-slate-700   font-serif  h-full" >
+    <div className="flex-col space-y-7 pt-2 text-white w-[15%] bg-slate-700   font-serif  h-full" >
             <div><img src="/librarymanagement.png" alt="" /></div>
-            <div className="flex space-x-1 items-center pl-2 "><AiOutlineDashboard className="text-xl"/><Link className="/library_management" href="">Dashboard</Link></div>
+            <div className="flex space-x-1 items-center pl-2 "><AiOutlineDashboard className="text-xl"/><Link className="" href="/library_management">Dashboard</Link></div>
             <div className="flex space-x-1 items-center pl-2"><RiContactsBook2Line className="text-xl"/><Link href="/library_management/issuedbook">Issued Books</Link></div>
-            <div className="flex space-x-1 items-center pl-2"><HiOutlineNewspaper className="text-xl"/><Link href="/library_management/issuedmagazines">Issued Magazines</Link></div>
+            {/* <div className="flex space-x-1 items-center pl-2"><HiOutlineNewspaper className="text-xl"/><Link href="/library_management/issuedmagazines">Issued Magazines</Link></div> */}
             <div className="flex space-x-1 items-center pl-2"><RiFolderAddLine className="text-xl"/><Link href="/library_management/addbook">Add Books</Link></div>
-            <div className="flex space-x-1 items-center pl-2"><MdPostAdd className="text-xl"/><Link href="/library_management/addmagazines">Add Magazines</Link></div>
+            {/* <div className="flex space-x-1 items-center pl-2"><MdPostAdd className="text-xl"/><Link href="/library_management/addmagazines">Add Magazines</Link></div> */}
             <div className="flex space-x-1 items-center pl-2"><BsBookmarkHeart className="text-xl"/><Link href="/library_management/requestedbooks">Requested Books</Link></div>
             <div className="flex space-x-1 items-center pl-2"><RiLogoutBoxLine className="text-xl"/><button type="button" className="" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Log Out

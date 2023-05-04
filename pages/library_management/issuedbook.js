@@ -16,6 +16,8 @@ export default function Issued_book(){
       } 
     const [rowsData, setRowsData] = useState([rowsInput1]);
     const [norecord, setnorecord] = useState('');
+    const [spin, setspin] = useState('');
+    const [show, setshow] = useState('hidden');
     const [disable, setdisable] = useState(true);
     const [opac, setopac] = useState('cursor-not-allowed opacity-50');
 //  const [bookname, setbookname] = useState('')
@@ -94,7 +96,7 @@ useEffect(() => {
   const url = "http://localhost:3000/api/issuedbooks";
   const fetchData = async () => {
     try {
-      // setspin('')
+      setspin('')
       let response = await fetch(url);
       let json = await response.json();
 
@@ -103,11 +105,11 @@ useEffect(() => {
         setnorecord('hidden')
       }
       
-      // setspin('hidden')
-      // setshow('')
+      setspin('hidden')
+      setshow('')
     } catch (error) {
-      // setshow('hidden')
-      // setspin('')
+      setshow('hidden')
+      setspin('')
       console.log("error", error);
     }
   };
@@ -120,72 +122,27 @@ useEffect(() => {
         <div className="flex h-[91.5%] ">
             <Sidebar/>
             <div className="flex justify-center items-center w-[100%] ">
-              {/* <div className="w-full  p-2">
-                <div className="text-center text-xl font-serif">Issue A Book</div>
-                
-                <div className="flex justify-center space-x-2 font-serif">
-                        <div className="flex-col space-y-5 pt-4 ">
-                           <div className="p-1">Book's Title</div>
-                           <div className="p-1">ISBN Number</div>
-                           <div className="p-1">Student Name</div>
-                           <div className="p-1">Student Roll No.</div>
-                           <div className="p-1">Issued Date</div>
-                           <div className="p-1">Return Date</div>
-                        </div>
-
-                        <div className="font-sans space-y-5 pt-4  w-[30%]">
-                           <div className=" "><input  type="text" value={bookname} onChange={(e)=>{setbookname(e.target.value)}} name="bookname"  className="p-1  w-full  bg-slate-100 outline-1   outline-gray-300 rounded outline focus:outline-gray-400" /></div>
-                           <div><input type="text" value={isbn} onChange={(e)=>{setisbn(e.target.value)}} name="isbn"  className="p-1   bg-slate-100 outline-1  w-full outline-gray-300 rounded outline focus:outline-gray-400"/></div>
-                           <div><input type="text" value={studentname} onChange={(e)=>{setstudentname(e.target.value)}} name="studentname"  className="p-1   bg-slate-100 outline-1  w-full outline-gray-300 rounded outline focus:outline-gray-400" /></div>
-                           <div><input type="text" value={studentroll} onChange={(e)=>{setstudentroll(e.target.value)}} name="studentroll"  className="p-1   bg-slate-100 outline-1  w-full outline-gray-300 rounded outline focus:outline-gray-400" /></div>
-                           <div><input type="date" value={issueddate} onChange={(e)=>{setissueddate(e.target.value)}} name="issueddate"  className="p-1  bg-slate-100 outline-1  w-full outline-gray-300 rounded outline focus:outline-gray-400" /></div>
-                           <div><input type="date" value={returndate} onChange={(e)=>{setreturndate(e.target.value)}} name="returndate"  className="p-1  bg-slate-100 outline-1  w-full outline-gray-300 rounded outline focus:outline-gray-400" /></div>
-                           <div className="flex w-full space-x-5"> 
-                            <button  onClick={addTableRows} className={`flex items-center justify-center w-full space-x-1 bg-blue-500 rounded text-white px-2 py-1 `}><div>ISSUE</div> <FiSave className="" /></button>
-                             </div>
-                         </div>
-                    </div> 
-                  </div> */}
-
                 <div className="w-full mt-3 ">
                 <div className=" flex-col  h-[93.3%]  container outline outline-1 outline-gray-300 px-3 py-2">
                     <div className="flex justify-between  items-center w-full">
                         <div className="text-xl font-semibold">Issued Books Details</div>
                         <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-blue-600 p-2 rounded ${opac}`} onClick={save}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
 
-                    {/* <div className=" flex  w-[30%] ">
-                <input
-                    type="search"
-                    className="relative m-0 -mr-px block w-96 min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-blue-100  px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
-                    placeholder="Search.."
-                    aria-label="Search"
-                    aria-describedby="button-addon1" />
-                <button
-                    className="relative z-[2] flex items-center rounded-r bg-blue-500 px-6 py-1 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg"
-                    type="button"
-                    id="button-addon1"
-                    data-te-ripple-init
-                    data-te-ripple-color="light">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="h-5 w-5">
-                    <path
-                        fillRule="evenodd"
-                        d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                        clipRule="evenodd" />
-                    </svg>
-                </button>
-                </div> */}
                     </div>
                     
                     <div className="pt-2 pb-2 res_table  h-96 overflow-y-auto  scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500">
+                    <div className={`text-center flex w-full justify-center items-center h-full absolute top-0 left-28
+ z-10 ${spin} `}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
                           <table className="border-collapse border   w-full">
                       <thead className="shadow-2xl shadow-gray-200 ">
                         <tr className=" ">
                           <th className="border-2  py-2 border-slate-300 text-center px-2">Student Name </th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Student Roll No.</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Roll No.</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Year</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Book's Title</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">ISBN No.</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Issue Date</th>
@@ -195,7 +152,7 @@ useEffect(() => {
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
                         </tr>
                       </thead>
-                      <tbody className="">
+                      <tbody className={show}>
                       <tr className={`${norecord}`}>
                           <td colSpan="9"  className="bg-slate-400 text-center  h-28">
                           No records found
