@@ -1,6 +1,40 @@
 import {IoMdArrowDroprightCircle} from 'react-icons/io'
 import Navbar from '../../components/navbar'
+import { useEffect, useState } from 'react';
 export default function Available(){
+      const [data, setdata] = useState([])
+      const [spin, setspin] = useState('')
+      const [show, setshow] = useState('hidden')
+      const [norecord, setnorecord] = useState('hidden')
+
+      useEffect(() => {
+          const url = "http://localhost:3000/api/addbooks";
+          // const url1 = "http://localhost:3000/api/placementevents";
+        
+        
+          const fetchData = async () => {
+            try {
+              setspin('')
+              let response = await fetch(url);
+              let json = await response.json();
+              // console.log(json);
+              setdata(json)
+              
+              if(json.length!=0){
+                setnorecord('hidden')
+             
+              }          
+              setspin('hidden')
+              setshow('')
+            } catch (error) {
+              setshow('hidden')
+              setspin('')
+              console.log("error", error);
+            }
+          };
+        
+          fetchData();
+        }, []);
     return(<>
 
    <div className='h-screen'>
@@ -108,16 +142,31 @@ export default function Available(){
 <div className='flex-col mx-2 py-12 h-full'>
         <div className='text-center text-2xl text-white font-serif'> All Books</div> 
         <div className='flex justify-center'><img className='w-32 ' src="/hr.png" alt="" /></div>
-        <div className=' w-full overflow-y-auto scrollbar-thin pb-12 scrollbar-track-transparent scrollbar-thumb-transparent h-full  flex flex-wrap  justify-center '>
-            <div className='flex-col mx-3 my-4'>
-            <img className='h-52' src="/book.jpg" alt="" />
-            <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
+        <div className={`${show}  w-full overflow-y-auto scrollbar-thin pb-12 scrollbar-track-transparent scrollbar-thumb-transparent h-full  flex flex-wrap  justify-center `}>
+            <div className={`${norecord} w-full  flex justify-center items-center `}>
+                <div className='text-xl text-gray-300 font-serif'>No Record Found</div>
             </div>
-            <div className='flex-col mx-3 my-4'>
-            <img className='h-52' src="/book.jpg" alt="" />
-            <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
+            {data.map((da,index)=>{
+              const {image,bookname,authorname}=da;
+              return(<>
+              <div className='flex-col mx-5 my-2 h-72 w-44 bg-black'>
+            <img className='h-52' src={image} alt="" />
+            <div className='text-center font-semibold font-serif text-gray-700'>{bookname}({authorname})</div>
             </div>
-            <div className='flex-col mx-3 my-4'>
+              </>)
+            })}
+                    {data.map((da,index)=>{
+              const {image,bookname,authorname}=da;
+              return(<>
+              <div className='flex-col mx-5 my-2 h-72 w-44 bg-black'>
+            <img className='h-52' src={image} alt="" />
+            <div className='text-center font-semibold font-serif text-gray-700'>{bookname}({authorname})</div>
+            </div>
+              </>)
+            })}
+          
+        
+            {/*<div className='flex-col mx-3 my-4'>
             <img className='h-52' src="/book.jpg" alt="" />
             <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
             </div>
@@ -169,7 +218,7 @@ export default function Available(){
             <img className='h-52' src="/book.jpg" alt="" />
             <div className='text-center font-semibold font-serif text-gray-700'>Ecocritism</div>
             </div>
-            
+             */}
         </div>
 </div>
         </div>

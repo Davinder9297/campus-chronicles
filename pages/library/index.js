@@ -5,7 +5,10 @@ import {MdAccountCircle} from 'react-icons/md'
 import {MdMessage} from 'react-icons/md'
 import LibraryCarousal from '../../components/Library_carousel'
 import Link from 'next/link'
+import { useEffect } from 'react'
 export default function Library(){
+    const [data, setdata] = useState([])
+
     return(<>
     <div className="flex-col ">
         {/* <div className='text-center text-4xl h-24 bg-slate-400'><img src='/libj.jpg' className='h-24 w-full'/></div> */}
@@ -23,12 +26,12 @@ export default function Library(){
                 <div className='flex '><MdAccountCircle className='text-xl mt-[2px] mr-1 '/>Profile</div>
             
             </div>
-        <div className="flex justify-between mt-[2px]">
+        <div className="flex  mt-[2px]">
       
-            <div className="flex-col w-[73%] h-2/3 bg-black">
+            <div className="flex-col w-full h-3/4 ">
                    <LibraryCarousal/>
             </div>
-            <div className="flex-col w-1/4 mr-1 shadow-xl shadow-purple-300 ">
+            {/* <div className="flex-col w-1/4 mr-1 shadow-xl shadow-purple-300 ">
                 <div className='text-xl font-serif text-center bg-purple-300 rounded-sm shadow-lg shadow-purple-500'>Announcement</div>
                <marquee  width="100%" direction="up" height="90%" behaviour="scroll" scrollamount="4" className="space-y-5 px-3">
              <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
@@ -37,7 +40,7 @@ export default function Library(){
              
                </marquee>
             
-            </div>
+            </div> */}
         </div>
         <div className='flex justify-between mt-5 mb-5 h-96 space-x-5'>
             <div className='new_published_book  w-1/2 flex-col shadow-xl shadow-purple-300'>
