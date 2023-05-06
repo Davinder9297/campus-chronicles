@@ -67,7 +67,7 @@ export default function Student() {
                             What would you like to do?
                         </div>
 
-                        <div className="flex justify-between mt-4">
+                        <div className="flex justify-between mt-5 ">
                             <Link href={"/student/my_profile"}>
                                 <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-red-600">
                                     <img src="stu.png" className="h-24  align-middle m-auto" />
@@ -88,13 +88,13 @@ export default function Student() {
                             <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-cyan-500">
                                 <img src="book_issued.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
-                                    Books Issued
+                                    Library
                                 </div>
                             </div>
 
                         </div>
 
-                        <div className="flex mt-4 justify-between">
+                        <div className="flex mt-5 justify-between ">
                             <Link href={"/student/update_profile"}>
                                 <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-yellow-300">
                                     <img src="/update_info.png" className="h-24  align-middle m-auto p-2" />
@@ -120,27 +120,7 @@ export default function Student() {
                             </div>
                             </Link>
                         </div>
-
-                        <div className="flex  mt-4 justify-between">
-                        <Link href={"/student/time_table"}>
-                            <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-green-600">
-                                <img src="/timetable3.png" className="h-24  align-middle m-auto p-2" />
-                                <div className=" m-auto pr-3 ">
-                                    View Time Table
-                                </div>
-                            </div>
-                            </Link>
-                            <div className="h-28 w-[30%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-purple-600">
-                                <img src="attendance.png" className="h-24  align-middle m-auto" />
-                                <div className=" m-auto pr-3 ">
-                                    Current Attendance
-                                </div>
-                            </div>
-                            <div className="h-28 w-[30%] rounded-lg border-2 border-solid border-white text-white">
-                                hfgh
-                            </div>
-
-                        </div>
+                        
                     </div>
                     <div className="shadow-sm shadow-neutral-900 w-[30%]">
                         <div className="pb-2 pt-1 bg-gray-200 rounded-3xl">

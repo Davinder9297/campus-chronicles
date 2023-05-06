@@ -8,7 +8,7 @@ import { useState } from "react"
 import { CgShapeRhombus } from 'react-icons/cg'
 
 
-export default function View_material() {
+export default function View_assign() {
 
     return (<>
         <div className="h-screen ">
@@ -28,7 +28,7 @@ export default function View_material() {
                             </div>
                             <div className="flex justify-between mt-4 w-[100%] m-auto flex-wrap ">
 
-                                <Link href="/student/view_assignment/view_assignment" target="_blank">
+                                <Link href="/student/view_assignment/view_assignment_main" target="_blank">
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Math 1
@@ -36,7 +36,7 @@ export default function View_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/student/view_assignment/view_assignment"} target="_blank">
+                                <Link href={"/student/view_assignment/view_assignment_main"} target="_blank">
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Bee
@@ -44,14 +44,14 @@ export default function View_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/student/view_assignment/view_assignment"}>
+                                <Link href={"/student/view_assignment/view_assignment_main"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Physics
                                         </div>
                                     </div>
                                 </Link>
-                                <Link href={"/student/view_assignment/view_assignment"}>
+                                <Link href={"/student/view_assignment/view_assignment_main"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Subject 4
@@ -59,7 +59,7 @@ export default function View_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/student/view_assignment/view_assignment"}>
+                                <Link href={"/student/view_assignment/view_assignment_main"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Subject 5
@@ -67,7 +67,7 @@ export default function View_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/student/view_assignment/view_assignment"}>
+                                <Link href={"/student/view_assignment/view_assignment_main"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Subject 6
@@ -75,7 +75,7 @@ export default function View_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/student/view_assignment/view_assignment"}>
+                                <Link href={"/student/view_assignment/view_assignment_main"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Subject 7 / 8
