@@ -1,9 +1,52 @@
 import Link from "next/link"
 import Navbar from "../../components/navbar"
 import {FaPowerOff} from "react-icons/fa"
+import {IoMdDownload} from "react-icons/io"
+import { useEffect } from "react";
+import { useState } from "react";
+import Marquee from "react-fast-marquee";
 
 
 export default function Student() {
+    const [announcement, setannouncement] = useState([])
+    const download=(doc,title)=>{
+        fetch(doc).then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = title;
+                alink.click();
+              
+            })
+        })
+      }
+    useEffect(() => {
+        const url = "http://localhost:3000/api/studentannouncement";
+        const fetchData = async () => {
+          try {
+            // setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+      
+            setannouncement(json)
+            if(json.length!=0){   
+              setnorecord('hidden')
+            }
+            
+            // setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
     return (<>
         <div className="h-screen overflow-hidden">
             <Navbar class="shadow-sm bg-yellow-2" />
@@ -105,19 +148,32 @@ export default function Student() {
                         </div>
 
                         <div>
-                            <marquee width="100%" direction="up" height="100%" behaviour="scroll" scrollamount="4" className="space-y-5 h-[54vh] px-3 text-base ">
-                                <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div>
-                                </div>
-                                {/* <div>fhebfjhgbejbef ehfbejrbj</div> */}
-                                <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                                <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                                <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                                {/* <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                            <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                            <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div>
-                            <div className='flex space-x-1'><div className='mt-2'><img className='' src="new.gif" alt="" /></div> <div>Proposed datesheet for 6th sem</div></div> */}
+                            {/* <Marquee direction="down"> */}
+                            {announcement.map((d,index)=>{
+                            const {title,doc,date}=d;
+                            // const [show, setshow] = useState('')
+                            let show='';
+                            let dat=new Date(date);
+                            let newdate=new Date();
+                            let formatted=date.substring(8,10)+date.substring(4,8)+date.substring(0,4);
+                            // console.log();
+                            let diff=(newdate.getTime()-dat.getTime())/(1000 * 60 * 60 * 24);
+                            if(diff>=1){
+                                // setshow('hidden')
+                                show='hidden';
+                            }
+                            // console.log(dat.getTime());
+                            return(<>
+                               <div className="border-solid border-1 border-slate-200 h-15 p-2 text-sm flex flex-row justify-between ">
+                            <div className=" ">{index+1}.</div>
+                            <div className="flex space-x-1 text-left   w-[40%]" ><div className={`mt-2 ${show}`}><img className='' src="new.gif" alt="" /></div> <div>{title}</div></div>
+                            <div className=" ">{formatted}</div>
+                            <div className=" text-2xl"><button onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
+                        </div>
+                            </>)
+                        })}
 
-                            </marquee>
+                            {/* </Marquee> */}
                         </div>
                     </div>
                 </div>

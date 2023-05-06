@@ -11,15 +11,10 @@ export default function My_profile() {
     const [pinfo, setpinfo] = useState('')
     const [edqu, setedqu] = useState('hidden')
     const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
+    const [personaldata, setpersonaldata] = useState({address:"-",linkedin:"-",image:"",studentname:"",rollno:"",dob:"",fathername:"",mothername:"",email:"-",phone:"-",sem:""})
     const [edeqclass, setedeqclass] = useState('text-white')
-    const [read, setread] = useState(true)
-    const [disable, setdisable] = useState(true)
-    const [name, setname] = useState('Ms. Jaspreet Kaur')
-    const [role, setrole] = useState('Student')
-    const [dob, setdob] = useState('23-11-2002')
-    const [phone, setphone] = useState('7009400665')
-    const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
-    const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
+    const [spin, setspin] = useState('')
+    const [opac, setopac] = useState('opacity-50')
     const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
     // const [, set] = useState(second)
     // const [bottomborder, setbottomborder] = useState()
@@ -53,6 +48,49 @@ export default function My_profile() {
                 ]
             },
         });
+        const url = "http://localhost:3000/api/studentcredentials";
+//   const url1 = "http://localhost:3000/api/clubannouncement";
+//   const url2 = "http://localhost:3000/api/events";
+
+
+  const fetchData = async () => {
+    try {
+      setspin('')
+      let response = await fetch(url);
+      let json = await response.json();
+console.log(json);
+      setpersonaldata(json)
+      setspin('hidden')
+      setopac('')
+    //   if(json.length!=0){
+    //     setnorecord('hidden')
+    //   }
+    //   let response1 = await fetch(url1);
+    //   let json1 = await response1.json();
+
+    //   setRowsData1(json1)
+    //   if(json1.length!=0){
+    //     setnorecord1('hidden')
+    //   }
+    //   let response2 = await fetch(url2);
+    //   let json2 = await response2.json();
+
+    //   setRowsData2(json2)
+    //   if(json2.length!=0){
+    //     setnorecord2('hidden')
+    //   }
+          
+      
+    //   setspin('hidden')
+    //   setshow('')
+    } catch (error) {
+    //   setshow('hidden')
+    //   setspin('')
+      console.log("error", error);
+    }
+  };
+
+  fetchData();
     }, [])
 
     return (<>
@@ -63,9 +101,15 @@ export default function My_profile() {
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
                         <div className="logout_stu text-base">Logout</div>
                 </div>
-                <div className=" w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden ">
-                    Your Profile ....
 
+                <div className={` w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden  ${opac}`}>
+                    Your Profile ....
+                    <div className={`text-center text-base flex w-full justify-center items-center h-full absolute top-0 left-28
+ z-10  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
                     <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] ">
                         <div className="flex justify-center  items-center  h-[100%]  w-[30%] shadow-md shadow-slate-400 rounded-sm">
                             <div className="h-[100%] w-[100%] justify-center">
@@ -92,48 +136,45 @@ export default function My_profile() {
                                     <tbody>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Name </td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Jaspreet Kaur</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.studentname}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Roll Number</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">2025677</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.rollno}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Current Semester</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">6<sup>th</sup></td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.sem}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Date of Birth</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">23.11.2002</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.dob}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Father's Name</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Jagjit Singh</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.fathername}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Mother's Name</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Amrit Kaur</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.mothername}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Contact Number</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">7009400665</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.phone}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">jaspreetkaursaini469.gmail.com</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.email}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Address</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">Mohali</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.address}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">https://www.linkedin.com/in/jaspreet-kaur23/</td>
+                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.linkedin}</td>
                                         </tr>
-                                        <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Current Password</td>
-                                            <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">123456</td>
-                                        </tr>
+
                                         
                                         </tbody>
                                 </table>

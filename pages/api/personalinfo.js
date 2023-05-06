@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import jwt from 'jsonwebtoken'
-import facultycredentials from "../../models/facultycredentials";
+import facultypersonaldata from "../../models/facultypersonaldata";
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test");
 export default async function handler(req, res) {
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         token=token.toString()
         if(req.method=='POST'){
 
-            await facultycredentials.findOneAndUpdate({userid:token},{          
+            await facultypersonaldata.findOneAndUpdate({userid:token},{          
                 phone:req.body.phone,
                 email:req.body.email,
                 linkedin:req.body.linkedin,
@@ -17,8 +17,7 @@ export default async function handler(req, res) {
         } 
         else{
             
-            let data=await facultycredentials.find({userid:token});
-            // console.log();
-            res.status(200).json(data[0]); 
+            let data=await facultypersonaldata.find({userid:token});
+            res.status(200).json(data); 
         }
 }
