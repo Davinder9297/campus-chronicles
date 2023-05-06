@@ -34,7 +34,7 @@ export default function View_material() {
                                         </div>
                                         <div className="w-[30%] flex">
                                             <div className="w-[50%] flex justify-end ">
-                                                <a href="/syllabus_sem3.pdf" target="_blank"><FaDownload className=" hover:opacity-80 h-full w-6 cursor-pointer  text-amber-900" /></a>
+                                                <a href="/syllabus_sem3.pdf" ><FaDownload className=" hover:opacity-80 h-full w-6 cursor-pointer  text-amber-900" /></a>
                                             </div>
                                             
                                         </div>
@@ -45,7 +45,7 @@ export default function View_material() {
                                         </div>
                                         <div className="w-[30%] flex">
                                             <div className="w-[50%] flex justify-end ">
-                                                <a href="/syllabus_sem3.pdf" target="_blank"><FaDownload className=" text-amber-900 hover:opacity-80 h-full w-6 cursor-pointer" /></a>
+                                                <a href="/syllabus_sem3.pdf" ><FaDownload className=" text-amber-900 hover:opacity-80 h-full w-6 cursor-pointer" /></a>
                                             </div>
                                             
                                         </div>
@@ -57,7 +57,7 @@ export default function View_material() {
                                         </div>
                                         <div className="w-[30%] flex">
                                             <div className="w-[50%] flex justify-end ">
-                                                <a href="/syllabus_sem3.pdf" target="_blank"><FaDownload className=" text-amber-900 hover:opacity-80 h-full w-6 cursor-pointer" /></a>
+                                                <a href="/syllabus_sem3.pdf" ><FaDownload className=" text-amber-900 hover:opacity-80 h-full w-6 cursor-pointer" /></a>
                                             </div>
                                             
                                         </div>
