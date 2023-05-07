@@ -5,13 +5,15 @@ import Link from "next/link";
 import cookie from "js-cookie"
 import {GrClose} from 'react-icons/gr'
 import {ImWarning} from 'react-icons/im'
+import { useRouter } from 'next/router';
 
 
 export default function TeacherNavbar() {
+    let router=useRouter()
     const yesbutton=()=>{
         cookie.remove('token')
         cookie.remove('login')
-      
+      router.push('/login')
       }
     return (<>
     <div className="modal fade " id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

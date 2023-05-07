@@ -48,11 +48,11 @@ const yesbutton=()=>{
 
     <div className="flex  justify-around items-center h-11 font-serif text-md font-semibold bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 ">
       <div >Home</div>
-      <div className="hover:text-white"><Link href="/about">About Us</Link></div>
-      <div><Link href='/faculty/new'>Faculty</Link></div>
+      <div><Link href="/about">About Us</Link></div>
+      <div><Link href='/faculty'>Faculty</Link></div>
       <div><Link href="#events">Events & Activities</Link></div>
       <div><Link href='/club'>Clubs</Link></div>
-      {/* <div>Library</div> */}
+      <div><Link href='/library'>Library</Link></div>
       <div><Link href="/placement">Placements</Link></div>
 
       {/* <div><button type="button" className="" data-bs-toggle="modal" data-bs-target="#exampleModal">

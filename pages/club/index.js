@@ -1,7 +1,7 @@
+import { useRouter } from "next/router";
 import Navbar from "../../components/navbar"
 // import Navbar from '../components/navbar'
 // import Document from "next/document";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import {IoMdDownload} from "react-icons/io"
 // import Head from 'next/head'
@@ -37,13 +37,17 @@ export default function Club() {
                 // Creating new object of PDF file
                 const fileURL = window.URL.createObjectURL(blob);
                 // Setting various property values
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = title;
-                alink.click();
+                let abutton = document.createElement('a');
+                abutton.href = fileURL;
+                abutton.download = title;
+                abutton.click();
               
             })
         })
+      }
+      let router=useRouter()
+      const opennext=(path)=>{
+router.push(path)
       }
     return (<>
 
@@ -51,19 +55,19 @@ export default function Club() {
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/cultural_club'}>
+                    <button onClick={()=>(opennext('/club/cultural_club'))} >
                         <img className="rounded-xl h-full w-full" src="/cultural_logo.png" />
-                    </Link>
+                    </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/personality'}>
+                    <button onClick={()=>(opennext('/club/personality'))} >
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
-                    </Link>
+                    </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/editorial'}>
-                        <img className="rounded-xl h-full w-full" src="editorial.jpg" />
-                    </Link>
+                    <button onClick={()=>(opennext('/club/editorial_club'))} >
+                        <img className="rounded-xl h-full w-full" src="/editorial.jpg" />
+                    </button>
                 </div>
             </div>
 
@@ -116,14 +120,18 @@ export default function Club() {
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">
                     <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+<<<<<<< HEAD
+                        <button onClick={()=>(opennext('/club/sports'))}>
+=======
                         <Link href={'/club/sport'}>
+>>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
                         <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
-                    </Link>
+                    </button>
                     </div>
                     <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/core_commitee'}>
+                    <button onClick={()=>(opennext('/club/core_commitee'))}>
                         <img className="rounded-xl h-full w-full" src="core-committee.png" />
-                    </Link>
+                    </button>
                     </div>
                 </div>
             </div>
@@ -131,19 +139,27 @@ export default function Club() {
 
             <div className="flex-col flex-wrap w-[24%]">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+<<<<<<< HEAD
+                    <button onClick={()=>(opennext('/club/training_placement_club'))}>
+=======
                     <Link href={'/club/training_placement'}>
+>>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
-                    </Link>
+                    </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/e'}>
+                    <button onClick={()=>(opennext('/club/e'))} >
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
-                    </Link>
+                    </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+<<<<<<< HEAD
+                    <button  onClick={()=>(opennext('/club/coding_and_tech_club'))} >
+=======
                     <Link href={'/club/coding_and_tech'}>
+>>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
                         <img className="rounded-xl h-full w-full" src="coding.png" />
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>

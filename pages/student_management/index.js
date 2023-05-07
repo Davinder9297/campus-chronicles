@@ -4,11 +4,11 @@ import TableRows from './tablerows'
 // import Facultyrows from './facultyrows'
 import { ToastContainer, toast } from 'react-toastify'
 import Announcementrows from './announcement'
+import Performancerows from './performancerows'
 // import Clubrows from './clubrows'
 export default function Index(){
     const [norecord, setnorecord] = useState('')
         const [rowsData, setrowsData] = useState([]);
-        const [data, setdata] = useState([]);
         const [norecord1, setnorecord1] = useState('')
         const [rowsData1, setrowsData1] = useState([])
         const [norecord2, setnorecord2] = useState('')
@@ -16,16 +16,14 @@ export default function Index(){
         const [save1, setsave1] = useState('cursor-not-allowed opacity-50')
         const [save2, setsave2] = useState('cursor-not-allowed opacity-50')
         const [save3, setsave3] = useState('cursor-not-allowed opacity-50')
-        const [save4, setsave4] = useState('cursor-not-allowed opacity-50')
         const [spin, setspin] = useState('hidden')
         const [spin2, setspin2] = useState('hidden')
+        const [spin3, setspin3] = useState('hidden')
         const [show, setshow] = useState('hidden')
         const [disable, setdisable] = useState(true)
         const [disable1, setdisable1] = useState(true)
         const [disable2, setdisable2] = useState(true)
-        const [disable3, setdisable3] = useState(true)
-        const [norecord3, setnorecord3] = useState('')
-        const [rowsData3, setrowsData3] = useState([])
+
     
         const imageupload=async ()=>{
           const formdata=new FormData()
@@ -209,6 +207,50 @@ export default function Index(){
    
    
   }
+    const addTableRows2 = ()=>{
+        setnorecord2('hidden')
+        setdisable2(false)
+        setsave3('cursor-pointer')
+          const rowsInput={
+            rollno:'',
+            sem1:'',
+            sem2:'',
+            sem3:'',
+            sem4:'',
+            sem5:'',
+            sem6:'',
+            sem7:'',
+            sem8:'',
+          } 
+          setrowsData2([...rowsData2, rowsInput])           
+        
+      }
+     const deleteTableRows2 = (index)=>{
+      setdisable2(false)
+      setsave3('cursor-pointer')
+          const rows = [...rowsData2];
+          rows.splice(index, 1);
+          setrowsData2(rows);
+          // console.log(rowsData.length);
+          if(rowsData2.length==1){
+            setnorecord2('')
+          }
+     }
+   
+     const handleChange2 = async(index, evnt)=>{
+      setdisable2(false)
+        setsave3('cursor-pointer')
+      const { name, value } = evnt.target;
+      const rowsInput = [...rowsData2];
+      
+        rowsInput[index][name] = value;
+      setrowsData2(rowsInput);
+      
+    
+    
+   
+   
+  }
  
 
 
@@ -240,6 +282,21 @@ const res=await fetch('http://localhost:3000/api/studentannouncement', {
                   'Content-Type': 'application/json',
                 },
                   body:JSON.stringify(rowsData1)
+              })
+              let response=await res.json();
+              // console.log(response);
+  }
+  const performance=async(e)=>{
+e.preventDefault();
+setdisable2(true)
+setsave3('cursor-not-allowed opacity-50')
+// let data={rowsData[0][studentname],}
+const res=await fetch('http://localhost:3000/api/performance', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(rowsData2)
               })
               let response=await res.json();
               // console.log(response);
@@ -312,6 +369,44 @@ const res=await fetch('http://localhost:3000/api/studentannouncement', {
                           </td>
                           </tr>
                         <Announcementrows rowsData={rowsData1} deleteTableRows={deleteTableRows1} handleChange={handleChange1} />
+                      </tbody>
+                    </table>
+                          </div>
+        </div>
+        
+        <div className="text-center text-2xl font-serif mt-5">Performance Data</div>
+        <div className="flex justify-end space-x-2 text-white pr-2">
+        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin3}`} type="button" disabled>
+        {/* <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> */}
+  <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Uploading...
+</button>
+          <button disabled={disable1} className={`bg-blue-600 p-2 rounded ${save3}`} onClick={performance}>Save Changes</button><button onClick={addTableRows2} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-center w-full ">
+        <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+                          <table className="border-collapse border border-slate-400  w-full">
+                      <thead className="">
+                        <tr className=" ">
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Roll No.</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem1</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem2</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem3</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem4</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem5</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem6</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem7</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sem8</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Action</th>
+          
+                        </tr>
+                      </thead>
+                      <tbody className="">
+                      <tr className={`${norecord2}`}>
+                          <td colSpan="10"  className="bg-slate-400 text-center  h-28">
+                          No records found
+                          </td>
+                          </tr>
+                        <Performancerows rowsData={rowsData2} deleteTableRows={deleteTableRows2} handleChange={handleChange2} />
                       </tbody>
                     </table>
                           </div>
