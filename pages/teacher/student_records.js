@@ -3,111 +3,50 @@ import Link from "next/link"
 import Navbar from "../../components/navbar"
 import TeacherNavbar from "../../components/teacher_navbar"
 
-export default function GenerateAssignment() {
+export default function Student_record() {
     const [selected, setSelected] = useState("");
 
     const changeSelectOptionHandler = (event) => {
         setSelected(event.target.value);
     };
 
-    const firstsem = [
-        "Mathematics 1",
-        "Engineering Drawing",
-        "Semiconductor Physics",
-        "Semiconductor Physics (Lab)",
-        "Basic Electrical Engineering",
-        "Basic Electrical Engineering (Lab)",
+    const firstyear = [
+        "All Students",
+        "Group 1",
+        "Group 2",
     ];
-    const secondsem = [
-        "English",
-        "Chemistry",
-        "English (Lab)",
-        "Mathematics 2",
-        "Chemistry (Lab)",
-        "Workshop for Manufacturing",
-        "Programming for Problem Solving",
-        "Programming for Problem Solving (Lab)"
+    const secondyear = [
+        "All Students",
+        "Group 1",
+        "Group 2",
+    ];
+    const thirdyear = [
+        "All Students",
+        "Group 1",
+        "Group 2",
     ];
 
-    const thirdsem = [
-        "DE",
-        "DSA",
-        "OOP",
-        "DE (Lab)",
-        "DSA (Lab)",
-        "OOP (Lab)",
-        "Humanities",
-        "IT Workshop",
-        "Mathematics 3",
+    const fourthyear= [
+        "All Students",
+        "Group 1",
+        "Group 2",
     ];
 
-    const fourthsem = [
-        "OS",
-        "DAA",
-        "COA",
-        "OS (Lab)",
-        "DAA (Lab)",
-        "COA (Lab)",
-        "Mathematics 4",
-    ];
-
-    const fifthsem = [
-        "CN",
-        "SE",
-        "ERP",
-        "FLAT",
-        "DBMS",
-        "SE (Lab)",
-        "CN (Lab)",
-        "DBMS (Lab)",
-        "Programmming in Python",
-        "Programmming in Python (Lab)",
-    ];
-
-    const sixthsem = [
-        "AI",
-        "ML",
-        "CD",
-        "CC",
-        "HRM",
-        "AI (Lab)",
-        "ML (Lab)",
-        "CD (Lab)",
-        "CC (Lab)",
-    ];
-
-    const seventhsem = [
-        "DL",
-        "ML",
-        "CD",
-        "CC",
-        "HRM",
-        "ML (Lab)",
-        "CD (Lab)",
-        "DL (Lab)",
-        "CC (Lab)",
-    ];
 
     let type = null;
 
-    let options = <option className="bg-zinc-400 text-center" >-- SELECT SUBJECT --</option >
+    let options = <option className="bg-zinc-400 text-center" >-- SELECT TYPE --</option >
         ;
 
-    if (selected === "First Semester") {
-        type = firstsem;
-    } else if (selected === "Second Semester") {
-        type = secondsem;
-    } else if (selected === "Third Semester") {
-        type = thirdsem;
-    } else if (selected === "Fourth Semester") {
-        type = fourthsem;
-    } else if (selected === "Fifth Semester") {
-        type = fifthsem;
-    } else if (selected === "Sixth Semester") {
-        type = sixthsem;
-    } else if (selected === "Seventh Semester") {
-        type = seventhsem;
-    }
+    if (selected === "First Year") {
+        type = firstyear;
+    } else if (selected === "Second Year") {
+        type = secondyear;
+    } else if (selected === "Third Year") {
+        type = thirdyear;
+    } else if (selected === "Fourth Year") {
+        type = fourthyear;
+    } 
 
 
     if (type) {
@@ -121,21 +60,18 @@ export default function GenerateAssignment() {
             <TeacherNavbar />
 
             <div className="">
-                <div className=" m-auto text-center text-4xl font-semibold p-4 overflow-hidden w-[100%] mb-2">
-                    Assignment Generation
+                <div className=" m-auto text-center text-4xl font-yearibold p-4 overflow-hidden w-[100%] mb-2">
+                    Student Record
                 </div>
 
                 <div className=" m-auto w-[70%] shadow-md  shadow-zinc-900 h-full">
                     <div>
                         <select onChange={changeSelectOptionHandler} name="select1" id="select1" className=" outline cursor-pointer outline-1 w-full outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900">
-                            <option className="bg-zinc-400 " >-- SELECT SEMESTER --</option >
-                            <option className="bg-zinc-400 " >First Semester</option >
-                            <option className="bg-zinc-400 " >Second Semester</option >
-                            <option className="bg-zinc-400 " >Third Semester</option >
-                            <option className="bg-zinc-400 " >Fourth Semester</option >
-                            <option className="bg-zinc-400 " >Fifth Semester</option >
-                            <option className="bg-zinc-400 " >Sixth Semester</option >
-                            <option className="bg-zinc-400 " >Seventh Semester</option >
+                            <option className="bg-zinc-400 " >-- SELECT YEAR --</option >
+                            <option className="bg-zinc-400 " >First Year</option >
+                            <option className="bg-zinc-400 " >Second Year</option >
+                            <option className="bg-zinc-400 " >Third Year</option >
+                            <option className="bg-zinc-400 " >Fourth Year</option >
                         </select>
                     </div>
                     <div className="w-full ">
