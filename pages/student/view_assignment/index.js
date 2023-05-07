@@ -4,11 +4,33 @@ import { FaPowerOff } from "react-icons/fa"
 import { GrView } from "react-icons/gr"
 import { FaDownload } from "react-icons/fa"
 import { IoIosArrowDropdownCircle } from "react-icons/io"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CgShapeRhombus } from 'react-icons/cg'
+import Cookies from "js-cookie"
+import { Router, useRouter } from "next/router"
+// import { useRouter } from "next/router"
 
 
-export default function View_assign() {
+export default function View_assign(props) {
+let router=useRouter();
+const [data, setdata] = useState([])
+
+const showassignment=(da)=>{
+Cookies.set('subject',da)
+// Router.push('')
+router.push('/student/view_assignment/view_assignment_main')
+}
+useEffect(() => {
+ let first=["math","physics"]
+ let second=["chem","bee"]
+ let sem=Cookies.get('sem')
+ if(sem=='6th'){
+    setdata(first)
+ }
+ else{
+    setdata(second)
+ }
+}, [])
 
     return (<>
         <div className="h-screen ">
@@ -26,9 +48,17 @@ export default function View_assign() {
                             <div className="bg-slate-200 p-2 text-xl rounded-2xl">
                                 Select Subject
                             </div>
-                            <div className="flex justify-between mt-4 w-[100%] m-auto flex-wrap ">
-
-                                <Link href="/student/view_assignment/view_assignment_main" target="_blank">
+                            <div className="flex justify-center space-x-3 mt-4 w-[100%] m-auto flex-wrap ">
+                                {data.map((da)=>{
+                                    return(<>
+                                    <button onClick={()=>(showassignment(da))} className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
+                                        <div className=" m-auto pr-3 text-lg">
+                                           {da}
+                                        </div>
+                                    </button>
+                                    </>)
+                                })}
+                                {/* <Link href="/student/view_assignment/view_assignment_main" target="_blank">
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Math 1
@@ -81,7 +111,7 @@ export default function View_assign() {
                                             Subject 7 / 8
                                         </div>
                                     </div>
-                                </Link>
+                                </Link> */}
 
 
                             </div>

@@ -5,10 +5,15 @@ import {IoMdDownload} from "react-icons/io"
 import { useEffect } from "react";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
+import Cookies from "js-cookie";
 
 
 export default function Student() {
+    // this.props.abc="fdf"
     const [announcement, setannouncement] = useState([])
+    const [spin, setspin] = useState('')
+    const [show, setshow] = useState('opacity-50')
+const [data, setdata] = useState([])
     const download=(doc,title)=>{
         fetch(doc).then(response => {
             response.blob().then(blob => {
@@ -25,22 +30,31 @@ export default function Student() {
       }
     useEffect(() => {
         const url = "http://localhost:3000/api/studentannouncement";
+        const url1 = "http://localhost:3000/api/studentcredentials";
         const fetchData = async () => {
           try {
-            // setspin('')
+            setspin('')
             let response = await fetch(url);
             let json = await response.json();
       
             setannouncement(json)
-            if(json.length!=0){   
-              setnorecord('hidden')
-            }
+            let response1 = await fetch(url1);
+            let json1 = await response1.json();
+      
+            setdata(json1)
+            Cookies.set('sem',json1.sem)
+            // console.log(json1);
+            // Cookies.set('year',)
+
+            // if(json.length!=0){   
+            //   setnorecord('hidden')
+            // }
             
-            // setspin('hidden')
-            // setshow('')
+            setspin('hidden')
+            setshow('')
           } catch (error) {
-            // setshow('hidden')
-            // setspin('')
+            setshow('opacity-50')
+            setspin('')
             console.log("error", error);
           }
         };
@@ -59,7 +73,7 @@ export default function Student() {
 
 
                 <div className="p-2">
-                    Welcome...  &nbsp;&nbsp; Ms. Jaspreet kaur
+                    Welcome...  &nbsp; {data.studentname}
                 </div>
                 <div className="flex justify-between mt-4 font-normal text-xl">
                     <div className="w-[68%] ">
@@ -103,7 +117,7 @@ export default function Student() {
                                     </div>
                                 </div>
                             </Link>
-                            <Link href={"/student/view_assignment"}>
+                            <Link href={"/student/view_assignment"} year="1">
                             <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-orange-500">
                                 <img src="assignment.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
@@ -122,12 +136,18 @@ export default function Student() {
                         </div>
                         
                     </div>
-                    <div className="shadow-sm shadow-neutral-900 w-[30%]">
+                    <div className={`shadow-sm shadow-neutral-900 w-[30%] ${show} `}>
                         <div className="pb-2 pt-1 bg-gray-200 rounded-3xl">
                             Notifications
                         </div>
 
                         <div>
+                        <div className={`text-center text-base flex w-full justify-center items-center h-full relative top-10 left-0
+ z-10  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
                             {/* <Marquee direction="down"> */}
                             {announcement.map((d,index)=>{
                             const {title,doc,date}=d;

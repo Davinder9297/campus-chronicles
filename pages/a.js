@@ -1,42 +1,76 @@
-export default function A(){
-    return(<>
-<div className="accordion" id="accordionExample">
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="headingOne">
-      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="headingTwo">
-      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="headingThree">
-      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
-    </>)
+// import * as React from "react";
+
+import { useState } from "react";
+
+const App = () => {
+/** "selected" here is state variable which will hold the
+* value of currently selected dropdown.
+*/
+const [selected, setSelected] = useState("");
+
+/** Function that will set different values to state variable
+* based on which dropdown is selected
+*/
+const changeSelectOptionHandler = (event) => {
+	setSelected(event.target.value);
+};
+
+/** Different arrays for different dropdowns */
+const algorithm = [
+	"Searching Algorithm",
+	"Sorting Algorithm",
+	"Graph Algorithm",
+];
+const language = ["C++", "Java", "Python", "C#"];
+const dataStructure = ["Arrays", "LinkedList", "Stack", "Queue"];
+
+/** Type variable to store different array for different dropdown */
+let type = null;
+
+/** This will be used to create set of options that user will see */
+let options = null;
+
+/** Setting Type variable according to dropdown */
+if (selected === "Algorithm") {
+	type = algorithm;
+} else if (selected === "Language") {
+	type = language;
+} else if (selected === "Data Structure") {
+	type = dataStructure;
 }
+
+/** If "Type" is null or undefined then options will be null,
+* otherwise it will create a options iterable based on our array
+*/
+if (type) {
+	options = type.map((el) => <option key={el}><div>{el}</div></option>);
+}
+return (
+
+	<form>
+		<div>
+		{/** Bind changeSelectOptionHandler to onChange method of select.
+		* This method will trigger every time different
+		* option is selected.
+		*/}
+		<select onChange={changeSelectOptionHandler}>
+			<option>Choose...</option>
+			<option>Algorithm</option>
+			<option>Language</option>
+			<option>Data Structure</option>
+		</select>
+		</div>
+		<div>
+		<select>
+			{
+			/** This is where we have used our options variable */
+			options
+			}
+		</select>
+		</div>
+	</form>
+
+);
+};
+
+export default App;
