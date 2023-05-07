@@ -44,9 +44,6 @@ const [doc, setdoc] = useState('')
     useEffect(() => {
         const url = "http://localhost:3000/api/assignments";
         const url1 = "http://localhost:3000/api/studentsubmissions";
-        // const url2 = "http://localhost:3000/api/librarycredentials";
-        // const url3 = "http://localhost:3000/api/clubcredentials";
-    
         const fetchData = async () => {
           try {
        
@@ -82,7 +79,7 @@ const [doc, setdoc] = useState('')
     }, []);
     const submit=async(userid,subject)=>{
 
-        const res1=await fetch('http://localhost:3000/api/studentcredentials')           
+        const res1=await fetch('http://localhost:3000/api/studentpersonaldata')           
           let response1=await res1.json();
  const data={doc:doc,studentname:response1.studentname,rollno:response1.rollno,userid:userid,subject:subject}
 //  console.log(data);

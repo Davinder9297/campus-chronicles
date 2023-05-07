@@ -17,7 +17,7 @@ const [data, setdata] = useState([])
 const [spin, setspin] = useState('')
 const showassignment=(da)=>{
 Cookies.set('subject',da)
-router.push('/student/view_assignment/view_assignment_main')
+router.push('/student/subjects/view_assignments')
 }
 
 const firstsem = [
@@ -153,61 +153,7 @@ setspin('hidden')
                                     </button>
                                     </>)
                                 })}
-                                {/* <Link href="/student/view_assignment/view_assignment_main" target="_blank">
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Math 1
-                                        </div>
-                                    </div>
-                                </Link>
-
-                                <Link href={"/student/view_assignment/view_assignment_main"} target="_blank">
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Bee
-                                        </div>
-                                    </div>
-                                </Link>
-
-                                <Link href={"/student/view_assignment/view_assignment_main"}>
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Physics
-                                        </div>
-                                    </div>
-                                </Link>
-                                <Link href={"/student/view_assignment/view_assignment_main"}>
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Subject 4
-                                        </div>
-                                    </div>
-                                </Link>
-
-                                <Link href={"/student/view_assignment/view_assignment_main"}>
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Subject 5
-                                        </div>
-                                    </div>
-                                </Link>
-
-                                <Link href={"/student/view_assignment/view_assignment_main"}>
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Subject 6
-                                        </div>
-                                    </div>
-                                </Link>
-
-                                <Link href={"/student/view_assignment/view_assignment_main"}>
-                                    <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
-                                        <div className=" m-auto pr-3 text-lg">
-                                            Subject 7 / 8
-                                        </div>
-                                    </div>
-                                </Link> */}
-
+                                
 
                             </div>
 

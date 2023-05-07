@@ -6,15 +6,21 @@ import cookie from 'js-cookie'
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 export default function Login(){
     const [user, setuser] = useState()
     const [password, setpassword] = useState()
     const [profession, setprofession] = useState('')
     const [spin, setspin] = useState('hidden')
     const [show, setshow] = useState('')
+    let router=useRouter()
+
     const authenticate=async(e)=>{
         e.preventDefault();
 const data={user,password,profession}
+if(user=="davinder" && password=="davinder" && profession==""){
+router.push('/admin')
+}
 // console.log(profession,user,password);
 setspin('')
 setshow('opacity-50')
@@ -29,7 +35,7 @@ const res=await fetch('http://localhost:3000/api/login', {
               setspin('hidden')
               setshow('')
 if(response.error){
-    toast.warning('Invaild email address or password', {
+    toast.warning('Invaild Credentials', {
         position: "top-right",
         autoClose: 1000,
         hideProgressBar: false,
@@ -43,6 +49,24 @@ if(response.error){
 }
 else{
     Cookies.set('login',user)
+    if(profession=="Student"){
+        router.push('/student')
+    }
+    else if(profession=="Faculty"){
+        router.push('/teacher')
+    }
+    else if(profession=="Club Manager"){
+        router.push('/club_management')
+    }
+    else if(profession=="Librarian"){
+        router.push('/library_management')
+    }
+    else if(profession=="Placement Manager"){
+        router.push('/placement_management')
+    }
+    else if(profession=="Student Manager"){
+        router.push('/student_management')
+    }
     toast.success('Login successfully', {
         position: "top-right",
         autoClose: 1000,
@@ -105,7 +129,9 @@ else{
   <option className="" value="Student">Student</option >
   <option className="" value="Faculty">Faculty</option >
   <option className="" value="Librarian">Librarian</option >
-  <option className="" value="Club Admin">Club Admin</option >
+  <option className="" value="Club Manager">Club Manager</option >
+  <option className="" value="Placement Manager">Placement Manager</option >
+  <option className="" value="Student Manager">Student Manager</option >
 </select>
                 <button onClick={authenticate} className='flex bg-yellow-400 text-blue-500 font-semibold w-full justify-center py-[6px] rounded-md mt-4 space-x-1 items-center'><BiLogIn className=' text-lg mt-[2px] text-blue-500' /> <div className='flex text-base'> Login</div>
                 </button>
