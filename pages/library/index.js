@@ -7,7 +7,7 @@ import LibraryCarousal from '../../components/Library_carousel'
 import Link from 'next/link'
 import { useEffect } from 'react'
 export default function Library(){
-    const [data, setdata] = useState([])
+    // const [data, setdata] = useState([])
 
     return(<>
     <div className="flex-col ">
