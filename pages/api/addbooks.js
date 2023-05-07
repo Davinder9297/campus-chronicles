@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     }
     
     else{  
-            let data1=await addbooks.find({});
+            let data1=await addbooks.find({}).sort({date:-1});
             res.status(200).json(data1);
     }      
 }

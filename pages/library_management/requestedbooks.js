@@ -1,10 +1,42 @@
 import { useState } from "react";
 import Navbar from "../../components/navbar";
 import Sidebar from "./sidebar";
+import { useEffect } from "react";
 
 export default function Requestedbooks(){
   const [norecord, setnorecord] = useState('')
+  const [spin, setspin] = useState('')
+  const [show, setshow] = useState('hidden')
   const [rowsdata, setrowsdata] = useState([])
+  useEffect(() => {
+    const url = "http://localhost:3000/api/requestbook";
+    // const url1 = "http://localhost:3000/api/placementevents";
+  
+  
+    const fetchData = async () => {
+      try {
+        setspin('')
+        let response = await fetch(url);
+        let json = await response.json();
+        // console.log(json);
+        setrowsdata(json)
+   
+        
+        if(json.length!=0){
+          setnorecord('hidden')
+       
+        }          
+        setspin('hidden')
+        setshow('')
+      } catch (error) {
+        setshow('hidden')
+        setspin('')
+        console.log("error", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
     return(<>
     <div className="h-screen overflow-y-hidden">
         <Navbar/>
@@ -16,33 +48,46 @@ export default function Requestedbooks(){
                     <div className="w-[100%]">
                         <div className="text-center text-2xl font-serif ">Requested Books</div>
                         <div className="pt-2   res_table  ">
+                                                <div className={`text-center  flex w-full justify-center items-center h-full relative top-24  left-0 
+ z-10  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Book Name </th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Author's Name</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Student Name </th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Roll No. </th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Book Title</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Author</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Publisher</th>
                         </tr>
                       </thead>
-                      <tbody className="">
+                      <tbody className={show}>
+
                       <tr className={`${norecord}`}>
-                          <td colSpan="8"  className="bg-slate-400 text-center  h-28">
+                          <td colSpan="3"  className="bg-slate-400 text-center  h-28">
                           No records found
                           </td>
                           </tr>
                           { rowsdata.map((data, index)=>{
-            const {bookname,author,publisher}= data;
-            
+            const {studentname,rollno,title,author,publisher}= data;            
             return(
-
                 <tr key={index}>
-                <td className="border-2  border-slate-300">
-                  {bookname}
+                <td className="border-2  border-slate-300 w-36">
+                  {studentname}
+                </td>
+                <td className="border-2  border-slate-300 w-20">
+                  {rollno}
                 </td>
                 <td className="border-2  border-slate-300">
+                  {title}
+                </td>
+                <td className="border-2  border-slate-300 w-56">
                   {author}
                 </td>
-                <td className="border-2  border-slate-300">
+                <td className="border-2  border-slate-300 w-60">
                   {publisher}
                 </td>
                 
@@ -50,15 +95,7 @@ export default function Requestedbooks(){
             )
         })
    }
-                        {/* <Newrow rowsData1={rowsData1} deleteTableRows1={deleteTableRows1} handleChange1={handleChange1} /> */}
-                     {/* <tr>
-                          <td className="border-2 max-w-lg   h-auto border-slate-300 ">Haar wavelet approximate solutions for the generalized Lane Emden equations arising in astrophysics</td>
-                          <td className="border-2 max-w-[200px]   h-auto border-slate-300 ">Harpreet Kaur, R.C. Mittal and Vinod Mishra</td>
-                          <td className="border-2 max-w-[150px]   h-auto border-slate-300 ">Computer Physics Communications</td>
-                          <td className="border-2 max-w-xsm   h-auto border-slate-300 ">2013</td>
-                          <td className="border-2 max-w-[150px]   h-auto border-slate-300 ">00104655</td>
-                          <td className="text-red-500 border-2 border-slate-300"><Link href="/" > Link</Link></td>
-                        </tr> */}
+
                         
                       </tbody>
                     </table>

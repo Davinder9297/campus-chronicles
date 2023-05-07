@@ -333,7 +333,7 @@ useEffect(() => {
         <div className="flex justify-end space-x-2 text-white pr-2">
         <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
         <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-  <span classNamea="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
           <button disabled={disable1} className={`bg-blue-600 p-2 rounded ${save1}`} onClick={saveannouncement}>Save Changes</button><button onClick={addTableRows1} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>

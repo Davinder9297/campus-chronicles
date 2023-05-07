@@ -5,6 +5,7 @@ import {HiOutlineNewspaper} from "react-icons/hi"
 import {BsBookmarkHeart} from "react-icons/bs"
 import {GrClose} from 'react-icons/gr'
 import {ImWarning} from 'react-icons/im'
+import {SlDoc} from "react-icons/sl"
 // import logout from ""
 import Link from "next/link";
 export default function Sidebar(){
@@ -34,7 +35,7 @@ export default function Sidebar(){
             <div className="flex space-x-1 items-center pl-2"><RiContactsBook2Line className="text-xl"/><Link href="/library_management/issuedbook">Issued Books</Link></div>
             {/* <div className="flex space-x-1 items-center pl-2"><HiOutlineNewspaper className="text-xl"/><Link href="/library_management/issuedmagazines">Issued Magazines</Link></div> */}
             <div className="flex space-x-1 items-center pl-2"><RiFolderAddLine className="text-xl"/><Link href="/library_management/addbook">Add Books</Link></div>
-            {/* <div className="flex space-x-1 items-center pl-2"><MdPostAdd className="text-xl"/><Link href="/library_management/addmagazines">Add Magazines</Link></div> */}
+            <div className="flex space-x-1 items-center pl-2 "><SlDoc className=""/><Link href="/library_management/ebooks">Add eBooks</Link></div>
             <div className="flex space-x-1 items-center pl-2"><BsBookmarkHeart className="text-xl"/><Link href="/library_management/requestedbooks">Requested Books</Link></div>
             <div className="flex space-x-1 items-center pl-2"><RiLogoutBoxLine className="text-xl"/><button type="button" className="" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Log Out

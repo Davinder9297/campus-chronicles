@@ -1,13 +1,9 @@
-import Link from "next/link"
 import Navbar from "../../../components/navbar"
 import { FaPowerOff } from "react-icons/fa"
-import { GrView } from "react-icons/gr"
-import { FaDownload } from "react-icons/fa"
-import { IoIosArrowDropdownCircle } from "react-icons/io"
-import { AiOutlineFileDone } from "react-icons/ai"
-import { useState } from "react"
-import { CgShapeRhombus } from 'react-icons/cg'
-import { FaQuestionCircle } from 'react-icons/fa'
+import { useEffect, useState } from "react"
+import { IoMdDownload } from 'react-icons/io'
+import { GrView } from 'react-icons/gr'
+import Cookies from "js-cookie"
 
 
 
@@ -20,9 +16,11 @@ export default function View_assignment() {
     const [edeqclass, setedeqclass] = useState('text-white')
     const [read, setread] = useState(true)
     const [disable, setdisable] = useState(true)
-
+    const [opac, setopac] = useState('opacity-50 cursor-not-allowed')
+    const [spin, setspin] = useState('hidden')
+const [data, setdata] = useState([])
+const [doc, setdoc] = useState('')
     const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
-
     const pi = () => {
         setedqu('hidden');
         setpinfo('');
@@ -39,6 +37,90 @@ export default function View_assignment() {
     const ex = () => {
         setexx('hidden ');
         setexxclass('')
+    }
+    useEffect(() => {
+        const url = "http://localhost:3000/api/assignments";
+        const url1 = "http://localhost:3000/api/studentsubmissions";
+        // const url2 = "http://localhost:3000/api/librarycredentials";
+        // const url3 = "http://localhost:3000/api/clubcredentials";
+    
+        const fetchData = async () => {
+          try {
+       
+            let response = await fetch(url);
+            let json = await response.json();
+            // console.log(json);
+            let sem=Cookies.get('sem')
+            let subject=Cookies.get('subject')
+            let temp=json.filter((val)=>{
+                if(val.subject==subject && val.sem==sem){
+                    return val;
+                }
+            })
+            // console.log(temp);
+            setdata(temp)
+  
+    
+        
+          } catch (error) {
+         
+            console.log("error", error);
+          }
+        };
+    
+        fetchData();
+    }, []);
+    const submit=async(userid,subject)=>{
+
+        const res1=await fetch('http://localhost:3000/api/studentcredentials')           
+          let response1=await res1.json();
+ const data={doc:doc,studentname:response1.studentname,rollno:response1.rollno,userid:userid,subject:subject}
+//  console.log(data);
+        const res=await fetch('http://localhost:3000/api/submittedassignments', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                      body:JSON.stringify(data)
+                  })
+                  let response=await res.json();
+                  console.log(response);
+                //   setspin('hidden')
+                //   setdisable(false)
+                //   setopac('cursor-pointer')
+    }
+    const download=(doc,title)=>{
+        fetch(doc).then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = title;
+                alink.click();
+              
+            })
+        })
+      }
+      const handledoc=async(evnt)=>{
+        setspin('')
+        setdisable(true)
+        setopac('opacity-50 cursor-not-allowed')
+        const formdata=new FormData()
+              formdata.append("file",evnt.target.files[0]);
+              formdata.append("upload_preset","mystore")
+            const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
+              method:"POST",
+              body:formdata,
+        
+            })
+            const res2=await res.json();
+            setdoc(res2.url)
+            console.log(res2.url);
+            setspin('hidden')
+            setdisable(false)
+            setopac('cursor-pointer ')
     }
 
     return (<>
@@ -68,13 +150,15 @@ export default function View_assignment() {
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
                                 <div>
                                     <div className="accordion " id="accordionFlushExample">
-                                        <div className="accordion-item focus-within:bg-white">
-                                            <h2 className="accordion-header" id="flush-headingOne">
+                                        {/* {data.map((ass,index)=>{ */}
+                                           {/* return(<>  */}
+                                            <div className="accordion-item focus-within:bg-white">
+                                            <h2 className="accordion-header" id={"title"}>
                                                 <button className="accordion-button collapsed hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                                     Assignment 1
                                                 </button>
                                             </h2>
-                                            <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby={"title"} data-bs-parent="#accordionFlushExample">
                                                 <div className="accordion-body">
                                                     <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base  p-3`}>
                                                         <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex">
@@ -85,35 +169,22 @@ export default function View_assignment() {
                                                                 <GrView className=" hover:opacity-80 h-full w-6 cursor-pointer flex justify-end" />
                                                             </div></div>
                                                         <div className="flex">
-                                                            <div className="w-[50%] text-start ml-7 ">
-                                                                Submission Date
-                                                            </div>
-                    
+                                                        <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex ">
+                                                        <div className="w-[70%]">
+                                                                Submision Date
+                                                        </div>
+                                                            <div className="w-[30%] flex justify-center ">{"formatted"}</div>
+
+                                                        </div>
                                                         </div>
                                                         
                                                     </div></div>
                                             </div>
                                         </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="flush-headingTwo">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                                    Accordion Item #2
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                            </div>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="flush-headingThree">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                    Accordion Item #3
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                                            </div>
-                                        </div>
+                                            {/* </>) */}
+                                        {/* })} */}
+                                        
+                              
                                     </div>
                                 </div>
                             </div>
@@ -124,59 +195,66 @@ export default function View_assignment() {
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
                                 <div>
                                     <div className="accordion " id="accordionFlushExample">
-                                        <div className="accordion-item focus-within:bg-white">
-                                            <h2 className="accordion-header" id="flush-headingOne">
-                                                <button className="accordion-button collapsed hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                    Assignment 1
+                                        {data.map((ass,index)=>{
+                                            const {title,doc,deadline,userid,subject}=ass;
+                                            let formatted=deadline.substring(8,10)+deadline.substring(4,8)+deadline.substring(0,4);
+
+                                            return(<>
+                                            <div className="accordion-item focus-within:bg-white" key={index}>
+                                            <h2 className="accordion-header" id={title}>
+                                                <button className="accordion-button collapsed hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target={`#a${index}`} aria-expanded="false" aria-controls={`a${index}`}>
+                                                    Assignment {index+1}
                                                 </button>
                                             </h2>
-                                            <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div id={`a${index}`} className="accordion-collapse collapse " aria-labelledby={title} data-bs-parent="#accordionFlushExample">
                                                 <div className="accordion-body">
                                                     <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base  p-3 bg-slate-100`}>
                                                         <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex ">
                                                         <div className="w-[70%]">
-                                                                View Assignment
-                                                                </div>
-                                                                <div className="w-[30%] flex justify-center ">
-                                                                <GrView className=" hover:opacity-80 h-full w-6 cursor-pointer flex justify-end" />
-                                                            </div></div>
+                                                                Download Assignment
+                                                        </div>
+                                                        <div className="w-[30%] flex justify-center ">
+                                                                <IoMdDownload className=" hover:opacity-80 h-full w-6 cursor-pointer flex justify-end" onClick={()=>(download(doc,title))} /></div>
+                                                        </div>
+                                                        <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex ">
+                                                        <div className="w-[70%]">
+                                                                Title
+                                                        </div>
+                                                            <div className="w-[30%] flex justify-center ">{title}</div>
+
+                                                        </div>
+                                                        <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex ">
+                                                        <div className="w-[70%]">
+                                                                Due Date
+                                                        </div>
+                                                            <div className="w-[30%] flex justify-center ">{formatted}</div>
+
+                                                        </div>
                                                         <div className="flex">
                                                             <div className="w-[50%] text-start ml-7 ">
                                                                 Attach File
                                                             </div>
-                                                            <div className="w-[50%] text-center">
-                                                                <input type="file" className="text-sm border-2 border-solid border-zinc-200"></input>
+                                                            <div className="w-[50%] text-center flex justify-center ">
+                                                                <input type="file" onChange={(e)=>(handledoc(e))} className="w-[40%]  text-sm border-2 border-solid border-zinc-200"></input>
+                                                                <button className={` p-1 rounded space-x-2 relative top-0  left-0 text-black ${spin}`} type="button" disabled>
+        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  {/* <span className="" role="status" aria-hidden="true"></span> */}
 
+</button>
                                                             </div>
                                                         </div>
                                                        <div className="w-[90%] flex justify-end  items-center mt-2">
-                                                       <div className=" bg-amber-800 text-white w-[36%] p-1 text-center rounded hover:bg-amber-700 cursor-pointer ">
-                                                            <button className="">Submit</button>
-                                                        </div>
+                                                       <button onClick={(e)=>(submit(userid,subject))} disabled={disable}  className={`${opac} bg-amber-800 text-white w-[36%] p-1 text-center rounded hover:bg-amber-700 `}>
+                                                       Submit
+                                                        </button>
+                                                        
                                                        </div>
                                                     </div></div>
                                             </div>
                                         </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="flush-headingTwo">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                                    Accordion Item #2
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                            </div>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header" id="flush-headingThree">
-                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                    Accordion Item #3
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                                            </div>
-                                        </div>
+                                            </>)
+                                        })}
+                                        
                                     </div>
                                 </div>
                             </div>

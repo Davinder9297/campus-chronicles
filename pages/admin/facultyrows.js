@@ -3,15 +3,11 @@ export default function Facultyrows({rowsData, deleteTableRows, handleChange}) {
     return(  
         
         rowsData.map((data, index)=>{
-            const {image,facultyname,facultyid,department,designation,userid,password}= data;
+            const {facultyname,facultyid,department,designation,userid,password}= data;
             // const [ind, setind] = useState(0)
             return(<>
                 <tr key={index}>
                     <td className="border-2  border-slate-300">{index+1}</td>
-                    <td className="border-2  border-slate-300 h-20 w-28 space-y-2">
-                    <div className="flex justify-center w-full"><img src={`${image}`} className="max-h-16 w-fit" alt="" /></div>
-               <input type="file"   onChange={(evnt)=>(handleChange(index, evnt))} name="image" className="py-0 px-1 form-control"/>
-                </td>
                 <td className="border-2  border-slate-300">
                <input  value={facultyname} onChange={(evnt)=>(handleChange(index, evnt))} name="facultyname" className=" form-control"/>
                 </td>

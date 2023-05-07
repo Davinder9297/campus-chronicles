@@ -5,10 +5,45 @@ import {MdAccountCircle} from 'react-icons/md'
 import {MdMessage} from 'react-icons/md'
 import LibraryCarousal from '../../components/Library_carousel'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 export default function Library(){
     // const [data, setdata] = useState([])
-
+    const [spin, setspin] = useState('hidden')
+    const [newbooks, setnewbooks] = useState([])
+    let temp=[]
+    useEffect(() => {
+        const url = "http://localhost:3000/api/addbooks";
+      //  const url1 = "http://localhost:3000/api/placementevents";
+      
+ 
+        const fetchData = async () => {
+          try {
+          //  setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+          //  console.log(json);
+            setdata(json)
+            if(json.length>8){
+                for (let i=0;i<8;i++){
+                    temp.push(json[i])
+                  }
+                  setnewbooks(temp)
+            }
+            else{
+                setnewbooks(json)
+            }
+             console.log(newbooks);
+           setspin('hidden')
+          //  setshow('')
+          } catch (error) {
+          //  setshow('hidden')
+          //  setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
     return(<>
     <div className="flex-col ">
         {/* <div className='text-center text-4xl h-24 bg-slate-400'><img src='/libj.jpg' className='h-24 w-full'/></div> */}
@@ -45,12 +80,22 @@ export default function Library(){
         <div className='flex justify-between mt-5 mb-5 h-96 space-x-5'>
             <div className='new_published_book  w-1/2 flex-col shadow-xl shadow-purple-300'>
                 <div className='text-2xl text-center pt-2 font-serif '>New Books</div>
-                <div className='flex justify-center w-full'><img className='w-40' src="hr.png" alt="" /></div>
-                <marquee  width="100%" direction="up" height="83%" behaviour="scroll" scrollamount="4" className="">
+               
+         <div className='flex justify-center w-full'><img className='w-40' src="hr.png" alt="" /></div>
+            <marquee  width="100%" direction="up" height="83%" behaviour="scroll" scrollamount="4" className="">
                 <div className='flex flex-wrap justify-evenly    pb-5 '>
-                    <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
-                    <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
-                    <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
+               {newbooks.map((da,index)=>{
+               const {image}=da;
+                console.log(da);
+               return(<>
+               <div className='h-40 mx-2 my-8  w-36 border shadow-xl' >
+                   <img className='h-full w-full' src={image} alt="" />
+                   </div>
+               </>)
+
+               })}
+                    {/* <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div> */}
+                    {/* <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
                     <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
                     <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
                     <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
@@ -61,7 +106,7 @@ export default function Library(){
                     <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
                     <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
                     <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
-                    <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div>
+                    <div className='h-40 mx-2 my-8  w-36' ><img src="book.jpg" alt="" /></div> */}
                    
                 </div>
                 </marquee> 
