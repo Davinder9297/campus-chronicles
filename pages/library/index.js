@@ -7,7 +7,7 @@ import LibraryCarousal from '../../components/Library_carousel'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 export default function Library(){
-    const [data, setdata] = useState([])
+    // const [data, setdata] = useState([])
     const [spin, setspin] = useState('hidden')
     const [newbooks, setnewbooks] = useState([])
     let temp=[]

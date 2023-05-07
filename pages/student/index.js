@@ -99,12 +99,15 @@ const [data, setdata] = useState([])
                                 </div>
                             </div>
                             </Link>
+
+                            <Link href={"/library"}>
                             <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-cyan-500">
                                 <img src="book_issued.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     Library
                                 </div>
                             </div>
+                            </Link>
 
                         </div>
 

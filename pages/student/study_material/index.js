@@ -135,7 +135,7 @@ export default function Study_material() {
 
                         </div>
 
-                        <div className={` m-auto flex-col h-[80%] w-[100%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
+                        <div className={` m-auto flex-col h-[80%] w-[95%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
                             <div className="bg-slate-200 p-2 text-xl rounded-2xl">
                                 Select Semester
                             </div>
@@ -214,7 +214,7 @@ export default function Study_material() {
                             </div>
                         </div>
 
-                        <div className={` m-auto flex-col h-[80%] w-[100%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${exre}`}>
+                        <div className={` m-auto flex-col h-[80%] w-[95%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${exre}`}>
                             <div className="bg-slate-200 p-2 text-xl rounded-2xl">
                                 Select Semester
                             </div>
