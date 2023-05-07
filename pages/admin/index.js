@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../../components/navbar'
-import TableRows from './tablerows'
 import Facultyrows from './facultyrows'
-import { ToastContainer, toast } from 'react-toastify'
-import Clubrows from './clubrows'
+import Rows from './facultydata'
 export default function Index(){
     const [norecord, setnorecord] = useState('')
         const [rowsData, setrowsData] = useState([]);
@@ -38,7 +36,7 @@ export default function Index(){
       }
 
           useEffect(() => {
-    const url = "http://localhost:3000/api/studentcredentials";
+    const url = "http://localhost:3000/api/studentmanager";
     const url1 = "http://localhost:3000/api/facultycredentials";
     const url2 = "http://localhost:3000/api/librarycredentials";
     const url3 = "http://localhost:3000/api/clubcredentials";
@@ -99,14 +97,16 @@ export default function Index(){
         setdisable(false)
         setsave1('cursor-pointer')
           const rowsInput={
-            studentname:'',
-            rollno:'',  
-            dob:'',  
-            fathername:'',  
-            mothername:'',  
+            facultyname:'',
+            image:'',
+            facultyid:'',  
+            department:'',  
+            designation:'',
+            phone:'',
+            email:'',
+            linkedin:'',  
             userid:'',  
             password:'',  
-            image:''
           } 
           setrowsData([...rowsData, rowsInput])
           // console.log(rowsData.length);
@@ -130,25 +130,10 @@ export default function Index(){
       setsave1('cursor-pointer')
       const rowsInput = [...rowsData];
       const { name, value } = evnt.target;
-      if(name=='image'){
-          const formdata=new FormData()
-          console.log(evnt.target.files);
-          formdata.append("file",evnt.target.files[0]);
-          formdata.append("upload_preset","mystore")
-        const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
-          method:"POST",
-          body:formdata,
-        })
-        const res2=await res.json();
-        console.log(res2.url);
-      rowsInput[index][name] = res2.url;
-      setrowsData(rowsInput)
-
-      }
-      else{
+     
         rowsInput[index][name] = value;
       setrowsData(rowsInput);
-      }
+      
   }
 
     const addTableRows1 = ()=>{
@@ -241,23 +226,10 @@ const addTableRows2 = ()=>{
       setsave3('cursor-pointer')
       const rowsInput = [...rowsData2];
       const { name, value } = evnt.target;
-      if(name=='image'){
-          const formdata=new FormData()
-          formdata.append("file",evnt.target.files[0]);
-          formdata.append("upload_preset","mystore")
-        const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
-          method:"POST",
-          body:formdata,
-        })
-        const res2=await res.json();
-      rowsInput[index][name] = res2.url;
-      setrowsData2(rowsInput)
-
-      }
-      else{
+     
         rowsInput[index][name] = value;
       setrowsData2(rowsInput);
-      }
+      
     
   }
 
@@ -292,30 +264,17 @@ const addTableRows2 = ()=>{
       setsave4('cursor-pointer')
       const rowsInput = [...rowsData3];
       const { name, value } = evnt.target;
-      if(name=='image'){
-          const formdata=new FormData()
-          formdata.append("file",evnt.target.files[0]);
-          formdata.append("upload_preset","mystore")
-        const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
-          method:"POST",
-          body:formdata,
-        })
-        const res2=await res.json();
-      rowsInput[index][name] = res2.url;
-      setrowsData3(rowsInput)
-
-      }
-      else{
+      
         rowsInput[index][name] = value;
       setrowsData3(rowsInput);
       }
-  }
+  
   const student=async(e)=>{
 e.preventDefault();
 setdisable(true)
 setsave1('cursor-not-allowed opacity-50')
 // let data={rowsData[0][studentname],}
-const res=await fetch('http://localhost:3000/api/studentcredentials', {
+const res=await fetch('http://localhost:3000/api/studentmanager', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -323,7 +282,7 @@ const res=await fetch('http://localhost:3000/api/studentcredentials', {
                   body:JSON.stringify(rowsData)
               })
               let response=await res.json();
-              console.log(response);
+              // console.log(response);
               
   }
   const faculty=async(e)=>{
@@ -379,20 +338,18 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
 </div>
 </div>
         <div className={`${show} pb-4`}>
-        <div className="text-center text-2xl font-serif mt-5 ">Student Credential Management</div>
+        <div className="text-center text-2xl font-serif mt-5 ">Student Manager Credentials</div>
         <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-blue-600 p-2 rounded ${save1}`} onClick={student}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
         <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
-                          <th className="border-2 py-2 border-slate-300 text-center px-2">Sr No.</th>
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Image</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Student Name</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Roll No</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">DOB</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Father's Name</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Mother's Name</th>
+                        <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Name</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Id</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Department</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Designation</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">User Id</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Password</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
@@ -404,7 +361,7 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           No records found
                           </td>
                           </tr>
-                        <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
+                        <Facultyrows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
                       </tbody>
                     </table>
                           </div>
@@ -433,7 +390,7 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           No records found
                           </td>
                           </tr>
-                        <Facultyrows rowsData={rowsData1} deleteTableRows={deleteTableRows1} handleChange={handleChange1} />
+                        <Rows rowsData={rowsData1} deleteTableRows={deleteTableRows1} handleChange={handleChange1} />
                       </tbody>
                     </table>
                           </div>
@@ -445,8 +402,7 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Image</th>
+                        <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Name</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Id</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Department</th>
@@ -474,10 +430,10 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Image</th>
+                        <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Name</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Club</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Id</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Department</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Designation</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">User Id</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Password</th>
@@ -490,7 +446,7 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           No records found
                           </td>
                           </tr>
-                        <Clubrows rowsData={rowsData3} deleteTableRows={deleteTableRows3} handleChange={handleChange3} />
+                        <Facultyrows rowsData={rowsData3} deleteTableRows={deleteTableRows3} handleChange={handleChange3} />
                       </tbody>
                     </table>
                           </div>

@@ -3,19 +3,23 @@ mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test");
 // mongoose.connect("mongodb://localhost:27017/main");
 const ourschema=new mongoose.Schema({
-    image:{
+    studentname:{
         type:String
     },
-    bookname:{
+    rollno:{
         type:String
     },  
-    authorname:{
+    subject:{
         type:String,
     }, 
-    isbn:{
+    userid:{
         type:String,
-    }, 
-    category:{
+    },
+    doc:{
+        type:String,
+    },
+    
+    sem:{
         type:String,
     }, 
     date:{
@@ -24,4 +28,4 @@ const ourschema=new mongoose.Schema({
     }
 });
 mongoose.models={};
-export default mongoose.model("addbooks",ourschema);
+export default mongoose.model("studentsubmissions",ourschema);

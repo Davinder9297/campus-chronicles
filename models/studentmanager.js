@@ -3,22 +3,16 @@ mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test");
 // mongoose.connect("mongodb://localhost:27017/main");
 const ourschema=new mongoose.Schema({
-    studentname:{
+    facultyname:{
         type:String
     },
-    rollno:{
+    facultyid:{
         type:String
     },  
-    image:{
-        type:String
-    },
-    dob:{
+    department:{
         type:String
     },  
-    fathername:{
-        type:String
-    },  
-    mothername:{
+    designation:{
         type:String
     },  
     phone:{
@@ -27,23 +21,15 @@ const ourschema=new mongoose.Schema({
     email:{
         type:String
     },
-    sem:{
-        type:String
-    },
-    address:{
-        type:String
-    },
     linkedin:{
         type:String
     },
-    
     userid:{
         type:String
     },  
     password:{
         type:String
     }, 
-    
-});
+},);
 mongoose.models={};
-export default mongoose.model("studentcredentials",ourschema);
+export default mongoose.model("studentmanager",ourschema);

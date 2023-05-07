@@ -28,7 +28,10 @@ const ourschema=new mongoose.Schema({
     linkedin:{
         type:String
     },
-    uniqueid:{
+    userid:{
+        type:String,
+    },
+    password:{
         type:String,
     }
 

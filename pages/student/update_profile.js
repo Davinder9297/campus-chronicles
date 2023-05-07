@@ -4,6 +4,7 @@ import { useState } from "react"
 import { FaEdit } from 'react-icons/fa'
 import { FiSave } from 'react-icons/fi'
 import { FaPowerOff } from 'react-icons/fa'
+import { useEffect } from "react"
 // update password pending
 
 export default function Update_profile() {
@@ -13,12 +14,42 @@ export default function Update_profile() {
 
     const [read, setread] = useState(true)
     const [disable, setdisable] = useState(true)
-    const [phone, setphone] = useState('7009400665')
-    const [currentpassword, setnewpassword] = useState('123456')
-    const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
-    const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
-    const [address, setaddress] = useState('Mohali')
+    const [phone, setphone] = useState('')
+    const [spin, setspin] = useState('')
+    const [opac, setopac] = useState('opacity-50')
+    const [currentpassword, setnewpassword] = useState('')
+    const [email, setemail] = useState('')
+    const [linkedin, setlinkedin] = useState('')
+    const [address, setaddress] = useState('')
     const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
+    useEffect(() => {
+        const url = "http://localhost:3000/api/studentcredentials";
+//   const url1 = "http://localhost:3000/api/clubannouncement";
+//   const url2 = "http://localhost:3000/api/events";
+
+
+  const fetchData = async () => {
+    try {
+      setspin('')
+      let response = await fetch(url);
+      let json = await response.json();
+// console.log(json);
+      setphone(json.phone)
+      setaddress(json.address)
+      setlinkedin(json.linkedin)
+      setemail(json.email)
+      setspin('hidden')
+      setopac('')
+
+    } catch (error) {
+      setshow('hidden')
+      setspin('')
+      console.log("error", error);
+    }
+  };
+
+  fetchData();
+    }, [])
 
     const edit=()=>{
         setread(false)
@@ -26,10 +57,20 @@ export default function Update_profile() {
         setpoint('cursor-pointer')
     }
 
-      const save=()=>{
+      const save=async(e)=>{
+        e.preventDefault()
         setread(true)
         setdisable(true)
         setpoint('opacity-50 cursor-not-allowed')
+        const data={phone,email,linkedin,address}
+        const res=await fetch('http://localhost:3000/api/updatestudentdata', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(data)
+              })
+              let response=await res.json();
     }
 
     const pi = () => {
@@ -47,9 +88,14 @@ export default function Update_profile() {
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
                         <div className="logout_stu text-base">Logout</div>
                 </div>
-                <div className=" w-[95%] m-auto text-center text-4xl font-semibold  p-4 h-[80%] overflow-hidden ">
+                <div className={` w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden  ${opac}`}>
                     Update Your Profile ....
-
+                    <div className={`text-center text-base flex w-full justify-center items-center h-full absolute top-0 left-28
+ z-10  ${spin}`}>
+<div className="spinner-border" role="status">
+  <span className ="visually-hidden">Loading...</span>
+</div>
+</div>
                     <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] ">
                         <div className="flex justify-center  items-center  h-[100%]  w-[30%] shadow-md shadow-slate-400 rounded-sm">
                             <div className="h-[100%] w-[100%] justify-center">
@@ -63,7 +109,7 @@ export default function Update_profile() {
                         </div>
                         <div className=" w-[65%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto">
                             <div className="h-[]5%] w-[100%] flex ">
-                                <div onClick={pi} className={` w-[100%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
+                                <div  className={` w-[100%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
                                     Personal Information
                                 </div>
                                 
@@ -89,18 +135,18 @@ export default function Update_profile() {
                                             <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
                                             <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e)=>{setlinkedin(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={linkedin}/></td>
                                         </tr>
-                                        <tr>
+                                        {/* <tr>
                                             <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Current Password</td>
                                             <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="password" onChange={(e)=>{setnewpassword(e.target.value)}} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={currentpassword}/></td>
-                                        </tr>
+                                        </tr> */}
                                         
                                         </tbody>
                                 </table>
-                                <div className="font-sans space-y-5 pt-3  w-[70%] m-auto">
+                                <div className="font-sans space-y-5 pt-3  w-[70%] ml-9">
 
-                                <div className="flex  space-x-5 justify-center"> 
-                            <button  type="submit" onClick={edit} className="flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 mr-5 cursor-pointer"><div>Edit</div> <FaEdit  className=""/></button>
-                            <button disabled={disable} onClick={save} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-1 ${point}`}><div>Save</div> <FiSave className="" /></button>
+                                <div className="flex space-x-2  justify-center"> 
+                            <button  type="submit" onClick={edit} className="flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-2  cursor-pointer"><div>Edit</div> <FaEdit  className=""/></button>
+                            <button disabled={disable} onClick={save} className={`flex items-center space-x-1 bg-blue-800 rounded text-white px-2 py-2 ${point}`}><div>Save</div> <FiSave className="" /></button>
                         </div>
                             </div>
 

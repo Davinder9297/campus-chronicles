@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/navbar";
 import Sidebar from "./sidebar";
 import Addbookrows from "./addbookrows"
+import Ebookrows from "./ebookrows";
 export default function Addbook(){
     const [rowsData, setrowsData] = useState([])
     const [norecord, setnorecord] = useState('')
@@ -17,10 +18,9 @@ export default function Addbook(){
         setdisable(false)
         setopac('cursor-pointer')
           const rowsInput={
-            bookname:'',
-            image:'',
-            authorname:'',
-            isbn:''
+            title:'',
+            doc:'',
+            category:'',
           } 
           setrowsData([...rowsData, rowsInput])
           // console.log(rowsData.length);
@@ -44,9 +44,8 @@ export default function Addbook(){
       setopac('cursor-pointer')
       const { name, value } = evnt.target;
       const rowsInput = [...rowsData];
-      // rowsInput[index][name] = value;
-      // setrowsData(rowsInput);
-      if(name=="image"){
+
+      if(name=="doc"){
         setspin2('opacity-50')
         setopac('hidden')
         // setdisable1(true)
@@ -79,7 +78,7 @@ export default function Addbook(){
         e.preventDefault()
         setdisable(true)
         setopac('cursor-not-allowed opacity-50')
-        const res=await fetch('http://localhost:3000/api/addbooks', {
+        const res=await fetch('http://localhost:3000/api/ebooks', {
                           method: 'POST',
                           headers: {
                             'Content-Type': 'application/json',
@@ -90,7 +89,7 @@ export default function Addbook(){
 
     }
     useEffect(() => {
-      const url = "http://localhost:3000/api/addbooks";
+      const url = "http://localhost:3000/api/ebooks";
       const fetchData = async () => {
         try {
           setspin('')
@@ -121,10 +120,10 @@ export default function Addbook(){
             <div className="flex-col w-[100%] h-[93.3%]  overflow-y-auto scrollbar-thin  scrollbar-track-slate-100 scrollbar-thumb-slate-500">
 
             <div className={` pb-4`}>
-        <div className="text-center text-2xl font-serif mt-5 ">Add Book's Details</div>
+        <div className="text-center text-2xl font-serif mt-5 ">Add eBook's Details</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
         <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
-        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        {/* <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> */}
   <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
@@ -140,22 +139,20 @@ export default function Addbook(){
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Book Image</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Book Name </th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Document</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Title</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Category</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Author Name</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">ISBN Number</th>
                           <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
                         </tr>
                       </thead>
                       <tbody className={`${show} `}>
 
                       <tr className={`${norecord}`}>
-                          <td colSpan="5"  className="bg-slate-400 text-center  h-28">
+                          <td colSpan="4"  className="bg-slate-400 text-center  h-28">
                           No records found
                           </td>
                           </tr>
-                        <Addbookrows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
+                        <Ebookrows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
                       </tbody>
                     </table>
                           </div>

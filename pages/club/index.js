@@ -41,6 +41,7 @@ export default function Club() {
                 alink.href = fileURL;
                 alink.download = title;
                 alink.click();
+              
             })
         })
       }
