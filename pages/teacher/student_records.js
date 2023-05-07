@@ -1,57 +1,10 @@
-import { useState } from "react";
+import { FaDownload } from "react-icons/fa";
+import { GrView } from "react-icons/gr";
 import Link from "next/link"
 import Navbar from "../../components/navbar"
 import TeacherNavbar from "../../components/teacher_navbar"
 
 export default function Student_record() {
-    const [selected, setSelected] = useState("");
-
-    const changeSelectOptionHandler = (event) => {
-        setSelected(event.target.value);
-    };
-
-    const firstyear = [
-        "All Students",
-        "Group 1",
-        "Group 2",
-    ];
-    const secondyear = [
-        "All Students",
-        "Group 1",
-        "Group 2",
-    ];
-    const thirdyear = [
-        "All Students",
-        "Group 1",
-        "Group 2",
-    ];
-
-    const fourthyear= [
-        "All Students",
-        "Group 1",
-        "Group 2",
-    ];
-
-
-    let type = null;
-
-    let options = <option className="bg-zinc-400 text-center" >-- SELECT TYPE --</option >
-        ;
-
-    if (selected === "First Year") {
-        type = firstyear;
-    } else if (selected === "Second Year") {
-        type = secondyear;
-    } else if (selected === "Third Year") {
-        type = thirdyear;
-    } else if (selected === "Fourth Year") {
-        type = fourthyear;
-    } 
-
-
-    if (type) {
-        options = type.map((el) => <option key={el}>{el}</option>);
-    }
 
     return (<>
 
@@ -63,50 +16,152 @@ export default function Student_record() {
                 <div className=" m-auto text-center text-4xl font-yearibold p-4 overflow-hidden w-[100%] mb-2">
                     Student Record
                 </div>
-
-                <div className=" m-auto w-[70%] shadow-md  shadow-zinc-900 h-full">
-                    <div>
-                        <select onChange={changeSelectOptionHandler} name="select1" id="select1" className=" outline cursor-pointer outline-1 w-full outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900">
-                            <option className="bg-zinc-400 " >-- SELECT YEAR --</option >
-                            <option className="bg-zinc-400 " >First Year</option >
-                            <option className="bg-zinc-400 " >Second Year</option >
-                            <option className="bg-zinc-400 " >Third Year</option >
-                            <option className="bg-zinc-400 " >Fourth Year</option >
-                        </select>
+                <div className=" w-[90%] mx-auto ">
+                    <div className="bg-slate-200 p-2 text-xl rounded-2xl font-medium shadow-inner shadow-slate-400 text-center">
+                        Select Year
                     </div>
-                    <div className="w-full ">
-                        <select name="select2" id="select2" className=" outline cursor-pointer outline-1 w-full mx-auto outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900 mt-4 pl-16">
-                            {options}
+                    <div className="w-[90%] mx-auto">
+                        <div className="accordion mt-5" id="accordionFlushExample">
+                            <div className="accordion-item focus-within:bg-white">
+                                <h2 className="accordion-header" id="flush-headingOne">
+                                    <button className="accordion-button collapsed hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        First Year (1st)
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div className="accordion-body">
+                                        <div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    All Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 1 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 2 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="flush-headingTwo">
+                                    <button className="accordion-button collapsed  hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Second Year (2nd)
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div className="accordion-body">
+                                    <div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    All Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 1 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 2 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="flush-headingThree">
+                                    <button className="accordion-button collapsed  hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Third Year (3rd)
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div className="accordion-body">
+                                    <div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    All Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 1 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 2 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
 
-                        </select>
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="flush-headingFour">
+                                    <button className="accordion-button collapsed  hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Fourth Year (4th)
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" className="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div className="accordion-body">
+                                    <div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    All Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 1 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                                <div className="w-[50%] ml-16">
+                                                    Group 2 Students
+                                                </div>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="w-full m-auto">
-
-                        <div className="border-b-2 border-solid border-zinc-300 mt-5 flex">
-                            <div className="text-xl p-2 w-[50%]  text-center">
-                                Title of Assignment
-                            </div>
-                            <div className="w-[50%] my-auto">
-                                <input type="text" className="pl-2 h-8 w-[85%] bg-zinc-200" placeholder="Enter the Title here" ></input>
-                            </div>
-
-                        </div>
-                        <div className="border-b-2 border-solid border-zinc-300 mt-3 flex">
-                            <div className="text-xl p-2 w-[50%]  text-center">
-                                Attach File
-                            </div>
-                            <div className="w-[50%] my-auto">
-                                <input type="file" className="h-8 w-[85%]"></input>
-                            </div>
-                        </div>
-                        <div className="space-x-16 justify-center flex ">
-                            <button className="shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 hover:text-white ">Upload</button>
-                            <button className="shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 hover:bg-amber-700 hover:text-white "><Link href={"/teacher/view_submitted_assignment"}>View Submitted Assignments</Link></button>
-                            <button className="shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 hover:text-white ">Cancel</button>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>

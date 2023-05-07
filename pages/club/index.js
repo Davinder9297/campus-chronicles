@@ -55,12 +55,12 @@ export default function Club() {
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/personality_club'}>
+                    <Link href={'/club/personality'}>
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/editorial_club'}>
+                    <Link href={'/club/editorial'}>
                         <img className="rounded-xl h-full w-full" src="editorial.jpg" />
                     </Link>
                 </div>
@@ -135,7 +135,7 @@ export default function Club() {
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/e_club'}>
+                    <Link href={'/club/e'}>
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
                     </Link>
                 </div>

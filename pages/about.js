@@ -4,8 +4,8 @@ import {BsFillBookmarkStarFill} from "react-icons/bs"
 export default function About(){
     return(<>
     <div className=" h-auto mb-4">
-    <Navbar class="bg-gray-500"/>
-    <div className="pt-10 ">
+    <Navbar class="shadow-md"/>
+    <div className="pt-7 ">
     <div className="flex justify-center space-x-20 items-center  ">     
         <div className=" flex justify-center items-center h-[50vh]">
             <img src="/lib1.jpg" className="h-full shadow-2xl rounded-tl-3xl rounded-br-3xl shadow-zinc-800" alt="" />
@@ -202,7 +202,7 @@ seamless in all facets of life.</div></div>
 	<div className="about mt-4"> 
 	<div className=" font-serif text-lg mt-3">B.Tech CSE LEET</div>
 	<table width="100%" className="table1 mt-2">
-		<thead className="bg-green-600 ">
+		<thead className="bg-amber-800 ">
 			<tr className="">
 				<th align="left" className="pl-2">
 					S.No.</th>
