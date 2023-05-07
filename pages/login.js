@@ -67,8 +67,8 @@ else{
     }
     
     return(<>
-    <div className='bg-slate-500  w-full h-screen'>
-        <Navbar/>
+    <div className='bg-zinc-400 w-full h-screen'>
+        <Navbar />
         <ToastContainer
     position="top-right"
     autoClose={1000}
@@ -97,7 +97,7 @@ else{
                 <div className='text-base  font-semibold '>User Id</div>
                 <input type="text" value={user} onChange={(e)=>{setuser(e.target.value)}} className='outline  outline-1 px-2 rounded-sm py-[6px] w-full text-base text-blue-400 outline-gray-300' placeholder="Enter User Id" />
                 <div className='mt-2   font-semibold text-base'>Password</div>
-                <input type="text" value={password} onChange={(e)=>{setpassword(e.target.value)}} className='outline outline-1 rounded-sm py-[6px] px-2 w-full text-base text-blue-400 outline-gray-300' placeholder="Enter Password" />
+                <input type="password" value={password} onChange={(e)=>{setpassword(e.target.value)}} className='outline outline-1 rounded-sm py-[6px] px-2 w-full text-base text-blue-400 outline-gray-300' placeholder="Enter Password" />
                 
                 <div className='mt-2   font-semibold text-base'>Login As</div>
                 <select value={profession}  onChange={(e)=>(setprofession(e.target.value))} name="profession"   className=" outline cursor-pointer outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-400 outline-gray-300">

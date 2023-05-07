@@ -75,7 +75,7 @@ export default function Study_material() {
                             </div>
                             <div className="flex justify-between mt-4 w-[100%] m-auto flex-wrap ">
 
-                                <Link href="/syllabus_sem3.pdf">
+                                <Link href="/syllabus_sem1.pdf">
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Semester 1
@@ -83,7 +83,7 @@ export default function Study_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/syllabbus.jpg"}>
+                                <Link href={"/syllabus_sem2.pdf"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Semester 2
@@ -98,7 +98,7 @@ export default function Study_material() {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link href={"/syllabus_sem3.pdf"}>
+                                <Link href={"/syllabus_sem4.pdf"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Semester 4
@@ -106,7 +106,7 @@ export default function Study_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/syllabus_sem3.pdf"}>
+                                <Link href={"/syllabus_sem5.pdf"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Semester 5
@@ -114,7 +114,7 @@ export default function Study_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/syllabus_sem3.pdf"}>
+                                <Link href={"/syllabus_sem6.pdf"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Semester 6
@@ -122,7 +122,7 @@ export default function Study_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/syllabus_sem3.pdf"}>
+                                <Link href={"/syllabus_sem7-8.pdf"}>
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Semester 7 / 8

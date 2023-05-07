@@ -60,7 +60,7 @@ router.push(path)
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/personality_club'))} >
+                    <button onClick={()=>(opennext('/club/personality'))} >
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
                     </button>
                 </div>
@@ -140,7 +140,7 @@ router.push(path)
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/e_club'))} >
+                    <button onClick={()=>(opennext('/club/e'))} >
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
                     </button>
                 </div>

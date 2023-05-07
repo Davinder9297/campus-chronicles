@@ -1,7 +1,7 @@
 import {FaQuoteRight,FaQuoteLeft} from 'react-icons/fa'
 export default function Director2(){
     return (<>
-    <div className="flex justify-center my-3 py-5 bg-purple-100 shadow-2xl  h-96">
+    <div className="flex justify-center my-3 py-5 bg-gradient-to-r from-yellow-400 via-amber-50 to-yellow-400 shadow-2xl  h-96">
         <div className="flex"> <img className="rounded-full h-52" src="director.jpg" alt="" /></div>
         <div className="flex-col ml-20">
             <div className='text-2xl font-bold text-cyan-500 font-serif'>Dr. Monika Sachdeva</div>
