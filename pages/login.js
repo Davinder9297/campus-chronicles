@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import cookie from 'js-cookie'
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 export default function Login(){
     const [user, setuser] = useState()
     const [password, setpassword] = useState()

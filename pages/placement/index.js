@@ -66,8 +66,8 @@ export default function Placement() {
   return (<>
 
 <Navbar/>
-<div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold'>
-  <div> <button> <AiTwotoneHome /></button> Home</div>
+<div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold xsm:text-xs xsm:justify-around xsm:h-16'>
+  <div className='flex'> <AiTwotoneHome className='m-1' /> Home </div>
   <div> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
   <div> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
   <div> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
@@ -75,7 +75,7 @@ export default function Placement() {
 
 </div>
 
-  <div className="flex p-2 h-[500px] justify-between flex-row mx-1 my-2 border-2 rounded-md b">
+  <div className="flex p-2 h-auto justify-between flex-row mx-1 my-2 border-2 rounded-md flex-wrap  ">
       {/* <div className="  fle<button> <AiTwotoneHome /></button>x-col p-2 text-lg  h-auto w-[22%]  justify-center grid grid-cols-1 divide-y  border-4 rounded-md  border-orange-900">
 
         <div className=" flex text-gray-800 font-bold  "><div className='mt-4 mb-4'>  Home </div></div>
@@ -90,16 +90,16 @@ export default function Placement() {
 
 
       </div> */}
-      <div className=" p-2.5 flex justify-center border-solid shadow-inner shadow-pink-600 w-[62%] rounded-md">
+      <div className=" p-2.5 flex justify-center border-solid shadow-inner shadow-pink-600 w-[62%] rounded-md xsm:h-[80%] xsm:w-full  ">
         {/* <img className="p-2.5" src="Qs2.png" alt='' /> */}
        <PlacementCr/>
       {/* <div className='' img src=""></div> */}
       </div>
 
-      <div className=" flex justify-center border-solid  w-[35%] shadow-inner shadow-pink-600 rounded-xl " >
+      <div className=" flex justify-center border-solid  w-[35%] shadow-inner shadow-pink-600 rounded-xl xsm:w-full xsm:relative top-50 xsm:m-7  " >
         <div className=' border-solid  w-[95%] text-center font-bold text-2xl font-sans m-3 '><button className='m-2'> <MdEditNotifications /> </button>
            NOTIFICATIONS
-          <div className="  text-xl h-[420px] w-[98%] text-center    border-y-2 rounded-md  border-orange-900">
+          <div className="  text-xl h-[420px] w-[98%] text-center    border-y-2 rounded-md  border-orange-900 xsm:h-auto">
           {/* <Marquee autoFill  direction="up" className='bg-slate-500 h-full'> */}
 {data.map((da,index)=>{
   const {title,doc,date}=da;
@@ -114,14 +114,14 @@ export default function Placement() {
   show='hidden';
   }
   return(<>
-          <div className="justify-between flex bg-slate-300 text-gray-800 font-bold  border-black border-b "><div className=''> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
+          <div className="justify-between flex bg-slate-300 text-gray-800 font-bold  border-black border-b "><div className='my-2'> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button className='my-2' onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
 </div>
 
   </>)
 })}
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div>
+        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
+        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
+        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
         {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
         {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
         {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
@@ -152,7 +152,7 @@ export default function Placement() {
         <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center '> <div className='m-2'><RiCheckboxMultipleFill/></div> 17 LPA-Highest Package</div>
       </div>
 
-      <div className='h-auto w-[30%] '>
+      <div className='h-auto w-[30%] xsm:hidden'>
         <div className=' flex-col m-6 space-y-2'>
           <div className=' flex-col justify-center space-y-1 pl-3'> <img className='w-72 h-48' src='plac_home.jpeg' alt=''></img>
           <div className=' text-center font-serif font-bold text-base pl-3'> Qspider's Placement drive</div></div>

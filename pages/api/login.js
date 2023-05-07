@@ -6,7 +6,7 @@ import facultycredentials from "../../models/facultycredentials";
 import studentcredentials from "../../models/studentcredentials";
 import librarycredentials from "../../models/librarycredentials";
 import clubcredentials from "../../models/clubcredentials";
-import { setCookie } from "cookies-next";
+// import { setCookie } from "cookies-next";
 // import {cookies} from "next/headers"
 mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test");
 // mongoose.connect("mongodb://localhost:27017/main");

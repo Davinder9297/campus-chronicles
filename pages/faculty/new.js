@@ -7,7 +7,7 @@ import { GoMail } from 'react-icons/go'
 import { GrLinkedin } from 'react-icons/gr'
 import { BiPhoneCall } from 'react-icons/bi'
 import { FaChalkboardTeacher } from 'react-icons/fa'
-import { Hidden } from "@mui/material"
+// import { Hidden } from "@mui/material"
 
 export default function Faculty() {
 
