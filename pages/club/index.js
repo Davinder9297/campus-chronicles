@@ -116,7 +116,7 @@ export default function Club() {
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">
                     <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                        <Link href={'/club/sports'}>
+                        <Link href={'/club/sport'}>
                         <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
                     </Link>
                     </div>
@@ -131,7 +131,7 @@ export default function Club() {
 
             <div className="flex-col flex-wrap w-[24%]">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/training_placement_club'}>
+                    <Link href={'/club/training_placement'}>
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
                     </Link>
                 </div>
@@ -141,7 +141,7 @@ export default function Club() {
                     </Link>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <Link href={'/club/coding_and_tech_club'}>
+                    <Link href={'/club/coding_and_tech'}>
                         <img className="rounded-xl h-full w-full" src="coding.png" />
                     </Link>
                 </div>
