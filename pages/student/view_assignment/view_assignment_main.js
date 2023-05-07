@@ -18,7 +18,10 @@ export default function View_assignment() {
     const [disable, setdisable] = useState(true)
     const [opac, setopac] = useState('opacity-50 cursor-not-allowed')
     const [spin, setspin] = useState('hidden')
+    const [sub, setsub] = useState('hidden')
+    const [ass, setass] = useState('hidden')
 const [data, setdata] = useState([])
+const [submitted, setsubmitted] = useState([])
 const [doc, setdoc] = useState('')
     const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
     const pi = () => {
@@ -57,10 +60,17 @@ const [doc, setdoc] = useState('')
                     return val;
                 }
             })
+            if(temp.length==0){
+                setass('')
+            }
             // console.log(temp);
             setdata(temp)
-  
-    
+            let response1 = await fetch(url1);
+            let json1 = await response1.json();
+            setsubmitted(json1)
+    if(json1.length==0){
+        setsub('')
+    }
         
           } catch (error) {
          
@@ -76,6 +86,7 @@ const [doc, setdoc] = useState('')
           let response1=await res1.json();
  const data={doc:doc,studentname:response1.studentname,rollno:response1.rollno,userid:userid,subject:subject}
 //  console.log(data);
+Cookies.set('rollno',response1.rollno)
         const res=await fetch('http://localhost:3000/api/submittedassignments', {
                     method: 'POST',
                     headers: {
@@ -122,7 +133,12 @@ const [doc, setdoc] = useState('')
             setdisable(false)
             setopac('cursor-pointer ')
     }
+    const view = (doc) => {
 
+        const newWindow = window.open(doc, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+        // window.open(doc, "_blank")
+      }
     return (<>
         <div className="h-screen ">
             <Navbar class="shadow-md" />
@@ -146,34 +162,39 @@ const [doc, setdoc] = useState('')
 
                         
                         <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
+                        <div className={`mt-[20%] text-xl ${sub}`}>No record found</div>
                         <div className="flex-col w-[100%] h-auto p-3">
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
                                 <div>
                                     <div className="accordion " id="accordionFlushExample">
-                                        {/* {data.map((ass,index)=>{ */}
-                                           {/* return(<>  */}
-                                            <div className="accordion-item focus-within:bg-white">
-                                            <h2 className="accordion-header" id={"title"}>
-                                                <button className="accordion-button collapsed hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                    Assignment 1
+                                       
+                                            {submitted.map((da,index)=>{
+                                                const {doc,date}=da;
+                                                let formatted=date.substring(8,10)+date.substring(4,8)+date.substring(0,4);
+
+                                                return(<>
+                                                <div className="accordion-item focus-within:bg-white">
+                                            <h2 className="accordion-header" id={date}>
+                                                <button className="accordion-button collapsed hover:bg-slate-100" type="button" data-bs-toggle="collapse" data-bs-target={`#a${index}`} aria-expanded="false" aria-controls={`a${index}`}>
+                                                    Assignment {index+1}
                                                 </button>
                                             </h2>
-                                            <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby={"title"} data-bs-parent="#accordionFlushExample">
+                                            <div id={`a${index}`} className="accordion-collapse collapse " aria-labelledby={date} data-bs-parent="#accordionFlushExample">
                                                 <div className="accordion-body">
                                                     <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base  p-3`}>
                                                         <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex">
                                                         <div className="w-[70%]">
                                                                 View Submitted Assignment
                                                                 </div>
-                                                                <div className="w-[30%] flex justify-center ">
+                                                                <button onClick={()=>(view(doc))} className="w-[30%] flex justify-center ">
                                                                 <GrView className=" hover:opacity-80 h-full w-6 cursor-pointer flex justify-end" />
-                                                            </div></div>
+                                                            </button></div>
                                                         <div className="flex">
                                                         <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex ">
                                                         <div className="w-[70%]">
-                                                                Submision Date
+                                                                Submission Date
                                                         </div>
-                                                            <div className="w-[30%] flex justify-center ">{"formatted"}</div>
+                                                            <div className="w-[30%] flex justify-center ">{formatted}</div>
 
                                                         </div>
                                                         </div>
@@ -181,8 +202,9 @@ const [doc, setdoc] = useState('')
                                                     </div></div>
                                             </div>
                                         </div>
-                                            {/* </>) */}
-                                        {/* })} */}
+                                                </>)
+                                            })}
+                                      
                                         
                               
                                     </div>
@@ -191,9 +213,14 @@ const [doc, setdoc] = useState('')
                         </div>
 
                         <div className={`m-auto  h-[80%] w-[95%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm px-2 ${pinfo}`}>
+                            
+                        <div className={`mt-[20%]  text-xl ${ass}`}>No record found</div>
                             <div className="flex-col w-[100%] h-auto p-3">
+
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
                                 <div>
+                              
+
                                     <div className="accordion " id="accordionFlushExample">
                                         {data.map((ass,index)=>{
                                             const {title,doc,deadline,userid,subject}=ass;
