@@ -8,7 +8,7 @@ import { useState } from "react"
 import { CgShapeRhombus } from 'react-icons/cg'
 
 
-export default function view_material() {
+export default function select_subject() {
 
     return (<>
         <div className="h-screen ">
@@ -28,7 +28,7 @@ export default function view_material() {
                             </div>
                             <div className="flex justify-between mt-4 w-[100%] m-auto flex-wrap ">
 
-                                <Link href="/student/study_material/view_material" target="_blank">
+                                <Link href="/student/study_material/view_material" >
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Subject 1
@@ -36,7 +36,7 @@ export default function view_material() {
                                     </div>
                                 </Link>
 
-                                <Link href={"/student/study_material/view_material"} target="_blank">
+                                <Link href={"/student/study_material/view_material"} >
                                     <div className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0] rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                         <div className=" m-auto pr-3 text-lg">
                                             Subject 2
