@@ -6,7 +6,6 @@ import cookie from 'js-cookie'
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
-import { useRouter } from 'next/router';
 export default function Login(){
     const [user, setuser] = useState()
     const [password, setpassword] = useState()

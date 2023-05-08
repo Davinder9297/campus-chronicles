@@ -6,7 +6,7 @@ export default function Navbar(props) {
         <div className={`h-24 w-full justify-between flex shadow-xl  ${props.class}`}>
             <div className='flex '>
                 <div className="h-[100px] w-24 ml-12 mr-8 xsm:ml-0">
-                    <div className="pt-1 w-[105px]"><a href='#'><img className="h-[90px] w-[110px]" src="/logo_gif.gif" alt="" /></a>
+                    <div className="pt-1 w-[105px]"><a href='/'><img className="h-[90px] w-[110px]" src="/logo_gif.gif" alt="" /></a>
                     </div>
                 </div>
                 <div className="flex-col xsm:my-auto">

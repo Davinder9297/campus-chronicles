@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {IoMdArrowDroprightCircle} from 'react-icons/io'
-
+import Link from 'next/link'
 
 export default function Coding_ques(){
     const [data, setdata] = useState([])
@@ -34,7 +34,8 @@ export default function Coding_ques(){
     <div className=" h-36 flex flex-row  ">
         <div className="flex justify-start w-[40%] h-36 " ><img className=" w-[65%]" src="/code_q.gif" /></div>
         <div className=" w-[70%] py-14 text-left pl-20 text-slate-800 font-extrabold font-BlinkMacSystemFont text-4xl"> Coding Practice Questions</div>   
-    <button className=' ml-4 mr-1 mt-1 p-2 flex rounded-lg text-center text-white font-semibold h-10 w-22 bg-slate-800' type="button " > HOME</button>   
+    {/* <Link href ={'/placement/index'}> </Link>   */}
+    <button className=' ml-4 mr-1 mt-1 p-2 flex rounded-lg text-center text-white font-semibold h-10 w-22 bg-slate-800' type="button " > HOME</button> 
             </div>
     
     

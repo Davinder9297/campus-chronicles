@@ -1,14 +1,15 @@
 import AboutPCarousal from '../../components/AboutP_carousal'
-
+import Navbar from '../../components/navbar' 
+import Footer from "../../components/footer";
 export default function About_placement(){
     return (<> 
     
-    
+   <Navbar/> 
   {/* <div className= " w-full h-44 bg-plac_bg bg-no-repeat bg-cover opacity-80 text-lg text-center p-5"> dhf</div> */}
-  <div className= "h-72 pt-20 placement_bg flex justify-center  "> 
+  {/* <div className= "h-72 pt-20 placement_bg flex justify-center  "> 
   <div className=" p-6 mt-2 mr-2 w-[84vh] h-20 shadow-xl shadow-slate-600 rounded-md" >
   <div className="text-4xl  font-BlinkMacSystemFont font-extrabold opacity-100 text-center">ABOUT PLACEMENTS....</div></div>
-  </div>
+  </div> */}
 
   <div className=" h-30 w-full p-6  ">
     <div className=' text-center text-4xl font-BlinkMacSystemFont font-extrabold text-amber-500 animate-pulse'>OUR TOP PLACEMENT HOLDERS</div> </div>
@@ -107,6 +108,7 @@ opportunities to the students.
       </div>
     
     </div>
+    <Footer/>
   
     </>)
 }
