@@ -188,6 +188,29 @@ a {
   padding: 8px; 
   /* background-color: red; */
 }  
+.p_record>table>thead>tr>th {
+  padding: 8px;
+  text-align: center;
+  background-color: #6969e2 !important;
+  color: #ffffff !important;
+}
+/* .p_record2>table>thead>tr>th {
+  padding: 8px;
+  text-align: center;
+  background-color: #6969e2 !important;
+  color: #ffffff !important;
+} */
+.p_record>table>tbody>tr:nth-child(even) {
+  background-color: #cffafe ; /*#f4b3d7 */
+}
+/* .p_record2>table>tbody>tr:nth-child(even) {
+  background-color: #f5d0fe ;
+} */
+.p_record>table>tbody>tr>td {
+  border: 4px;
+  padding: 7px; 
+  text-align:center
+} 
 .qualtable>table>tbody>tr>td {
   padding: 6px 5px; 
   text-align: center;

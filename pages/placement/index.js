@@ -1,4 +1,4 @@
-// import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 import { icons } from 'react-icons'
 import { AiTwotoneHome } from 'react-icons/ai'
 import {MdEditNotifications} from 'react-icons/md'
@@ -114,14 +114,14 @@ export default function Placement() {
   show='hidden';
   }
   return(<>
-          <div className="justify-between flex bg-slate-300 text-gray-800 font-bold  border-black border-b "><div className='my-2'> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button className='my-2' onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
+          <div className="justify-between flex  font-mono font-bold text-lg border-black border-b "><div className='my-2'> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button className='my-2' onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
 </div>
 
   </>)
 })}
+        {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
         <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
-        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div>
+        <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='my-2'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
         {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
         {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
         {/* <div className=" flex  text-gray-800 font-bold  border-black border-b"><div className='mt-4 mb-4'> <button> <FaThList/></button> 1st notification is announced</div></div> */}
@@ -226,6 +226,7 @@ export default function Placement() {
         </div>
 
 <Collab/>
+<Footer/>
 
      
   </>)
