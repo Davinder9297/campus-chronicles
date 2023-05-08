@@ -11,7 +11,7 @@ export default function Placement_record(){
 <div className=" w- full  text-start font-mono font-bold text-3xl">Batch: 2018-2022
 </div>
 	<table width="100%" className="mt-2">
-		<thead>
+		<thead className='uppercase'>
 			<tr>
 				<th align="left" >
 					S.No.</th>
@@ -24,7 +24,7 @@ export default function Placement_record(){
 				<th align="left">
 					</th>
 				{/* <th align="left">
-					IV/VI/VIII</th> */}
+					Company Logo</th> */}
 			</tr>
 		</thead>
 		<tbody >
@@ -32,7 +32,7 @@ export default function Placement_record(){
 				<td>
 					<strong>1.</strong></td>
 				<td>
-					<img className=' ml-16 w-44 h-44 rounded-full' src='/glimpse.jpg' alt=''/></td>
+					<img className=' ml-16 w-40 h-40 rounded-full' src='/glimpse.jpg' alt=''/></td>
 				<td>
                 Glimpse Salwan</td>
 				<td>
@@ -45,69 +45,99 @@ export default function Placement_record(){
 				<td>
 					<strong>1.</strong></td>
 				<td>
-                <img className=' ml-16 w-44 h-44 rounded-full' src='/glimpse.jpg' alt=''/></td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/dev.jpg' alt=''/></td>
 				<td>
-                Glimpse Salwan</td>
+                Dev Kumar Anand</td>
 				<td>
-					Infosys</td>
+					IBM</td>
 				<td>
-                <img className='w-50 h-44' src='/f.png' alt=''/></td>
+                <img className='w-50 h-44' src='/e.png' alt=''/></td>
 				
 			</tr>
 			<tr className=" text-lg font-semibold">
 				<td>
 					<strong>1.</strong></td>
 				<td>
-                <img className=' ml-16 w-44 h-44 rounded-full' src='/glimpse.jpg' alt=''/></td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/shekar.jpg' alt=''/></td>
 
 				<td>
-                Glimpse Salwan</td>
+               Shashank Shekhar</td>
 				<td>
-					Infosys</td>
+					Wipro</td>
 				<td>
-                <img className='w-50 h-44' src='/f.png' alt=''/></td>
+                <img className='w-50 h-44' src='/a.png' alt=''/></td>
 				
 			</tr>
 			<tr className=" text-lg font-semibold">
 				<td>
 					<strong>1.</strong></td>
 				<td>
-                <img className=' ml-16 w-44 h-44 rounded-full' src='/glimpse.jpg' alt=''/></td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/rohit.jpg' alt=''/></td>
 
 				<td>
-                Glimpse Salwan</td>
+                Rohit Datwalia</td>
 				<td>
-					Infosys</td>
+					TCS</td>
 				<td>
-                <img className='w-50 h-44' src='/f.png' alt=''/></td>
+                <img className='w-50 h-44' src='/j.png' alt=''/></td>
 				
 			</tr>
 			<tr className=" text-lg font-semibold">
 				<td>
 					<strong>1.</strong></td>
 				<td>
-                <img className=' ml-16 w-44 h-44 rounded-full' src='/glimpse.jpg' alt=''/></td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/milan.jpeg' alt=''/></td>
 
 				<td>
-                Glimpse Salwan</td>
+                Milan Das</td>
 				<td>
-					Infosys</td>
+					TCS</td>
 				<td>
-                <img className='w-50 h-44' src='/f.png' alt=''/></td>
+                <img className='w-50 h-44' src='/j.png' alt=''/></td>
 				
 			</tr>
             <tr className=" text-lg font-semibold">
 				<td>
 					<strong>1.</strong></td>
 				<td>
-                <img className=' ml-16 w-44 h-44 rounded-full' src='/glimpse.jpg' alt=''/></td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/sahil_rana.jpg' alt=''/></td>
 
 				<td>
-                Glimpse Salwan</td>
+                Sahil Rana</td>
 				<td>
-					Infosys</td>
+					Cognizant</td>
 				<td>
-                <img className='w-50 h-44' src='/f.png' alt=''/></td>
+                <img className='w-50 h-44' src='/b.png' alt=''/></td>
+				
+			</tr>
+			
+			<tr className=" text-lg font-semibold">
+				<td>
+					<strong>1.</strong></td>
+				<td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/vivek_singh.jpg' alt=''/></td>
+
+				<td>
+                Vivek Singh</td>
+				<td>
+					Cognizant</td>
+				<td>
+                <img className='w-50 h-44' src='/b.png' alt=''/></td>
+				
+			</tr>
+			
+			<tr className=" text-lg font-semibold">
+				<td>
+					<strong>1.</strong></td>
+				<td>
+                <img className=' ml-16 w-40 h-40 rounded-full' src='/gorav.jpg' alt=''/></td>
+
+				<td>
+                Gaurav Chaudhary</td>
+				<td>
+					Cognizant</td>
+				<td>
+                <img className='w-50 h-44' src='/b.png' alt=''/></td>
 				
 			</tr>
 		</tbody>
@@ -117,7 +147,7 @@ export default function Placement_record(){
 	<div className=" w- full  text-start font-mono font-bold text-3xl">Batch: 2019-2023
 </div>
 <table width="100%" className="mt-2">
-		<thead>
+		<thead className='uppercase'>
 			<tr>
 				<th align="left" >
 					S.No.</th>
@@ -127,8 +157,10 @@ export default function Placement_record(){
 					Name</th>
 				<th align="left">
 					Company</th>
-				<th align="left">
-					</th>
+				{/* <th align="left">
+					Company Logo
+					</th> */}
+					
 			</tr>
 		</thead>
 		<tbody >
