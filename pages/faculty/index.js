@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Navbar from "../../components/navbar"
-<<<<<<< HEAD
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -74,118 +73,6 @@ View Profile
                             <button>View Profile</button>
                         </div>
                     </div>
-=======
-import { useState } from "react"
-import { CgShapeRhombus } from 'react-icons/cg'
-import { RiBankFill } from 'react-icons/ri'
-import { GoMail } from 'react-icons/go'
-import { GrLinkedin } from 'react-icons/gr'
-import { BiPhoneCall } from 'react-icons/bi'
-import { FaChalkboardTeacher } from 'react-icons/fa'
-import { Hidden } from "@mui/material"
-
-export default function Faculty() {
-
-// password pending
-    const [pinfo, setpinfo] = useState('')
-    const [edqu, setedqu] = useState('hidden')
-    const [res,setres]=useState('hidden')
-    const [teach,setteach]=useState('hidden')
-    const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
-    const [edeqclass, setedeqclass] = useState('text-white')
-    const [resclass, setresclass] = useState('text-white')
-    const [teachclass, setteachclass] = useState('text-white')
-    const [read, setread] = useState(true)
-    const [disable, setdisable] = useState(true)
-    const [name, setname] = useState('Ms. Jaspreet Kaur')
-    const [role, setrole] = useState('Student')
-    const [dob, setdob] = useState('23-11-2002')
-    const [phone, setphone] = useState('7009400665')
-    const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
-    const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
-    const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
-    // const [, set] = useState(second)
-    // const [bottomborder, setbottomborder] = useState()
-
-    const pi = () => {
-        setedqu('hidden');
-        setres('hidden');
-        setteach('hidden');
-        setpinfo(' ');
-        setpiclass('border-b-4 border-black text-black ')
-        setedeqclass('text-white')
-        setresclass('text-white')
-        setteachclass('text-white')
-    }
-    const eq = () => {
-        setedqu(' ');
-        setpinfo('hidden');
-        setres('hidden');
-        setteach('hidden');
-        setpiclass('text-white')
-        setresclass('text-white')
-        setteachclass('text-white')
-        setedeqclass('border-b-4 border-black text-black ')
-    }
-    const respub = () => {
-        setres(' ');
-        setedqu('hidden');
-        setpinfo('hidden');
-        setteach('hidden');
-        setpiclass('text-white')
-        setedeqclass('text-white')
-        setteachclass('text-white')
-        setresclass('border-b-4 border-black text-black ')
-    }
-    const teaching = () => {
-        setres('hidden ');
-        setedqu('hidden');
-        setpinfo('hidden');
-        setteach('');
-        setpiclass('text-white')
-        setedeqclass('text-white')
-        setresclass('text-white')
-        setteachclass('border-b-4 border-black text-black ')
-    }
-
-    return (<>
-        <div className=" ">
-            <Navbar class="shadow-md" />
-            <div className="mt-3 p-2 text-center text-3xl font-semibold">
-                Our Faculty and Other Staff
-            </div >
-            <div className="w-[90%] m-auto">
-                {/* Monika Ma'am */}
-                <div className="mt-3">
-                    {/* <div className=" text-center text-2xl font-semibold text-amber-900 bg-yellow-200 p-1 rounded-3xl">
-                        Dr. Monika Sachdeva
-                    </div> */}
-                    <div className=" flex w-[100%] m-auto">
-                        <div className="h-60 w-52 mr-2 m-auto justify-center">
-                            <div className="flex justify-center">
-                            <img src="/jass.jpeg" className=" rounded-full shadow-md shadow-black h-44  " />
-                            </div>
-                            <div className=" text-center text-xl font-semibold text-amber-900 p-1 mt-3">
-                            Dr. Monika Sachdeva
-                            </div>
-                        </div>
-
-                        <div className="mt-3 w-[70%] shadow-md shadow-slate-400 h-60 m-auto">
-                            <div className=" w-[100%] flex text-center ">
-                                <div onClick={pi} className={` w-[50%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
-                                    Personal Information
-                                </div>
-                                <div onClick={eq} className={`bg-amber-800 w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
-                                    Educational Qualifications
-                                </div>
-                                <div onClick={teaching} className={`bg-yellow-500 w-[50%] m-auto p-1 h-full  hover:bg-yellow-400 cursor-pointer ${teachclass}`}>
-                                    Teaching Experience
-                                </div>
-                                <div onClick={respub} className={` w-[50%] m-auto bg-amber-800 font-semibold p-1 hover:bg-amber-700 cursor-pointer ${resclass}`} >
-                                    Research Publications
-                                </div>
-                            </div>
->>>>>>> e4c83310db5c7725c7fca20fdaff4f0d5d52138e
 
                             <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin  scrollbar-thumb-zinc-900 text-sm ${pinfo}`}>
                                 
@@ -627,12 +514,8 @@ export default function Faculty() {
                                 </table>
                             </div>
                         </div>
-<<<<<<< HEAD
-                    </div> */}
-=======
                     </div>
                             <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
->>>>>>> e4c83310db5c7725c7fca20fdaff4f0d5d52138e
                 </div>
                 
             </div>
@@ -643,83 +526,8 @@ export default function Faculty() {
             </div >
             <div className="w-[90%] m-auto">
                 {/* Monika Ma'am */}
-                <div className="mt-3">
-                    {/* <div className=" text-center text-2xl font-semibold text-amber-900 bg-yellow-200 p-1 rounded-3xl">
-                        Dr. Monika Sachdeva
-                    </div> */}
-                    <div className=" flex w-[100%] m-auto">
-                        <div className="h-48 w-52 mr-2 m-auto justify-center">
-                            <div className="flex justify-center">
-                            <img src="/jass.jpeg" className=" rounded-full shadow-md shadow-black h-40  " />
-                            </div>
-                            <div className=" text-center text-xl font-semibold text-amber-900 p-1 mt-3">
-                            Mr. Ravinder
-                            </div>
-                        </div>
 
-                        <div className="mt-3 w-[70%] shadow-md shadow-slate-400 h-48 m-auto">
-                            <div className=" w-[100%] flex text-center ">
-                                <div className={` w-[100%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer `} >
-                                    Personal Information
-                                </div>
-                                
-                            </div>
-
-                            <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin  scrollbar-thumb-zinc-900 text-sm `}>
-                                
-                            <table className="w-full">
-                                    <tbody>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <RiBankFill className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Department</div></div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Director
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                <div className="flex">
-                                                <FaChalkboardTeacher className="fill-amber-800 mr-4  h-4 w-6"/>
-                                                <div className="">Designation</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Professor
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <BiPhoneCall className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Contact Number</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                7009400665
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <GoMail className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Email I'd</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreetkaursaini469@gmail.com
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                           
-                        </div>
-                    </div>
                     
-                            <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
 
 
                         
