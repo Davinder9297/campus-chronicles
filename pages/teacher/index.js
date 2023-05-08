@@ -10,7 +10,7 @@ import Newrow from "./tablerows1"
 import Experiencerow from "./tablerows2"
 import { Cookies } from "js-cookie"
 import { parseCookies, setCookie } from "nookies"
-import { getCookie } from 'cookies-next';
+// import { getCookie } from 'cookies-next';
 import TeacherNavbar from "../../components/teacher_navbar"
 
 export default function Profile() {
