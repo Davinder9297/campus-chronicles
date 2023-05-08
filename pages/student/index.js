@@ -4,7 +4,7 @@ import {FaPowerOff} from "react-icons/fa"
 import {IoMdDownload} from "react-icons/io"
 import { useEffect } from "react";
 import { useState } from "react";
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 import Cookies from "js-cookie";
 
 
@@ -43,6 +43,7 @@ const [data, setdata] = useState([])
       
             setdata(json1)
             Cookies.set('sem',json1.sem)
+            Cookies.set('rollno',json1.rollno)
             // console.log(json1);
             // Cookies.set('year',)
 

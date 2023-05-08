@@ -51,7 +51,7 @@ export default function Library(){
             <img src='/libj2.gif' className='h-24 ml-12 w-[15%]'/>
             <div className=' justify-center items-center flex w-[70%]  font-bold'>Library</div>
         </div>
-        <div className="libnavbar flex justify-center w-full space-x-28  bg-purple-300 py-2 font-semibold font-serif ">
+        <div className="libnavbar flex justify-center w-full space-x-28 bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 py-2 font-semibold font-serif ">
                 <div className='flex '><FaHome className='text-lg mt-[2px] mr-1'/> Home</div>
                 <div className='flex '><ImBooks className='text-xl mt-[2px] mr-1'/> <Link href='/library/availablebooks'>Available Books</Link></div>
                 <div className='flex '><FaBookMedical className=' mt-1 mr-1'/><Link href='/library/requestbook'>Request Book</Link></div>

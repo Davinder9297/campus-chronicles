@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { ToastContainer, toast } from 'react-toastify';
 import cookie from 'js-cookie'
+import {useRouter} from 'next/router';
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
@@ -51,6 +52,7 @@ if(response.error){
 else{
     Cookies.set('login',user)
     if(profession=="Student"){
+        // Cookies.set('rollno',)
         router.push('/student')
     }
     else if(profession=="Faculty"){
