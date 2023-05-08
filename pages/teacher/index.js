@@ -37,7 +37,7 @@ export default function Profile() {
 const [facultyname, setfacultyname] = useState('')
   // let c=cookie.get('facultyname')
 
-  const [personaldata, setpersonaldata] = useState({ image: "", facutyname: "", department: "", designation: "", facultyid: "", phone: "", email: "", linkedin: "" })
+  const [personaldata, setpersonaldata] = useState({ image: "", facultyname: "", department: "", designation: "", facultyid: "", phone: "", email: "", linkedin: "" })
   const personaldatachange = (evnt) => {
     setpersonaldata({
       ...personaldata,
@@ -319,7 +319,7 @@ const [facultyname, setfacultyname] = useState('')
               <img className="h-48 shadow-2xl shadow-red-600 w-48 rounded-full" src={`${personaldata.image}`} alt="" />
             </div>
             <div className="text-center text-2xl mt-4 font-bold">
-              Ms.jaspreet kaur
+              {personaldata.facultyname}
             </div>
           </div>
         </div>
