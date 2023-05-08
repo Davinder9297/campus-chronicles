@@ -118,6 +118,13 @@ const openInNewTab = (url) => {
            <div className='flex-col space-y-4 ml-2 pt-3'>
               <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="All">All</button></div>
               <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="Mathematics">Mathematics</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="Physics">Physics</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="os">Operating System</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="dbms">DataBase Management System</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="python">Python</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="java">Java</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="c">C</button></div>
+
               
            </div>
            
@@ -161,7 +168,9 @@ const openInNewTab = (url) => {
 <div className='flex-col mx-2 py-12 h-full res_table  '>
         <div className='text-center text-2xl text-white font-serif'> All Books</div> 
         <div className='flex justify-center'><img className='w-32 ' src="/hr.png" alt="" /></div>
-        <table className="border-collapse border border-slate-400  w-[90%] mx-auto mt-2">
+        <div className='h-[85.3%] overflow-y-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-500'>
+
+        <table className="border-collapse border border-slate-400  w-[90%] mx-auto mt-2 ">
                       <thead className="">
                         <tr className=" ">
                           <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
@@ -202,6 +211,7 @@ const openInNewTab = (url) => {
                         })}
                       </tbody>
                     </table>
+        </div>
         {/* <div className={`${show}  w-full overflow-y-auto scrollbar-thin pb-12  scrollbar-track-transparent scrollbar-thumb-transparent h-full  flex flex-wrap  justify-center pt-2`}>
             <div className={`${norecord} w-full  flex justify-center items-center shadow-2xl shadow-gray-900 mx-5 my-3`}>
                 <div className='text-xl text-gray-300 font-serif'>No Record Found</div>

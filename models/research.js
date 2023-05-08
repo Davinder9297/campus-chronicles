@@ -8,6 +8,9 @@ const ourschema=new mongoose.Schema({
     },  
     researchdata:{
         type:Array
+    },    
+    facultyname:{
+        type:String
     }
 
 },);

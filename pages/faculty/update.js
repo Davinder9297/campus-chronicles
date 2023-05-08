@@ -2,13 +2,8 @@ import Link from "next/link"
 import Navbar from "../../components/navbar"
 // import Navbar from "../../components/navbar"
 import { useState } from "react"
-import { CgShapeRhombus } from 'react-icons/cg'
-import { RiBankFill } from 'react-icons/ri'
-import { GoMail } from 'react-icons/go'
-import { GrLinkedin } from 'react-icons/gr'
-import { BiPhoneCall } from 'react-icons/bi'
-import { FaChalkboardTeacher } from 'react-icons/fa'
-import { Hidden } from "@mui/material"
+
+import { useEffect } from "react"
 
 export default function Faculty() {
 // password pending
@@ -20,15 +15,7 @@ const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
 const [edeqclass, setedeqclass] = useState('text-white')
 const [resclass, setresclass] = useState('text-white')
 const [teachclass, setteachclass] = useState('text-white')
-const [read, setread] = useState(true)
-const [disable, setdisable] = useState(true)
-const [name, setname] = useState('Ms. Jaspreet Kaur')
-const [role, setrole] = useState('Student')
-const [dob, setdob] = useState('23-11-2002')
-const [phone, setphone] = useState('7009400665')
-const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
-const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
-const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
+const [data, setdata] = useState({})
 // const [, set] = useState(second)
 // const [bottomborder, setbottomborder] = useState()
 
@@ -72,6 +59,23 @@ const teaching = () => {
     setresclass('text-white')
     setteachclass('border-b-4 border-black text-black ')
 }
+useEffect(() => {
+    const url = "http://localhost:3000/api/singlepagedata";     
+    const fetchData = async () => {
+      try {
+        // setspin('')
+        let response = await fetch(url);
+        let json = await response.json();
+        setdata(json)
+console.log(json);
+      } catch (error) {
+
+        console.log("error", error);
+      }
+    };
+  
+    fetchData();
+  }, []);  
     return (<>
         <div className=" border-red-700">
             <Navbar class="shadow-md" />
@@ -82,13 +86,13 @@ const teaching = () => {
                 {/* Monika Ma'am */}
                 <div className="mt-4">
                     <div className=" text-center text-2xl font-semibold text-amber-900 bg-yellow-200 p-1 rounded-3xl">
-                        Dr. Monika Sachdeva
+                        {data.facultyname}
                     </div>
                     <div className=" flex w-[95%]  border-emerald-800">
                         <div className="w-52 mr-2 m-auto">
-                            <img src="/jass.jpeg" className="h-full rounded-full mx-auto" />
+                            <img src={data.image} className="h-full rounded-full mx-auto" />
                             <div className="mt-3 text-xl text-center"> 
-                                Dr. Monika Sachdeva
+                            {data.facultyname}
                             </div>
                         </div>
                         <div className="w-[70%] ">
@@ -102,7 +106,7 @@ const teaching = () => {
                                                 Department
                                             </td>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Director
+                                                {data.department}
                                             </td>
                                         </tr>
                                         <tr>
@@ -110,7 +114,7 @@ const teaching = () => {
                                                 Designation
                                             </td>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Professor
+                                                {data.designation}
                                             </td>
                                         </tr>
                                         <tr>
@@ -118,7 +122,7 @@ const teaching = () => {
                                                 Contact Number
                                             </td>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                7009400665
+                                                {data.phone}
                                             </td>
                                         </tr>
                                         <tr>
@@ -126,7 +130,7 @@ const teaching = () => {
                                                 E-mail I'd
                                             </td>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreetkaursaini469@gmail.com
+                                                {data.email}
                                             </td>
                                         </tr>
                                         <tr>
@@ -134,7 +138,7 @@ const teaching = () => {
                                                 LinkedIn
                                             </td>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreet
+                                                {data.linkedin}
                                             </td>
                                         </tr>
                                     </tbody>
