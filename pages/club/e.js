@@ -11,9 +11,9 @@ export default function Editorial() {
 
             </div>
             
-            <div className="w-[80%] mx-auto">
+            <div className="w-[95%] mx-auto">
 
-            <div className="  text-center font-bold text-3xl mt-2 font-sans p-2 bg-slate-800">
+            <div className="  text-center font-bold text-3xl mt-2 font-sans p-2">
                 About us....
                 <div className="mx-3 font-normal text-lg shadow-md shadow-yellow-500 rounded-xl p-2 text-justify">
                     Entrepreneurship cell is dedicated to promoting the spirit of entrepreneurship among students. The basic aim of E-Cell is to encourage students today to start their own enterprise. The basic purpose of E-Cell is :<br />
@@ -27,9 +27,9 @@ export default function Editorial() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-around w-full bg-blue-600" >
+            <div className="flex justify-around w-full" >
 
-                <div className="w-[40%] text-center font-bold text-3xl font-sans mt-3 p-2 bg-red-400 ">
+                <div className="w-[40%] text-center font-bold text-3xl font-sans mt-3 p-2">
                     Our Handlers
                     <div className="shadow-md shadow-yellow-500 text-2xl m-3 p-3 rounded-xl  ">
                         <div className="bg-yellow-300 rounded-xl">Incharge</div>
@@ -62,7 +62,7 @@ export default function Editorial() {
                 </div>
                 <div className="flex-col='true'  w-[50%] ">
 
-                    <div className=" text-center font-bold text-3xl font-sans mt-3 p-2 mx-auto bg-pink-800 ">
+                    <div className=" text-center font-bold text-3xl font-sans mt-3 p-2 mx-auto ">
 
                         Leading Roles
                     <div className="shadow-md shadow-yellow-500 text-2xl p-1 rounded-xl space-y-4">

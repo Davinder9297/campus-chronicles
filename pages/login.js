@@ -5,16 +5,21 @@ import { ToastContainer, toast } from 'react-toastify';
 import cookie from 'js-cookie'
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 export default function Login(){
     const [user, setuser] = useState()
     const [password, setpassword] = useState()
     const [profession, setprofession] = useState('')
     const [spin, setspin] = useState('hidden')
     const [show, setshow] = useState('')
+    let router=useRouter()
+
     const authenticate=async(e)=>{
         e.preventDefault();
 const data={user,password,profession}
+if(user=="davinder" && password=="davinder" && profession==""){
+router.push('/admin')
+}
 // console.log(profession,user,password);
 setspin('')
 setshow('opacity-50')
@@ -29,7 +34,7 @@ const res=await fetch('http://localhost:3000/api/login', {
               setspin('hidden')
               setshow('')
 if(response.error){
-    toast.warning('Invaild email address or password', {
+    toast.warning('Invaild Credentials', {
         position: "top-right",
         autoClose: 1000,
         hideProgressBar: false,
@@ -43,6 +48,24 @@ if(response.error){
 }
 else{
     Cookies.set('login',user)
+    if(profession=="Student"){
+        router.push('/student')
+    }
+    else if(profession=="Faculty"){
+        router.push('/teacher')
+    }
+    else if(profession=="Club Manager"){
+        router.push('/club_management')
+    }
+    else if(profession=="Librarian"){
+        router.push('/library_management')
+    }
+    else if(profession=="Placement Manager"){
+        router.push('/placement_management')
+    }
+    else if(profession=="Student Manager"){
+        router.push('/student_management')
+    }
     toast.success('Login successfully', {
         position: "top-right",
         autoClose: 1000,
@@ -67,8 +90,8 @@ else{
     }
     
     return(<>
-    <div className='bg-slate-500  w-full h-screen'>
-        <Navbar/>
+    <div className='bg-zinc-400 w-full h-screen'>
+        <Navbar />
         <ToastContainer
     position="top-right"
     autoClose={1000}
@@ -97,7 +120,7 @@ else{
                 <div className='text-base  font-semibold '>User Id</div>
                 <input type="text" value={user} onChange={(e)=>{setuser(e.target.value)}} className='outline  outline-1 px-2 rounded-sm py-[6px] w-full text-base text-blue-400 outline-gray-300' placeholder="Enter User Id" />
                 <div className='mt-2   font-semibold text-base'>Password</div>
-                <input type="text" value={password} onChange={(e)=>{setpassword(e.target.value)}} className='outline outline-1 rounded-sm py-[6px] px-2 w-full text-base text-blue-400 outline-gray-300' placeholder="Enter Password" />
+                <input type="password" value={password} onChange={(e)=>{setpassword(e.target.value)}} className='outline outline-1 rounded-sm py-[6px] px-2 w-full text-base text-blue-400 outline-gray-300' placeholder="Enter Password" />
                 
                 <div className='mt-2   font-semibold text-base'>Login As</div>
                 <select value={profession}  onChange={(e)=>(setprofession(e.target.value))} name="profession"   className=" outline cursor-pointer outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-400 outline-gray-300">
@@ -105,7 +128,9 @@ else{
   <option className="" value="Student">Student</option >
   <option className="" value="Faculty">Faculty</option >
   <option className="" value="Librarian">Librarian</option >
-  <option className="" value="Club Admin">Club Admin</option >
+  <option className="" value="Club Manager">Club Manager</option >
+  <option className="" value="Placement Manager">Placement Manager</option >
+  <option className="" value="Student Manager">Student Manager</option >
 </select>
                 <button onClick={authenticate} className='flex bg-yellow-400 text-blue-500 font-semibold w-full justify-center py-[6px] rounded-md mt-4 space-x-1 items-center'><BiLogIn className=' text-lg mt-[2px] text-blue-500' /> <div className='flex text-base'> Login</div>
                 </button>

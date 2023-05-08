@@ -176,12 +176,12 @@ a {
 .about>table>thead>tr>th {
   padding: 8px;
   text-align: left;
-  background-color: #065012 !important;
-  color: #ffffff !important;
+  background-color:#945a28 !important;
+  color: #ffff !important;
 }
 
 .about>table>tbody>tr:nth-child(even) {
-  background-color: #92c471;
+  background-color: #fffac4;
 }
 .about>table>tbody>tr>td {
   border: 1px;

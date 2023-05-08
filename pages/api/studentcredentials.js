@@ -19,7 +19,7 @@ res.status(200).json({success:"success"})
     else{
         // let ans=await studentcredentials.countDocuments({}).exec();
         // if(ans>0){
-            let data1=await studentcredentials.findOne({userid:token});
+            let data1=await studentcredentials.find({});
             res.status(200).json(data1);
         // }
     }      

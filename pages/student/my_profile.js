@@ -48,7 +48,7 @@ export default function My_profile() {
                 ]
             },
         });
-        const url = "http://localhost:3000/api/studentcredentials";
+        const url = "http://localhost:3000/api/studentpersonaldata";
 //   const url1 = "http://localhost:3000/api/clubannouncement";
 //   const url2 = "http://localhost:3000/api/events";
 

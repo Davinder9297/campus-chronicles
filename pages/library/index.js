@@ -49,16 +49,14 @@ export default function Library(){
         {/* <div className='text-center text-4xl h-24 bg-slate-400'><img src='/libj.jpg' className='h-24 w-full'/></div> */}
         <div className='text-center text-5xl h-24 flex w-[100%] '>
             <img src='/libj2.gif' className='h-24 ml-12 w-[15%]'/>
-            <div className=' justify-center flex w-[70%]  font-bold'>Library</div>
+            <div className=' justify-center items-center flex w-[70%]  font-bold'>Library</div>
         </div>
-        <div className="libnavbar flex justify-around w-full bg-purple-300 py-2 font-semibold font-serif ">
+        <div className="libnavbar flex justify-center w-full space-x-28  bg-purple-300 py-2 font-semibold font-serif ">
                 <div className='flex '><FaHome className='text-lg mt-[2px] mr-1'/> Home</div>
-                <div className='flex  '><MdMessage className='text-lg mt-1 mr-1'/>About Library</div>
                 <div className='flex '><ImBooks className='text-xl mt-[2px] mr-1'/> <Link href='/library/availablebooks'>Available Books</Link></div>
-                <div className='flex '><ImNewspaper className='text-lg mt-[3px] mr-1'/><Link href='/library/availablemagazines'>Available Magazines</Link></div>
                 <div className='flex '><FaBookMedical className=' mt-1 mr-1'/><Link href='/library/requestbook'>Request Book</Link></div>
                 <div className='flex '><AiFillFilePdf className='text-lg mt-1 mr-1'/><Link href='/library/ebooks'>eBooks</Link></div>
-                <div className='flex '><MdAccountCircle className='text-xl mt-[2px] mr-1 '/>Profile</div>
+                {/* <div className='flex '><MdAccountCircle className='text-xl mt-[2px] mr-1 '/>Log o</div> */}
             
             </div>
         <div className="flex  mt-[2px]">

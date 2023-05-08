@@ -4,7 +4,7 @@ import {MdLocationPin} from 'react-icons/md';
 
 export default function Footer(){
     return(<>
-    <div className=" flex justify-around mt-2 relative bg-purple-200 py-3 bottom-0">
+    <div className=" flex justify-around mt-2 relative bg-gradient-to-r from-yellow-500 via-amber-100 to-yellow-500 py-3 bottom-0">
         <div className="flex-col ">
             <div className='flex justify-center'><img className='h-24' src="/ptu-logo-transparent.png" alt="" /></div>
         <div className='text-center font-semibold'> CAMPUS CHRONICLES</div>

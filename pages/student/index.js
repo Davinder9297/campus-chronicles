@@ -30,7 +30,7 @@ const [data, setdata] = useState([])
       }
     useEffect(() => {
         const url = "http://localhost:3000/api/studentannouncement";
-        const url1 = "http://localhost:3000/api/studentcredentials";
+        const url1 = "http://localhost:3000/api/studentpersonaldata";
         const fetchData = async () => {
           try {
             setspin('')
@@ -120,7 +120,7 @@ const [data, setdata] = useState([])
                                     </div>
                                 </div>
                             </Link>
-                            <Link href={"/student/view_assignment"} year="1">
+                            <Link href={"/student/subjects"} year="1">
                             <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-orange-500">
                                 <img src="assignment.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">

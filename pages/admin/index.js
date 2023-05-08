@@ -13,14 +13,18 @@ export default function Index(){
         const [save2, setsave2] = useState('cursor-not-allowed opacity-50')
         const [save3, setsave3] = useState('cursor-not-allowed opacity-50')
         const [save4, setsave4] = useState('cursor-not-allowed opacity-50')
+        const [save5, setsave5] = useState('cursor-not-allowed opacity-50')
         const [spin, setspin] = useState('hidden')
         const [show, setshow] = useState('hidden')
         const [disable, setdisable] = useState(true)
         const [disable1, setdisable1] = useState(true)
         const [disable2, setdisable2] = useState(true)
         const [disable3, setdisable3] = useState(true)
+        const [disable4, setdisable4] = useState(true)
         const [norecord3, setnorecord3] = useState('')
+        const [norecord4, setnorecord4] = useState('')
         const [rowsData3, setrowsData3] = useState([])
+        const [rowsData4, setrowsData4] = useState([])
     
         const imageupload=async ()=>{
           const formdata=new FormData()
@@ -40,6 +44,7 @@ export default function Index(){
     const url1 = "http://localhost:3000/api/facultycredentials";
     const url2 = "http://localhost:3000/api/librarycredentials";
     const url3 = "http://localhost:3000/api/clubcredentials";
+    const url4 = "http://localhost:3000/api/placementcredentials";
 
     const fetchData = async () => {
       try {
@@ -77,6 +82,14 @@ export default function Index(){
         // console.log(json2.length);
         if(json3.length!=0){
           setnorecord3('hidden')
+        }
+        const response4 = await fetch(url4);
+        const json4 = await response4.json();
+        // console.log(json2);
+        setrowsData4(json4)
+        // console.log(json2.length);
+        if(json4.length!=0){
+          setnorecord4('hidden')
         }
         setspin('hidden')
         setshow('')
@@ -238,8 +251,9 @@ const addTableRows2 = ()=>{
         setdisable3(false)
         setsave4('cursor-pointer')
           const rowsInput={
-            facultyname:'', 
-            club:'',  
+            facultyname:'',
+            facultyid:'',  
+            department:'',  
             designation:'',  
             userid:'',  
             password:'',  
@@ -267,6 +281,41 @@ const addTableRows2 = ()=>{
       
         rowsInput[index][name] = value;
       setrowsData3(rowsInput);
+      }
+    const addTableRows4 = ()=>{
+        setnorecord4('hidden')
+        setdisable4(false)
+        setsave5('cursor-pointer')
+          const rowsInput={
+            facultyname:'', 
+            club:'',  
+            designation:'',  
+            userid:'',  
+            password:'',  
+          } 
+          setrowsData4([...rowsData4, rowsInput])           
+        
+      }
+     const deleteTableRows4 = (index)=>{
+      setdisable4(false)
+        setsave5('cursor-pointer')
+          const rows = [...rowsData4];
+          rows.splice(index, 1);
+          setrowsData4(rows);
+          // console.log(rowsData.length);
+          if(rowsData4.length==1){
+            setnorecord4('')
+          }
+     }
+   
+     const handleChange4 = async(index, evnt)=>{
+      setdisable4(false)
+      setsave5('cursor-pointer')
+      const rowsInput = [...rowsData4];
+      const { name, value } = evnt.target;
+      
+        rowsInput[index][name] = value;
+      setrowsData4(rowsInput);
       }
   
   const student=async(e)=>{
@@ -325,6 +374,20 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                   'Content-Type': 'application/json',
                 },
                   body:JSON.stringify(rowsData3)
+              })
+              let response=await res.json();
+              // console.log(response);
+  }
+  const placement=async(e)=>{
+e.preventDefault();
+setdisable4(true)
+setsave5('cursor-not-allowed opacity-50')
+const res=await fetch('http://localhost:3000/api/placementcredentials', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(rowsData4)
               })
               let response=await res.json();
               // console.log(response);
@@ -447,6 +510,34 @@ const res=await fetch('http://localhost:3000/api/clubcredentials', {
                           </td>
                           </tr>
                         <Facultyrows rowsData={rowsData3} deleteTableRows={deleteTableRows3} handleChange={handleChange3} />
+                      </tbody>
+                    </table>
+                          </div>
+        </div>
+        <div className="text-center text-2xl font-serif mt-5">Placement Credential Management</div>
+        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable4} className={`bg-blue-600 p-2 rounded ${save5}`} onClick={placement}>Save Changes</button><button onClick={addTableRows4} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-center w-full ">
+        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+                          <table className="border-collapse border border-slate-400  w-full">
+                      <thead className="">
+                        <tr className=" ">
+                        <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Name</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Faculty Id</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Department</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Designation</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">User Id</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Password</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody className="">
+                      <tr className={`${norecord4}`}>
+                          <td colSpan="9"  className="bg-slate-400 text-center  h-28">
+                          No records found
+                          </td>
+                          </tr>
+                        <Facultyrows rowsData={rowsData4} deleteTableRows={deleteTableRows4} handleChange={handleChange4} />
                       </tbody>
                     </table>
                           </div>
