@@ -9,13 +9,8 @@ import TableRows from "./Tablerows"
 import Newrow from "./tablerows1"
 import Experiencerow from "./tablerows2"
 import { Cookies } from "js-cookie"
-<<<<<<< HEAD
-import cookie from 'js-cookie'
-
-=======
 import { parseCookies, setCookie } from "nookies"
 // import { getCookie } from 'cookies-next';
->>>>>>> 85d3a5fc0201343c13be2a956043506fd366c2b8
 import TeacherNavbar from "../../components/teacher_navbar"
 
 export default function Profile() {
@@ -42,7 +37,7 @@ export default function Profile() {
 const [facultyname, setfacultyname] = useState('')
   // let c=cookie.get('facultyname')
 
-  const [personaldata, setpersonaldata] = useState({ image: "", facutyname: "", department: "", designation: "", facultyid: "", phone: "", email: "", linkedin: "" })
+  const [personaldata, setpersonaldata] = useState({ image: "", facultyname: "", department: "", designation: "", facultyid: "", phone: "", email: "", linkedin: "" })
   const personaldatachange = (evnt) => {
     setpersonaldata({
       ...personaldata,
@@ -324,7 +319,7 @@ const [facultyname, setfacultyname] = useState('')
               <img className="h-48 shadow-2xl shadow-red-600 w-48 rounded-full" src={`${personaldata.image}`} alt="" />
             </div>
             <div className="text-center text-2xl mt-4 font-bold">
-              Ms.jaspreet kaur
+              {personaldata.facultyname}
             </div>
           </div>
         </div>
