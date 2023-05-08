@@ -8,7 +8,12 @@ export default function Director2(){
             <div className='text-xl font-semibold text-gray-500 font-jass'>Director</div>
             <div className="flex-col w-96 mt-2 ">
                 <button className='text-2xl'><FaQuoteLeft/></button>
-                <div className=' text-lg'><i>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus consectetur facilis, rerum, mollitia illo repellat ipsum ea eius, autem placeat excepturi in repellendus blanditiis reprehenderit iusto neque quibusdam. Cupiditate, nobis!</i></div>
+                <div className=' text-lg'><i>I wish students success in their future endeavours and
+assure them 
+that IKGPTU will help them to pursue their objectives
+of life by honing their 
+talent & exposing them to cutting edge
+competitive environment.</i></div>
                <div className='flex text-2xl justify-end '><button className=''><FaQuoteRight/></button></div>
                 </div>
         </div>

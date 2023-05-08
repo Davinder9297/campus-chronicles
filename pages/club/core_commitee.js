@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useState } from "react";
 export default function CoreCommittee() {
     const [president, setpresident] = useState({})
     const [incharge, setincharge] = useState({})

@@ -16,7 +16,7 @@ export default function Navbar(props) {
                         <div className="text-2xl mt-5 pt-2 xsm:text-sm text-amber-800 font-bold "><div className="first">CAMPUS CHRONICLES</div>
                         </div>
                     </div>
-                    {/* <div className="ml-4 font-semibold text-center text-yellow-300 xsm:hidden">(A State Govt. Technical University Campus)</div> */}
+                    <div className="ml-4 font-semibold text-center text-yellow-300 xsm:hidden">(A State Govt. Technical University Campus)</div>
                 </div>
             </div>
             <div className="rightcorner flex-col mr-20 mt-4">

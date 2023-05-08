@@ -10,31 +10,37 @@ export default function Faq(){
   <div className="accordion-item focus-within:bg-white">
     <h2 className="accordion-header" id="flush-headingOne">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Accordion Item #1
+        What is the minimum percentile required ?
       </button>
     </h2>
     <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+      <div className="accordion-body">The minimum percentile required is 90 percentile.</div>
     </div>
   </div>
   <div className="accordion-item">
     <h2 className="accordion-header" id="flush-headingTwo">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Accordion Item #2
+        What is centralized online councelling
       </button>
     </h2>
     <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+      <div className="accordion-body">Through Centralized Online Counselling candidates can get admission in the Constituent Campuses/Affiliated Colleges of participating Universities according to their choice on the basis of their Rank/Merit by participating online. A candidate requires an internet enabled device (i.e. Laptop / Desktop / Tablet etc.) and can participate in centralized online counselling from anywhere. All the activities i.e. from counselling fee deposition to allotment of seats, shall be done online through web module.</div>
     </div>
   </div>
   <div className="accordion-item">
     <h2 className="accordion-header" id="flush-headingThree">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
+      Centralized Online Counselling Process
       </button>
     </h2>
     <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+      <div className="accordion-body">Centralized Online Counselling Registration<br/>
+Online Counselling Fee Payment<br/>
+Preparation of Rank<br/>
+Choice Filling<br/>
+Allotment of Seat<br/>
+Online Reporting at Allotted Institute (By uploading the requisite Documents on portal and Depositing the Semester Fee through Online Mode and Uploading the Fee Slip on portal)<br/>
+Provisional Confirmation by allotted Institute after Verification of relevant uploaded Documents/Certificates and Verification of Uploaded Semester Fee Slip</div>
     </div>
   </div>
 </div>

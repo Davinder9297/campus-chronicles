@@ -99,10 +99,10 @@ export default function My_profile() {
         <div className="h-screen ">
             <div className="h-screen">
                 <Navbar class="shadow-sm" />
-                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+                {/* <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
                         <div className="logout_stu text-base">Logout</div>
-                </div>
+                </div> */}
 
                 <div className={` w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden  ${opac}`}>
                     Your Profile ....

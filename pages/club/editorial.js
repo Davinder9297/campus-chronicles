@@ -66,7 +66,7 @@ export default function Personality() {
                                 <img className="h-full w-full" src={incharge.image} />
                             </div>
                             <div className="w-[95%] text-xl h-full my-auto items-center m-auto">
-                                <div >{incharge.facultyname}</div>
+                                <div >{incharge.name}</div>
                                 <div className="font-normal text-sm">{incharge.designation}</div>
                             </div>
                         </div>

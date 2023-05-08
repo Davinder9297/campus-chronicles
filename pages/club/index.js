@@ -65,17 +65,17 @@ router.push(path)
 <Navbar class=""/>
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[160px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/cultural',"Cultural Club"))} >
                         <img className="rounded-xl h-full w-full" src="/cultural_logo.png" />
                     </button>
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[150px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/personality',"Personality Club"))} >
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
                     </button>
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[160px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/editorial',"Editorial Club"))} >
                         <img className="rounded-xl h-full w-full" src="/editorial.jpg" />
                     </button>
@@ -129,13 +129,13 @@ router.push(path)
                         {/* </marquee> */}
                     </div>
                 </div>
-                <div className="flex flex-row flex-wrap justify-evenly mt-2">
-                    <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="flex flex-row flex-wrap justify-evenly mt-1">
+                    <div className="border-solid border-2 m-2 bg-black border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                         <button onClick={()=>(opennext('/club/sport',"Sports Club"))}>
-                        <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
+                        <img className="flex  rounded-xl h-full w-full " src="sports1.jpg" />
                     </button>
                     </div>
-                    <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                    <div className="border-solid border-2 m-2 border-pink-600 h-[150px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/core_commitee',"Core Committee"))}>
                         <img className="rounded-xl h-full w-full" src="core-committee.png" />
                     </button>
@@ -145,17 +145,17 @@ router.push(path)
 
 
             <div className="flex-col flex-wrap w-[24%]">
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[145px] bg-blue-600 text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/training_placement',"Training & Placement Cell"))}>
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
                     </button>
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[160px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/e',"Enterpreneurship Cell"))} >
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
                     </button>
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <div className="border-solid border-2 m-3 border-pink-600 h-[155px] bg-purple-900 rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button  onClick={()=>(opennext('/club/coding_and_tech',"Coding Club"))} >
                         <img className="rounded-xl h-full w-full" src="coding.png" />
                     </button>

@@ -47,7 +47,7 @@ const yesbutton=()=>{
 
 
     <div className="flex  justify-around items-center h-11 font-serif text-md font-semibold bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 ">
-      <div >Home</div>
+      <div ><Link href="/">Home</Link></div>
       <div><Link href="/about">About Us</Link></div>
       <div><Link href='/faculty'>Faculty</Link></div>
       <div><Link href="#events">Events & Activities</Link></div>
