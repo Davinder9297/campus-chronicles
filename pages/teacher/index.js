@@ -9,13 +9,8 @@ import TableRows from "./Tablerows"
 import Newrow from "./tablerows1"
 import Experiencerow from "./tablerows2"
 import { Cookies } from "js-cookie"
-<<<<<<< HEAD
-import cookie from 'js-cookie'
-
-=======
 import { parseCookies, setCookie } from "nookies"
 // import { getCookie } from 'cookies-next';
->>>>>>> 85d3a5fc0201343c13be2a956043506fd366c2b8
 import TeacherNavbar from "../../components/teacher_navbar"
 
 export default function Profile() {
