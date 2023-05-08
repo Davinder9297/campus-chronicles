@@ -55,7 +55,7 @@ router.push(path)
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/cultural_club'))} >
+                    <button onClick={()=>(opennext('/club/cultural'))} >
                         <img className="rounded-xl h-full w-full" src="/cultural_logo.png" />
                     </button>
                 </div>
@@ -64,9 +64,10 @@ router.push(path)
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
                     </button>
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/editorial_club'))} >
-                        <img className="rounded-xl h-full w-full" src="/editorial.jpg" />
+                <div className="border-solid border-2 m-3 border-pink-600 h-[164px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                    <button onClick={()=>(opennext('/club/editorial'))} >
+                        <img className="rounded-xl h-[163px] w-[100%] justify-center flex" src="/editorial.jpg" />
+
                     </button>
                 </div>
             </div>
@@ -119,16 +120,12 @@ router.push(path)
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">
-                    <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-<<<<<<< HEAD
-                        <button onClick={()=>(opennext('/club/sports'))}>
-=======
-                        <Link href={'/club/sport'}>
->>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
-                        <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
+                    <div className="border-solid border-2 m-2 border-pink-600 h-[162px] text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                    <button onClick={()=>(opennext('/club/sport'))} >
+                        <img className="flex  rounded-xl h-full " src="sports1.jpg" />
                     </button>
                     </div>
-                    <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                    <div className="border-solid border-2 m-2 border-pink-600 h-[162px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
                     <button onClick={()=>(opennext('/club/core_commitee'))}>
                         <img className="rounded-xl h-full w-full" src="core-committee.png" />
                     </button>
@@ -138,12 +135,8 @@ router.push(path)
 
 
             <div className="flex-col flex-wrap w-[24%]">
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-<<<<<<< HEAD
-                    <button onClick={()=>(opennext('/club/training_placement_club'))}>
-=======
-                    <Link href={'/club/training_placement'}>
->>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
+                <div className="border-solid border-2 m-3 border-pink-600 h-[161px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150 bg-blue-900">
+                <button onClick={()=>(opennext('/club/training_placement'))} >
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
                     </button>
                 </div>
@@ -152,12 +145,8 @@ router.push(path)
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
                     </button>
                 </div>
-                <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-<<<<<<< HEAD
-                    <button  onClick={()=>(opennext('/club/coding_and_tech_club'))} >
-=======
-                    <Link href={'/club/coding_and_tech'}>
->>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
+                <div className="border-solid border-2 m-3 border-pink-600 h-[164px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
+                <button onClick={()=>(opennext('/club/coding_and_tech'))} >
                         <img className="rounded-xl h-full w-full" src="coding.png" />
                     </button>
                 </div>

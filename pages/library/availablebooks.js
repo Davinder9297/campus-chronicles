@@ -99,7 +99,7 @@ setdata(t)
 
    <div className='h-screen'>
     <Navbar/>
-     <div className="flex h-[85.3%] overflow-y-hidden  bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 ">
+     <div className="flex h-[85.3%] overflow-y-hidden  bg-gradient-to-r from-yellow-400 via-yellow-50 to-yellow-500 ">
   
         <div className="flex-col filter-side w-[15%]  scrollbar-thin scrollbar-track-slate-700 scrollbar-thumb-slate-600  bg-slate-900 py-2 px-3 text-white overflow-y-auto overflow-x-hidden ">
             {/* <div className="flex justify-between w-full   h-8 items-center"> */}
