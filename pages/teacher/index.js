@@ -9,8 +9,13 @@ import TableRows from "./Tablerows"
 import Newrow from "./tablerows1"
 import Experiencerow from "./tablerows2"
 import { Cookies } from "js-cookie"
+<<<<<<< HEAD
 import cookie from 'js-cookie'
 
+=======
+import { parseCookies, setCookie } from "nookies"
+// import { getCookie } from 'cookies-next';
+>>>>>>> 85d3a5fc0201343c13be2a956043506fd366c2b8
 import TeacherNavbar from "../../components/teacher_navbar"
 
 export default function Profile() {
@@ -433,11 +438,11 @@ const [facultyname, setfacultyname] = useState('')
 
               <div className="  py-2 research_pub px-2 w-full ">
                 <div className="text-center font-semibold text-2xl mt-8">Research Publications</div>
-                <div className="w-full flex justify-end pt-2 mb-2 space-x-3">
+                <div className="w-full flex justify-end pt-2 mb-2 space-x-3 ">
                   <button onClick={addTableRows1} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button>
                   <button disabled={show2} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light2}`} onClick={researchsave}><div>Save </div><FiSave className="" /></button> 
                   </div>
-                <div className="pt-2   res_table  ">
+                <div className="pt-2   res_table  pb-20  ">
                   <table className="border-collapse border border-slate-400  w-full">
                     <thead className="">
                       <tr className=" ">

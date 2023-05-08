@@ -1,9 +1,9 @@
 import {BiLogIn} from 'react-icons/bi'
 import Navbar from '../components/navbar'
 import { useState } from 'react'
+
 import { ToastContainer, toast } from 'react-toastify';
 import cookie from 'js-cookie'
-import {useRouter} from 'next/router';
 // import './toast.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';

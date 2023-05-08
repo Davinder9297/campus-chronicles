@@ -6,7 +6,7 @@ import facultycredentials from "../../models/facultycredentials";
 import studentcredentials from "../../models/studentcredentials";
 import librarycredentials from "../../models/librarycredentials";
 import clubcredentials from "../../models/clubcredentials";
-import { setCookie } from "cookies-next";
+// import { setCookie } from "cookies-next";
 import placementcredentials from "../../models/placementcredentials";
 import studentmanager from "../../models/studentmanager";
 // import {cookies} from "next/headers"

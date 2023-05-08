@@ -70,6 +70,7 @@ export default function Placement() {
   <div className='flex'> <AiTwotoneHome className='m-1' /> Home </div>
   <div> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
   <div> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
+  <div> <Link href= {'/placement/placement_record'}> Placement Record </Link> </div>
   <div> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
   <div> <Link href= {'/placement/coding_ques'}>Coding Practice </Link></div>
 
