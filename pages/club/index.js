@@ -146,7 +146,7 @@ router.push(path)
 
             <div className="flex-col flex-wrap w-[24%]">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/training_placement_club',"Training & Placement Cell"))}>
+                    <button onClick={()=>(opennext('/club/training_placement',"Training & Placement Cell"))}>
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
                     </button>
                 </div>
