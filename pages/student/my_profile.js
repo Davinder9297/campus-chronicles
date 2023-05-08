@@ -16,6 +16,7 @@ export default function My_profile() {
     const [spin, setspin] = useState('')
     const [opac, setopac] = useState('opacity-50')
     const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
+    const [rowsdata, setrowsdata] = useState({})
     // const [, set] = useState(second)
     // const [bottomborder, setbottomborder] = useState()
 
@@ -33,23 +34,9 @@ export default function My_profile() {
     }
 
     useEffect(() => {
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Sem1", "Sem2", "Sem3", "Sem4", "Sem5", "Sem6"],
-                datasets: [{
-                    data: [8.77, 8.58, 9.43, 9.19, 9.3, 9.5],
-                    label: "Cgpa",
-                    borderColor: "#3e95cd",
-                    backgroundColor: "#7bb6dd",
-                    fill: true,
-                }
-                ]
-            },
-        });
+        
         const url = "http://localhost:3000/api/studentpersonaldata";
-//   const url1 = "http://localhost:3000/api/clubannouncement";
+  const url1 = "http://localhost:3000/api/personalcgpa";
 //   const url2 = "http://localhost:3000/api/events";
 
 
@@ -58,20 +45,34 @@ export default function My_profile() {
       setspin('')
       let response = await fetch(url);
       let json = await response.json();
-console.log(json);
+// console.log(json);
       setpersonaldata(json)
       setspin('hidden')
       setopac('')
     //   if(json.length!=0){
     //     setnorecord('hidden')
     //   }
-    //   let response1 = await fetch(url1);
-    //   let json1 = await response1.json();
+      let response1 = await fetch(url1);
+      let json1 = await response1.json();
 
-    //   setRowsData1(json1)
-    //   if(json1.length!=0){
-    //     setnorecord1('hidden')
-    //   }
+      setrowsdata(json1)
+      console.log(json1);
+    //   const data={json1.sem1,}
+    //   var ctx = document.getElementById('myChart').getContext('2d');
+    //     var myChart = new Chart(ctx, {
+    //         type: 'line',
+    //         data: {
+    //             labels: ["Sem1", "Sem2", "Sem3", "Sem4", "Sem5", "Sem6"],
+    //             datasets: [{
+    //                 data: [8.77, 8.58, 9.43, 9.19, 9.3, 9.5],
+    //                 label: "Cgpa",
+    //                 borderColor: "#3e95cd",
+    //                 backgroundColor: "#7bb6dd",
+    //                 fill: true,
+    //             }
+    //             ]
+    //         },
+    //     });
     //   let response2 = await fetch(url2);
     //   let json2 = await response2.json();
 
@@ -92,7 +93,8 @@ console.log(json);
 
   fetchData();
     }, [])
-
+    const{sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8}=rowsdata;
+// console.log("sem1");
     return (<>
         <div className="h-screen ">
             <div className="h-screen">
@@ -187,51 +189,59 @@ console.log(json);
                                             <th className=" border-2  py-2 border-slate-300 text-center px-2">Sno. </th>
                                             <th className=" border-2 py-2 border-slate-300 px-2 text-center">Semester</th>
                                             <th className=" border-2 py-2 border-slate-300 px-2 text-center">Cgpa Obtained</th>
-                                            <th className=" border-2 py-2 border-slate-300 px-2 text-center">Download</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {/* {rowsdata.map((da,index)=>{ */}
+                                               
+                                            
+                                            
+                                     
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">1.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 1</td>
-                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">8.77</td>
-                                            <td className=" p-2 border-2 w-[15%]  h-auto border-slate-300 "><a href="#" className="text-sky-500 underline">Link</a></td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem1}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">2.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 2</td>
-                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">8.58</td>
-                                            <td className=" p-2 border-2 w-[15%]  h-auto border-slate-300 "><a href="#" className="text-sky-500 underline">Link</a></td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem2}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">3.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 3</td>
-                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">9.43</td>
-                                            <td className=" p-2 border-2 w-[15%]  h-auto border-slate-300 "><a href="#" className="text-sky-500 underline">Link</a></td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem3}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">4.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 4</td>
-                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">9.19</td>
-                                            <td className=" p-2 border-2 w-[15%]  h-auto border-slate-300 "><a href="#" className="text-sky-500 underline">Link</a></td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem4}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">5.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 5</td>
-                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">9.3</td>
-                                            <td className=" p-2 border-2 w-[15%]  h-auto border-slate-300 "><a href="#" className="text-sky-500 underline">Link</a></td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem5}</td>
                                         </tr>
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">6.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 6</td>
-                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">9.5</td>
-                                            <td className=" p-2 border-2 w-[15%]  h-auto border-slate-300 "><a href="#" className="text-sky-500 underline">Link</a></td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem6}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">7.</td>
+                                            <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 7</td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem7}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">8.</td>
+                                            <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 8</td>
+                                            <td className=" p-2 border-2 w-[15%] h-auto border-slate-300 ">{sem8}</td>
                                         </tr>
 
 
                                     </tbody>
                                 </table>
-
+{/* 
                                 <div className='w-[95%] mx-auto mt-4 text-2xl'>
                                     <div>
                                         Performance Graph
@@ -239,7 +249,7 @@ console.log(json);
                                     <div className='border border-gray-400 pt-0 rounded-xl shadow-md my-3'>
                                         <canvas id='myChart'></canvas>
                                     </div>
-                                </div>
+                                </div> */}
 
 
                                 {/* <div id='myChart' className='border border-gray-400 pt-0 rounded-xl  my-auto  shadow-xl'>

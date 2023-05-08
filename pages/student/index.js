@@ -43,6 +43,7 @@ const [data, setdata] = useState([])
       
             setdata(json1)
             Cookies.set('sem',json1.sem)
+            Cookies.set('rollno',json1.rollno)
             // console.log(json1);
             // Cookies.set('year',)
 

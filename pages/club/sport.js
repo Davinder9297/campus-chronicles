@@ -3,6 +3,38 @@ export default function sports() {
     const d = new Date();
     let name = month[d.getMonth()];
     let s = d.getDate() + " " + name + " " + d.getFullYear();
+    const [president, setpresident] = useState({})
+    const [incharge, setincharge] = useState({})
+    const [leadingrole, setleadingrole] = useState([])
+    const [events, setevents] = useState([])
+    useEffect(() => {
+        const url = "http://localhost:3000/api/clubdetails";     
+        const fetchData = async () => {
+          try {
+            // setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+    //   console.log(json);
+            setpresident(json.president[0])
+            setincharge(json.incharge)
+            setleadingrole(json.leadingrole)
+            setevents(json.event)
+            console.log(json.event);
+            // if(json.length!=0){
+            //   setnorecord('hidden')
+            // }
+            
+            // setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);      
     return (<>
 
         <div className=" w-full mt-1">

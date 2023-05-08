@@ -15,7 +15,7 @@ export default function Available(){
 //   if(e.target.checked){
 //     filters.push(e.target.name)
 
-//   }
+//   } 
 //   else{
 //     const index=filters.indexOf(e.target.name)
 //     filters.splice(index,1)
@@ -164,9 +164,9 @@ setdata(t)
             {data.map((da,index)=>{
               const {image,bookname,authorname}=da;
               return(<>
-              <div className='flex-col mx-5 my-2 h-64 w-44  shadow-lg shadow-purple-400'>
-            <img className='h-48' src={image} alt="" />
-            <div className='text-center font-semibold font-serif text-red-600'>{bookname}({authorname})</div>
+              <div className='flex-col mx-5 my-11 h-60 w-44  shadow-lg shadow-purple-400'>
+            <img className='h-full w-full' src={image} alt="" />
+            <div className='text-center font-semibold font-serif text-sm text-white'>{bookname} <br/>({authorname})</div>
             </div>
               {/* <div className='flex-col m-auto h-64 w-44 border-1  border-purple-300 shadow-md shadow-purple-400'>
             <img className='h-48' src={image} alt="" />

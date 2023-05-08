@@ -3,6 +3,34 @@ export default function Editorial() {
     const d = new Date();
     let name = month[d.getMonth()];
     let s = d.getDate() + " " + name + " " + d.getFullYear();
+    useEffect(() => {
+        const url = "http://localhost:3000/api/clubdetails";     
+        const fetchData = async () => {
+          try {
+            // setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+    //   console.log(json);
+            setpresident(json.president[0])
+            setincharge(json.incharge)
+            setleadingrole(json.leadingrole)
+            setevents(json.event)
+            console.log(json.event);
+            // if(json.length!=0){
+            //   setnorecord('hidden')
+            // }
+            
+            // setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);  
     return (<>
 
         <div className=" w-full mt-1">
@@ -35,11 +63,11 @@ export default function Editorial() {
                         <div className="bg-yellow-300 rounded-xl">Incharge</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
-                                <img className="h-full w-full" src="/teacher.jpg" />
+                                <img className="h-full w-full" src={incharge.image} />
                             </div>
                             <div className="w-[95%] text-xl h-full my-auto items-center m-auto">
-                                <div >Dr. Monika Sachdeva</div>
-                                <div className="font-normal text-sm">(Campus Director)</div>
+                                <div >{incharge.facultyname}</div>
+                                <div className="font-normal text-sm">({incharge.designation})</div>
                             </div>
                         </div>
                     </div>
@@ -48,11 +76,11 @@ export default function Editorial() {
                         <div className="bg-yellow-300 rounded-xl">President</div>
                         <div className="flex flex-row  justify-around  ">
                             <div className="w-[40%] text-xl h-28">
-                                <img className="h-full w-full" src="/teacher.jpg" />
+                                <img className="h-full w-full" src={president.image} />
                             </div>
                             <div className="w-[95%] text-xl h-full my-auto items-center m-auto">
-                                <div className="">Jatin Saini</div>
-                                <div className="font-normal text-sm">(3<sup>rd</sup> Year )</div>
+                            <div className="">{president.name}</div>
+                                <div className="font-normal text-sm">({president.currentyear})</div>
 
                             </div>
                         </div>
@@ -77,7 +105,23 @@ export default function Editorial() {
                                 Year
                             </div>
                         </div>
+                        {leadingrole.map((dat,index)=>{
+                            const {name,currentyear}=dat;
+                            return(<>
                         <div className="flex flex-row justify-around hover:bg-yellow-100 mt-2 ">
+                            <div className="w-[20%] text-xl h-[58] p-1">
+                                {index+1}.
+                            </div>
+                            <div className=" w-[55%] text-xl h-[58] text-left p-1">
+                                {name}
+                            </div>
+                            <div className=" w-[25%] text-xl h-[58] text-left p-1">
+                                {currentyear}
+                            </div>
+                        </div>
+                            </>)
+                        })}
+                        {/* <div className="flex flex-row justify-around hover:bg-yellow-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1">
                                 1.
                             </div>
@@ -142,7 +186,7 @@ export default function Editorial() {
                             <div className=" w-[20%] text-xl h-[58] text-left p-1">
                                 2<sup>nd</sup> Year
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 </div>
