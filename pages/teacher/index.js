@@ -9,8 +9,8 @@ import TableRows from "./Tablerows"
 import Newrow from "./tablerows1"
 import Experiencerow from "./tablerows2"
 import { Cookies } from "js-cookie"
-import { parseCookies, setCookie } from "nookies"
-import { getCookie } from 'cookies-next';
+import cookie from 'js-cookie'
+
 import TeacherNavbar from "../../components/teacher_navbar"
 
 export default function Profile() {
@@ -34,6 +34,8 @@ export default function Profile() {
   const [light3, setlight3] = useState('opacity-40 cursor-not-allowed')
   const [spin, setspin] = useState('hidden')
   const [opac, setopac] = useState('')
+const [facultyname, setfacultyname] = useState('')
+  // let c=cookie.get('facultyname')
 
   const [personaldata, setpersonaldata] = useState({ image: "", facutyname: "", department: "", designation: "", facultyid: "", phone: "", email: "", linkedin: "" })
   const personaldatachange = (evnt) => {
@@ -217,6 +219,7 @@ export default function Profile() {
   const educationsave = async () => {
     setshow3(true)
     setlight3('opacity-40 cursor-not-allowed')
+  
     const res = await fetch('http://localhost:3000/api/education', {
       method: 'POST',
       headers: {

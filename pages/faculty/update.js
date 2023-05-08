@@ -2,33 +2,20 @@ import Link from "next/link"
 import Navbar from "../../components/navbar"
 // import Navbar from "../../components/navbar"
 import { useState } from "react"
-import { CgShapeRhombus } from 'react-icons/cg'
-import { RiBankFill } from 'react-icons/ri'
-import { GoMail } from 'react-icons/go'
-import { GrLinkedin } from 'react-icons/gr'
-import { BiPhoneCall } from 'react-icons/bi'
-import { FaChalkboardTeacher } from 'react-icons/fa'
-import { Hidden } from "@mui/material"
+
+import { useEffect } from "react"
 
 export default function Faculty() {
 // password pending
-const [pinfo, setpinfo] = useState('')
-const [edqu, setedqu] = useState('hidden')
+const [pinfo, setpinfo] = useState('hidden')
+const [edqu, setedqu] = useState('')
 const [res,setres]=useState('hidden')
 const [teach,setteach]=useState('hidden')
 const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
 const [edeqclass, setedeqclass] = useState('text-white')
 const [resclass, setresclass] = useState('text-white')
 const [teachclass, setteachclass] = useState('text-white')
-const [read, setread] = useState(true)
-const [disable, setdisable] = useState(true)
-const [name, setname] = useState('Ms. Jaspreet Kaur')
-const [role, setrole] = useState('Student')
-const [dob, setdob] = useState('23-11-2002')
-const [phone, setphone] = useState('7009400665')
-const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
-const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
-const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
+const [data, setdata] = useState({})
 // const [, set] = useState(second)
 // const [bottomborder, setbottomborder] = useState()
 
@@ -72,6 +59,23 @@ const teaching = () => {
     setresclass('text-white')
     setteachclass('border-b-4 border-black text-black ')
 }
+useEffect(() => {
+    const url = "http://localhost:3000/api/singlepagedata";     
+    const fetchData = async () => {
+      try {
+        // setspin('')
+        let response = await fetch(url);
+        let json = await response.json();
+        setdata(json)
+console.log(json);
+      } catch (error) {
+
+        console.log("error", error);
+      }
+    };
+  
+    fetchData();
+  }, []);  
     return (<>
         <div className=" border-red-700">
             <Navbar class="shadow-md" />
@@ -82,67 +86,68 @@ const teaching = () => {
                 {/* Monika Ma'am */}
                 <div className="mt-4">
                     <div className=" text-center text-2xl font-semibold text-amber-900 bg-yellow-200 p-1 rounded-3xl">
-                        Dr. Monika Sachdeva
+                        {data.facultyname}
                     </div>
-                    <div className=" flex w-[90%] m-auto">
-                        <div className=" border-black h-48 w-52 mr-2 m-auto">
-                            <img src="jass.jpeg" className="h-full" />
+                    <div className=" flex w-[95%]  border-emerald-800">
+                        <div className="w-52 mr-2 m-auto">
+                            <img src={data.image} className="h-full rounded-full mx-auto" />
+                            <div className="mt-3 text-xl text-center"> 
+                            {data.facultyname}
+                            </div>
                         </div>
-                        <div className=" border-black w-full">
+                        <div className="w-[70%] ">
 
 
-                            {/* <div className=" border-collapse border-violet-700 w-[85%] m-auto mt-2">
+                            <div className=" border-collapse border-violet-700 m-auto mt-2 ">
                                 <table className="w-full">
                                     <tbody>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                                 Department
                                             </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Director
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                                {data.department}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                                 Designation
                                             </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Professor
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                                {data.designation}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                                 Contact Number
                                             </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                7009400665
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                                {data.phone}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                                 E-mail I'd
                                             </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreetkaursaini469@gmail.com
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                                {data.email}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                                 LinkedIn
                                             </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreet
+                                            <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
+                                                {data.linkedin}
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div> */}
+                            </div>
 
-                            <div className="mt-3 w-full shadow-md shadow-slate-400 h-60 m-auto">
-                            <div className=" w-[100%] flex text-center ">
-                                <div onClick={pi} className={` w-[50%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
-                                    Personal Information
-                                </div>
+                            <div className="mt-3 w-65% shadow-md shadow-slate-400  border-pink-700 m-auto">
+                            <div className=" w-full flex text-center m-auto ">
+                                
                                 <div onClick={eq} className={`bg-amber-800 w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
                                     Educational Qualifications
                                 </div>
@@ -154,69 +159,7 @@ const teaching = () => {
                                 </div>
                             </div>
 
-                            <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin  scrollbar-thumb-zinc-900 text-sm ${pinfo}`}>
-                                
-                                    <table className="w-full">
-                                    <tbody>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <RiBankFill className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Department</div></div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Director
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                <div className="flex">
-                                                <FaChalkboardTeacher className="fill-amber-800 mr-4  h-4 w-6"/>
-                                                <div className="">Designation</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Professor
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <BiPhoneCall className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Contact Number</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                7009400665
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <GoMail className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Email I'd</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreetkaursaini469@gmail.com
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <GrLinkedin className="fill-amber-800 mr-4  h-4 w-6"/>
-                                                <div className="">LinkedIn</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreet
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
+                            <div className={` m-auto flex-col h-[80%] border-pink-700 w-full overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
                                 <table className="border-collapse border border-slate-400 w-[95%] mx-auto ">
                                     <thead className="">
                                         <tr className=" ">

@@ -4,7 +4,7 @@ import {FaPowerOff} from "react-icons/fa"
 import {IoMdDownload} from "react-icons/io"
 import { useEffect } from "react";
 import { useState } from "react";
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 import Cookies from "js-cookie";
 
 

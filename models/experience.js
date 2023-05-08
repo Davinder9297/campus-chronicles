@@ -8,6 +8,9 @@ const ourschema=new mongoose.Schema({
     },  
     experiencedata:{
         type:Array
+    },
+    facultyname:{
+        type:String
     }
 
 },);

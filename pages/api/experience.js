@@ -6,13 +6,15 @@ mongoose.connect("mongodb+srv://campus-chronicles:cc@cc.cvjckys.mongodb.net/test
 export default async function handler(req, res) {
     // console.log(req.body);
     let token=req.cookies.login;
+    let facultyname=req.cookies.facultyname;
 
     if(req.method==='POST'){
         let ans=await experience.countDocuments({userid:token}).exec();
 if(ans==0){
     let p=new experience({
         experiencedata:req.body,
-        userid:token
+        userid:token,
+        facultyname:facultyname
        
 });
 await p.save();
@@ -22,7 +24,8 @@ else{
     await experience.findOneAndDelete({userid:token})
     let newdata=new experience({
         experiencedata:req.body,
-        userid:token
+        userid:token,
+        facultyname:facultyname
        
 });
 await newdata.save();

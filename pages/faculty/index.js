@@ -32,10 +32,11 @@ const [data, setdata] = useState([])
       
         fetchData();
       }, []);  
-    //   let router=useRouter()
+      let router=useRouter()
       const nextpage=(facultyname)=>{
         // router.push(facultyname)
         Cookies.set('facultyname',facultyname);
+        router.push('/faculty/update')
       }
     return (<>
         <div>
@@ -54,9 +55,9 @@ const {facultyname,image}=da;
                         <div className="border-2 border-solid border-purple-900 text-center text-xl mt-2">
                            {facultyname}
                         </div>
-                        <div className="w-full bg-amber-800 text-center shadow-inner shadow-yellow-500 p-1 mt-3 rounded hover:text-white" >
-                            <button onClick={()=>(nextpage(facultyname))}>View Profile</button>
-                        </div>
+                        <button onClick={()=>(nextpage(facultyname))} className="w-full bg-amber-800 text-center shadow-inner shadow-yellow-500 p-1 mt-3 rounded hover:text-white" >
+View Profile
+                        </button>
                     </div>
                             </>
                         )
