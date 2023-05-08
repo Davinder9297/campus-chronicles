@@ -50,6 +50,7 @@ if(response.error){
 else{
     Cookies.set('login',user)
     if(profession=="Student"){
+        // Cookies.set('rollno',)
         router.push('/student')
     }
     else if(profession=="Faculty"){

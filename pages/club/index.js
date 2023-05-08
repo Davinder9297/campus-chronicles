@@ -4,7 +4,16 @@ import Navbar from "../../components/navbar"
 // import Document from "next/document";
 import { useEffect, useState } from "react";
 import {IoMdDownload} from "react-icons/io"
+import Cookies from "js-cookie";
 // import Head from 'next/head'
+{/* <option className="" value="Personality Club">Personality Club</option >
+  <option className="" value="Cultural Club">Cultural Club</option >
+  <option className="" value="Coding Club">Coding Club</option >
+  <option className="" value="Editorial Club">Editorial Club</option >
+  <option className="" value="Sports Club">Sports Club</option >
+  <option className="" value="Training & Placement Cell">Training & Placement Cell</option >
+  <option className="" value="Enterpreneurship Cell">Enterpreneurship Cell</option >
+  <option className="" value="Core Committee">Core Committee</option > */}
 export default function Club() {
     const [data, setdata] = useState([])
     useEffect(() => {
@@ -46,8 +55,10 @@ export default function Club() {
         })
       }
       let router=useRouter()
-      const opennext=(path)=>{
+      const opennext=(path,club)=>{
+        Cookies.set('club',club);
 router.push(path)
+
       }
     return (<>
 
@@ -55,17 +66,17 @@ router.push(path)
         <div className="flex justify-between w-full ">
             <div className=" flex-col-reverse flex-wrap  w-[24%] mr-1 ">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/cultural_club'))} >
+                    <button onClick={()=>(opennext('/club/cultural',"Cultural Club"))} >
                         <img className="rounded-xl h-full w-full" src="/cultural_logo.png" />
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/personality'))} >
+                    <button onClick={()=>(opennext('/club/personality',"Personality Club"))} >
                         <img className="rounded-xl h-full w-full" src="/personality.png" />
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/editorial_club'))} >
+                    <button onClick={()=>(opennext('/club/editorial',"Editorial Club"))} >
                         <img className="rounded-xl h-full w-full" src="/editorial.jpg" />
                     </button>
                 </div>
@@ -120,16 +131,12 @@ router.push(path)
                 </div>
                 <div className="flex flex-row flex-wrap justify-evenly mt-2">
                     <div className="border-solid border-2 m-2 border-pink-600 h-auto text-center rounded-xl w-[45%] justify-items-center shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-<<<<<<< HEAD
-                        <button onClick={()=>(opennext('/club/sports'))}>
-=======
-                        <Link href={'/club/sport'}>
->>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
+                        <button onClick={()=>(opennext('/club/sport',"Sports Club"))}>
                         <img className="flex  rounded-xl h-full w-full" src="sports1.jpg" />
                     </button>
                     </div>
                     <div className="border-solid border-2 m-2 border-pink-600 h-[173px] text-center rounded-xl w-[45%] shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/core_commitee'))}>
+                    <button onClick={()=>(opennext('/club/core_commitee',"Core Committee"))}>
                         <img className="rounded-xl h-full w-full" src="core-committee.png" />
                     </button>
                     </div>
@@ -139,25 +146,17 @@ router.push(path)
 
             <div className="flex-col flex-wrap w-[24%]">
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] text-center rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-<<<<<<< HEAD
-                    <button onClick={()=>(opennext('/club/training_placement_club'))}>
-=======
-                    <Link href={'/club/training_placement'}>
->>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
+                    <button onClick={()=>(opennext('/club/training_placement_club',"Training & Placement Cell"))}>
                         <img className="rounded-xl h-full w-full" src="placement.jpg" />
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/e'))} >
+                    <button onClick={()=>(opennext('/club/e',"Enterpreneurship Cell"))} >
                         <img className="rounded-xl h-full w-full" src="e-cell.png" />
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[173px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-<<<<<<< HEAD
-                    <button  onClick={()=>(opennext('/club/coding_and_tech_club'))} >
-=======
-                    <Link href={'/club/coding_and_tech'}>
->>>>>>> 2f28f3b364ce11da73802109a3f7d0ca2956e93d
+                    <button  onClick={()=>(opennext('/club/coding_and_tech',"Coding Club"))} >
                         <img className="rounded-xl h-full w-full" src="coding.png" />
                     </button>
                 </div>

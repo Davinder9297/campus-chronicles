@@ -41,7 +41,7 @@ export default function Index(){
           useEffect(() => {
     const url = "http://localhost:3000/api/studentcredentials";
     const url1 = "http://localhost:3000/api/studentannouncement";
-    // const url2 = "http://localhost:3000/api/librarycredentials";
+    const url2 = "http://localhost:3000/api/performance";
     // const url3 = "http://localhost:3000/api/clubcredentials";
 
     const fetchData = async () => {
@@ -64,6 +64,15 @@ export default function Index(){
         console.log(json1.length);
         if(json1.length!=0){
           setnorecord1('hidden')
+        }
+            
+        const response2 = await fetch(url2);
+        const json2 = await response2.json();
+        // console.log(json1);
+        setrowsData2(json2)
+        // console.log(json1.length);
+        if(json2.length!=0){
+          setnorecord2('hidden')
         }
         // const response2 = await fetch(url2);
         // const json2 = await response2.json();
@@ -381,7 +390,7 @@ const res=await fetch('http://localhost:3000/api/performance', {
   <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
-          <button disabled={disable1} className={`bg-blue-600 p-2 rounded ${save3}`} onClick={performance}>Save Changes</button><button onClick={addTableRows2} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+          <button disabled={disable2} className={`bg-blue-600 p-2 rounded ${save3}`} onClick={performance}>Save Changes</button><button onClick={addTableRows2} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
         <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
