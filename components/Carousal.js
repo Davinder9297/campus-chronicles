@@ -10,15 +10,16 @@ const Carousal = () => {
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div className="carousel-inner  ">
+    <div className="carousel-item relative float-left w-full" data-bs-interval="1500">
+        <img src="2.jpg" className="block w-full h-[350px] xsm:h-48" alt="..."/>
+      </div>
       <div className="carousel-item active relative float-left w-full " data-bs-interval="1500">
-        <img src="1.jpg" className="block w-full h-[350px] xsm:h-40" alt="..."/>
+        <img src="1.jpg" className="block w-full h-[350px] xsm:h-48" alt="..."/>
       </div>
       <div className="carousel-item  relative float-left w-full" data-bs-interval="1500">
-        <img src="2.jpg" className="block w-full h-[350px] xsm:h-40" alt="..."/>
+        <img src="2.jpg" className="block w-full h-[350px] xsm:h-48" alt="..."/>
       </div>
-      <div className="carousel-item relative float-left w-full" data-bs-interval="1500">
-        <img src="2.jpg" className="block w-full h-[350px] xsm:h-40" alt="..."/>
-      </div>
+      
     </div>
     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span className="carousel-control-prev-icon" aria-hidden="true"></span>
