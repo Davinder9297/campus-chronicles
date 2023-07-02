@@ -51,10 +51,10 @@ export default function Study_material() {
     return (<>
         <div className="h-screen ">
             <Navbar class="shadow-md" />
-            <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+            {/* <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 " />
                 <div className="logout_stu text- border-2 border-solid">Logout</div>
-            </div>
+            </div> */}
             <div className=" w-[95%] m-auto h-[85%] ">
                 <div className=" m-auto text-center  text-4xl font-semibold p-4 overflow-hidden h-[100%] ">
                     <div className="font-sans">Fees Records</div>
@@ -75,8 +75,9 @@ export default function Study_material() {
                         
                         <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
                         <div className="flex-col w-[100%] h-auto p-3">
+                            <div className="text-xl text-gray-500 pt-[10%]">No Record Found</div>
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
-                                <div>
+                                {/* <div>
                                     <div className="accordion " id="accordionFlushExample">
                                         <div className="accordion-item focus-within:bg-white">
                                             <h2 className="accordion-header" id="flush-headingOne">
@@ -125,14 +126,14 @@ export default function Study_material() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
                         <div className={`m-auto  h-[80%] w-[95%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm px-2 ${pinfo}`}>
                             <div className="flex-col w-[100%] h-auto p-3">
-                                {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
-                                <div>
+                            <div className="text-xl text-gray-500 pt-[10%]">No Record Found</div>
+                                {/* <div>
                                     <div className="accordion " id="accordionFlushExample">
                                         <div className="accordion-item focus-within:bg-white">
                                             <h2 className="accordion-header" id="flush-headingOne">
@@ -188,14 +189,14 @@ export default function Study_material() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
                         <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${exre}`}>
                         <div className="flex-col w-[100%] h-auto p-3">
-                                {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
-                                <div>
+                        <div className="text-xl text-gray-500 pt-[10%]">No Record Found</div>
+                                {/* <div>
                                     <div className="accordion " id="accordionFlushExample">
                                         <div className="accordion-item focus-within:bg-white">
                                             <h2 className="accordion-header" id="flush-headingOne">
@@ -244,7 +245,7 @@ export default function Study_material() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
