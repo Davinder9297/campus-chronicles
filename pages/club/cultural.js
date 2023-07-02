@@ -108,8 +108,23 @@ export default function Cultural() {
                                 Year
                             </div>
                         </div>
-
-                        <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                        {leadingrole.map((dat, index) => {
+                                const { name, currentyear } = dat;
+                                return (<>
+                                    <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
+                                        <div className="w-[20%] text-xl h-[58] p-1 xsm:text-base">
+                                            {index + 1}.
+                                        </div>
+                                        <div className=" w-[55%] text-xl h-[58] text-left p-1 xsm:text-base">
+                                            {name}
+                                        </div>
+                                        <div className=" w-[25%] text-xl h-[58] text-left p-1 xsm:text-base">
+                                            {currentyear}
+                                        </div>
+                                    </div>
+                                </>)
+                            })}
+                        {/* <div className="flex flex-row justify-around hover:bg-red-100 mt-2 ">
                             <div className="w-[20%] text-xl h-[58] p-1 xsm:text-base">
                                 1.
                             </div>
@@ -174,7 +189,7 @@ export default function Cultural() {
                             <div className=" w-[20%] text-xl h-[58] text-left p-1  xsm:text-base">
                                 2<sup>nd</sup> Year
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -183,13 +198,17 @@ export default function Cultural() {
                 <div className="flex justify-center w-full xsm:w-[90%]">
                     <div className="flex flex-wrap w-full h-auto justify-evenly mt-4 max-w-[1250px]  xsm:w-[90%]">
                         {events.map((data, index) => {
-                            const { title, image, description } = data;
+                            const { title, image, description,eventname,date } = data;
+                            const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                            const d = new Date(date);
+                            let name = month[d.getMonth()];
+                            let s = d.getDate() + " " + name + " " + d.getFullYear();
                             return (<>
                                 <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5 hover:scale-105 transition duration-200 ease-in">
                                     <div className=""><img className="rounded-t w-[350px] h-52" src={image} alt="" /></div>
                                     <div className="flex justify-between">
-                                        <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
-                                        <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
+                                        <div className="bg-yellow-400 px-2 mt-1 text-xs py-1 rounded-tr rounded-br text-white">{eventname}</div>
+                                        <div className="bg-amber-800 mt-1 text-xs px-2 py-1 rounded-tl rounded-bl text-white">{s}</div>
                                     </div>
                                     <div className="px-1 mt-3 font-bold xsm:text-base">{title}</div>
                                     <div className="px-1  xsm:text-sm">{description}</div>

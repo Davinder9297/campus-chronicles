@@ -12,7 +12,7 @@ import Resheader from "../components/resheader"
 
 export default function Index() {
     return(<>
-      <div className="flex-col ">
+      <div className="flex-col h-screen overflow-y-auto scrollbar-thin   scrollbar-track-transparent scrollbar-thumb-transparent ">
         {/* <Navbar/> */}
         <Navbarres/>
         

@@ -4,9 +4,74 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { RiBankFill } from 'react-icons/ri'
+import { GoMail } from 'react-icons/go'
+import { GrLinkedin } from 'react-icons/gr'
+import { BiPhoneCall } from 'react-icons/bi'
+import { FaChalkboardTeacher } from 'react-icons/fa'
 
 export default function fac() {
 const [data, setdata] = useState([])
+const [pinfo, setpinfo] = useState('')
+    const [edqu, setedqu] = useState('hidden')
+    const [res,setres]=useState('hidden')
+    const [teach,setteach]=useState('hidden')
+    const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
+    const [edeqclass, setedeqclass] = useState('text-white')
+    const [resclass, setresclass] = useState('text-white')
+    const [teachclass, setteachclass] = useState('text-white')
+    const [read, setread] = useState(true)
+    const [disable, setdisable] = useState(true)
+    const [name, setname] = useState('Ms. Jaspreet Kaur')
+    const [role, setrole] = useState('Student')
+    const [dob, setdob] = useState('23-11-2002')
+    const [phone, setphone] = useState('7009400665')
+    const [email, setemail] = useState('jaspreetkaursaini469@gmail.com')
+    const [linkedin, setlinkedin] = useState('https://www.linkedin.com/in/jaspreet-kaur23/')
+    const [point, setpoint] = useState('opacity-50 cursor-not-allowed')
+    // const [, set] = useState(second)
+    // const [bottomborder, setbottomborder] = useState()
+
+    const pi = () => {
+        setedqu('hidden');
+        setres('hidden');
+        setteach('hidden');
+        setpinfo(' ');
+        setpiclass('border-b-4 border-black text-black ')
+        setedeqclass('text-white')
+        setresclass('text-white')
+        setteachclass('text-white')
+    }
+    const eq = () => {
+        setedqu(' ');
+        setpinfo('hidden');
+        setres('hidden');
+        setteach('hidden');
+        setpiclass('text-white')
+        setresclass('text-white')
+        setteachclass('text-white')
+        setedeqclass('border-b-4 border-black text-black ')
+    }
+    const respub = () => {
+        setres(' ');
+        setedqu('hidden');
+        setpinfo('hidden');
+        setteach('hidden');
+        setpiclass('text-white')
+        setedeqclass('text-white')
+        setteachclass('text-white')
+        setresclass('border-b-4 border-black text-black ')
+    }
+    const teaching = () => {
+        setres('hidden ');
+        setedqu('hidden');
+        setpinfo('hidden');
+        setteach('');
+        setpiclass('text-white')
+        setedeqclass('text-white')
+        setresclass('text-white')
+        setteachclass('border-b-4 border-black text-black ')
+    }
     useEffect(() => {
         const url = "http://localhost:3000/api/facultycredentials";     
         const fetchData = async () => {
@@ -40,19 +105,19 @@ const [data, setdata] = useState([])
       }
     return (<>
         <div>
-            <Navbar className="shadow-sm" />
             <div>
+            <Navbar className="shadow-sm" />
                 <div className="mt-3 p-2 text-center text-4xl font-semibold">
                     Our Faculty and Other Staff
                 </div >
-                <div className="w-[90%] border-2 border-solid border-red-700 mt-2 mx-auto p-2 flex flex-wrap justify-around">
+                <div className="w-[90%] items-center min-h-[450px] border-2 border-solid border-red-700 mt-2 mx-auto p-2 flex flex-wrap justify-around">
                     {data.map((da,index)=>{
 const {facultyname,image}=da;
                         return(
                             <>
-                            <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
-                        <img src={image} className="h-36 w-36 mx-auto rounded-full border-2 shadow-md shadow-zinc-400 border-solid border-purple-900"/>
-                        <div className="border-2 border-solid border-purple-900 text-center text-xl mt-2">
+                            <div className="h-64 w-72 border-1 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
+                        <img src={image} className="h-36 w-36 mx-auto rounded-full border-2 shadow-md shadow-zinc-400 border-solid border-purple-200"/>
+                        <div className=" text-center text-xl mt-2">
                            {facultyname}
                         </div>
                         <button onClick={()=>(nextpage(facultyname))} className="w-full bg-amber-800 text-center shadow-inner shadow-yellow-500 p-1 mt-3 rounded hover:text-white" >
@@ -64,7 +129,7 @@ View Profile
                     })}
                     
 
-              <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
+              {/* <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
                         <img src="/teacher.jpg" className="h-36 w-36 mx-auto rounded-full border-2 shadow-md shadow-zinc-400 border-solid border-purple-900"/>
                         <div className="border-2 border-solid border-purple-900 text-center text-xl mt-2">
                             Dr. Monika Sachdeva
@@ -72,9 +137,9 @@ View Profile
                         <div className="w-full bg-amber-800 text-center shadow-inner shadow-yellow-500 p-1 mt-3 rounded hover:text-white" >
                             <button>View Profile</button>
                         </div>
-                    </div>
+                    </div> */}
 
-                            <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin  scrollbar-thumb-zinc-900 text-sm ${pinfo}`}>
+                            {/* <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin  scrollbar-thumb-zinc-900 text-sm ${pinfo}`}>
                                 
                                     <table className="w-full">
                                     <tbody>
@@ -134,9 +199,9 @@ View Profile
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                            </div> */}
 
-                            <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
+                            {/* <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
                                 <table className="border-collapse border border-slate-400 w-[95%] mx-auto ">
                                     <thead className="">
                                         <tr className=" ">
@@ -230,9 +295,9 @@ View Profile
                                     </tbody>
                                 </table>
 
-                            </div>
+                            </div> */}
 
-                            <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm ${res}`}>
+                            {/* <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm ${res}`}>
                                 <table className="border-collapse border border-slate-400 w-[95%] mx-auto ">
                                     <thead className="">
                                         <tr className=" ">
@@ -280,9 +345,9 @@ View Profile
                             </div>
                         </div>
                     </div>
-                            <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
+                            <div className="mt-3 border-b-2 border-solid border-zinc-200"></div> */}
 
-
+{/* 
                             <div className=" flex w-[100%] m-auto">
                         <div className="h-60 w-52 mr-2 m-auto justify-center">
                             <div className="flex justify-center">
@@ -516,7 +581,7 @@ View Profile
                         </div>
                     </div>
                             <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
-                </div>
+                </div> */}
                 
             {/* </div> */}
 
@@ -531,11 +596,11 @@ View Profile
 
 
                         
-                {/* </div> */}
+                </div>
                 
-            {/* </div> */}
+            </div>
 
-        {/* </div> */}
+        </div>
 
     </>)
 

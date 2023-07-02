@@ -77,11 +77,11 @@ console.log(json);
     fetchData();
   }, []);  
     return (<>
-        <div className=" border-red-700">
+        <div className=" border-red-700 overflow-y-hidden">
             <Navbar class="shadow-md" />
-            <div className="mt-3 p-2 text-center text-3xl font-semibold">
+            {/* <div className="mt-3 p-2 text-center text-3xl font-semibold">
                 Our Faculty and Other Staff
-            </div >
+            </div > */}
             <div className="w-[90%] m-auto">
                 {/* Monika Ma'am */}
                 <div className="mt-4">
@@ -89,16 +89,16 @@ console.log(json);
                         {data.facultyname}
                     </div>
                     <div className=" flex w-[95%]  border-emerald-800">
-                        <div className="w-52 mr-2 m-auto">
-                            <img src={data.image} className="h-full rounded-full mx-auto" />
-                            <div className="mt-3 text-xl text-center"> 
+                        <div className="w-52 mr-2 m-auto ">
+                            <img src={data.image} className=" rounded-full mx-auto h-52 w-52 shadow-2xl border-1 border-gray-300" />
+                            <div className="mt-3 text-xl text-center font-semibold"> 
                             {data.facultyname}
                             </div>
                         </div>
                         <div className="w-[70%] ">
 
 
-                            <div className=" border-collapse border-violet-700 m-auto mt-2 ">
+                            <div className="h-44 border-collapse border-violet-700 m-auto mt-2 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-transparent  ">
                                 <table className="w-full">
                                     <tbody>
                                         <tr>
@@ -159,7 +159,7 @@ console.log(json);
                                 </div>
                             </div>
 
-                            <div className={` m-auto flex-col h-[80%] border-pink-700 w-full overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
+                            <div className={` m-auto flex-col h-[250px] border-pink-700 w-full overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
                                 <table className="border-collapse border border-slate-400 w-[95%] mx-auto ">
                                     <thead className="">
                                         <tr className=" ">
@@ -197,7 +197,7 @@ console.log(json);
 
                             </div>
 
-                            <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${teach}`}>
+                            <div className={` m-auto flex-col h-[250px] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${teach}`}>
                                 <table className="border-collapse border border-slate-400 w-[95%] mx-auto ">
                                     <thead className="">
                                         <tr className=" ">
@@ -255,7 +255,7 @@ console.log(json);
 
                             </div>
 
-                            <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm ${res}`}>
+                            <div className={`m-auto h-[250px] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm ${res}`}>
                                 <table className="border-collapse border border-slate-400 w-[95%] mx-auto ">
                                     <thead className="">
                                         <tr className=" ">
