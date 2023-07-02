@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {IoMdArrowDroprightCircle} from 'react-icons/io'
+import{RiCheckboxMultipleFill} from 'react-icons/ri'
 import Link from 'next/link'
 
 export default function Coding_ques(){
@@ -46,22 +47,22 @@ export default function Coding_ques(){
 
 <div className=" py-3 px-3 flex-col h-[100vh] w-[25%] border-l-2 border-black scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 bg-slate-800 text-black  overflow-y-scroll overflow-x-auto ">
 <div className="flex justify-start w-full  h-8 items-center">
-    <div className=" text-2xl text-left font-bold text-white">Questions & Filters</div>
+    <div className=" text-2xl text-left font-bold text-white">Content Overview</div>
 </div>
 
 <div className=' mt-4 '>
 <div className='flex-col space-y-2'>
      <div className="flex justify-between w-full   h-8 items-center mt-3">
      <div className="text-lg font-semibold text-white">TOPICS</div>
-     <div className="text-base text-white flex items-center space-x-1"><div>View All</div><IoMdArrowDroprightCircle className='text-lg'/></div>
+     {/* <div className="text-base text-white flex items-center space-x-1"><div>View All</div><IoMdArrowDroprightCircle className='text-lg'/></div> */}
      </div>
      
  <div className='text-base text-white flex-col w-full space-y-1 '> 
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="topics" id=""/><div className=" space-x-2 pl-2">Arrays</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="topics" id=""/><div className=" space-x-2 pl-2">Strings</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="topics" id=""/><div className=" space-x-2 pl-2">Linked Lists</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="topics" id=""/><div className=" space-x-2 pl-2">Trees</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="topics" id=""/><div className=" space-x-2 pl-2">Graphs</div></div> 
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div> <div className=" space-x-2 pl-2">Arrays</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div> <div className=" space-x-2 pl-2">Strings</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div> <div className=" space-x-2 pl-2">Linked Lists</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div> <div className=" space-x-2 pl-2">Trees</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div> <div className=" space-x-2 pl-2">Graphs</div></div> 
 
 
     </div></div>
@@ -71,16 +72,16 @@ export default function Coding_ques(){
    <div className=' mt-4 '>
 <div className='flex-col space-y-2'>
      <div className="flex justify-between w-full   h-8 items-center mt-3">
-     <div className="text-lg font-semibold text-white">COMPANIES</div>
-     <div className="text-base text-white flex items-center space-x-1"><div>View All</div><IoMdArrowDroprightCircle className='text-lg'/></div>
+     <div className="text-lg font-semibold text-white"> COVERED COMPANIES</div>
+     {/* <div className="text-base text-white flex items-center space-x-1"><div>View All</div><IoMdArrowDroprightCircle className='text-lg'/></div> */}
      </div>
      
  <div className='text-base text-white flex-col w-full space-y-1 '> 
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="company" id=""/><div className=" space-x-2 pl-2">Amazon</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="company" id=""/><div className=" space-x-2 pl-2">Microsoft</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="company" id=""/><div className=" space-x-2 pl-2">Flipkart</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="company" id=""/><div className=" space-x-2 pl-2">Google</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="company" id=""/><div className=" space-x-2 pl-2">Adobe</div></div> 
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Amazon</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Microsoft</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Flipkart</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Google</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Adobe</div></div> 
 
 
     </div></div>
@@ -90,14 +91,14 @@ export default function Coding_ques(){
    <div className=' mt-4 '>
 <div className='flex-col space-y-2'>
      <div className="flex justify-between w-full   h-8 items-center mt-3">
-     <div className="text-lg font-semibold text-white">DIFFICULTY</div>
+     <div className="text-lg font-semibold text-white">DIFFICULTY LEVELS</div>
      </div>
      
  <div className='text-base text-white flex-col w-full space-y-1 '> 
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="dificult" id=""/><div className=" space-x-2 pl-2">School</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="dificult" id=""/><div className=" space-x-2 pl-2">Easy</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="dificult" id=""/><div className=" space-x-2 pl-2">Medium</div></div>
-  <div className="flex  "> <input className=" w-[20px]" type="checkbox" name="dificult" id=""/><div className=" space-x-2 pl-2">Hard</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">School</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Easy</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Medium</div></div>
+  <div className="flex  "> <div className='m-2'><RiCheckboxMultipleFill/></div><div className=" space-x-2 pl-2">Hard</div></div>
 
     </div></div>
 
