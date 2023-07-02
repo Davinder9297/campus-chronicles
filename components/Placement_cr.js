@@ -16,25 +16,25 @@ const PlacementCr = () => {
     </div>
     <div className="carousel-inner  ">
       <div className="carousel-item active relative float-left w-full " data-bs-interval="900">
-        <img src="/Qs2.png" className="block w-full h-[86vh] xsm:h-40" alt="..."/>
+        <img src="/Qs2.png" className="block w-full h-[86vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       <div className="carousel-item  relative float-left w-full" data-bs-interval="900">
-        <img src="/Relinnes.png" className="block w-full h-[80vh] xsm:h-40" alt="..."/>
+        <img src="/Relinnes.png" className="block w-full h-[80vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       <div className="carousel-item relative float-left w-full" data-bs-interval="900">
-        <img src="/cognizant.png" className="block w-full h-[80vh] xsm:h-40" alt="..."/>
+        <img src="/cognizant.png" className="block w-full h-[80vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       <div className="carousel-item relative float-left w-full" data-bs-interval="900">
-        <img src="/prince_v.png" className="block w-full h-[80vh] xsm:h-40" alt="..."/>
+        <img src="/prince_v.png" className="block w-full h-[80vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       <div className="carousel-item relative float-left w-full" data-bs-interval="900">
-        <img src="/gaurav.png" className="block w-full h-[78vh] xsm:h-40" alt="..."/>
+        <img src="/gaurav.png" className="block w-full h-[78vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       <div className="carousel-item relative float-left w-full" data-bs-interval="900">
-        <img src="/sinesh_bhai.png" className="block w-full h-[78vh] xsm:h-40" alt="..."/>
+        <img src="/sinesh_bhai.png" className="block w-full h-[78vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       <div className="carousel-item relative float-left w-full" data-bs-interval="900">
-        <img src="/sid 22.png" className="block w-full h-[78vh] xsm:h-40" alt="..."/>
+        <img src="/sid 22.png" className="block w-full h-[78vh] xsm:h-[42vh] xsm:w-full" alt="..."/>
       </div>
       
     </div>
