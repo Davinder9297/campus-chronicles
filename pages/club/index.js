@@ -126,7 +126,7 @@ router.push(path)
                     </button>
                 </div>
                 <div className="border-solid border-2 m-3 border-pink-600 h-[160px] rounded-xl shadow-md shadow-pink-400 cursor-pointer hover:scale-105 transition duration-150">
-                    <button onClick={()=>(opennext('/club/editorial',"Editorial Club"))} >
+                    <button onClick={()=>(opennext('/club/editorialres',"Editorial Club"))} >
                         <img className="rounded-xl h-[158px] w-full" src="/editorial.jpg" />
                     </button>
                 </div>
