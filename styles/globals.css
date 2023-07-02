@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+.animation {
+  height:50px;
+  overflow:hidden;
+  margin-left: 1rem;
+}
+
+.animation > div > div {
+  /* padding: 0.25rem 0.75rem; */
+  height:3rem;
+  margin-bottom: 2.81rem;
+  display:inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 8s infinite;
+}
+/* .animation div:second-child {
+  animation: text-animation 8s infinite;
+} */
+
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -5.62rem;}
+  30% {margin-top: -5.62rem;}
+  40% {margin-top: -11.24rem;}
+  60% {margin-top: -11.24rem;}
+  70% {margin-top: -5.62rem;}
+  80% {margin-top: -5.62rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}
+
+@keyframes move { 
+  0% {
+        transform: translateX(-200%);
+
+  }
+
+  100% {
+    transform: translateX(0%);
+    
+
+  }
+}
+/* @keyframes m { 
+  0% {
+        transform: translateX(0%);
+
+  }
+
+  100% {
+    transform: translateX(-200%);
+    
+
+  }
+} */
+.whologin{
+  background-image: url('../public/bg-gif.gif');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+/* .p_proced_animation{
+  animation: m 1s linear 1;
+} */
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+     opacity: 0.7;
+  }
+}
+.request{
+  background-image: url('../public/bookbg.webp');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  
+}
+.request_book_animation{
+  animation: move 1s linear 1;
+}
+.teacherbg{
+  background-image: url('../public/teacherbg.gif');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.profile{
+  background-image: url('../public/teacherprofile.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.assignment{
+  background-image: url('../public/assignment.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.record{
+  background-image: url('../public/studentrecord.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.attendance{
+  background-image: url('../public/attendance.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.research{
+  background-image: url('../public/research.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.announcement{
+  background-image: url('../public/announcement.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.syllabus{
+  background-image: url('../public/syllabbus.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+.timetable{
+  background-image: url('../public/timetable4.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+.placement_bg{
+  background-image: url('../public/Data_Streams.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.procedure{
+  background-image: url('../public/pr.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.word {
+  margin: auto;
+  color: white;
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+.about>table>thead>tr>th {
+  padding: 8px;
+  text-align: left;
+  background-color:#945a28 !important;
+  color: #ffff !important;
+}
+
+.about>table>tbody>tr:nth-child(even) {
+  background-color: #fffac4;
+}
+.about>table>tbody>tr>td {
+  border: 1px;
+  padding: 8px; 
+  /* background-color: red; */
+}  
+.p_record>table>thead>tr>th {
+  padding: 8px;
+  text-align: center;
+  background-color: #6969e2 !important;
+  color: #ffffff !important;
+}
+/* .p_record2>table>thead>tr>th {
+  padding: 8px;
+  text-align: center;
+  background-color: #6969e2 !important;
+  color: #ffffff !important;
+} */
+.p_record>table>tbody>tr:nth-child(even) {
+  background-color: #cffafe ; /*#f4b3d7 */
+}
+/* .p_record2>table>tbody>tr:nth-child(even) {
+  background-color: #f5d0fe ;
+} */
+.p_record>table>tbody>tr>td {
+  border: 4px;
+  padding: 2px; 
+  text-align:center
+} 
+.qualtable>table>tbody>tr>td {
+  padding: 6px 5px; 
+  text-align: center;
+  /* background-color: red; */
+}  
+.research_pub>table>tbody>tr>td {
+  padding: 6px 5px; 
+  text-align: center;
+  /* background-color: red; */
+}  
+.left-side>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.res_table>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.ex>table>tbody>tr>td {
+  padding: 2px 4px; 
+
+  text-align: center;
+  /* background-color: red; */
+}  
+.ann_bg{
+  background-image: url('../public/ann_bg.jpg');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
+
+/* student -> study material */
+.sm_dropoptions{
+  display: none;
+}
+.sm_drop:hover .sm_dropoptions{
+  display: block;
+}
+/* student -> study material -> notes*/
+.notes_sem_sub{
+  display: none;
+  /* position: absolute; */
+
+}
+.sem1:hover .notes_sem_sub{
+  display: inline-flex;
+  /* position: relative; */
+  width: 90%;
+}
+.notes_sem_sub_1{
+  display: none;
+  /* position: absolute; */
+}
+.notes_sem_sub:hover .notes_sem_sub_1{
+  display: inline-flex;
+  /* position: relative; */
+  width: 90%;
+}
+
+/* student -> logout option */
+.logout_stu{
+  display: none; 
+}
+.logo_logout:hover .logout_stu{
+  display: block;
+}
+label {
+  cursor: pointer;
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
