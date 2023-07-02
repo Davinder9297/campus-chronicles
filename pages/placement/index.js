@@ -68,10 +68,10 @@ export default function Placement() {
 <Navbar/>
 <div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold xsm:text-xs xsm:justify-evenly xsm:h-16'>
   <div className='flex'> <AiTwotoneHome className='m-1' /> Home </div>
-  <div className="xsm:pl-5"> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
-  <div> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
+  <div className="xsm:pl-3"> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
+  <div className="xsm:pl-3"> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
   <div className="xsm:hidden"> <Link href= {'/placement/placement_record'}> Placement Record </Link> </div>
-  <div> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
+  <div className="xsm:pl-3"> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
   <div> <Link href= {'/placement/coding_ques'}>Coding Practice </Link></div>
 
 </div>
@@ -98,9 +98,9 @@ export default function Placement() {
       </div>
 
       <div className=" flex justify-center border-solid  w-[35%] shadow-inner shadow-pink-600 rounded-xl xsm:w-full xsm:relative top-2 xsm:m-5  " >
-        <div className=' border-solid  w-[95%] text-center font-bold text-2xl font-sans m-3 '><button className='m-2'> <MdEditNotifications /> </button>
+        <div className=' border-solid  w-[95%] text-center font-bold text-2xl font-sans m-3 xsm:text-xl '><button className='m-2'> <MdEditNotifications /> </button>
            NOTIFICATIONS
-          <div className="  text-xl h-[420px] w-[98%] text-center    border-y-2 rounded-md  border-orange-900 xsm:h-auto">
+          <div className="  text-xl h-[420px] w-[98%] text-center    border-y-2 rounded-md  border-orange-900 xsm:h-auto ">
           {/* <Marquee autoFill  direction="up" className='bg-slate-500 h-full'> */}
 {data.map((da,index)=>{
   const {title,doc,date}=da;
@@ -115,7 +115,7 @@ export default function Placement() {
   show='hidden';
   }
   return(<>
-          <div className="justify-between flex  font-mono font-bold text-lg border-black border-b "><div className='my-2'> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button className='my-2' onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
+          <div className="justify-between flex  font-mono font-bold text-lg border-black border-b xsm:text-base"><div className='my-2'> <button> <FaThList/></button></div><div className='flex  items-center'><div className='mr-2'><img className={`w-fit ${show}`} src="/new.gif" alt="" /></div>{title}</div><div className=" text-2xl"><button className='my-2' onClick={(e)=>{download(doc,title)}}><IoMdDownload/></button></div>
 </div>
 
   </>)
@@ -133,24 +133,24 @@ export default function Placement() {
       </div>
     </div>
 
-    <div className=' flex flex-row justify-between w-auto h-3/4 mx-1 my-2 border-2 xsm:justify-evenly '>
-      <div className=' flex-col h-3/4 w-[32%] text-clip overflow-hidden xsm:w-[50%] xsm:h-auto '>
-        <div className='pl-5 pt-3 pb-2 mt-8 ml-5 text-left xsm:pl-2'>
+    <div className=' flex flex-row justify-between w-auto h-3/4 mx-1 my-2 border-2  xsm:block'>
+      <div className=' flex-col h-3/4 w-[32%] text-clip overflow-hidden xsm:w-[100%] xsm:h-auto '>
+        <div className='pl-5 pt-3 pb-2 mt-8 ml-5 text-left xsm:pl-2 '>
           <div className=' text-3xl font-serif font-bold text-pink-500'> PLACEMENT
           <div className=' text-3xl font-serif font-bold text-black'>  STATS</div></div>
         </div>
-        <div className=' pl-14 pt-4 pb-2 mt-8 ml-5 text-left text-xl font-mono xsm:pr-2'>
+        <div className=' pl-14 pt-4 pb-2 mt-8 ml-5 text-left text-xl font-mono xsm:pr-2 xsm:mt-1 xsm:text-base'>
         1260 management case-studies covering domains like Strategy, Marketing, Economics & Finance and others, 
         bought across 68 countries. The placement stats are hjdsvhdhbdhcbdsbc cndbjgcxbjl bla blaa b;aaaa
         </div>
 
       </div>
 
-      <div className='h-auto w-[40%]  bg-gradient-to-r from-orange-200 via-red-200 to-pink-300 rounded-xl xsm:w-[50%] xsm:h-auto xsm:py-6 xsm:pt-8'>
-        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-4 xsm:pl-3 '> <div className='m-2'><RiCheckboxMultipleFill/></div> 50 Companies</div>
-        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-4 xsm:pl-3 '> <div className='m-2'><RiCheckboxMultipleFill/></div> 100+ Placement Offers</div>
-        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-4 xsm:pl-3 '> <div className='m-2'><RiCheckboxMultipleFill/></div> 6.06 lac Average CTC</div>
-        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-4 xsm:pl-3 '> <div className='m-2'><RiCheckboxMultipleFill/></div> 17 LPA-Highest Package</div>
+      <div className='h-auto w-[40%]  bg-gradient-to-r from-orange-200 via-red-200 to-pink-300 rounded-xl xsm:w-[100%] xsm:h-auto xsm:py-3 xsm:mt-2 '>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-2 xsm:text-base'> <div className='m-2'><RiCheckboxMultipleFill/></div> 50 Companies</div>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-2 xsm:text-base'> <div className='m-2'><RiCheckboxMultipleFill/></div> 100+ Placement Offers</div>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-2 xsm:text-base'> <div className='m-2'><RiCheckboxMultipleFill/></div> 6.06 lac Average CTC</div>
+        <div className='flex m-8  pl-20 pt-4 h-20 w-auto font-serif font-extrabold text-xl text-center xsm:m-2 xsm:text-base'> <div className='m-2'><RiCheckboxMultipleFill/></div> 17 LPA-Highest Package</div>
       </div>
 
       <div className='h-auto w-[30%] xsm:hidden'>
@@ -175,7 +175,7 @@ export default function Placement() {
         
 
         <div className="flex-col mt-8 mb-5 " id="events" >
-            <div className="text-center text-3xl font-semibold font-serif text-gray-600">Events At Campus</div>
+            <div className="text-center text-3xl font-semibold font-serif text-gray-600 xsm:text-2xl">Events At Campus</div>
             <div className="flex justify-center"><img src="hr.png" alt="" /></div>
             <div className="flex justify-center w-full">
             <div className="flex flex-wrap w-full h-auto justify-center space-x-14  mt-4 max-w-[1250px] xsm:space-x-2 ">

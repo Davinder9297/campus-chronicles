@@ -34,7 +34,7 @@ export default function Coding_ques(){
     return(<>  
     <div className=" h-36 flex flex-row xsm:h-40 ">
         <div className="flex justify-start w-[40%] h-36 xsm:h-40" ><img className=" w-[65%] xsm:w-[70vh]" src="/code_q.gif" /></div>
-        <div className=" w-[70%] py-14 text-left pl-20 text-slate-800 font-extrabold font-BlinkMacSystemFont text-4xl xsm:pt-7"> Coding Practice Questions</div>   
+        <div className=" w-[70%] py-14 text-left pl-20 text-slate-800 font-extrabold font-BlinkMacSystemFont text-4xl xsm:pt-8 xsm:text-2xl"> Coding Practice Questions</div>   
     {/* <Link href ={'/placement/index'}> </Link>   */}
     {/* <button className=' ml-4 mr-1 mt-1 p-2 flex rounded-lg text-center text-white font-semibold h-10 w-22 bg-slate-800' type="button " > HOME</button>  */}
             </div>
@@ -105,8 +105,8 @@ export default function Coding_ques(){
    </div>
 </div>
 
-<div className=" mx-2 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner overflow-auto scrollbar-thin scrollbar-thumb-zinc-300 xsm:w-full "> 
-<div className="flex-col w-[100%] p-3 xsm:w-full xsm:p-1">
+<div className=" mx-2 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner overflow-auto scrollbar-thin scrollbar-thumb-zinc-300 xsm:w-[100%] "> 
+<div className="flex-col w-[100%] p-3 xsm:p-1">
 <div className={`text-center flex w-full justify-center items-center h-full absolute top-10 left-36
  z-10 ${spin}`}>
 <div className="spinner-border" role="status">
@@ -117,15 +117,15 @@ export default function Coding_ques(){
     {data.map((da,index)=>{
         const {title,description,difficulty,task,example,company}=da;
         return(<>
-        <div className="  accordion-item focus-within:bg-white xsm:w-[60vh]">
-                        <h2 className=" p-2 accordion-header xsm:p-1" id={title}>
+        <div className="  accordion-item focus-within:bg-white xsm:w-[43vh] xsm:p-0">
+                        <h2 className=" p-2 accordion-header " id={title}>
 
                             <button className=" h-28 space-y-2  accordion-button collapsed hover:bg-green-50" type="button" data-bs-toggle="collapse" data-bs-target={`#a${index}`} aria-expanded="false" aria-controls={`a${index}`}>
                             <div className=' flex-row w-full space-y-1'>
-                                <div className=" pt-7 flex-col text-lg w-full  ">
+                                <div className=" pt-7 flex-col text-lg w-full xsm:space-x-10  ">
                                 <div className="flex justify-between  items-center">
                                 <div className="text-xl text-justify font-serif font-bold text-black xsm:text-lg">{title}</div>
-                                <div className="text-base text-black font-semibold items-center space-x-1 xsm:text-sm"><div>View Ques</div></div>
+                                <div className="text-base text-black font-semibold items-center space-x-1 xsm:text-sm xsm:pl-10 "><div>View Ques</div></div>
                                 </div></div>
 
                                 <div className=" flex-col text-lg w-full ">
