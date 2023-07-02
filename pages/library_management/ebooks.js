@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../components/navbar";
+import Navbarres from "../../components/navbarres";
 import Sidebar from "./sidebar";
 import Addbookrows from "./addbookrows"
 import Ebookrows from "./ebookrows";
@@ -114,7 +114,7 @@ export default function Addbook(){
     }, []);
     return(<>
     <div className="h-screen overflow-y-hidden">
-        <Navbar/>
+        <Navbarres/>
         <div className="flex h-[91.5%] ">
             <Sidebar/>
             <div className="flex-col w-[100%] h-[93.3%]  overflow-y-auto scrollbar-thin  scrollbar-track-slate-100 scrollbar-thumb-slate-500">
@@ -122,12 +122,12 @@ export default function Addbook(){
             <div className={` pb-4`}>
         <div className="text-center text-2xl font-serif mt-5 ">Add eBook's Details</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
-        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
+        <button className={`bg-yellow-400 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
         {/* <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> */}
   <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
-          <button disabled={disable} className={`bg-blue-600 p-2 rounded ${opac}`} onClick={savedata}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+          <button disabled={disable} className={`bg-yellow-400 p-2 rounded ${opac}`} onClick={savedata}>Save Changes</button><button onClick={addTableRows} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
         <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
         <div className={`text-center flex w-full justify-center items-center h-full absolute top-0 left-28

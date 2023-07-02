@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from "react-toastify";
-import Navbar from "../../components/navbar";
+import Navbarres from "../../components/navbarres";
 import { useState } from "react";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -46,8 +46,8 @@ const res=await fetch('http://localhost:3000/api/requestbook', {
     }
     return(<>
     
-   <div className="h-screen overflow-y-hidden">
-    <Navbar/>
+   <div className="h-screen overflow-y-hidden ">
+    <Navbarres/>
     <ToastContainer
     position="top-right"
     autoClose={1000}
@@ -59,15 +59,15 @@ const res=await fetch('http://localhost:3000/api/requestbook', {
     draggable
     pauseOnHover
     />
-   <div className="h-[86%] request flex items-center ">
-        <div className="h-80  w-96 request_book_animation outline ml-20 text-yellow-100 flex justify-center shadow-xl shadow-yellow-200  outline-1 outline-yellow-200  rounded-lg">
+   <div className="h-[86%] request flex items-center xsm:w-full xsm:bg-opacity-50">
+        <div className="h-80  w-96 request_book_animation outline ml-20 text-yellow-100 flex justify-center shadow-xl shadow-yellow-200  outline-1  outline-yellow-200  rounded-lg xsm:w-[90%] xsm:ml-5 xsm:px-6 ">
             
-         <div className="flex-col text-yellow-100 py-3">
-             <div className="text-center font-serif text-2xl animate-pulse">Request Book</div>
+         <div className="flex-col text-yellow-100 py-3 xsm:mx-auto">
+             <div className="text-center font-serif text-2xl animate-pulse xsm:text-xl">Request Book</div>
              <div className="space-y-5 mt-4 ">
-                <div className="flex justify-between  space-x-3"><div>Book Title</div> <div><input  value={title} onChange={(e)=>{settitle(e.target.value)}} className="p-1 rounded-sm bg-yellow-200 text-black " type="text" /></div></div>
-                <div className="flex justify-between space-x-3 "><div>Author Name</div> <div><input  value={author} onChange={(e)=>{setauthor(e.target.value)}} className="p-1 rounded-sm bg-yellow-200 text-black " type="text" /></div></div>
-                <div className="flex justify-between  space-x-3"><div>Publisher (Optional*)</div> <div><input value={publisher} onChange={(e)=>{setpublisher(e.target.value)}} className="p-1 rounded-sm bg-yellow-200 text-black " type="text" /></div></div>
+                <div className="flex justify-between"><div>Book Title</div> <div><input  value={title} onChange={(e)=>{settitle(e.target.value)}} placeholder="Enter the title" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
+                <div className="flex justify-between"><div>Author Name</div> <div><input  value={author} onChange={(e)=>{setauthor(e.target.value)}} placeholder="Enter the Author" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
+                <div className="flex justify-between  space-x-2"><div>Publisher (Optional*)</div> <div><input value={publisher} onChange={(e)=>{setpublisher(e.target.value)}} placeholder="Enter Publisher's name" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
             
    
             </div>

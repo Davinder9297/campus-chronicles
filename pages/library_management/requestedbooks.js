@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../../components/navbar";
+import Navbarres from "../../components/navbarres";
 import Sidebar from "./sidebar";
 import { useEffect } from "react";
 
@@ -39,7 +39,7 @@ export default function Requestedbooks(){
   }, []);
     return(<>
     <div className="h-screen overflow-y-hidden">
-        <Navbar/>
+        <Navbarres/>
         <div className="flex h-[91.5%] ">
             <Sidebar/>
             <div className="flex-col w-[100%] h-[93.3%]  overflow-y-auto scrollbar-thin  scrollbar-track-slate-100 scrollbar-thumb-slate-500">

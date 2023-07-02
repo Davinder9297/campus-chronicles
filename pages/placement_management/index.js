@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../../components/navbar";
+import Navbarres from "../../components/navbarres";
 import TableRows from "./Tablerows";
 import TableRows2 from "./tablerows2";
 import { useEffect } from "react";
@@ -342,7 +342,7 @@ useEffect(() => {
 }, []);
     return(<>
     <div className="h-screen overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
-        <Navbar/>
+        <Navbarres/>
         <div className={`text-center flex w-full justify-center items-center h-[85.3%]  ${spin}`}>
 <div className="spinner-border" role="status">
   <span className ="visually-hidden">Loading...</span>
@@ -350,9 +350,9 @@ useEffect(() => {
 </div>
         <div className={`pb-4 ${show}`}>
         <div className="text-center text-2xl font-serif mt-3">Interview Related Question Management</div>
-        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-blue-600 p-2 rounded ${opac}`} onClick={saveinterview}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add Question</button></div>
+        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-yellow-400 p-2 rounded ${opac}`} onClick={saveinterview}>Save Changes</button><button onClick={addTableRows} className="bg-amber-800 p-2 rounded">+Add Question</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[90%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
@@ -384,9 +384,9 @@ useEffect(() => {
 
 
         <div className="text-center text-2xl font-serif mt-5">Coding Question Management</div>
-        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable1} className={`bg-blue-600 p-2 rounded ${opac1}`} onClick={savecoding}>Save Changes</button><button onClick={addTableRows1} className="bg-blue-600 p-2 rounded">+Add Question</button></div>
+        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable1} className={`bg-yellow-400 p-2 rounded ${opac1}`} onClick={savecoding}>Save Changes</button><button onClick={addTableRows1} className="bg-amber-800 p-2 rounded">+Add Question</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[90%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
@@ -427,9 +427,9 @@ useEffect(() => {
   <span classNamea="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
-          <button disabled={disable2} className={`bg-blue-600 p-2 rounded ${save1}`} onClick={uploadannouncement}>Save Changes</button><button onClick={addTableRows2} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+          <button disabled={disable2} className={`bg-yellow-400 p-2 rounded ${save1}`} onClick={uploadannouncement}>Save Changes</button><button onClick={addTableRows2} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[90%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[90%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">

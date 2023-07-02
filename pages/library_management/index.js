@@ -1,4 +1,4 @@
-import Navbar from "../../components/navbar";
+import Navbarres from "../../components/navbarres";
 
 import { useEffect } from "react"
 import { Chart } from "chart.js";
@@ -37,7 +37,7 @@ export default function Library_management(){
 
     return(<>
     <div className="h-screen overflow-y-hidden">
-        <Navbar/>
+        <Navbarres/>
         <div className="flex h-full" >
           <Sidebar/>
         

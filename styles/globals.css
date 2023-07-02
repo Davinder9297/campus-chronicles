@@ -106,6 +106,7 @@ a {
   background-image: url('../public/bookbg.webp');
   background-repeat: no-repeat;
   background-size:100% 100%;
+  /* opacity: 0.8; */
   
 }
 .request_book_animation{
@@ -288,7 +289,4 @@ label {
   opacity: 0;
   position: absolute;
   z-index: -1;
-}
-.missionbg{
-  
 }

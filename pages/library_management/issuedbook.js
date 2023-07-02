@@ -1,4 +1,4 @@
-import Navbar from "../../components/navbar";
+import Navbarres from "../../components/navbarres";
 import Sidebar from "./sidebar";
 import {FiSave} from "react-icons/fi"
 import TableRows from "./tablerows";
@@ -118,7 +118,7 @@ useEffect(() => {
 }, []);
     return(<>
     <div className="h-screen overflow-y-hidden">
-        <Navbar/>
+        <Navbarres/>
         <div className="flex h-[91.5%] ">
             <Sidebar/>
             <div className="flex justify-center items-center w-[100%] ">
@@ -126,7 +126,7 @@ useEffect(() => {
                 <div className=" flex-col  h-[93.3%]  container outline outline-1 outline-gray-300 px-3 py-2">
                     <div className="flex justify-between  items-center w-full">
                         <div className="text-xl font-semibold">Issued Books Details</div>
-                        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-blue-600 p-2 rounded ${opac}`} onClick={save}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+                        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-yellow-400 p-2 rounded ${opac}`} onClick={save}>Save Changes</button><button onClick={addTableRows} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
 
                     </div>
                     
