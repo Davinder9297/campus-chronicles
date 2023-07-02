@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { GrClose } from 'react-icons/gr'
 import { ImWarning } from 'react-icons/im'
+import { RxHamburgerMenu } from 'react-icons/rx'
+
 // import parcookie from 'js-cookie'
 import { parseCookies } from 'nookies'
 import { useEffect, useState } from "react"
@@ -46,20 +48,43 @@ export default function Header() {
     </div>
 
 
-
-
-
-    <div className="flex justify-around items-center h-11 font-serif text-md font-semibold  bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 " id="navbarSupportedContent">
-      <div><Link href="/">Home</Link></div>
-      <div><Link href="/about">About Us</Link></div>
-      <div><Link href='/faculty'>Faculty</Link></div>
-      <div><Link href="#events">Events & Activities</Link></div>
-      <div><Link href='/club'>Clubs</Link></div>
-      <div><Link href='/library'>Library</Link></div>
-      <div><Link href="/placement">Placements</Link></div>
-      <div className={`${showlogin}`}><Link href="/login">Log In </Link></div>
-      <div className={` flex items-center h-full justify-center ${showlogout}`}><button type="button" className={`font-serif font-semibold  `} data-bs-toggle="modal" data-bs-target="#exampleModal">Log out</button></div>
+    
+    <nav className="navbar navbar-expand-lg bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 flex justify-around items-center font-serif text-md font-semibold">
+  <div className="container-fluid ">
+<div className="mb-2"><Link href="/">Home</Link></div>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      {/* <span className="RxHamburgerMenu"></span> */}
+      <RxHamburgerMenu></RxHamburgerMenu>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto ">
+        <li className="nav-item mb-2"><div><Link href="/about">About Us</Link></div></li>
+        <li className="nav-item mb-2"><div><Link href='/faculty'>Faculty</Link></div></li>
+        <li className="nav-item mb-2"><div><Link href="#events">Events & Activities</Link></div></li>
+        <li className="nav-item mb-2"><div><Link href='/club'>Clubs</Link></div></li>
+        <li className="nav-item mb-2"><div><Link href='/library'>Library</Link></div></li>
+        <li className="nav-item mb-2"><div><Link href="/placement">Placements</Link></div></li>
+        <li className="nav-item mb-2"><div className={`${showlogin}`}><Link href="/login">Log In </Link></div></li>
+        <li className="nav-item mb-2"><div className={` flex items-center h-full justify-center ${showlogout}`}><button type="button" className={`font-serif font-semibold  `} data-bs-toggle="modal" data-bs-target="#exampleModal">Log out</button></div></li>
+        
+      </ul>
+      
     </div>
+  </div>
+</nav>
+
+
+
+
+{/* 
+    <div className="flex justify-around items-center h-11 font-serif text-md font-semibold  bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 " id="navbarSupportedContent">
+      <div></div>
+      <div><Link href='/club'>Clubs</Link></div>
+      <div></div>
+      <div></div>
+      
+      <div className={` flex items-center h-full justify-center ${showlogout}`}><button type="button" className={`font-serif font-semibold  `} data-bs-toggle="modal" data-bs-target="#exampleModal">Log out</button></div>
+    </div> */}
     
   </>)
 }

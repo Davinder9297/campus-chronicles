@@ -31,23 +31,23 @@ export default function Interview_ques(){
         fetchData();
       }, []);
     return(<>
-    <div className=" h-36 flex flex-row  ">
-        <div className="flex justify-start w-[40%] h-36 " ><img className=" w-[65%]" src="/interview.gif" /></div>
-        <div className=" w-[70%] py-14 text-left pl-6 text-cyan-300 font-extrabold font-BlinkMacSystemFont text-4xl"> Interview Related Questions</div>  
-        <button className=' ml-4 mr-1 mt-1 p-2 flex rounded-lg text-center text-white font-semibold h-10 w-22 bg-cyan-600' type="button " > HOME</button>   
+    <div className=" h-36 flex flex-row  xsm:h-40 ">
+        <div className="flex justify-start w-[40%] h-36 xsm:h-40 " ><img className=" w-[65%] xsm:w-[90%] " src="/interview.gif" /></div>
+        <div className=" w-[70%] py-14 text-left pl-6 text-cyan-300 font-extrabold font-BlinkMacSystemFont text-4xl xsm:text-3xl xsm:pt-10 xsm:pl-14"> Interview Related Questions</div>  
+        {/* <button className=' ml-4 mr-1 mt-1 p-2 flex rounded-lg text-center text-white font-semibold h-10 w-22 bg-cyan-600' type="button " > HOME</button>    */}
 
             </div>
 
 
     <div className= " p-2 flex flex-row w-full h-auto overflow-y-hidden">
 
-            <div className=" py-4 px-3 flex-col h-[100vh] w-[23%] border-l-2 border-black scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 bg-sky-100 text-black  overflow-y-scroll overflow-x-auto ">
+            <div className=" py-4 px-3 flex-col h-[100vh] w-[23%] border-l-2 border-black scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 bg-sky-100 text-black  overflow-y-scroll overflow-x-auto xsm:w-[42%] xsm:py-6">
             <div className="flex justify-start w-full  h-8 items-center">
-                <div className=" text-2xl text-left font-bold text-black">Computer Science Interview Questions</div>
+                <div className=" text-2xl text-left font-bold text-black xsm:pt-10">Computer Science Interview Questions</div>
             </div>
 
-           <div className=' pt-2 '>
-             <div className='text-lg flex-col w-full space-y-3 '> 
+           <div className=' pt-2  '>
+             <div className='text-lg flex-col w-full space-y-3 xsm:pt-14 '> 
              <div className={`text-center flex w-full justify-center items-center h-full relative top-36 left-0
  z-10 ${spin}`}>
 <div className="spinner-border" role="status">
@@ -87,7 +87,7 @@ export default function Interview_ques(){
            </div>
     
 
-           <div className=" mx-3 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner shadow-sky-200  scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 overflow-y-scroll "> 
+           <div className=" mx-2 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner shadow-sky-200  scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 overflow-y-scroll xsm:mx-0"> 
            <div className=" pt-2 text-2xl text-left font-bold text-black underline">Detailed Answers to the Questions</div>
 
            <div className="  flex-col   ">

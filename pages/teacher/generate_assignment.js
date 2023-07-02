@@ -19,7 +19,7 @@ export default function GenerateAssignment() {
         setopac('cursor-pointer')
         setsem(event.target.value)
         setSelected(event.target.value);
-        console.log(event.target.value);
+        // console.log(event.target.value);
     };
 
     const firstsem = [

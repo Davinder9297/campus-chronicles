@@ -95,17 +95,17 @@ const openInNewTab = (url) => {
         }, []);
         const download=(doc,title)=>{
           fetch(doc).then(response => {
-              response.blob().then(blob => {
-                  // Creating new object of PDF file
-                  const fileURL = window.URL.createObjectURL(blob);
-                  // Setting various property values
-                  let alink = document.createElement('a');
-                  alink.href = fileURL;
-                  alink.download = title;
-                  alink.click();
-                
-              })
-          })
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let abutton = document.createElement('a');
+                abutton.href = fileURL;
+                abutton.download = title;
+                abutton.click();
+              
+            })
+        })
         }
     return(<>
 
@@ -116,15 +116,14 @@ const openInNewTab = (url) => {
         <div className="flex-col filter-side w-[15%]  scrollbar-thin scrollbar-track-slate-700 scrollbar-thumb-slate-600  bg-slate-900 py-2 px-3 text-white overflow-y-auto overflow-x-hidden ">
           <div className='text-xl font-semibold '>Categories</div>
            <div className='flex-col space-y-4 ml-2 pt-3'>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="All">All</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="Mathematics">Mathematics</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="Physics">Physics</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="os">Operating System</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="dbms">DataBase Management System</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="python">Python</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="java">Java</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-2xl px-3 py-1 focus:bg-pink-500 " onClick={showresult} value="c">C</button></div>
-
+               <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36 " onClick={showresult} value="All">All Books</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36 " onClick={showresult} value="Mathematics">Mathematics</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Physics">Physics</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Python">Python</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Java">Java</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="C">C</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="DBMS">DBMS</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Operating System">OS</button></div>
               
            </div>
            

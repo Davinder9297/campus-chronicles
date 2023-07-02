@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import Navbar from "../../components/navbar"
 import { useState } from "react"
@@ -84,10 +85,10 @@ export default function Update_profile() {
         <div className="h-screen ">
             <div className="h-screen">
                 <Navbar class="shadow-sm" />
-                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+                {/* <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
                         <div className="logout_stu text-base">Logout</div>
-                </div>
+                </div> */}
                 <div className={` w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden  ${opac}`}>
                     Update Your Profile ....
                     <div className={`text-center text-base flex w-full justify-center items-center h-full absolute top-0 left-28

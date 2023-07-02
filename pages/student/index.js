@@ -1,11 +1,16 @@
 import Link from "next/link"
 import Navbar from "../../components/navbar"
 import {FaPowerOff} from "react-icons/fa"
+import {ImWarning} from "react-icons/im"
+import {GrClose} from "react-icons/gr"
 import {IoMdDownload} from "react-icons/io"
 import { useEffect } from "react";
 import { useState } from "react";
 // import Marquee from "react-fast-marquee";
-import Cookies from "js-cookie";
+import cookie from "js-cookie"
+import Cookies from "js-cookie"
+import { useRouter } from "next/router"
+
 
 
 export default function Student() {
@@ -36,11 +41,11 @@ const [data, setdata] = useState([])
             setspin('')
             let response = await fetch(url);
             let json = await response.json();
-      
             setannouncement(json)
             let response1 = await fetch(url1);
             let json1 = await response1.json();
-      
+            
+
             setdata(json1)
             Cookies.set('sem',json1.sem)
             Cookies.set('rollno',json1.rollno)
@@ -50,9 +55,8 @@ const [data, setdata] = useState([])
             // if(json.length!=0){   
             //   setnorecord('hidden')
             // }
-            
-            setspin('hidden')
             setshow('')
+            setspin('hidden')
           } catch (error) {
             setshow('opacity-50')
             setspin('')
@@ -62,13 +66,36 @@ const [data, setdata] = useState([])
       
         fetchData();
       }, []);
+      let router=useRouter();
+      const yesbutton=()=>{
+        cookie.remove('token')
+        router.push('/');
+      }
     return (<>
+    <div className="modal fade " id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog ">
+    <div className="modal-content bg-orange-100">
+      <div className="modal-header">
+        <h5 className="modal-title font-semibold flex text-xl  items-center" id="exampleModalLabel"><ImWarning className='mr-2 text-2xl' />Confirmation</h5>
+        <button type="button" className="btn-close text-black font-bold" data-bs-dismiss="modal" aria-label="Close"><GrClose/></button>
+      </div>
+      <div className="modal-body font-medium text-md ">
+        Are you sure to log out?
+      </div>
+      <div className="modal-footer">
+        <button type="button" className=" font-medium btn px-3 bg-orange-200" data-bs-dismiss="modal">No</button>
+        <button onClick={yesbutton}  type="button" className="btn font-medium  bg-orange-500 "  data-bs-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
         <div className="h-screen overflow-hidden">
             <Navbar class="shadow-sm bg-yellow-2" />
 
             <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4">
                 <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
-                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
+                <button type="button" className= {`font-serif font-semibold  `} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  /></button>
                         <div className="logout_stu text-base">Logout</div>
                 </div>
 

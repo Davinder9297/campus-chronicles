@@ -66,11 +66,11 @@ export default function Placement() {
   return (<>
 
 <Navbar/>
-<div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold xsm:text-xs xsm:justify-around xsm:h-16'>
+<div className='flex justify-around border-2 border-purple-900 h-11 p-2 bg-pink-300 font-serif font-bold xsm:text-xs xsm:justify-evenly xsm:h-16'>
   <div className='flex'> <AiTwotoneHome className='m-1' /> Home </div>
-  <div> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
+  <div className="xsm:pl-5"> <Link href={'/placement/about_placement'}> About Placements </Link> </div>
   <div> <Link href= {'/placement/plac_procedure'}> Placement Procedure </Link> </div>
-  <div> <Link href= {'/placement/placement_record'}> Placement Record </Link> </div>
+  <div className="xsm:hidden"> <Link href= {'/placement/placement_record'}> Placement Record </Link> </div>
   <div> <Link href= {'/placement/interview_ques'}>Interview Related questions </Link> </div>
   <div> <Link href= {'/placement/coding_ques'}>Coding Practice </Link></div>
 

@@ -16,7 +16,7 @@ export default function View_material() {
 const queryParams = new URLSearchParams(href)
 // console.log(queryParams.get("q"))
 let subject=queryParams.get("subject")
-        const url = "http://localhost:3000/api/notes?subject="+subject;
+        const url = "http://localhost:3000/api/previousyears?subject="+subject;
         // const url1 = "http://localhost:3000/api/placementevents";
       
       

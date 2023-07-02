@@ -64,7 +64,7 @@ View Profile
                     })}
                     
 
-                    {/* <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
+              <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
                         <img src="/teacher.jpg" className="h-36 w-36 mx-auto rounded-full border-2 shadow-md shadow-zinc-400 border-solid border-purple-900"/>
                         <div className="border-2 border-solid border-purple-900 text-center text-xl mt-2">
                             Dr. Monika Sachdeva
@@ -518,24 +518,24 @@ View Profile
                             <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
                 </div>
                 
-            </div>
+            {/* </div> */}
 
-
+{/* 
             <div className="mt-3 p-2 text-center text-3xl font-semibold">
                 Other Staff
             </div >
             <div className="w-[90%] m-auto">
-                {/* Monika Ma'am */}
+                */}
 
                     
 
 
                         
-                </div>
+                {/* </div> */}
                 
-            </div>
+            {/* </div> */}
 
-        </div>
+        {/* </div> */}
 
     </>)
 

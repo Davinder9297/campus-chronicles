@@ -14,17 +14,17 @@ export default function About_placement(){
   <div className=" h-30 w-full p-6  ">
     <div className=' text-center text-4xl font-BlinkMacSystemFont font-extrabold text-amber-500 animate-pulse'>OUR TOP PLACEMENT HOLDERS</div> </div>
 
-<div className="m-1 w-full h-[96vh] outline outline-2 outline-offset-0 outline-amber-800 ">
+<div className="m-1 w-full h-[96vh] outline outline-2 outline-offset-0 outline-amber-800 xsm:h-[45vh] ">
 {/* <img className=" w-full h-[96vh] outline outline-4 outline-offset-4 outline-white " src="p2.gif" ></img> */}
   <AboutPCarousal/>
 </div>
 
 
-   <div className=' flex flex-row justify-between w-auto h-[76vh] mx-32 mt-8 rounded-3xl shadow-inner shadow-gray-400 border-t-2  '>
-   <div className=' p-9  w-[50%] '><img className=' pt-2 rounded-3xl' src='/vision.gif'></img> </div>
+   <div className=' flex flex-row justify-between w-auto h-[76vh] mx-32 mt-8 rounded-3xl shadow-inner shadow-gray-400 border-t-2 xsm:mx-3 xsm:h-auto '>
+   <div className=' p-9  w-[50%] xsm:w-[96vh] xsm:hidden '><img className=' pt-2 rounded-3xl xsm:w-[90vh]' src='/vision.gif'></img> </div>
 
-   <div className='  p-10 h-auto w-[50%]'>
-    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 '>OUR VISION</div>
+   <div className='  p-10 h-auto w-[50%]  xsm:p-2 xsm:pt-4 xsm:m-2 xsm:w-full '>
+    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 xsm:text-4xl '>OUR VISION</div>
     <div className=' pl-8 pt-3 mt-6 ml-1 text-xl font-medium  font-serif '>
     To be an institution of excellence in the domain of higher technical 
 education that serves as the fountainhead for nurturing the future 
@@ -36,10 +36,10 @@ the people of the State of Punjab, the Nation and the World
    </div>
 
 
-   <div className=' flex flex-row justify-between w-auto h-[86vh] mx-32 mt-10 rounded-3xl shadow-xl shadow-gray-400 border-t-2  '>
+   <div className=' flex flex-row justify-between w-auto h-[86vh] mx-32 mt-10 rounded-3xl shadow-xl shadow-gray-400 border-t-2 xsm:mx-3 xsm:h-auto xsm:pb-6 '>
    
-   <div className='  p-10 h-auto w-[50%]'>
-    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 '>OUR MISSION</div>
+   <div className='  p-10 h-auto w-[50%] xsm:w-full xsm:p-2 xsm:pt-6'>
+    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 xsm:text-4xl'>OUR MISSION</div>
     <div className=' pl-8 pt-2  mt-6 ml-1 text-xl font-medium font-serif  '>
     To provide seamless education through the pioneering use of 
 technology, in partnership with industry and society with a view to 
@@ -53,19 +53,19 @@ seamless in all facets of life
         </div>
     </div>
 
-    <div className=' p-9  w-[50%] flex justify-center '><img className=' pt-2 rounded-3xl' src='/Mission.gif'></img> </div>
+    <div className=' p-9  w-[50%] flex justify-center xsm:hidden '><img className=' pt-2 rounded-3xl' src='/Mission.gif'></img> </div>
 
    </div>
 
 
-   <div className=' mt-12 flex flex-row justify-between w-auto h-3/4 mx-1 border-2 rounded-lg  '>
-      <div className=' flex-col h-3/4 w-[50%] text-clip overflow-hidden '>
+   <div className=' mt-12 flex flex-row justify-between w-auto h-3/4 mx-1 border-2 rounded-lg    '>
+      <div className=' flex-col h-3/4 w-[50%] text-clip overflow-hidden xsm:hidden xsm:w-full xsm:ml-0  xsm:h-auto xsm:bg-slate-300'>
         <div className='pl-5 pt-3 pb-2 mt-8 ml-5 text-center text-3xl font-serif font-bold text-amber-500'>
           About us
           <div className="flex justify-center"><img src="/hr.png" alt="" /></div>
           </div>
           
-    <div className=' pl-6 pt-3 ml-4 text-xl font-mono text-justify'>
+    <div className=' pl-6 pt-3 ml-4 text-xl font-mono text-justify xsm:w-full'>
  The main endeavor of CR&A Cell, IKG PTU Mohali Campus I 
 is to get students placed in
 reputed multinationals, government organizations. All students registered with CR&A
@@ -73,7 +73,7 @@ Cell are
 provided placement assistance, counseling for employment, and Self/Social 
 Entrepreneurship. 
 
-<p className='pt-3'>T&P Cell, IKG PTU Mohali Campus I is the nodal point of contact for companies 
+<p className='pt-3 xsm:hidden'>T&P Cell, IKG PTU Mohali Campus I is the nodal point of contact for companies 
 seeking students for placement. University also work in 
 collaboration with various industrial
 associations like Confederation of Indian 
@@ -88,8 +88,8 @@ opportunities to the students.
 
       </div>
 
-      <div className='h-[94vh] w-[50%] '>
-        <div className=' flex-col space-y-2'>
+      <div className='h-[94vh] w-[50%]  xsm:w-full xsm:h-auto'>
+        <div className=' flex-col space-y-2 xsm: justify-start'>
           <div className=' mt-8 pt-3 space-y-4 pl-3 '><div className='flex justify-center'> <img className='rounded-full  outline-offset-4 shadow-lg' src='/teacher.jpg' alt=''></img></div>
           <div className=' text-center font-mono font-normal underline text-xl pl-3 '> T&P Head Officer</div></div>
           
@@ -97,7 +97,7 @@ opportunities to the students.
            Dr. NEERAJ MOHAN</div>
 
           
-           <div class=" grid grid-cols-1 gap-0 text-center ">
+           <div class=" grid grid-cols-1 gap-0 text-center  xsm:w-full ">
           <div class="mx-14 pt-2 h-auto w-auto border-t-2 border-x-2 border-black bg-gray-100 font-bold text-xl  "> Mobile </div> 
           <div class="mx-14 h-auto border-x-2 border-black  bg-gray-100 ">784797792469 / 58768499004</div>
           <div class="mx-14 h-auto border-x-2 border-black bg-gray-100 text-xl font-bold  "> E-mail</div>
