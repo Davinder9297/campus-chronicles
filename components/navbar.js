@@ -10,7 +10,7 @@ export default function Navbar(props) {
                     </div>
                 </div>
                 <div className="flex-col xsm:my-auto">
-                    <div className="animation ml-52 xsm:ml-0 xsm:text-smxsm:text-sm">
+                    <div className="animation ml-52 xsm:ml-0 xsm:text-sm">
                         <div className="text-2xl pt-3 xsm:text-sm text-amber-800 font-bold "><div className="first ">CAMPUS CHRONICLES</div></div>
                         <div className="text-2xl font-bold xsm:text-sm  text-yellow-300 "><div className="second"></div>CAMPUS CHRONICLES</div>
                         <div className="text-2xl mt-5 pt-2 xsm:text-sm text-amber-800 font-bold "><div className="first">CAMPUS CHRONICLES</div>
