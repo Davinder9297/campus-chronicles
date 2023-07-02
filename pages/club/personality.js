@@ -21,7 +21,9 @@ export default function Personality() {
             setincharge(json.incharge)
             setleadingrole(json.leadingrole)
             setevents(json.event)
-            console.log(json.event);
+            // console.log(json.event);
+            console.log(json.incharge);
+
             // if(json.length!=0){
             //   setnorecord('hidden')
             // }
@@ -65,7 +67,7 @@ export default function Personality() {
                                 <img className="h-full w-full" src={incharge.image} />
                             </div>
                             <div className="w-[95%] text-xl h-full my-auto items-center m-auto">
-                                <div >{incharge.facultyname}</div>
+                                <div >{incharge.name}</div>
                                 <div className="font-normal text-sm">{incharge.designation}</div>
                             </div>
                         </div>

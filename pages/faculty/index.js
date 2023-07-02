@@ -64,7 +64,7 @@ View Profile
                     })}
                     
 
-                    {/* <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
+              <div className="h-64 w-72 border-2 border-solid border-emerald-700 p-2 shadow-lg mt-3 shadow-zinc-800 rounded ">
                         <img src="/teacher.jpg" className="h-36 w-36 mx-auto rounded-full border-2 shadow-md shadow-zinc-400 border-solid border-purple-900"/>
                         <div className="border-2 border-solid border-purple-900 text-center text-xl mt-2">
                             Dr. Monika Sachdeva
@@ -514,102 +514,28 @@ View Profile
                                 </table>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
+                            <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
                 </div>
                 
-            </div>
+            {/* </div> */}
 
-
+{/* 
             <div className="mt-3 p-2 text-center text-3xl font-semibold">
                 Other Staff
             </div >
             <div className="w-[90%] m-auto">
-                {/* Monika Ma'am */}
-                <div className="mt-3">
-                    {/* <div className=" text-center text-2xl font-semibold text-amber-900 bg-yellow-200 p-1 rounded-3xl">
-                        Dr. Monika Sachdeva
-                    </div> */}
-                    <div className=" flex w-[100%] m-auto">
-                        <div className="h-48 w-52 mr-2 m-auto justify-center">
-                            <div className="flex justify-center">
-                            <img src="/jass.jpeg" className=" rounded-full shadow-md shadow-black h-40  " />
-                            </div>
-                            <div className=" text-center text-xl font-semibold text-amber-900 p-1 mt-3">
-                            Mr. Ravinder
-                            </div>
-                        </div>
+                */}
 
-                        <div className="mt-3 w-[70%] shadow-md shadow-slate-400 h-48 m-auto">
-                            <div className=" w-[100%] flex text-center ">
-                                <div className={` w-[100%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer `} >
-                                    Personal Information
-                                </div>
-                                
-                            </div>
-
-                            <div className={`m-auto h-[80%] w-[90%] overflow-auto scrollbar-thin  scrollbar-thumb-zinc-900 text-sm `}>
-                                
-                            <table className="w-full">
-                                    <tbody>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <RiBankFill className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Department</div></div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Director
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                <div className="flex">
-                                                <FaChalkboardTeacher className="fill-amber-800 mr-4  h-4 w-6"/>
-                                                <div className="">Designation</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                Professor
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <BiPhoneCall className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Contact Number</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                7009400665
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                            <div className="flex">
-                                                <GoMail className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Email I'd</div>
-                                                </div>
-                                            </td>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                jaspreetkaursaini469@gmail.com
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                           
-                        </div>
-                    </div>
                     
-                            <div className="mt-3 border-b-2 border-solid border-zinc-200"></div>
 
 
                         
-                </div>
+                {/* </div> */}
                 
-            </div>
+            {/* </div> */}
 
-        </div>
+        {/* </div> */}
 
     </>)
 

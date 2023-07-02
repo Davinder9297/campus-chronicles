@@ -65,7 +65,7 @@ export default function Cultural() {
                                 <img className="h-full rounded-full w-full" src={incharge.image} />
                             </div>
                             <div className="w-[70%] text-xl h-full my-auto items-center ">
-                                <div >{incharge.facultyname}</div>
+                                <div >{incharge.name}</div>
                                 <div className="font-normal text-sm">({incharge.designation})</div>
                             </div>
                         </div>
