@@ -3,13 +3,14 @@ import { GrView } from "react-icons/gr";
 import Link from "next/link"
 import Navbar from "../../components/navbar"
 import TeacherNavbar from "../../components/teacher_navbar"
+import Navbarres from "../../components/navbarres";
 
 export default function Student_record() {
 
     return (<>
 
         <div className="">
-            <Navbar />
+            <Navbarres />
             <TeacherNavbar />
 
             <div className="">
