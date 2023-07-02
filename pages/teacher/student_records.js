@@ -14,7 +14,7 @@ export default function Student_record() {
             <TeacherNavbar />
 
             <div className="">
-                <div className=" m-auto text-center text-4xl font-yearibold p-4 overflow-hidden w-[100%] mb-2">
+                <div className="xsm:text-xl m-auto text-center text-4xl font-yearibold p-4 overflow-hidden w-[100%] mb-2">
                     Student Record
                 </div>
                 <div className=" w-[90%] mx-auto ">
@@ -32,25 +32,25 @@ export default function Student_record() {
                                 <div id="flush-collapseOne" className="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div className="accordion-body">
                                         <div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
-                                                <div className="w-[50%] ml-16">
+                                            <div className=" flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around ">
+                                                <div className="w-[50%] ml-16 ">
                                                     All Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                <div className="w-[50%]  flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl" ><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 1 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 2 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -66,25 +66,25 @@ export default function Student_record() {
                                 <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                     <div className="accordion-body">
                                     <div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     All Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 1 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 2 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -100,25 +100,25 @@ export default function Student_record() {
                                 <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                     <div className="accordion-body">
                                     <div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     All Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 1 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 2 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,25 +135,25 @@ export default function Student_record() {
                                 <div id="flush-collapseFour" className="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                                     <div className="accordion-body">
                                     <div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     All Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_all.xlsx" download={true}><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 1 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g1.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
-                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer">
+                                            <div className="flex p-2 border-b-2 mb-2 border-solid border-zinc-300 hover:bg-slate-100 cursor-pointer xsm:w-full xsm:justify-around">
                                                 <div className="w-[50%] ml-16">
                                                     Group 2 Students
                                                 </div>
-                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
+                                                <div className="w-[50%] flex justify-end fill-amber-800 mr-24 xsm:mr-0 xsm:w-auto xsm:text-xl"><a href="/4th_year_g2.xlsx"><FaDownload /></a>
                                                 </div>
                                             </div>
                                         </div>
