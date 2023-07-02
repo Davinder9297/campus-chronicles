@@ -36,7 +36,7 @@ export default function CoreCommittee() {
     return (<>
 
         <div className="">
-        <div className=" h-auto flex justify-around w-[100%]  shadow-md shadow-purple-500 items-center xsm:block">
+        <div className=" h-auto flex justify-around w-[100%]  shadow-md shadow-gray-500 items-center xsm:block">
                 <div className="xsm:w-[100%] xsm:flex xsm:justify-center w-[20%] " >
                     <img className="xsm:h-36 w-full h-36 xsm:w-auto" src="/core-committee.png" />
                     </div>

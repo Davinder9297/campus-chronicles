@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Navbar from '../../components/navbar'
+import Navbarres from '../../components/navbarres'
 import TableRows from './tablerows'
 // import Facultyrows from './facultyrows'
 import { ToastContainer, toast } from 'react-toastify'
@@ -463,7 +463,7 @@ const res=await fetch('http://localhost:3000/api/previousyears', {
 
     return(<>
     <div className='h-screen overflow-y-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-400 '>
-        <Navbar/>
+        <Navbarres/>
 <div className={`text-center flex justify-center items-center h-[85.3%] ${spin}`}>
 <div className="spinner-border" role="status">
   <span className ="visually-hidden">Loading...</span>
@@ -471,9 +471,9 @@ const res=await fetch('http://localhost:3000/api/previousyears', {
 </div>
         <div className={`${show} pb-4`}>
         <div className="text-center text-2xl font-serif mt-5 ">Student Credential Management</div>
-        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-blue-600 p-2 rounded ${save1}`} onClick={student}>Save Changes</button><button onClick={addTableRows} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-end space-x-2 text-white pr-2"><button disabled={disable} className={`bg-yellow-400 p-2 rounded ${save1}`} onClick={student}>Save Changes</button><button onClick={addTableRows} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[95%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
@@ -503,14 +503,14 @@ const res=await fetch('http://localhost:3000/api/previousyears', {
         </div>
         <div className="text-center text-2xl font-serif mt-5">Announcement Generation</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
-        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
+        <button className={`bg-yellow-400 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
         {/* <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> */}
   <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
-          <button disabled={disable1} className={`bg-blue-600 p-2 rounded ${save2}`} onClick={announcement}>Save Changes</button><button onClick={addTableRows1} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+          <button disabled={disable1} className={`bg-yellow-400 p-2 rounded ${save2}`} onClick={announcement}>Save Changes</button><button onClick={addTableRows1} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[95%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
@@ -535,14 +535,14 @@ const res=await fetch('http://localhost:3000/api/previousyears', {
         
         <div className="text-center text-2xl font-serif mt-5">Performance Data</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
-        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin3}`} type="button" disabled>
+        <button className={`bg-yellow-400 p-2 rounded space-x-1 ${spin3}`} type="button" disabled>
         {/* <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> */}
   <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
-          <button disabled={disable2} className={`bg-blue-600 p-2 rounded ${save3}`} onClick={performance}>Save Changes</button><button onClick={addTableRows2} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+          <button disabled={disable2} className={`bg-yellow-400 p-2 rounded ${save3}`} onClick={performance}>Save Changes</button><button onClick={addTableRows2} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[95%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
@@ -573,13 +573,13 @@ const res=await fetch('http://localhost:3000/api/previousyears', {
         
         <div className="text-center text-2xl font-serif mt-5">Upload Notes</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
-        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin4}`} type="button" disabled>
+        <button className={`bg-yellow-400 p-2 rounded space-x-1 ${spin4}`} type="button" disabled>
   <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   Uploading...
 </button>
-          <button disabled={disable3} className={`bg-blue-600 p-2 rounded ${save4}`} onClick={notes}>Save Changes</button><button onClick={addTableRows3} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+          <button disabled={disable3} className={`bg-yellow-400 p-2 rounded ${save4}`} onClick={notes}>Save Changes</button><button onClick={addTableRows3} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>
         <div className="flex justify-center w-full ">
-        <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+        <div className="mt-2 res_table w-[95%] bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
                           <table className="border-collapse border border-slate-400  w-full">
                       <thead className="">
                         <tr className=" ">
