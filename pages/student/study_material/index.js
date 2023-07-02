@@ -141,7 +141,7 @@ export default function Study_material() {
                             </div>
                             <div className="flex justify-between mt-4 w-[100%] m-auto flex-wrap ">
 
-                            <Link href="/student/study_material/select_subject" >
+                            <Link href="/student/study_material/select_subject?sem=1" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">
@@ -151,7 +151,7 @@ export default function Study_material() {
                                     </a>
                                 </Link>
 
-                                <Link href="/student/study_material/select_subject" >
+                                <Link href="/student/study_material/select_subject?sem=2" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">
@@ -161,7 +161,7 @@ export default function Study_material() {
                                     </a>
                                 </Link>
 
-                                <Link href="/student/study_material/select_subject" >
+                                <Link href="/student/study_material/select_subject?sem=3" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">
@@ -171,7 +171,7 @@ export default function Study_material() {
                                     </a>
                                 </Link>
 
-                                <Link href="/student/study_material/select_subject" >
+                                <Link href="/student/study_material/select_subject?sem=4" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">
@@ -181,7 +181,7 @@ export default function Study_material() {
                                     </a>
                                 </Link>
 
-                                <Link href="/student/study_material/select_subject" >
+                                <Link href="/student/study_material/select_subject?sem=5" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">
@@ -191,7 +191,7 @@ export default function Study_material() {
                                     </a>
                                 </Link>
 
-                                <Link href="/student/study_material/select_subject" >
+                                <Link href="/student/study_material/select_subject?sem=6" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">
@@ -201,7 +201,7 @@ export default function Study_material() {
                                     </a>
                                 </Link>
 
-                                <Link href="/student/study_material/select_subject" >
+                                <Link href="/student/study_material/select_subject?sem=7" >
                                     <a className="h-20 w-[30%] bg-gradient-to-r from-[#ffafbd]  to-[#ffc3a0]  rounded-lg mx-2 my-2 cursor-pointer hover:scale-105 hover:bg-red-400- transition duration-150 flex ">
                                     <div className="m-auto">
                                         <div className=" m-auto pr-3 text-lg">

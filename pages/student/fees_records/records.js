@@ -51,10 +51,10 @@ export default function Study_material() {
     return (<>
         <div className="h-screen ">
             <Navbar class="shadow-md" />
-            {/* <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+            <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 " />
                 <div className="logout_stu text- border-2 border-solid">Logout</div>
-            </div> */}
+            </div>
             <div className=" w-[95%] m-auto h-[85%] ">
                 <div className=" m-auto text-center  text-4xl font-semibold p-4 overflow-hidden h-[100%] ">
                     <div className="font-sans">Fees Records</div>

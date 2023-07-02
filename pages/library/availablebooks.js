@@ -28,7 +28,12 @@ export default function Available(){
 const showresult=(e)=>{
 e.preventDefault()
 // data.map((curr)=>{
+  if(e.target.value=='All'){
+    setdata(data1);
+    return;
+  }
   let temp=data1.filter((currelem)=>{
+    
     return currelem.category==e.target.value;
   })
 if(temp.length==0){
@@ -113,7 +118,14 @@ setdata(t)
                 <div className="text-xs text-white flex items-center space-x-1"><div>View All</div><IoMdArrowDroprightCircle className='text-lg'/></div>
                 </div> */}
 
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 " onClick={showresult} value="Mathematics">Mathematics(20)</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36 " onClick={showresult} value="All">All Books</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36 " onClick={showresult} value="Mathematics">Mathematics</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Physics">Physics</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Python">Python</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Java">Java</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="C">C</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="DBMS">DBMS</button></div>
+              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Operating System">OS</button></div>
               
            </div>
            
@@ -130,7 +142,9 @@ setdata(t)
         className="relative m-0 -mr-px block w-96 min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-pink-200  px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
         placeholder="Search books"
         aria-label="Search"
-        aria-describedby="button-addon1" onChange={(evnt)=>(setsearchdata(evnt.target.value))}/>
+        aria-describedby="button-addon1" onChange={(evnt)=>(setsearchdata(evnt.target.value))}
+      
+        />
       <button
         className="relative z-[2] flex items-center rounded-r bg-pink-500 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-pink-600 hover:shadow-lg focus:bg-pink-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg"
         type="button"

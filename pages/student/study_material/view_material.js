@@ -5,10 +5,65 @@ import { FaDownload } from "react-icons/fa"
 import { IoIosArrowDropdownCircle } from "react-icons/io"
 import { useState } from "react"
 import { CgShapeRhombus } from 'react-icons/cg'
+import { useEffect } from "react"
 
 
 export default function View_material() {
-
+    const [data, setdata] = useState([])
+    const [norecord, setnorecord] = useState('')
+    useEffect(() => {
+        let href=window.location.search;
+const queryParams = new URLSearchParams(href)
+// console.log(queryParams.get("q"))
+let subject=queryParams.get("subject")
+        const url = "http://localhost:3000/api/notes?subject="+subject;
+        // const url1 = "http://localhost:3000/api/placementevents";
+      
+      
+        const fetchData = async () => {
+          try {
+            // setspin('')
+            let response = await fetch(url);
+            let json = await response.json();
+            console.log(json);
+            setdata(json)
+            // setdata1(json)
+            
+            if(json.length!=0){
+              setnorecord('hidden')
+           
+            }          
+            // setspin('hidden')
+            // setshow('')
+          } catch (error) {
+            // setshow('hidden')
+            // setspin('')
+            console.log("error", error);
+          }
+        };
+      
+        fetchData();
+      }, []);
+      const download=(doc,title)=>{
+        if(doc==''){
+            alert('No file attached')
+        }
+        else{
+            fetch(doc).then(response => {
+                response.blob().then(blob => {
+                    // Creating new object of PDF file
+                    const fileURL = window.URL.createObjectURL(blob);
+                    // Setting various property values
+                    let abutton = document.createElement('a');
+                    abutton.href = fileURL;
+                    abutton.download = title;
+                    abutton.click();
+                  
+                })
+            })
+        }
+        
+      }
     return (<>
         <div className="h-screen ">
             <Navbar class="shadow-md" />
@@ -28,41 +83,26 @@ export default function View_material() {
                             <div className=" mt-4 w-[80%] m-auto  ">
 
                                 {/* <div className="  align-middle w-[80%]"> */}
-                                    <div className="flex hover:bg-yellow-50 border-b-2 border-solid border-zinc-300 p-2 text-lg">
+                                <div className={`text-center text-xl text-gray-700 pt-[10%] ${norecord}`}>No Record Found</div>
+                                    {data.map((d)=>{
+                                        return(<>
+                                        <div className="flex hover:bg-yellow-50 border-b-2 border-solid border-zinc-300 p-2 text-lg">
                                         <div className="sem1 text-left ml-5 w-[70%]">
-                                            Notes 1
+                                            {d.title}
                                         </div>
                                         <div className="w-[30%] flex">
                                             <div className="w-[50%] flex justify-end ">
-                                                <a href="/syllabus_sem3.pdf" ><FaDownload className=" hover:opacity-80 h-full w-6 cursor-pointer  text-amber-900" /></a>
+                                            <button onClick={(e)=>{download(d.attachment,d.title)}}><FaDownload className=" hover:opacity-80 h-full w-6 cursor-pointer  text-amber-900" /></button>
+                                              
                                             </div>
                                             
                                         </div>
                                     </div>
-                                    <div className="flex hover:bg-yellow-50 border-b-2 border-solid border-zinc-300 p-2 text-lg">
-                                        <div className="sem1 text-left ml-5 w-[70%]">
-                                            Notes 2
-                                        </div>
-                                        <div className="w-[30%] flex">
-                                            <div className="w-[50%] flex justify-end ">
-                                                <a href="/syllabus_sem3.pdf" ><FaDownload className=" text-amber-900 hover:opacity-80 h-full w-6 cursor-pointer" /></a>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-
-                                    <div className="flex hover:bg-yellow-50 border-b-2 border-solid border-zinc-300 p-2 text-lg">
-                                        <div className="sem1 text-left ml-5 w-[70%]">
-                                            Notes 3
-                                        </div>
-                                        <div className="w-[30%] flex">
-                                            <div className="w-[50%] flex justify-end ">
-                                                <a href="/syllabus_sem3.pdf" ><FaDownload className=" text-amber-900 hover:opacity-80 h-full w-6 cursor-pointer" /></a>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-
+                                        </>)
+                                        
+                                    })}
+                                    
+                                   
                                     
                                 </div>
                             </div>

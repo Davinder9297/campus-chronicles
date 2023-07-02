@@ -5,6 +5,7 @@ import TableRows from './tablerows'
 import { ToastContainer, toast } from 'react-toastify'
 import Announcementrows from './announcement'
 import Performancerows from './performancerows'
+import Notesrows from './notesrows'
 // import Clubrows from './clubrows'
 export default function Index(){
     const [norecord, setnorecord] = useState('')
@@ -12,17 +13,22 @@ export default function Index(){
         const [norecord1, setnorecord1] = useState('')
         const [rowsData1, setrowsData1] = useState([])
         const [norecord2, setnorecord2] = useState('')
+        const [norecord3, setnorecord3] = useState('')
         const [rowsData2, setrowsData2] = useState([])
+        const [rowsData3, setrowsData3] = useState([])
         const [save1, setsave1] = useState('cursor-not-allowed opacity-50')
         const [save2, setsave2] = useState('cursor-not-allowed opacity-50')
         const [save3, setsave3] = useState('cursor-not-allowed opacity-50')
+        const [save4, setsave4] = useState('cursor-not-allowed opacity-50')
         const [spin, setspin] = useState('hidden')
         const [spin2, setspin2] = useState('hidden')
         const [spin3, setspin3] = useState('hidden')
+        const [spin4, setspin4] = useState('hidden')
         const [show, setshow] = useState('hidden')
         const [disable, setdisable] = useState(true)
         const [disable1, setdisable1] = useState(true)
         const [disable2, setdisable2] = useState(true)
+        const [disable3, setdisable3] = useState(true)
 
     
         const imageupload=async ()=>{
@@ -42,7 +48,7 @@ export default function Index(){
     const url = "http://localhost:3000/api/studentcredentials";
     const url1 = "http://localhost:3000/api/studentannouncement";
     const url2 = "http://localhost:3000/api/performance";
-    // const url3 = "http://localhost:3000/api/clubcredentials";
+    const url3 = "http://localhost:3000/api/notes";
 
     const fetchData = async () => {
       try {
@@ -73,6 +79,14 @@ export default function Index(){
         // console.log(json1.length);
         if(json2.length!=0){
           setnorecord2('hidden')
+        }
+        const response3 = await fetch(url3);
+        const json3 = await response3.json();
+        // console.log(json1);
+        setrowsData3(json3)
+        // console.log(json1.length);
+        if(json3.length!=0){
+          setnorecord3('hidden')
         }
         // const response2 = await fetch(url2);
         // const json2 = await response2.json();
@@ -260,7 +274,59 @@ export default function Index(){
    
    
   }
+    const addTableRows3 = ()=>{
+        setnorecord3('hidden')
+        setdisable3(false)
+        setsave4('cursor-pointer')
+          const rowsInput={
+        sem:'',
+        subject:'',
+        attachment:''
+          } 
+          setrowsData3([...rowsData3, rowsInput])           
+        
+      }
+     const deleteTableRows3 = (index)=>{
+      setdisable3(false)
+      setsave4('cursor-pointer')
+          const rows = [...rowsData3];
+          rows.splice(index, 1);
+          setrowsData3(rows);
+          // console.log(rowsData.length);
+          if(rowsData3.length==1){
+            setnorecord3('')
+          }
+     }
+  const handleChange3 = async(index, evnt)=>{
+    setdisable3(false)
+      setsave4('cursor-pointer')
+    const { name, value } = evnt.target;
+    const rowsInput = [...rowsData3];
+    if(name=='attachment'){
+      setspin4('opacity-50')
+      setsave4('hidden')
+        const formdata=new FormData()
+        formdata.append("file",evnt.target.files[0]);
+        formdata.append("upload_preset","mystore")
+      const res= await fetch("https://api.cloudinary.com/v1_1/desiynbby/image/upload",{
+        method:"POST",
+        body:formdata,
+      })
+      const res2=await res.json();
+    rowsInput[index][name] = res2.url;
+    setrowsData3(rowsInput)
+    setspin4('hidden')
+    setsave4('')
+    }
+    else{
+      rowsInput[index][name] = value;
+    setrowsData3(rowsInput);
+    }
+  
+  
  
+ 
+}
 
 
 
@@ -306,6 +372,21 @@ const res=await fetch('http://localhost:3000/api/performance', {
                   'Content-Type': 'application/json',
                 },
                   body:JSON.stringify(rowsData2)
+              })
+              let response=await res.json();
+              // console.log(response);
+  }
+  const notes=async(e)=>{
+e.preventDefault();
+setdisable3(true)
+setsave4('cursor-not-allowed opacity-50')
+// let data={rowsData[0][studentname],}
+const res=await fetch('http://localhost:3000/api/notes', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                  body:JSON.stringify(rowsData3)
               })
               let response=await res.json();
               // console.log(response);
@@ -416,6 +497,39 @@ const res=await fetch('http://localhost:3000/api/performance', {
                           </td>
                           </tr>
                         <Performancerows rowsData={rowsData2} deleteTableRows={deleteTableRows2} handleChange={handleChange2} />
+                      </tbody>
+                    </table>
+                          </div>
+        </div>
+        
+        <div className="text-center text-2xl font-serif mt-5">Upload Notes</div>
+        <div className="flex justify-end space-x-2 text-white pr-2">
+        <button className={`bg-blue-600 p-2 rounded space-x-1 ${spin4}`} type="button" disabled>
+  <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Uploading...
+</button>
+          <button disabled={disable3} className={`bg-blue-600 p-2 rounded ${save4}`} onClick={notes}>Save Changes</button><button onClick={addTableRows3} className="bg-blue-600 p-2 rounded">+Add New Record</button></div>
+        <div className="flex justify-center w-full ">
+        <div className="mt-2 res_table w-[95%] bg-slate-500 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500 ">
+                          <table className="border-collapse border border-slate-400  w-full">
+                      <thead className="">
+                        <tr className=" ">
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sr. No</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Attachment</th>
+                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Title</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Semester</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Subject</th>
+                          <th className="border-2  py-2 border-slate-300 text-center px-2">Action</th>
+          
+                        </tr>
+                      </thead>
+                      <tbody className="">
+                      <tr className={`${norecord3}`}>
+                          <td colSpan="10"  className="bg-slate-400 text-center  h-28">
+                          No records found
+                          </td>
+                          </tr>
+                        <Notesrows rowsData={rowsData3} deleteTableRows={deleteTableRows3} handleChange={handleChange3} />
                       </tbody>
                     </table>
                           </div>
