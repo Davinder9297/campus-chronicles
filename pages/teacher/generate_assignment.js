@@ -3,6 +3,7 @@ import Link from "next/link"
 import Navbar from "../../components/navbar"
 import TeacherNavbar from "../../components/teacher_navbar"
 import Cookies from "js-cookie";
+import Navbarres from "../../components/navbarres";
 
 export default function GenerateAssignment() {
     const [selected, setSelected] = useState("");
@@ -161,17 +162,17 @@ const upload=async()=>{
     return (<>
 
         <div className="">
-            <Navbar />
+            <Navbarres />
             <TeacherNavbar />
 
             <div className="">
-                <div className=" m-auto text-center text-4xl font-semibold p-4 overflow-hidden w-[100%] mb-2">
+                <div className="xsm:text-xl m-auto text-center text-4xl font-semibold p-4 overflow-hidden w-[100%] mb-2">
                     Assignment Generation
                 </div>
 
-                <div className=" m-auto w-[70%] shadow-md  shadow-zinc-900 h-full">
+                <div className=" m-auto w-[70%] shadow-md  shadow-zinc-900 h-full xsm:text-lg xsm:w-[90%]">
                     <div>
-                        <select  onChange={changeSelectOptionHandler} name="select1" id="select1" className=" outline cursor-pointer outline-1 w-full outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900">
+                        <select  onChange={changeSelectOptionHandler} name="select1" id="select1" className="xsm:text-base outline cursor-pointer outline-1 w-full outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900">
                             <option className="bg-zinc-400 " value="">-- SELECT SEMESTER --</option >
                             <option className="bg-zinc-400 " value="1st">First Semester</option >
                             <option className="bg-zinc-400 " value="2nd">Second Semester</option >
@@ -183,7 +184,7 @@ const upload=async()=>{
                         </select>
                     </div>
                     <div className="w-full ">
-                        <select name="select2" value={subject} onChange={(e)=>(setsubject(e.target.value))} id="select2" className=" outline cursor-pointer outline-1 w-full mx-auto outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900 mt-4 pl-16">
+                        <select name="select2" value={subject} onChange={(e)=>(setsubject(e.target.value))} id="select2" className="xsm:text-base  outline cursor-pointer outline-1 w-full mx-auto outline-gray-300 bg-zinc-600 text-white p-2 text-xl rounded-2xl text-center overflow-auto scrollbar-thin scrollbar-thumb-zinc-900 mt-4 pl-16">
                         {/* <option className="bg-zinc-400 " >-- SELECT SUBJECT --</option > */}
                             {options}
 
@@ -192,8 +193,8 @@ const upload=async()=>{
 
                     <div className="w-full m-auto">
 
-                        <div className="border-b-2 border-solid border-zinc-300 mt-5 flex ">
-                            <div className="text-xl p-2 w-[50%]  text-center">
+                        <div className="border-b-2 border-solid border-zinc-300 mt-5 flex xsm:mt-1">
+                            <div className="text-xl p-2 w-[50%]  text-center  xsm:text-lg">
                                 Title of Assignment
                             </div>
                             <div className="w-[50%] my-auto">
@@ -201,8 +202,8 @@ const upload=async()=>{
                             </div>
 
                         </div>
-                        <div className="border-b-2 border-solid border-zinc-300 flex ">
-                            <div className="text-xl p-2 w-[50%]  text-center ">
+                        <div className="border-b-2 border-solid border-zinc-300 flex  ">
+                            <div className="text-xl p-2 w-[50%]  text-center xsm:text-lg">
                                 Deadline
                             </div>
                             <div className="w-[50%] my-auto">
@@ -211,11 +212,11 @@ const upload=async()=>{
 
                         </div>
                         <div className="border-b-2 border-solid border-zinc-300 mt-3 flex">
-                            <div className="text-xl p-2 w-[50%]  text-center">
+                            <div className="text-xl p-2 w-[50%]  text-center xsm:text-lg">
                                 Attach File
                             </div>
                             <div className="w-[50%] my-auto flex">
-                                <input type="file"  onChange={handledoc} className="h-8 w-[50%] "></input>
+                                <input type="file"  onChange={handledoc} className="h-8 w-[50%] xsm:w-[65%]"></input>
                                 <button className={` p-1 rounded space-x-2 relative top-0 left-0 ${spin}`} type="button" disabled>
         <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   {/* <span className="" role="status" aria-hidden="true"></span> */}
@@ -223,11 +224,11 @@ const upload=async()=>{
 </button>
                             </div>
                         </div>
-                        <div className="space-x-16 justify-center flex items-center">
+                        <div className="space-x-16 justify-center flex items-center  xsm:flex-col xsm:space-x-0">
                             <button onClick={upload} disabled={disable} className={`shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white ${opac}`}>
                                 
                                 Upload</button>
-                            <Link className=" cursor-pointer " href={"/teacher/view_submitted_assignment"}><div className="shadow-amber-400 cursor-pointer shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white ">View Submitted Assignments</div></Link>
+                            <Link className=" cursor-pointer " href={"/teacher/view_submitted_assignment"}><div className="shadow-amber-400 cursor-pointer shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white xsm:mt-0">View Submitted Assignments</div></Link>
                             {/* <button className="shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 hover:text-white ">Cancel</button> */}
                         </div>
 

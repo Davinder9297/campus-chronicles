@@ -12,6 +12,7 @@ import { Cookies } from "js-cookie"
 import { parseCookies, setCookie } from "nookies"
 // import { getCookie } from 'cookies-next';
 import TeacherNavbar from "../../components/teacher_navbar"
+import Navbarres from "../../components/navbarres"
 
 export default function Profile() {
   const [pinfo, setpinfo] = useState('')
@@ -303,31 +304,33 @@ const [facultyname, setfacultyname] = useState('')
   }, [])
 
   return (<>
-    <div className="h-screen overflow-y-hidden ">
-      <Navbar />
+    <div className="h-screen overflow-y-hidden xsm:h-auto xsm:overflow-auto xsm:text-xs ">
+      <Navbarres/>
       <TeacherNavbar />
-      <div className="text-center font-semibold  text-3xl mt-2 p-2">Your Profile...</div>
-      <div className={`flex  h-[77.3%] mt-2 justify-around font-serif ${opac}`}>
+      <div className="text-center font-semibold  text-3xl mt-2 p-2 xsm:text-lg">Your Profile...</div>
+      <div className={`flex  h-[77.3%] mt-2 justify-around font-serif ${opac} xsm:flex-col  `}>
         <div className={`text-center  justify-center items-center h-full w-full flex absolute top-0 left-0 z-10 order-1  ${spin}`}>
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
-        <div className="dp  h-[100%] w-[30%] flex items-center justify-center">
+        <div className="dp  h-[100%] w-[30%] flex items-center justify-center  xsm:mx-auto xsm:w-[60%] xsm:mt-[10px]">
           <div className="">
             <div className=" flex justify-center rounded-full">
               <img className="h-48 shadow-2xl shadow-red-600 w-48 rounded-full" src={`${personaldata.image}`} alt="" />
             </div>
-            <div className="text-center text-2xl mt-4 font-bold">
+            <div className="text-center text-2xl mt-4 font-bold xsm:text-lg">
               {personaldata.facultyname}
+              
+               
             </div>
           </div>
         </div>
-        <div className="info  w-[65%] h-[100%] shadow-md shadow-slate-600">
-          <div className="flex justify-around  border-b-2 border-gray-200 w-[100%]">
+        <div className="info  w-[65%] h-[100%] shadow-md  xsm:mx-auto xsm:w-full xsm:my-5 ">
+          <div className="flex justify-around  border-b-2 border-gray-200 w-[100%] xsm:text-xs">
             <button onClick={pi} className={`py-2  px-2 w-[33.3%] hover:bg-amber-700 font-semibold bg-amber-800 ${piclass}`} >Personal Information</button>
-            <button onClick={eq} className={`py-2  px-2 w-[33.3%] hover:bg-yellow-600 font-semibold bg-yellow-500 ${edeqclass}`}>Educational Qualification</button>
-            <button onClick={er} className={`py-2  px-2 w-[33.3%] hover:bg-amber-700 font-semibold bg-amber-800 ${exreclass}`}>Experience And Research Papers</button>
+            <button onClick={eq} className={` py-2  px-2 w-[33.3%] hover:bg-yellow-600 font-semibold bg-yellow-500 ${edeqclass}`}>Educational Qualification</button>
+            <button onClick={er} className={` py-2  px-2 w-[33.3%] hover:bg-amber-700 font-semibold bg-amber-800 ${exreclass}`}>Experience And Research Papers</button>
           </div>
           <div className=" h-[91.5%] w-[95%] mx-auto">
             <div className={`personal_info w-full text-lg ${pinfo}`}>
@@ -335,7 +338,7 @@ const [facultyname, setfacultyname] = useState('')
               {/* <div className="flex bg-slate-600  justify-center space-x-5 "><div className="font-semibold">Job Role</div><div><input type="text" value="Chapdasi"/></div></div> */}
 
               <div className="flex justify-evenly">
-                <div className="flex-col space-y-5 pt-4 ">
+                <div className="flex-col space-y-5 pt-4 xsm:text-sm xsm:space-y-6">
                   <div className="mb-1">Name</div>
                   <div className="mb-1">Department</div>
                   <div className="mb-1">Designation</div>
@@ -345,7 +348,7 @@ const [facultyname, setfacultyname] = useState('')
                   <div className="mb-1">Linkedin</div>
                 </div>
 
-                <div className="font-sans space-y-5 pt-4  w-[50%]">
+                <div className="font-sans space-y-5 pt-4  w-[50%] xsm:text-sm">
                   <div className=" "><input readOnly={true} onChange={personaldatachange} type="text" className="text-base pl-3 w-full  bg-slate-100 outline-1  outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.facultyname} name="facultyname" /></div>
                   <div><input type="text" onChange={personaldatachange} readOnly={true} className="text-base pl-3 bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.department} name="department" /></div>
                   <div><input type="text" onChange={personaldatachange} readOnly={true} className="text-base pl-3 bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400" value={personaldata.designation} name="designation" /></div>
@@ -366,7 +369,7 @@ const [facultyname, setfacultyname] = useState('')
             </div>
 
 
-            <div className={`qualification font-sans w-full ${edqu} justify-center items-center h-full px-2 `}>
+            <div className={` qualification font-sans w-full ${edqu} justify-center items-center h-full px-2 `}>
               <div className="h-full space-y-5 overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500  w-full ">
                 <div className="w-full flex justify-end pt-2 space-x-3">
                   <button onClick={addTableRows} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button>
@@ -398,9 +401,9 @@ const [facultyname, setfacultyname] = useState('')
             </div>
 
             <div className={`experience ${exre} pt-2 w-full   h-full overflow-y-auto  scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-500`}>
-              <div className="text-center font-semibold text-2xl mt-3">Teaching Experience</div>
+              <div className="text-center font-semibold text-2xl mt-3 xsm:text-lg">Teaching Experience</div>
               <div className="w-full px-2 flex justify-end pt-2 mb-2 space-x-3">
-              <button onClick={addTableRows2} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button>
+              <button onClick={addTableRows2} className="bg-blue-800 py-2 px-1 text-white rounded xsm:text-xs">+Add New Record</button>
                 <button disabled={show1} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light1}`} onClick={experiencesave}><div>Save </div><FiSave className="" /></button> 
               </div>
               <div className="w-full ex h-auto px-2">
@@ -432,9 +435,9 @@ const [facultyname, setfacultyname] = useState('')
                         </div> */}
 
               <div className="  py-2 research_pub px-2 w-full ">
-                <div className="text-center font-semibold text-2xl mt-8">Research Publications</div>
+                <div className="text-center font-semibold text-2xl mt-8 xsm:text-lg">Research Publications</div>
                 <div className="w-full flex justify-end pt-2 mb-2 space-x-3 ">
-                  <button onClick={addTableRows1} className="bg-blue-800 py-2 px-1 text-white rounded">+Add New Record</button>
+                  <button onClick={addTableRows1} className="bg-blue-800 py-2 px-1 text-white rounded xsm:text-xs">+Add New Record</button>
                   <button disabled={show2} className={`bg-blue-800 py-2 px-2 space-x-1 flex justify-center items-center text-white rounded ${light2}`} onClick={researchsave}><div>Save </div><FiSave className="" /></button> 
                   </div>
                 <div className="pt-2   res_table  pb-20  ">

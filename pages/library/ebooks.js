@@ -1,8 +1,10 @@
 import {IoMdArrowDroprightCircle} from 'react-icons/io'
 import {GrView} from 'react-icons/gr'
 import {IoMdDownload} from 'react-icons/io'
-import Navbar from '../../components/navbar'
+import Navbarres from '../../components/navbarres'
 import { useEffect, useState } from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx'
+
 import Link from 'next/link';
 
 export default function Ebooks(){
@@ -110,39 +112,64 @@ const openInNewTab = (url) => {
     return(<>
 
    <div className='h-screen'>
-    <Navbar/>
-     <div className="flex h-[85.3%] overflow-y-hidden bg-gradient-to-b from-amber-500 via-yellow-100 to-amber-500 ">
+    <Navbarres/>
+
+
+    <nav className="navbar navbar-expand-lg bg-slate-900 justify-around items-center font-serif text-md font-semibold hidden xsm:flex">
+        <div className="container-fluid ">
+          <div className=" text-white text-center text-xl">Categories</div>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            {/* <span className="RxHamburgerMenu"></span> */}
+            <RxHamburgerMenu className='text-white' />
+          </button>
+          <div className="collapse navbar-collapse mt-3" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto ">
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text- " onClick={showresult} value="All">All Books</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text- " onClick={showresult} value="Mathematics">Mathematics</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text-" onClick={showresult} value="Physics">Physics</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text-" onClick={showresult} value="Python">Python</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text-" onClick={showresult} value="Java">Java</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text-" onClick={showresult} value="C">C</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text-" onClick={showresult} value="DBMS">DBMS</button></div></li>
+              <li className="nav-item mb-2"><div><button className="bg-gray-400 text-sky-900 rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-amber-800 w-full text-" onClick={showresult} value="Operating System">OS</button></div></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+     <div className="flex h-[85.3%] overflow-y-hidden bg-gradient-to-r from-amber-800 via-yellow-500 to-amber-800">
   
-        <div className="flex-col filter-side w-[15%]  scrollbar-thin scrollbar-track-slate-700 scrollbar-thumb-slate-600  bg-slate-900 py-2 px-3 text-white overflow-y-auto overflow-x-hidden ">
+        <div className="flex-col filter-side w-[15%]  scrollbar-thin scrollbar-track-yellow-700 scrollbar-thumb-yellow-600  bg-slate-900 py-2 px-3 text-white overflow-y-auto overflow-x-hidden  xsm:hidden">
           <div className='text-xl font-semibold '>Categories</div>
            <div className='flex-col space-y-4 ml-2 pt-3'>
-               <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36 " onClick={showresult} value="All">All Books</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36 " onClick={showresult} value="Mathematics">Mathematics</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Physics">Physics</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Python">Python</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Java">Java</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="C">C</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="DBMS">DBMS</button></div>
-              <div><button className="bg-slate-700 text-gray-200 rounded-full px-3 py-2 focus:bg-pink-500 w-36" onClick={showresult} value="Operating System">OS</button></div>
+               <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36 " onClick={showresult} value="All">All Books</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36 " onClick={showresult} value="Mathematics">Mathematics</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36" onClick={showresult} value="Physics">Physics</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36" onClick={showresult} value="Python">Python</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36" onClick={showresult} value="Java">Java</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36" onClick={showresult} value="C">C</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36" onClick={showresult} value="DBMS">DBMS</button></div>
+              <div><button className="bg-gray-400 text-black rounded-full px-3 py-2 focus:bg-yellow-200 focus:text-red-800 w-36" onClick={showresult} value="Operating System">OS</button></div>
               
            </div>
            
         </div>
 
 
-        <div className='right-side flex-col w-[85%]'>
+        <div className='right-side flex-col w-[85%] xsm:w-full'>
         <div className="flex justify-center ">
   <div className="pt-3">
     <div className=" flex w-full flex-wrap items-stretch">
       <input
       value={searchdata}
         type="search"
-        className="relative m-0 -mr-px block w-96 min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-pink-200  px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
+        className="xsm:w-[70%] relative m-0 -mr-px block w-96 min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-yellow-200  px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-sky-900"
         placeholder="Search eBooks"
         aria-label="Search"
         aria-describedby="button-addon1" onChange={(evnt)=>(setsearchdata(evnt.target.value))}/>
       <button
-        className="relative z-[2] flex items-center rounded-r bg-pink-500 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-pink-600 hover:shadow-lg focus:bg-pink-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg"
+        className="relative z-[2] flex items-center rounded-r bg-yellow-500 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-lg"
         type="button"
         id="button-addon1"
         data-te-ripple-init
@@ -164,24 +191,24 @@ const openInNewTab = (url) => {
 </div>
 
 
-<div className='flex-col mx-2 py-12 h-full res_table  '>
+<div className='flex-col mx-2 py-12 h-full res_table xsm:py-3'>
         <div className='text-center text-2xl text-white font-serif'> All Books</div> 
         <div className='flex justify-center'><img className='w-32 ' src="/hr.png" alt="" /></div>
-        <div className='h-[85.3%] overflow-y-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-500'>
+        <div className='h-[85.3%] overflow-y-auto scrollbar-thin scrollbar-track-neutral-400 scrollbar-thumb-neutral-500'>
 
-        <table className="border-collapse border border-slate-400  w-[90%] mx-auto mt-2 ">
+        <table className="border-collapse border border-neutral-400  w-[90%] mx-auto mt-2 xsm:mb-5">
                       <thead className="">
                         <tr className=" ">
-                          <th className="border-2  py-2 border-slate-300 text-center px-2">Sr No.</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Title</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">View</th>
-                          <th className="border-2 py-2 border-slate-300 px-2 text-center">Download</th>
+                          <th className="border-2  py-2 border-neutral-300 text-center px-2">Sno.</th>
+                          <th className="border-2 py-2 border-neutral-300 px-2 text-center">Title</th>
+                          <th className="border-2 py-2 border-neutral-300 px-2 text-center">View</th>
+                          <th className="border-2 py-2 border-neutral-300 px-2 text-center">Download</th>
                         </tr>
                       </thead>
                       <tbody className={`${show} `}>
 
                       <tr className={`${norecord}`}>
-                          <td colSpan="4"  className="bg-slate-400 text-center  h-28">
+                          <td colSpan="4"  className="bg-yellow-400 text-center  h-28  xsm:h-auto">
                           No records found
                           </td>
                           </tr>
@@ -189,18 +216,18 @@ const openInNewTab = (url) => {
                           const {title,doc}=da;
                           return(<>
                         <tr key={index} >      
-                <td className="border-2  border-slate-300 text-center w-24">
+                <td className="border-2  border-neutral-300 text-center w-24">
                             {index+1}.
                 </td>        
-                <td className="border-2  border-slate-300">
+                <td className="border-2  border-neutral-300 ml-4">
                             {title}
                 </td>        
-                <td className="border-2  border-slate-300 w-16 py-2">
+                <td className="border-2  border-neutral-300 w-16 py-2">
                            {/* <Link href={doc} target="_blank">view</Link> */}
 <div className='w-full flex justify-center'><button className=' text-2xl ' onClick={() => openInNewTab(doc)}><GrView/></button>
 </div>
                 </td>        
-                <td className="border-2 w-16 py-2 border-slate-300 ">
+                <td className="border-2 w-16 py-2 border-neutral-300 ">
                 <div className='w-full flex justify-center'> <button className=' text-2xl ' onClick={() => download(doc,title)}><IoMdDownload/></button>
 </div>
                         
