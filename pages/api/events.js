@@ -18,7 +18,9 @@ export default async function handler(req, res) {
     }
     
     else{  
-            let data1=await events.find({});
+      
+            let data1=await events.find({}).sort({date:-1});
             res.status(200).json(data1);
+            
     }      
 }
