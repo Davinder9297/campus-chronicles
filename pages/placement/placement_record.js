@@ -143,23 +143,24 @@ export default function Placement_record(){
 		</tbody>
 	</table>
 
-	<div className="p_record mt-11"> 
-	<div className=" w- full  text-start font-mono font-bold text-3xl">Batch: 2019-2023
+	{/* <div className="p_record mt-11 container "> 
+	<div className="  w- full text-start font-mono font-bold text-3xl">Batch: 2019-2023
 </div>
+<div className='w-full p_record'>
 <table width="100%" className="mt-2">
-		<thead className='uppercase'>
+		<thead className='uppercase bg-blue-500'>
 			<tr>
-				<th align="left" >
+				<th align="left " className='w-[15%]' >
 					S.No.</th>
-				<th align="center">
+				<th align="center" className='w-[35%]'>
 					Picture</th>
-				<th align="left">
+				<th align="left" className='w-[15%]'>
 					Name</th>
-				<th align="left">
+				<th align="left" className='w-[25%]'>
 					Company</th>
-				{/* <th align="left">
+				<th align="left"  className='w-[35%]'>
 					Company Logo
-					</th> */}
+					</th>
 					
 			</tr>
 		</thead>
@@ -215,7 +216,7 @@ export default function Placement_record(){
 				<td>
 					Infosys</td>
 				<td>
-                <img className='w-50 h-44' src='/f.png' alt=''/></td>
+                <img className='w-50 h-44' src='/f.png' alt='ghvgghbudtyugfk bhjnbghj gm vg '/></td>
 				
 			</tr>
 			<tr className=" text-lg font-semibold">
@@ -248,7 +249,8 @@ export default function Placement_record(){
 			</tr>
 		</tbody>
 	</table>
-</div>
+	</div>
+</div> */}
 </div>
     
     </>)
