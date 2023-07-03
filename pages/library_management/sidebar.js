@@ -7,10 +7,19 @@ import {GrClose} from 'react-icons/gr'
 import {ImWarning} from 'react-icons/im'
 import {SlDoc} from "react-icons/sl"
 // import logout from ""
+import cookie from 'js-cookie'
 import Link from "next/link";
+import { useRouter } from "next/router"
 export default function Sidebar(){
+  let router=useRouter()
+  const yesbutton = () => {
+    cookie.remove('token')
+    router.push('/')
+    // setshowlogin('')
+    // setshowlogout('hidden')
+}
     return(<>
-    <div className="modal fade " id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade " id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog ">
     <div className="modal-content bg-orange-100">
       <div className="modal-header">
@@ -22,7 +31,7 @@ export default function Sidebar(){
       </div>
       <div className="modal-footer">
         <button type="button" className=" font-medium btn px-3 bg-orange-200" data-bs-dismiss="modal">No</button>
-        <button type="button" className="btn font-medium  bg-orange-500 ">Yes</button>
+        <button onClick={yesbutton}  type="button" className="btn font-medium  bg-orange-500 "  data-bs-dismiss="modal">Yes</button>
       </div>
     </div>
   </div>
