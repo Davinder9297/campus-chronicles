@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Navbar from "../../components/navbar"
+import Navbarres from "../../components/navbarres"
 import {FaPowerOff} from "react-icons/fa"
 import {ImWarning} from "react-icons/im"
 import {GrClose} from "react-icons/gr"
@@ -89,29 +89,29 @@ const [data, setdata] = useState([])
     </div>
   </div>
 </div>
-        <div className="h-screen overflow-hidden">
-            <Navbar class="shadow-sm bg-yellow-2" />
+        <div className="h-screen overflow-hidden xsm:h-auto">
+            <Navbarres class="shadow-sm bg-yellow-2" />
 
             <div className=" w-[95%] m-auto text-center text-4xl font-semibold shadow-md shadow-slate-600 p-4">
-                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
+                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer xsm:absolute xsm:top-24 xsm:right-5 xsm:h-4 xsm:w-7 ">
                 <button type="button" className= {`font-serif font-semibold  `} data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  /></button>
-                        <div className="logout_stu text-base">Logout</div>
+                        <div className="logout_stu text-base xsm:text-xs">Logout</div>
                 </div>
 
 
-                <div className="p-2">
+                <div className="p-2 xsm:text-2xl">
                     Welcome...  &nbsp; {data.studentname}
                 </div>
-                <div className="flex justify-between mt-4 font-normal text-xl">
-                    <div className="w-[68%] ">
-                        <div className="rounded-2xl bg-slate-200 p-1">
+                <div className="flex justify-between mt-4 font-normal text-xl xsm:text-lg">
+                    <div className="w-[68%] xsm:w-[50%]">
+                        <div className="rounded-2xl bg-slate-200 p-1 xsm:mb-3 ">
                             What would you like to do?
                         </div>
 
-                        <div className="flex justify-between mt-5 ">
+                        <div className="flex md:mt-5 lg:mt-5 xl:mt-10 2xl:mt-10 justify-between xsm:block xsm:mt-0">
                             <Link href={"/student/my_profile"}>
-                                <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-red-600">
+                                <div className="h-28 w-[100%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-red-600 xsm:mb-3">
                                     <img src="stu.png" className="h-24  align-middle m-auto" />
                                     <div className=" m-auto pr-3 ">
                                         View Profile
@@ -120,8 +120,8 @@ const [data, setdata] = useState([])
                             </Link>
 
                             <Link href={"/student/study_material"}>
-                            <div className="h-28 w-[30%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-emerald-700">
-                                <img src="study_material.png" className="h-32  align-middle m-auto" />
+                            <div className="h-28 w-[100%] rounded-lg mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-emerald-700 xsm:mb-3">
+                                <img src="study_material.png" className="h-32 xsm:h-28 align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     Study Material
                                 </div>
@@ -129,7 +129,7 @@ const [data, setdata] = useState([])
                             </Link>
 
                             <Link href={"/library"}>
-                            <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-cyan-500">
+                            <div className="h-28 w-[100%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-cyan-500 xsm:mb-3">
                                 <img src="book_issued.png" className="h-24  align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     Library
@@ -139,9 +139,9 @@ const [data, setdata] = useState([])
 
                         </div>
 
-                        <div className="flex mt-5 justify-between ">
+                        <div className="flex md:mt-5 lg:mt-5 xl:mt-10 2xl:mt-10 justify-between xsm:block xsm:mt-0">
                             <Link href={"/student/update_profile"}>
-                                <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-yellow-300">
+                                <div className="h-28 w-[100%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-yellow-300 xsm:mb-3">
                                     <img src="/update_info.png" className="h-24  align-middle m-auto p-2" />
                                     <div className=" m-auto pr-3 ">
                                         Update Profile
@@ -149,16 +149,16 @@ const [data, setdata] = useState([])
                                 </div>
                             </Link>
                             <Link href={"/student/subjects"} year="1">
-                            <div className="h-28 w-[30%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-orange-500">
-                                <img src="assignment.png" className="h-24  align-middle m-auto" />
+                            <div className="h-28 w-[100%] rounded-lg  mr-2 cursor-pointer hover:scale-105 transition duration-150 flex bg-orange-500 xsm:mb-3">
+                                <img src="assignment.png" className="h-24 xsm:h-20 align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     View Assignment
                                 </div>
                             </div>
                             </Link>
                             <Link href={"/student/fees_records"}>
-                            <div className="h-28 w-[30%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-teal-500">
-                                <img src="fees_records.png" className="h-24  align-middle m-auto" />
+                            <div className="h-28 w-[100%] rounded-lg  flex cursor-pointer hover:scale-105 transition duration-150 bg-teal-500 xsm:mb-3">
+                                <img src="fees_records.png" className="h-24 xsm:h-20 align-middle m-auto" />
                                 <div className=" m-auto pr-3 ">
                                     Fees Records
                                 </div>
@@ -167,7 +167,7 @@ const [data, setdata] = useState([])
                         </div>
                         
                     </div>
-                    <div className={`shadow-sm shadow-neutral-900 w-[30%] ${show} `}>
+                    <div className={`shadow-sm shadow-neutral-900 w-[30%] ${show} xsm:w-[47%]`}>
                         <div className="pb-2 pt-1 bg-gray-200 rounded-3xl">
                             Notifications
                         </div>
