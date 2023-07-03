@@ -137,21 +137,21 @@ Cookies.set('rollno',response1.rollno)
         // window.open(doc, "_blank")
       }
     return (<>
-        <div className="h-screen ">
+        <div className="h-screen">
             <Navbar class="shadow-md" />
             {/* <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
                 <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 " />
                 <div className="logout_stu text- border-2 border-solid">Logout</div>
             </div> */}
             <div className=" w-[95%] m-auto h-[85%] ">
-                <div className=" m-auto text-center  text-4xl font-semibold p-4 overflow-hidden h-[100%] ">
+                <div className=" m-auto text-center  text-4xl font-semibold p-4 overflow-hidden h-[100%] xsm:text-2xl">
                     <div className="font-serif">Assignment Submission</div>
                     <div className=" w-[95%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto mt-3 ">
                         <div className=" w-[100%] flex ">
-                            <div onClick={pi} className={` w-[50%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
+                            <div onClick={pi} className={` w-[50%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer xsm:text-lg ${piclass}`} >
                                 Current Assignments
                             </div>
-                            <div onClick={eq} className={`bg-amber-800 text-2xl w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
+                            <div onClick={eq} className={`bg-amber-800 text-2xl w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer xsm:text-lg ${edeqclass}`}>
                                 Submitted Assignments
                             </div>
 
@@ -159,7 +159,7 @@ Cookies.set('rollno',response1.rollno)
 
                         
                         <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
-                        <div className={`mt-[20%] text-xl ${sub}`}>No record found</div>
+                        <div className={`mt-[20%] text-xl xsm:text-lg ${sub}`}>No record found</div>
                         <div className="flex-col w-[100%] h-auto p-3">
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
                                 <div>
@@ -178,7 +178,7 @@ Cookies.set('rollno',response1.rollno)
                                             </h2>
                                             <div id={`a${index}`} className="accordion-collapse collapse " aria-labelledby={date} data-bs-parent="#accordionFlushExample">
                                                 <div className="accordion-body">
-                                                    <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base  p-3`}>
+                                                    <div className={`shadow-sm shadow-gray-500 w-[100%] m-auto text-base xsm:text-sm  p-3`}>
                                                         <div className="w-[100%] text-start ml-5 mb-4 p-2 border-b-2 border-zinc-400 border-solid flex">
                                                         <div className="w-[70%]">
                                                                 View Submitted Assignment
@@ -211,7 +211,7 @@ Cookies.set('rollno',response1.rollno)
 
                         <div className={`m-auto  h-[80%] w-[95%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm px-2 ${pinfo}`}>
                             
-                        <div className={`mt-[20%]  text-xl ${ass}`}>No record found</div>
+                        <div className={`mt-[20%]  text-xl xsm:text-lg ${ass}`}>No record found</div>
                             <div className="flex-col w-[100%] h-auto p-3">
 
                                 {/* <div className='text-3xl border-2 border-solid border-emerald-600 p-1 rounded bg-zinc-300 mb-3'>Assignments </div> */}
