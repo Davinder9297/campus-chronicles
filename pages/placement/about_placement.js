@@ -21,11 +21,11 @@ export default function About_placement(){
 
 
    <div className=' flex flex-row justify-between w-auto h-[76vh] mx-32 mt-8 rounded-3xl shadow-inner shadow-gray-400 border-t-2 xsm:mx-3 xsm:h-auto '>
-   <div className=' p-9  w-[50%] xsm:w-[96vh] xsm:hidden '><img className=' pt-2 rounded-3xl xsm:w-[90vh]' src='/vision.gif'></img> </div>
+   <div className=' p-9  w-[50%] xsm:w-[96vh] xsm:hidden '><img className=' pt-2 rounded-3xl xsm:w-[40%]' src='/vision.gif'></img> </div>
 
    <div className='  p-10 h-auto w-[50%]  xsm:p-2 xsm:pt-4 xsm:m-2 xsm:w-full '>
-    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 xsm:text-4xl '>OUR VISION</div>
-    <div className=' pl-8 pt-3 mt-6 ml-1 text-xl font-medium  font-serif '>
+    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 xsm:text-2xl '>OUR VISION</div>
+    <div className=' pl-8 pt-3 mt-6 ml-1 text-xl font-medium  font-mono xsm:text-sm xsm:pl-5'>
     To be an institution of excellence in the domain of higher technical 
 education that serves as the fountainhead for nurturing the future 
 leaders of technology and techno-innovation responsible for the 
@@ -36,11 +36,11 @@ the people of the State of Punjab, the Nation and the World
    </div>
 
 
-   <div className=' flex flex-row justify-between w-auto h-[86vh] mx-32 mt-10 rounded-3xl shadow-xl shadow-gray-400 border-t-2 xsm:mx-3 xsm:h-auto xsm:pb-6 '>
+   <div className=' flex flex-row justify-between w-auto h-[86vh] mx-32 mt-10 rounded-3xl shadow-xl shadow-gray-400 border-t-2 xsm:mx-3 xsm:h-auto xsm:pb-6 xsm:block'>
    
    <div className='  p-10 h-auto w-[50%] xsm:w-full xsm:p-2 xsm:pt-6'>
-    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 xsm:text-4xl'>OUR MISSION</div>
-    <div className=' pl-8 pt-2  mt-6 ml-1 text-xl font-medium font-serif  '>
+    <div className=' text-center text-3xl font-bold font-BlinkMacSystemFont text-amber-500 xsm:text-2xl'>OUR MISSION</div>
+    <div className=' pl-8 pt-2  mt-6 ml-1 text-xl font-medium font-mono xsm:text-sm xsm:pl-5'>
     To provide seamless education through the pioneering use of 
 technology, in partnership with industry and society with a view to 
 promote research, discovery and entrepreneurship and to prepare 
@@ -53,7 +53,7 @@ seamless in all facets of life
         </div>
     </div>
 
-    <div className=' p-9  w-[50%] flex justify-center xsm:hidden '><img className=' pt-2 rounded-3xl' src='/Mission.gif'></img> </div>
+    <div className=' p-9  w-[50%] flex justify-center xsm:w-[45vh] '><img className=' pt-2 rounded-3xl ' src='/Mission.gif'></img> </div>
 
    </div>
 
@@ -90,7 +90,7 @@ opportunities to the students.
 
       <div className='h-[94vh] w-[50%]  xsm:w-full xsm:h-auto'>
         <div className=' flex-col space-y-2 xsm: justify-start'>
-          <div className=' mt-8 pt-3 space-y-4 pl-3 '><div className='flex justify-center'> <img className='rounded-full  outline-offset-4 shadow-lg' src='/teacher.jpg' alt=''></img></div>
+          <div className=' mt-8 pt-3 space-y-4 pl-3 '><div className='flex justify-center'> <img className='rounded-full  outline-offset-4 shadow-lg xsm:h-36 xsm:w-36' src='/teacher.jpg' alt=''></img></div>
           <div className=' text-center font-mono font-normal underline text-xl pl-3 '> T&P Head Officer</div></div>
           
           <div className=' flex justify-center space-y-6 pl-3 text-center font-serif font-bold text-xl  text-amber-500'> 
@@ -98,9 +98,9 @@ opportunities to the students.
 
           
            <div class=" grid grid-cols-1 gap-0 text-center  xsm:w-full ">
-          <div class="mx-14 pt-2 h-auto w-auto border-t-2 border-x-2 border-black bg-gray-100 font-bold text-xl  "> Mobile </div> 
+          <div class="mx-14 pt-2 h-auto w-auto border-t-2 border-x-2 border-black bg-gray-100 font-bold text-xl xsm:text-lg "> Mobile </div> 
           <div class="mx-14 h-auto border-x-2 border-black  bg-gray-100 ">784797792469 / 58768499004</div>
-          <div class="mx-14 h-auto border-x-2 border-black bg-gray-100 text-xl font-bold  "> E-mail</div>
+          <div class="mx-14 h-auto border-x-2 border-black bg-gray-100 text-xl font-bold xsm:text-lg "> E-mail</div>
           <div class="mx-14 pb-2 h-auto border-b-2 border-x-2 border-black bg-gray-100 ">nerrajmohan12345@gmail.com</div>
         </div> 
         </div>

@@ -191,32 +191,32 @@ const upload=async()=>{
                         </select>
                     </div>
 
-                    <div className="w-full m-auto">
+                    <div className="w-full m-auto ">
 
-                        <div className="border-b-2 border-solid border-zinc-300 mt-5 flex xsm:mt-1">
-                            <div className="text-xl p-2 w-[50%]  text-center  xsm:text-lg">
+                        <div className="border-b-2 border-solid border-zinc-300 mt-5 flex xsm:-mt-5 xsm:flex-col xsm:w-full ">
+                            <div className="text-xl p-2 w-[50%]  text-center xsm:mx-auto xsm:w-full xsm:text-base xsm:font-semibold">
                                 Title of Assignment
                             </div>
-                            <div className="w-[50%] my-auto">
-                            <input type="text" value={title} onChange={(e)=>(settitle(e.target.value))} className="pl-2 py-2 h-8 w-[85%] bg-zinc-200 form-control"  placeholder="Enter the Title here"/>
+                            <div className="w-[50%] my-auto xsm:mx-auto xsm:w-full xsm:flex xsm:justify-center ">
+                            <input type="text" value={title} onChange={(e)=>(settitle(e.target.value))} className="xsm:text-base pl-2 py-2 h-8 w-[85%] bg-zinc-200 form-control"  placeholder="Enter the Title here"/>
                             </div>
 
                         </div>
-                        <div className="border-b-2 border-solid border-zinc-300 flex  ">
-                            <div className="text-xl p-2 w-[50%]  text-center xsm:text-lg">
+                        <div className="border-b-2 border-solid border-zinc-300 flex xsm:flex-col xsm:w-full  ">
+                            <div className="text-xl p-2 w-[50%]  text-center xsm:mx-auto xsm:w-full xsm:text-base xsm:font-semibold">
                                 Deadline
                             </div>
-                            <div className="w-[50%] my-auto">
-                                <input type="date" value={deadline} onChange={(e)=>(setdeadline(e.target.value))} className="pl-2 h-8 w-[85%] bg-zinc-200 form-control" placeholder="Enter the Title here" ></input>
+                            <div className="w-[50%] my-auto xsm:mx-auto xsm:w-full xsm:flex xsm:justify-center ">
+                                <input type="date" aria-placeholder="" value={deadline} onChange={(e)=>(setdeadline(e.target.value))} className="xsm:text-base pl-2 h-8 w-[85%] bg-zinc-200 form-control" placeholder="Enter the Title here" ></input>
                             </div>
 
                         </div>
-                        <div className="border-b-2 border-solid border-zinc-300 mt-3 flex">
-                            <div className="text-xl p-2 w-[50%]  text-center xsm:text-lg">
+                        <div className="border-b-2 border-solid border-zinc-300 flex xsm:flex-col xsm:w-full  ">
+                        <div className="text-xl p-2 w-[50%]  text-center xsm:mx-auto xsm:w-full xsm:text-base xsm:font-semibold">
                                 Attach File
                             </div>
-                            <div className="w-[50%] my-auto flex">
-                                <input type="file"  onChange={handledoc} className="h-8 w-[50%] xsm:w-[65%]"></input>
+                            <div className="w-[50%] my-auto xsm:mx-auto xsm:w-full xsm:flex xsm:justify-center">
+                                <input type="file"  onChange={handledoc} className="xsm:text-base h-8 w-[50%] xsm:w-[65%]"></input>
                                 <button className={` p-1 rounded space-x-2 relative top-0 left-0 ${spin}`} type="button" disabled>
         <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
   {/* <span className="" role="status" aria-hidden="true"></span> */}
@@ -225,10 +225,10 @@ const upload=async()=>{
                             </div>
                         </div>
                         <div className="space-x-16 justify-center flex items-center  xsm:flex-col xsm:space-x-0">
-                            <button onClick={upload} disabled={disable} className={`shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white ${opac}`}>
+                            <button onClick={upload} disabled={disable} className={`shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white ${opac} xsm:text-base`}>
                                 
                                 Upload</button>
-                            <Link className=" cursor-pointer " href={"/teacher/view_submitted_assignment"}><div className="shadow-amber-400 cursor-pointer shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white xsm:mt-0">View Submitted Assignments</div></Link>
+                            <Link className=" cursor-pointer " href={"/teacher/view_submitted_assignment"}><div className="shadow-amber-400 cursor-pointer shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 text-white xsm:mt-0 xsm:text-base">View Submitted Assignments</div></Link>
                             {/* <button className="shadow-amber-400 shadow-inner rounded bg-amber-800 p-2 mt-9 mb-9 px-5 hover:bg-amber-700 hover:text-white ">Cancel</button> */}
                         </div>
 

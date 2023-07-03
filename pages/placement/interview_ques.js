@@ -39,9 +39,9 @@ export default function Interview_ques(){
             </div>
 
 
-    <div className= " p-2 flex flex-row w-full h-auto overflow-y-hidden">
+    <div className= " p-2 flex flex-row w-full h-auto overflow-y-hidden ">
 
-            <div className=" py-4 px-3 flex-col h-[100vh] w-[23%] border-l-2 border-black scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 bg-sky-100 text-black  overflow-y-scroll overflow-x-auto xsm:w-[42%] xsm:py-6">
+            <div className=" py-4 px-3 flex-col h-[100vh] w-[23%] border-l-2 border-black scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 bg-sky-100 text-black  overflow-y-scroll overflow-x-auto  xsm:hidden ">
             <div className="flex justify-start w-full  h-8 items-center">
                 <div className=" text-2xl text-left font-bold text-black xsm:pt-10">Computer Science Interview Questions</div>
             </div>
@@ -87,8 +87,8 @@ export default function Interview_ques(){
            </div>
     
 
-           <div className=" mx-2 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner shadow-sky-200  scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 overflow-y-scroll xsm:mx-0"> 
-           <div className=" pt-2 text-2xl text-left font-bold text-black underline">Detailed Answers to the Questions</div>
+           <div className=" mx-2 px-3 pb-3 flex-col w-[75%] h-[100vh] border-2 shadow-inner shadow-sky-200  scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400 overflow-y-scroll xsm:ml-0 xsm:w-full"> 
+           <div className=" pt-2 text-2xl text-left font-bold text-black underline xsm:text-center xsm:text-xl">Detailed Answers to the Questions</div>
 
            <div className="  flex-col   ">
            <div className='text-lg flex-col w-full space-y-3 '> 

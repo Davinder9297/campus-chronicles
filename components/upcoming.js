@@ -13,16 +13,16 @@ export default function Upcomingevents() {
             <div><img className='w-36 ml-1 mb-3' src="hr.png" alt="" /></div>
             <div className='flex-col  divide-y-4 space-y-3 xsm:space-y-4 xsm:divide-y-2'>
                 <div className='flex-col'>
-                    <div className='text-base mt-2 font-semibold xsm:text-sm'>ReNew CoE organised event on 1st March 2023 , 5 - 6:30 pm</div>
-                    <div className='flex text-sm  xsm:text-xs'><FaRegCalendarAlt className='mt-[3px] mr-1' /> February 20, 2023</div>
+                    <div className='text-base mt-2 font-semibold xsm:text-sm'>Cognizant Regional Council - Tech Talk on 7th july, 2023 , 5 - 6:30 pm</div>
+                    <div className='flex text-sm  xsm:text-xs'><FaRegCalendarAlt className='mt-[3px] mr-1' /> June 20, 2023</div>
                 </div>
                 <div className='flex-col'>
-                    <div className='text-base mt-2 font-semibold xsm:text-sm'>ReNew CoE organised event on 1st March 2023 , 5 - 6:30 pm</div>
-                    <div className='flex text-sm  xsm:text-xs'><FaRegCalendarAlt className='mt-[3px] mr-1' /> February 20, 2023</div>
+                    <div className='text-base mt-2 font-semibold xsm:text-sm'>Talk on career Opportunities on 10th July, 2023 , 10 - 11:30 am</div>
+                    <div className='flex text-sm  xsm:text-xs'><FaRegCalendarAlt className='mt-[3px] mr-1' /> June 22, 2023</div>
                 </div>
                 <div className='flex-col'>
-                    <div className='text-base mt-2 font-semibold xsm:text-sm'>ReNew CoE organised event on 1st March 2023 , 5 - 6:30 pm</div>
-                    <div className='flex text-sm  xsm:text-xs'><FaRegCalendarAlt className='mt-[3px] mr-1' /> February 20, 2023</div>
+                    <div className='text-base mt-2 font-semibold xsm:text-sm'>Independence Day event on 14th August 2023 , 10 - 2:00 pm</div>
+                    <div className='flex text-sm  xsm:text-xs'><FaRegCalendarAlt className='mt-[3px] mr-1' /> July 2, 2023</div>
                 </div>
 
             </div>
