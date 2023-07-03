@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Navbar from "../../components/navbar"
+import Navbarres from "../../components/navbarres"
 import { useState } from "react"
-import {FaPowerOff} from "react-icons/fa"
+import { FaPowerOff } from "react-icons/fa"
 import { CgShapeRhombus } from 'react-icons/cg'
 import { useEffect } from "react"
 import { Chart } from "chart.js";
@@ -11,7 +11,7 @@ export default function My_profile() {
     const [pinfo, setpinfo] = useState('')
     const [edqu, setedqu] = useState('hidden')
     const [piclass, setpiclass] = useState('border-b-4 border-black text-black ')
-    const [personaldata, setpersonaldata] = useState({address:"-",linkedin:"-",image:"",studentname:"",rollno:"",dob:"",fathername:"",mothername:"",email:"-",phone:"-",sem:""})
+    const [personaldata, setpersonaldata] = useState({ address: "-", linkedin: "-", image: "", studentname: "", rollno: "", dob: "", fathername: "", mothername: "", email: "-", phone: "-", sem: "" })
     const [edeqclass, setedeqclass] = useState('text-white')
     const [spin, setspin] = useState('')
     const [opac, setopac] = useState('opacity-50')
@@ -34,107 +34,103 @@ export default function My_profile() {
     }
 
     useEffect(() => {
-        
+
         const url = "http://localhost:3000/api/studentpersonaldata";
-  const url1 = "http://localhost:3000/api/personalcgpa";
-//   const url2 = "http://localhost:3000/api/events";
+        const url1 = "http://localhost:3000/api/personalcgpa";
+        //   const url2 = "http://localhost:3000/api/events";
 
 
-  const fetchData = async () => {
-    try {
-      setspin('')
-      let response = await fetch(url);
-      let json = await response.json();
-// console.log(json);
-      setpersonaldata(json)
-      setspin('hidden')
-      setopac('')
-    //   if(json.length!=0){
-    //     setnorecord('hidden')
-    //   }
-      let response1 = await fetch(url1);
-      let json1 = await response1.json();
+        const fetchData = async () => {
+            try {
+                setspin('')
+                let response = await fetch(url);
+                let json = await response.json();
+                // console.log(json);
+                setpersonaldata(json)
+                setspin('hidden')
+                setopac('')
+                //   if(json.length!=0){
+                //     setnorecord('hidden')
+                //   }
+                let response1 = await fetch(url1);
+                let json1 = await response1.json();
 
-      setrowsdata(json1)
-      console.log(json1);
-    //   const data={json1.sem1,}
-    //   var ctx = document.getElementById('myChart').getContext('2d');
-    //     var myChart = new Chart(ctx, {
-    //         type: 'line',
-    //         data: {
-    //             labels: ["Sem1", "Sem2", "Sem3", "Sem4", "Sem5", "Sem6"],
-    //             datasets: [{
-    //                 data: [8.77, 8.58, 9.43, 9.19, 9.3, 9.5],
-    //                 label: "Cgpa",
-    //                 borderColor: "#3e95cd",
-    //                 backgroundColor: "#7bb6dd",
-    //                 fill: true,
-    //             }
-    //             ]
-    //         },
-    //     });
-    //   let response2 = await fetch(url2);
-    //   let json2 = await response2.json();
+                setrowsdata(json1)
+                console.log(json1);
+                //   const data={json1.sem1,}
+                //   var ctx = document.getElementById('myChart').getContext('2d');
+                //     var myChart = new Chart(ctx, {
+                //         type: 'line',
+                //         data: {
+                //             labels: ["Sem1", "Sem2", "Sem3", "Sem4", "Sem5", "Sem6"],
+                //             datasets: [{
+                //                 data: [8.77, 8.58, 9.43, 9.19, 9.3, 9.5],
+                //                 label: "Cgpa",
+                //                 borderColor: "#3e95cd",
+                //                 backgroundColor: "#7bb6dd",
+                //                 fill: true,
+                //             }
+                //             ]
+                //         },
+                //     });
+                //   let response2 = await fetch(url2);
+                //   let json2 = await response2.json();
 
-    //   setRowsData2(json2)
-    //   if(json2.length!=0){
-    //     setnorecord2('hidden')
-    //   }
-          
-      
-    //   setspin('hidden')
-    //   setshow('')
-    } catch (error) {
-    //   setshow('hidden')
-    //   setspin('')
-      console.log("error", error);
-    }
-  };
+                //   setRowsData2(json2)
+                //   if(json2.length!=0){
+                //     setnorecord2('hidden')
+                //   }
 
-  fetchData();
+
+                //   setspin('hidden')
+                //   setshow('')
+            } catch (error) {
+                //   setshow('hidden')
+                //   setspin('')
+                console.log("error", error);
+            }
+        };
+
+        fetchData();
     }, [])
-    const{sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8}=rowsdata;
-// console.log("sem1");
+    const { sem1, sem2, sem3, sem4, sem5, sem6, sem7, sem8 } = rowsdata;
+    // console.log("sem1");
     return (<>
         <div className="h-screen ">
-            <div className="h-screen">
-                <Navbar class="shadow-sm" />
-                <div className="logo_logout h-9 w-11  fixed right-10 top-28 cursor-pointer ">
-                <FaPowerOff className=" h-full w-full hover:opacity-80 text-amber-900 "  />
-                        <div className="logout_stu text-base">Logout</div>
-                </div>
+            <div className="h-screen xsm:h-auto">
+                <Navbarres class="shadow-sm" />
 
-                <div className={` w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden  ${opac}`}>
+
+                <div className={` w-[95%] m-auto text-center text-4xl font-semibold p-4 h-[80%] overflow-hidden xsm:text-2xl ${opac}`}>
                     Your Profile ....
-                    <div className={`text-center text-base flex w-full justify-center items-center h-full absolute top-0 left-28
- z-10  ${spin}`}>
-<div className="spinner-border" role="status">
-  <span className ="visually-hidden">Loading...</span>
-</div>
-</div>
-                    <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] ">
-                        <div className="flex justify-center  items-center  h-[100%]  w-[30%] shadow-md shadow-slate-400 rounded-sm">
-                            <div className="h-[100%] w-[100%] justify-center">
+                    <div className={`text-center text-base flex w-full justify-center items-center h-full absolute top-0 left-28 z-10  ${spin}`}>
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div className=" w-[97%] m-auto mt-2 text-center text-4xl font-semibold flex justify-between p-4 h-[90%] xsm:block">
+                        <div className="flex justify-center  items-center  h-[100%]  w-[30%] shadow-md shadow-slate-400 rounded-sm xsm:w-full">
+                            <div className="h-[100%] w-[100%] xsm:h-40 xsm:w-40 justify-center">
                                 <div className="h-[80%]">
                                     <img src="/jass.jpeg" className="shadow-md shadow-slate-700 h-[90%] rounded-full mt-2 m-auto" />
                                 </div>
-                                <div className="text-[80%] ">
+                                <div className="text-3xl xsm:text-sm ">
                                     Jaspreet kaur
                                 </div>
                             </div>
                         </div>
-                        <div className=" w-[65%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto">
-                            <div className=" w-[100%] flex ">
-                                <div onClick={pi} className={` w-[50%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
+                        <div className=" w-[65%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto xsm:w-full ">
+                            <div className=" w-[100%] flex xsm:mt-5">
+                                <div onClick={pi} className={` w-[50%] m-auto bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass} xsm:text-sm`} >
                                     Personal Information
                                 </div>
-                                <div onClick={eq} className={`bg-amber-800 w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
+                                <div onClick={eq} className={`bg-amber-800 w-[50%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass} xsm:text-sm`}>
                                     Performance
                                 </div>
                             </div>
 
-                            <div className={`m-auto  h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-900 text-sm px-2 ${pinfo}`}>
-                                <table className="border-collapse border border-white w-[95%] mx-auto text-lg">
+                            <div className={`m-auto  h-[80%] w-[90%] overflow-auto scrollbar-thin pt-1 scrollbar-thumb-zinc-900 text-sm px-2 ${pinfo}`}>
+                                <table className="border-collapse border border-white w-[95%] mx-auto text-lg xsm:text-sm xsm:mb-4">
                                     <tbody>
                                         <tr>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Name </td>
@@ -177,13 +173,13 @@ export default function My_profile() {
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.linkedin}</td>
                                         </tr>
 
-                                        
-                                        </tbody>
+
+                                    </tbody>
                                 </table>
                             </div>
 
                             <div className={` m-auto flex-col h-[80%] w-[90%] overflow-auto scrollbar-thin pt-3 scrollbar-thumb-zinc-300 text-sm px-2 ${edqu}`}>
-                                <table className="border-collapse border border-slate-400 w-[95%] mx-auto text-lg">
+                                <table className="border-collapse border border-slate-400 w-[95%] mx-auto text-lg xsm:text-sm xsm:mb-4">
                                     <thead className="">
                                         <tr className=" ">
                                             <th className=" border-2  py-2 border-slate-300 text-center px-2">Sno. </th>
@@ -193,10 +189,10 @@ export default function My_profile() {
                                     </thead>
                                     <tbody>
                                         {/* {rowsdata.map((da,index)=>{ */}
-                                               
-                                            
-                                            
-                                     
+
+
+
+
                                         <tr>
                                             <td className=" p-2 border-2 w-[10%] h-auto border-slate-300 ">1.</td>
                                             <td className=" p-2 border-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Semester 1</td>
@@ -241,7 +237,7 @@ export default function My_profile() {
 
                                     </tbody>
                                 </table>
-{/* 
+                                {/* 
                                 <div className='w-[95%] mx-auto mt-4 text-2xl'>
                                     <div>
                                         Performance Graph

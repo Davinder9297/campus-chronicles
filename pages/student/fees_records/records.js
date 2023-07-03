@@ -56,17 +56,17 @@ export default function Study_material() {
                 <div className="logout_stu text- border-2 border-solid">Logout</div>
             </div> */}
             <div className=" w-[95%] m-auto h-[85%] ">
-                <div className=" m-auto text-center  text-4xl font-semibold p-4 overflow-hidden h-[100%] ">
+                <div className=" m-auto text-center  text-4xl font-semibold p-4 overflow-hidden h-[100%] xsm:text-2xl">
                     <div className="font-sans">Fees Records</div>
                     <div className=" w-[95%] shadow-md shadow-slate-400 text-[60%] h-[100%] m-auto mt-3 ">
                         <div className=" w-[100%] flex ">
-                            <div onClick={pi} className={` w-[33.3%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${piclass}`} >
+                            <div onClick={pi} className={` w-[33.3%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer xsm:text-lg ${piclass}`} >
                                 Semester Fees 
                             </div>
-                            <div onClick={eq} className={`bg-amber-800 text-xl w-[33.3%] m-auto p-1  hover:bg-amber-700 cursor-pointer ${edeqclass}`}>
+                            <div onClick={eq} className={`bg-amber-800 text-xl w-[33.3%] m-auto p-1  hover:bg-amber-700 cursor-pointer xsm:text-sm ${edeqclass}`}>
                                 Exam Form & University related funds
                             </div>
-                            <div onClick={er} className={` w-[33.3%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer ${exreclass}`} >
+                            <div onClick={er} className={` w-[33.3%] m-auto text-2xl bg-yellow-500 font-semibold p-1 hover:bg-yellow-400 cursor-pointer xsm:text-lg ${exreclass}`} >
                                  Hostel related Fees
                             </div>
 
