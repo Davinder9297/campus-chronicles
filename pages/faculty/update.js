@@ -127,7 +127,7 @@ console.log(json);
                                         </tr>
                                         <tr>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
-                                                E-mail I'd
+                                                E-mail Id
                                             </td>
                                             <td className=" p-1 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                                 {data.email}

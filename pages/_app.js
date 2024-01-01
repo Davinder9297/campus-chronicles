@@ -10,9 +10,6 @@ function MyApp({ Component, pageProps }) {
     <title>Campus Chronicles</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous"></link>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=DynaPuff&family=Oswald&display=swap" rel="stylesheet"/>
 </Head>
   {/* <Navbar/> */}
   {/* <Header/> */}

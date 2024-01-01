@@ -161,7 +161,7 @@ export default function My_profile() {
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.phone}</td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
+                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Email id</td>
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.email}</td>
                                         </tr>
                                         <tr>
@@ -169,7 +169,7 @@ export default function My_profile() {
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.address}</td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Linkedin i'd</td>
+                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Linkedin id</td>
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.linkedin}</td>
                                         </tr>
 

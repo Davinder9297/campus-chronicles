@@ -151,7 +151,7 @@ export default function Faculty() {
                                             <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                             <div className="flex">
                                                 <GoMail className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Email I'd</div>
+                                                <div className="">Email Id</div>
                                                 </div>
                                             </td>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
@@ -386,7 +386,7 @@ export default function Faculty() {
                                             <td className="font-semibold p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
                                             <div className="flex">
                                                 <GoMail className="fill-amber-800 mr-4  h-5 w-6"/>
-                                                <div className="">Email I'd</div>
+                                                <div className="">Email Id</div>
                                                 </div>
                                             </td>
                                             <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">
