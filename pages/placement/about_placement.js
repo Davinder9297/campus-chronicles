@@ -1,10 +1,10 @@
 import AboutPCarousal from '../../components/AboutP_carousal'
-import Navbar from '../../components/navbar' 
+import Navbarres from '../../components/navbarres' 
 import Footer from "../../components/footer";
 export default function About_placement(){
     return (<> 
     
-   <Navbar/> 
+   <Navbarres/> 
   {/* <div className= " w-full h-44 bg-plac_bg bg-no-repeat bg-cover opacity-80 text-lg text-center p-5"> dhf</div> */}
   {/* <div className= "h-72 pt-20 placement_bg flex justify-center  "> 
   <div className=" p-6 mt-2 mr-2 w-[84vh] h-20 shadow-xl shadow-slate-600 rounded-md" >
