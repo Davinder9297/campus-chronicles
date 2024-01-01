@@ -122,7 +122,7 @@ function Notesrows({rowsData, deleteTableRows, handleChange}) {
                 <select value={subject} onChange={(evnt)=>(handleChange(index, evnt))} name="subject"  className="outline cursor-pointer outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300">
                 <option className="" value="">--Select Subject--</option >
 {
-    sem && options[sem-1].map((d)=><option className="" value={d}>{d}</option >
+    sem && options[sem-1].map((d,index)=><option key={index} className="" value={d}>{d}</option >
     )
 }
 

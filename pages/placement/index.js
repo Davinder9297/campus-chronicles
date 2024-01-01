@@ -156,7 +156,7 @@ export default function Placement() {
       <div className='h-auto w-[30%] xsm:hidden'>
         <div className=' flex-col m-6 space-y-2'>
           <div className=' flex-col justify-center space-y-1 pl-3'> <img className='w-72 h-48' src='plac_home.jpeg' alt=''></img>
-          <div className=' text-center font-serif font-bold text-base pl-3'> Qspider's Placement drive</div></div>
+          <div className=' text-center font-serif font-bold text-base pl-3'> Qspider Placement drive</div></div>
           
           <div className=' flex-col justify-center space-y-1 pl-3 pr-3 '> <img className='w-72 h-48 ' src='plac_home2.jpeg' alt=''></img>
           <div className=' text-center font-serif font-bold text-base  pl-3'> Guidance session</div></div>
@@ -194,31 +194,31 @@ export default function Placement() {
     
                 {/* <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
                     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
-                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                     <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                     <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
                 </div>
                 <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
                     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
-                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                     <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                     <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
                 </div>
                 <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
                     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
-                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                     <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                     <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
                 </div>
                 <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
                     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
-                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                     <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                     <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
                 </div>
                 <div className="flex-col h-[420px] border-2 w-[350px] shadow-2xl rounded-lg mb-5 ">
                     <div className=""><img className="rounded-t w-[350px] h-52" src="e1.jpg" alt="" /></div>
-                    <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                    <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                     <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                     <div className="w-full mt-3 text-sm rounded-xl py-2 bg-blue-900 text-center text-white"><button>View more images</button></div>
                 </div> */}

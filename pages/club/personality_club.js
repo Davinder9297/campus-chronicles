@@ -165,7 +165,7 @@ export default function Personalityclub() {
                     <div className="  text-center font-bold text-3xl font-sans p-2">
                         About us....
                         <div className="m-3 font-normal text-xl shadow-md shadow-orange-400 rounded-xl p-2 text-justify">
-                            Darpan comes you with the opportunity of developing personality in ways through which learn not only to benefit others but ourselves as well. With the aim of developing one's personality we have reached methods like demo interview sessions and group discussions for your placements along with other activities and charities that are to be held.
+                            Darpan comes you with the opportunity of developing personality in ways through which learn not only to benefit others but ourselves as well. With the aim of developing one personality we have reached methods like demo interview sessions and group discussions for your placements along with other activities and charities that are to be held.
                         </div>
                     </div>
                     <div className="text-center font-bold text-3xl font-sans m-3 p-2 shadow-md shadow-orange-400 rounded-xl">

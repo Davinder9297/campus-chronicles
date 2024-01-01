@@ -97,11 +97,11 @@ opportunities to the students.
            Dr. NEERAJ MOHAN</div>
 
           
-           <div class=" grid grid-cols-1 gap-0 text-center  xsm:w-full ">
-          <div class="mx-14 pt-2 h-auto w-auto border-t-2 border-x-2 border-black bg-gray-100 font-bold text-xl xsm:text-lg "> Mobile </div> 
-          <div class="mx-14 h-auto border-x-2 border-black  bg-gray-100 ">784797792469 / 58768499004</div>
-          <div class="mx-14 h-auto border-x-2 border-black bg-gray-100 text-xl font-bold xsm:text-lg "> E-mail</div>
-          <div class="mx-14 pb-2 h-auto border-b-2 border-x-2 border-black bg-gray-100 ">nerrajmohan12345@gmail.com</div>
+           <div className=" grid grid-cols-1 gap-0 text-center  xsm:w-full ">
+          <div className="mx-14 pt-2 h-auto w-auto border-t-2 border-x-2 border-black bg-gray-100 font-bold text-xl xsm:text-lg "> Mobile </div> 
+          <div className="mx-14 h-auto border-x-2 border-black  bg-gray-100 ">784797792469 / 58768499004</div>
+          <div className="mx-14 h-auto border-x-2 border-black bg-gray-100 text-xl font-bold xsm:text-lg "> E-mail</div>
+          <div className="mx-14 pb-2 h-auto border-b-2 border-x-2 border-black bg-gray-100 ">nerrajmohan12345@gmail.com</div>
         </div> 
         </div>
 

@@ -67,7 +67,7 @@ const res=await fetch('http://localhost:3000/api/requestbook', {
              <div className="space-y-5 mt-4 ">
                 <div className="flex justify-between"><div>Book Title</div> <div><input  value={title} onChange={(e)=>{settitle(e.target.value)}} placeholder="Enter the title" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
                 <div className="flex justify-between"><div>Author Name</div> <div><input  value={author} onChange={(e)=>{setauthor(e.target.value)}} placeholder="Enter the Author" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
-                <div className="flex justify-between  space-x-2"><div>Publisher (Optional*)</div> <div><input value={publisher} onChange={(e)=>{setpublisher(e.target.value)}} placeholder="Enter Publisher's name" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
+                <div className="flex justify-between  space-x-2"><div>Publisher (Optional*)</div> <div><input value={publisher} onChange={(e)=>{setpublisher(e.target.value)}} placeholder="Enter Publisher name" className="p-1 rounded-sm bg-yellow-200 text-black xsm:text-sm" type="text" /></div></div>
             
    
             </div>

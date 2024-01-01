@@ -83,7 +83,7 @@ export default function Library_management(){
                 <div className="text-center text-xl">Add New Books</div>
             <form action="" method="post" className="flex-col space-y-2 font-serif">
                       <div className="flex-col">
-                        <div className=" text-lg">Book's Title</div>
+                        <div className=" text-lg">Book Title</div>
                         <div><input type="text" className="outline  outline-1 px-2 rounded-sm py-[6px] w-full text-base text-gray-600 outline-gray-300" /></div>
                       </div>
                       <div className="flex-col">

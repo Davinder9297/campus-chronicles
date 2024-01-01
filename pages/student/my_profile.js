@@ -149,11 +149,11 @@ export default function My_profile() {
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.dob}</td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Father's Name</td>
+                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Father Name</td>
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.fathername}</td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Mother's Name</td>
+                                            <td className=" p-2 border-b-2 w-[50%] text-left pl-3 h-auto border-slate-300 ">Mother Name</td>
                                             <td className=" p-2 border-b-2 w-[50%] h-auto text-left border-slate-300 ">{personaldata.mothername}</td>
                                         </tr>
                                         <tr>

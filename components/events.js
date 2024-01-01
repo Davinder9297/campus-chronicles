@@ -46,7 +46,7 @@ export default function Events() {
     let name = month[d.getMonth()];
     let s = d.getDate() + " " + name + " " + d.getFullYear();
                 return(
-                    <div className="flex-col h-[400px] border-2 w-[350px] shadow-xl rounded-lg mb-5 hover:scale-95 transition duration-300 ease-in xsm:h-auto">
+                    <div key={index} className="flex-col h-[400px] border-2 w-[350px] shadow-xl rounded-lg mb-5 hover:scale-95 transition duration-300 ease-in xsm:h-auto">
                     <div className=""><img className="rounded-t w-[350px] h-52 xsm:h-44" src={de.image} alt="" /></div>
                     <div className="flex justify-between">
                         <div className="bg-yellow-500 px-1 mt-1 text-xs py-1 rounded-tr rounded-br text-white">{de.eventname}</div>

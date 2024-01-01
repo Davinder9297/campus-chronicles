@@ -10,7 +10,7 @@ import { GrLinkedin } from 'react-icons/gr'
 import { BiPhoneCall } from 'react-icons/bi'
 import { FaChalkboardTeacher } from 'react-icons/fa'
 
-export default function fac() {
+export default function Fac() {
 const [data, setdata] = useState([])
 const [pinfo, setpinfo] = useState('')
     const [edqu, setedqu] = useState('hidden')

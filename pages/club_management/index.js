@@ -298,7 +298,7 @@ useEffect(() => {
 </div>
 </div>
         <div className={`${show} pb-4`}>
-        <div className="text-center text-2xl font-serif mt-5 ">Coordinator's Details Management</div>
+        <div className="text-center text-2xl font-serif mt-5 ">Coordinator Details Management</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
 
           <button disabled={disable} className={`bg-yellow-400 p-2 rounded ${save}`} onClick={savedata}>Save Changes</button><button onClick={addTableRows} className="bg-amber-800 p-2 rounded">+Add New Record</button></div>

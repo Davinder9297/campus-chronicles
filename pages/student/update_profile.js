@@ -124,7 +124,7 @@ export default function Update_profile() {
                                             <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="text" onChange={(e) => { setphone(e.target.value) }} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400 xsm:text-sm" value={phone} /></td>
                                         </tr>
                                         <tr>
-                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Email i'd</td>
+                                            <td className=" p-2 border-b-2 w-[30%] text-left pl-3 h-auto border-slate-300 ">Email id</td>
                                             <td className=" p-2 border-b-2 w-[70%] h-auto border-slate-300 "><input type="email" onChange={(e) => { setemail(e.target.value) }} readOnly={read} className="p-1  bg-slate-100 outline-1 w-full outline-gray-300 rounded outline focus:outline-gray-400 xsm:text-sm" value={email} /></td>
                                         </tr>
                                         <tr>

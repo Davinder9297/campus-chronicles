@@ -173,7 +173,7 @@ export default function Coding_ques(){
                                <div className=' flex-row w-full space-y-1'>
                                 <div className=" pt-7 flex-col text-lg w-full  ">
                                 <div className="flex justify-between  items-center">
-                                <div className="text-xl text-justify font-serif font-bold text-black">Kadane's Algorithm</div>
+                                <div className="text-xl text-justify font-serif font-bold text-black">Kadane Algorithm</div>
                                 <div className="text-base text-black font-semibold items-center space-x-1"><div>View Ques</div></div>
                                 </div></div>
 

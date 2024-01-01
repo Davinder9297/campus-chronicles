@@ -159,60 +159,60 @@ export default function sports() {
                         <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5  hover:scale-105 transition duration-200 ease-in">
                             <div className=""><img className="rounded-t w-[350px] h-52" src="/e1.jpg" alt="" /></div>
                             <div className="flex justify-between">
-                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
+                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher day</div>
                                 <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
                             </div>
-                            <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                            <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                             <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                             <div className="w-full mt-3 text-sm rounded-xl py-2 bg-amber-800 text-center text-white hover:bg-amber-800 cursor-pointer"><button>View Details</button></div>
                         </div>
                         <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5  hover:scale-105 transition duration-200 ease-in ">
                             <div className=""><img className="rounded-t w-[350px] h-52" src="/e1.jpg" alt="" /></div>
                             <div className="flex justify-between">
-                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
+                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher day</div>
                                 <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
                             </div>
-                            <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                            <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                             <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                             <div className="w-full mt-3 text-sm rounded-xl py-2 bg-amber-800 text-center text-white hover:bg-amber-800 cursor-pointer"><button>View Details</button></div>
                         </div>
                         <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5  hover:scale-105 transition duration-200 ease-in ">
                             <div className=""><img className="rounded-t w-[350px] h-52" src="/e1.jpg" alt="" /></div>
                             <div className="flex justify-between">
-                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
+                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher day</div>
                                 <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
                             </div>
-                            <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                            <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                             <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                             <div className="w-full mt-3 text-sm rounded-xl py-2 bg-amber-800 text-center text-white hover:bg-amber-800 cursor-pointer"><button>View Details</button></div>
                         </div>
                         <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5  hover:scale-105 transition duration-200 ease-in ">
                             <div className=""><img className="rounded-t w-[350px] h-52" src="/e1.jpg" alt="" /></div>
                             <div className="flex justify-between">
-                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
+                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher day</div>
                                 <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
                             </div>
-                            <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                            <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                             <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                             <div className="w-full mt-3 text-sm rounded-xl py-2 bg-amber-800 text-center text-white hover:bg-amber-800 cursor-pointer"><button>View Details</button></div>
                         </div>
                         <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5  hover:scale-105 transition duration-200 ease-in ">
                             <div className=""><img className="rounded-t w-[350px] h-52" src="/e1.jpg" alt="" /></div>
                             <div className="flex justify-between">
-                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
+                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher day</div>
                                 <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
                             </div>
-                            <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                            <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                             <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                             <div className="w-full mt-3 text-sm rounded-xl py-2 bg-amber-800 text-center text-white hover:bg-amber-800 cursor-pointer"><button>View Details</button></div>
                         </div>
                         <div className="flex-col h-[420px] border-2 w-[350px] shadow-md rounded-lg mb-5  hover:scale-105 transition duration-200 ease-in ">
                             <div className=""><img className="rounded-t w-[350px] h-52" src="/e1.jpg" alt="" /></div>
                             <div className="flex justify-between">
-                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher's day</div>
+                                <div className="bg-yellow-400 px-1 mt-1 text-xs py-[1px] rounded-tr rounded-br text-white">Teacher day</div>
                                 <div className="bg-amber-800 mt-1 text-xs px-1 py-[1px] rounded-tl rounded-bl text-white">{s}</div>
                             </div>
-                            <div className="px-1 mt-3 font-bold">Teacher's day celeberated by all staff and students of our campus</div>
+                            <div className="px-1 mt-3 font-bold">Teacher day celeberated by all staff and students of our campus</div>
                             <div className="px-1">It is well organized by our students and there were many activities like skit,singing,mimicry,anchoring,dance etc.</div>
                             <div className="w-full mt-3 text-sm rounded-xl py-2 bg-amber-800 text-center text-white hover:bg-amber-800 cursor-pointer"><button>View Details</button></div>
                         </div>

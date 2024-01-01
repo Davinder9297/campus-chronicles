@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import { CgShapeRhombus } from 'react-icons/cg'
 
 
-export default function select_subject() {
+export default function Select_subject() {
     const [data, setdata] = useState([])
     const firstsem = [
         "Mathematics 1",

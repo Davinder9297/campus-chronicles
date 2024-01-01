@@ -120,7 +120,7 @@ export default function Addbook(){
             <div className="flex-col w-[100%] h-[93.3%]  overflow-y-auto scrollbar-thin  scrollbar-track-slate-100 scrollbar-thumb-slate-500">
 
             <div className={` pb-4`}>
-        <div className="text-center text-2xl font-serif mt-5 ">Add eBook's Details</div>
+        <div className="text-center text-2xl font-serif mt-5 ">Add eBook Details</div>
         <div className="flex justify-end space-x-2 text-white pr-2">
         <button className={`bg-yellow-400 p-2 rounded space-x-1 ${spin2}`} type="button" disabled>
         {/* <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> */}

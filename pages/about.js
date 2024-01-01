@@ -55,8 +55,8 @@ export default function About() {
 						<div className="text-center text-xl font-semibold xsm:mt-7"> Programms Offered</div>
 						<div className="flex justify-center mb-2"><img className="w-44" src="/hr.png" alt="" /></div>
 						<div className=" leading-loose xsm:w-[90%] xsm:mx-auto  xsm:text-base">
-							<div className="flex items-center  space-x-2 "><div><BsFillBookmarkStarFill /></div><div>Bachelor's of Computer Science and Engineering (4 years) </div></div>
-							<div className="flex items-center space-x-2  mt-2"><div><BsFillBookmarkStarFill /></div><div>Bachelor's of Computer Science and Engineering Lateral Entry (3 years) </div></div>
+							<div className="flex items-center  space-x-2 "><div><BsFillBookmarkStarFill /></div><div>Bachelor of Computer Science and Engineering (4 years) </div></div>
+							<div className="flex items-center space-x-2  mt-2"><div><BsFillBookmarkStarFill /></div><div>Bachelor of Computer Science and Engineering Lateral Entry (3 years) </div></div>
 						</div>
 
 					</div>
@@ -194,7 +194,7 @@ export default function About() {
 									&nbsp;</td>
 							</tr>
 							<tr>
-								<td colspan="2">
+								<td colSpan="2">
 									<strong>Total Fee</strong></td>
 								<td>
 									46,600.00</td>
@@ -299,7 +299,7 @@ export default function About() {
 										&nbsp;</td>
 								</tr>
 								<tr>
-									<td colspan="2">
+									<td colSpan="2">
 										<strong>Total Fee</strong></td>
 									<td>
 										46,600.00</td>
@@ -329,7 +329,7 @@ export default function About() {
 						<tbody>
 							<tr>
 								<td>
-									Prime Minister's Scholarship Scheme (PMSS) for SC/ST &amp; OBC Students</td>
+									Prime Minister Scholarship Scheme (PMSS) for SC/ST &amp; OBC Students</td>
 								<td>
 									<a href="http://www.scholarships.punjab.gov.in/">Click Here</a></td>
 							</tr>
